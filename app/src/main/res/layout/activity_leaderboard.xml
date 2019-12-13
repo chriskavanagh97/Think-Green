@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/Friends"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Friends"
+        android:textColor="#FFFFFF"
+        android:background="#3F51B5"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Name"
+
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/Email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Email"
+
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/Number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Number"
+
+            android:textSize="24sp"
+
+
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+
+        android:id="@+id/my_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="602dp"
+        android:scrollbars="vertical">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+    <Button
+        android:id="@+id/Home"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#3F51B5"
+        android:text="Home"
+        android:textColor="#FFFEFE"
+        android:textStyle="bold"/>
+
+
+</LinearLayout>
+
+

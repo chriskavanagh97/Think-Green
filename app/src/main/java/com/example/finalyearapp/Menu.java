@@ -1,0 +1,126 @@
+package com.example.finalyearapp;
+
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.finalyearapp.Leaderboard.Leaderboard;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+
+import java.util.Objects;
+
+import static com.example.finalyearapp.MainActivity.KEY1;
+
+
+public class Menu extends AppCompatActivity {
+
+    int score1;
+
+    private int score;
+    DatabaseReference database;
+    TextView emaiil;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_menu);
+        FirebaseAuth mFirebaseAuth = FirebaseAuth.getInstance();
+        String email = Objects.requireNonNull(mFirebaseAuth.getCurrentUser()).getEmail();
+
+        //=========================================================================================================================================================================================
+        //reading from the Database
+        //=========================================================================================================================================================================================
+
+
+        //=========================================================================================================================================================================================
+        //Setting the text box with info from the database
+        //=========================================================================================================================================================================================
+
+        Button quiz = (Button) findViewById(R.id.Quiz);
+        quiz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent inttoQuiz = new Intent(Menu.this, QuizMenu.class);
+                startActivity(inttoQuiz);
+
+            }
+        });
+
+        //=========================================================================================================================================================================================
+        //Sign Out
+        //=========================================================================================================================================================================================
+
+        Button signout = (Button) findViewById(R.id.SignOut);
+        signout.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intToMain = new Intent(Menu.this, MainActivity.class);
+                startActivity(intToMain);
+
+            }
+        });
+
+        //=========================================================================================================================================================================================
+        //Writing a new score to the database
+        //=========================================================================================================================================================================================
+        Button scoreupdate = (Button) findViewById(R.id.ScoreUpdate);
+        scoreupdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View c) {
+
+                score = 100;
+
+
+
+                /**/
+
+
+            }
+        });
+
+        //=========================================================================================================================================================================================
+        //Switching to the profile page
+        //=========================================================================================================================================================================================
+        Button profile = (Button) findViewById(R.id.profile);
+        profile.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Menu.this,
+                        ViewUser.class);
+
+                startActivity(intent);
+            }
+        });
+        Intent intent = getIntent();
+        intent.getStringExtra(KEY1);
+
+
+        Button leaderboard = (Button) findViewById(R.id.Leaderboard);
+        leaderboard.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Menu.this,
+                        Leaderboard.class);
+
+                startActivity(intent);
+            }
+        });
+
+    }
+
+}
+
+
+
