@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DataSnapshot;
@@ -89,8 +90,7 @@ public class Quiz extends AppCompatActivity {
                                     b1.setBackgroundColor(Color.RED);
                                     b4.setBackgroundColor(Color.GREEN);
 
-                                    description.setBackgroundColor(Color.YELLOW);
-                                    description.setText(question.getDescription());
+                                    showMessage("Wrong", question.getDescription());
 
 
                                 }
@@ -109,8 +109,8 @@ public class Quiz extends AppCompatActivity {
                                     b2.setBackgroundColor(Color.RED);
                                     b4.setBackgroundColor(Color.GREEN);
 
-                                    description.setBackgroundColor(Color.YELLOW);
-                                    description.setText(question.getDescription());
+                                    showMessage("Wrong", question.getDescription());
+
 
 
 
@@ -130,8 +130,7 @@ public class Quiz extends AppCompatActivity {
                                     b3.setBackgroundColor(Color.RED);
                                     b4.setBackgroundColor(Color.GREEN);
 
-                                    description.setBackgroundColor(Color.YELLOW);
-                                    description.setText(question.getDescription());
+                                    showMessage("Wrong", question.getDescription());
 
                                 }
                             }, 1500);
@@ -148,8 +147,7 @@ public class Quiz extends AppCompatActivity {
                                     correct++;
                                     b4.setBackgroundColor(Color.GREEN);
 
-                                    description.setText(question.getDescription());
-                                    description.setBackgroundColor(Color.YELLOW);
+                                    showMessage("Correct", question.getDescription());
 
 
                                 }
@@ -198,6 +196,16 @@ public class Quiz extends AppCompatActivity {
         resultintent.putExtra("correct",String.valueOf(correct));
         resultintent.putExtra("incorrect",String.valueOf(incorrect));
         startActivity(resultintent);
+
+    }
+    public void showMessage(String title, String Message){
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(true);
+        builder.setTitle(title);
+        builder.setMessage(Message);
+        builder.show();
+
 
     }
 
