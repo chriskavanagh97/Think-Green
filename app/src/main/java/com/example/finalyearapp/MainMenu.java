@@ -5,9 +5,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.example.finalyearapp.Leaderboard.Leaderboard;
 import com.google.firebase.auth.FirebaseAuth;
@@ -18,13 +22,16 @@ import java.util.Objects;
 import static com.example.finalyearapp.MainActivity.KEY1;
 
 
-public class Menu extends AppCompatActivity {
+public class MainMenu extends AppCompatActivity {
 
     int score1;
 
     private int score;
     DatabaseReference database;
     TextView emaiil;
+    RelativeLayout maincontent;
+    LinearLayout mainmenu;
+
 
 
     @Override
@@ -34,6 +41,29 @@ public class Menu extends AppCompatActivity {
         FirebaseAuth mFirebaseAuth = FirebaseAuth.getInstance();
         String email = Objects.requireNonNull(mFirebaseAuth.getCurrentUser()).getEmail();
 
+        maincontent = (RelativeLayout) findViewById(R.id.mainContent);
+        mainmenu = (LinearLayout) findViewById(R.id.mainmenu);
+
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                maincontent.animate().translationX(0);
+                mainmenu.animate().translationX(0);
+
+
+            }
+        });
+        maincontent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                maincontent.animate().translationX(-735);
+                mainmenu.animate().translationX(-735);
+            }
+        });
         //=========================================================================================================================================================================================
         //reading from the Database
         //=========================================================================================================================================================================================
@@ -43,12 +73,12 @@ public class Menu extends AppCompatActivity {
         //Setting the text box with info from the database
         //=========================================================================================================================================================================================
 
-        Button quiz = (Button) findViewById(R.id.Quiz);
+        ImageView quiz = (ImageView) findViewById(R.id.Quiz);
         quiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent inttoQuiz = new Intent(Menu.this, QuizMenu.class);
+                Intent inttoQuiz = new Intent(MainMenu.this, QuizMenu.class);
                 startActivity(inttoQuiz);
 
             }
@@ -64,7 +94,7 @@ public class Menu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
-                Intent intToMain = new Intent(Menu.this, MainActivity.class);
+                Intent intToMain = new Intent(MainMenu.this, MainActivity.class);
                 startActivity(intToMain);
 
             }
@@ -73,7 +103,7 @@ public class Menu extends AppCompatActivity {
         //=========================================================================================================================================================================================
         //Writing a new score to the database
         //=========================================================================================================================================================================================
-        Button scoreupdate = (Button) findViewById(R.id.ScoreUpdate);
+       /* Button scoreupdate = (Button) findViewById(R.id.ScoreUpdate);
         scoreupdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View c) {
@@ -82,11 +112,9 @@ public class Menu extends AppCompatActivity {
 
 
 
-                /**/
-
 
             }
-        });
+        });*/
 
         //=========================================================================================================================================================================================
         //Switching to the profile page
@@ -96,7 +124,7 @@ public class Menu extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Menu.this,
+                Intent intent = new Intent(MainMenu.this,
                         ViewUser.class);
 
                 startActivity(intent);
@@ -106,12 +134,12 @@ public class Menu extends AppCompatActivity {
         intent.getStringExtra(KEY1);
 
 
-        Button leaderboard = (Button) findViewById(R.id.Leaderboard);
+        ImageView leaderboard = (ImageView) findViewById(R.id.Leaderboard);
         leaderboard.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Menu.this,
+                Intent intent = new Intent(MainMenu.this,
                         Leaderboard.class);
 
                 startActivity(intent);
@@ -119,6 +147,7 @@ public class Menu extends AppCompatActivity {
         });
 
     }
+
 
 }
 

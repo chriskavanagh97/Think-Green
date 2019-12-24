@@ -83,7 +83,7 @@ public class ViewUser extends AppCompatActivity {
        /* home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ViewUser.this, Menu.class));
+                startActivity(new Intent(ViewUser.this, MainMenu.class));
             }
         });*/
 

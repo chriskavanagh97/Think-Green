@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.finalyearapp.RecycleMaterial.Material;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 if( mFirebaseUser != null){
                     Toast.makeText(MainActivity.this,"You are Logged in",Toast.LENGTH_SHORT).show();
                     Intent intent=new Intent(MainActivity.this,
-                            Menu.class);
+                            MainMenu.class);
                     startActivity(intent);
                 }
                 else{
@@ -91,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
 
                             if(task.isSuccessful()){
-                                startActivity(new Intent(MainActivity.this, Menu.class));
+                                startActivity(new Intent(MainActivity.this, MainMenu.class));
 
                             }
                             else {
@@ -374,6 +375,184 @@ public class MainActivity extends AppCompatActivity {
         pollutionquiz5.setId(6);
 
         mRootRef.child("Pollution").child("6").setValue(pollutionquiz5);
+
+        Question ocean = new Question();
+        ocean.setQuestion("Other than melting land-based ice sheets, which of these factors has made the largest contribution to the rise in sea level over the past 100 years?");
+        ocean.setAnswer1("Climate change including Rain");
+        ocean.setAnswer2("melting sea ice");
+        ocean.setDifficulty("easy");
+        ocean.setAnswer3("increased river run off");
+        ocean.setAnswerCorrect("warming of ocean surface waters");
+        ocean.setDescription("As the ocean warms, it expands and sea level rises, accounting for about a third of the approximately 20-centimeter sea level rise seen in the past century. Water released by melting land-based ice sheets contributes the other two-thirds of sea level rise");
+        ocean.setScore(100);
+        ocean.setId(1);
+
+        mRootRef.child("Ocean").child("1").setValue(ocean);
+
+        Question ocean2 = new Question();
+        ocean2.setQuestion("What percentage of heat from global warming has the ocean absorbed in the past 40 years?");
+        ocean2.setAnswer1("20%");
+        ocean2.setAnswer2("66%");
+        ocean2.setDifficulty("easy");
+        ocean2.setAnswer3("5%");
+        ocean2.setAnswerCorrect("93%");
+        ocean2.setDescription("Water resists changes in temperature; it is slow to heat up and slow to cool down. In scientific terms, water has high heat capacity. This means that, so far, Earth's ocean has been able to absorb and hold a majority of the heat from Earth's atmosphere");
+        ocean2.setScore(100);
+        ocean2.setId(2);
+
+        mRootRef.child("Ocean").child("2").setValue(ocean2);
+
+
+        Question ocean3 = new Question();
+        ocean3.setQuestion("Melting sea ice has the potential to raise sea level by how many metres");
+        ocean3.setAnswer1("15");
+        ocean3.setAnswer2("30");
+        ocean3.setDifficulty("easy");
+        ocean3.setAnswer3("45");
+        ocean3.setAnswerCorrect("0");
+        ocean3.setDescription("Melting sea ice cannot raise global sea level since the ice is already floating. (Think of an ice cube melting in a glass full of water.) However, Arctic sea ice is thinning and the long-term summer average has decreased by 34 percent since 1979. Ice from glaciers and ice sheets, which form on land, does add water to Earth's ocean when it melts and does contribute to sea level rise.");
+        ocean3.setScore(100);
+        ocean3.setId(3);
+
+        mRootRef.child("Ocean").child("3").setValue(ocean3);
+
+
+        Question ocean4 = new Question();
+        ocean4.setQuestion("What percentage of the world's population lives within 100 kilometers of the shoreline?");
+        ocean4.setAnswer1("10");
+        ocean4.setAnswer2("80%");
+        ocean4.setDifficulty("easy");
+        ocean4.setAnswer3("25%");
+        ocean4.setAnswerCorrect("39%");
+        ocean4.setDescription("According to the World Resources Institute, in 1995 2.2 billion people, or 39 percent of the world's population, lived on or within 100 kilometers of a seashore. Recent studies reveal that up to 600 million people live in Low Elevation Coastal Zones and 200 million people live within coastal flood plains. ");
+        ocean4.setScore(100);
+        ocean4.setId(4);
+
+        mRootRef.child("Ocean").child("4").setValue(ocean4);
+
+        Question ocean5 = new Question();
+        ocean5.setQuestion("Sea level rise contributes to more frequent flooding in which of these coastal areas?");
+        ocean5.setAnswer1("Venice");
+        ocean5.setAnswer2("Bangladesh");
+        ocean5.setDifficulty("easy");
+        ocean5.setAnswer3("");
+        ocean5.setAnswerCorrect("39%");
+        ocean5.setDescription("According to the World Resources Institute, in 1995 2.2 billion people, or 39 percent of the world's population, lived on or within 100 kilometers of a seashore. Recent studies reveal that up to 600 million people live in Low Elevation Coastal Zones and 200 million people live within coastal flood plains. ");
+        ocean5.setScore(100);
+        ocean5.setId(5);
+
+        mRootRef.child("Ocean").child("5").setValue(ocean5);
+
+
+
+        Material paper = new Material();
+        paper.setName("Paper");
+        paper.setWhat("This is a paper or card");
+        paper.setWhere("This should be placed in the household recycling bin.");
+        paper.setHow("Please make sure items are clean, dry and placed loosely in the bin.");
+        paper.setTip("If paper or card become wet or dirty on its way to the sorting facility it may not be recycled.");
+
+        mRootRef.child("Materials").child("paper").setValue(paper);
+
+
+
+        Material glassbottles = new Material();
+        glassbottles.setName("Glass bottles and Jars");
+        glassbottles.setWhat("Glass bottles and jars generally fall into three categories – clear glass, green glass and brown glass, each of which is recyclable.");
+        glassbottles.setWhere("All clear glass, green and brown glass should be placed into glass recycling containers at your local bring bank.");
+        glassbottles.setHow("Find your local facilities please check our waste services locator");
+        glassbottles.setTip("Please make sure all bottles are clean and empty before recycling");
+        mRootRef.child("Materials").child("glassbottles").setValue(glassbottles);
+
+        Material aerosols = new Material();
+        aerosols.setName("Aerosols");
+        aerosols.setWhat("Aerosols are generally pressurised cans like deodorant, air freshener or bug sprays.");
+        aerosols.setWhere("These should be brought to your local civic amenity site and if this is not an option please place them in your general waste bin.");
+        aerosols.setHow("Find your local facilities please check our waste services locator");
+        aerosols.setTip("In Ireland, as per 2nd Schedule category 1 waste of The Waste Management Act, 1996,  aerosols fall into the category of hazardous waste and therefore cannot be placed in the household recycle bin. ");
+        mRootRef.child("Materials").child("aerosols").setValue(aerosols);
+
+        Material medicine = new Material();
+        medicine.setName("Medicines");
+        medicine.setWhat("This is hazardous waste.");
+        medicine.setWhere("Return unused or unwanted medicines to the pharmacy or dispose of at your local civic amenity site if it accepts this type of hazardous waste. Check the waste services locator on this site.");
+        medicine.setHow("Find your local facilities please check our waste services locator");
+        medicine.setTip("");
+        mRootRef.child("Materials").child("medicine").setValue(medicine);
+
+        Material battery = new Material();
+        battery.setName("Batteries");
+        battery.setWhat("Household batteries of any size including battery packs from electrical items are suitable for recycling.");
+        battery.setWhere("Batteries should be brought to a WEEE dropoff recycling point or to a Civic Amenity Site.");
+        battery.setHow("Find your local facilities please check our waste services locator, When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill");
+        battery.setTip("Most supermarkets will have battery boxes where you can leave your used batteries for free.\n" +
+                "If you use a lot of batteries why not try using rechargeable ones instead.");
+        mRootRef.child("Materials").child("battery").setValue(battery);
+
+
+        Material food = new Material();
+        food.setName("Food waste");
+        food.setWhat("Plate scrapings, food which has spoiled [remove it from any packaging]");
+        paper.setWhere("This should be placed in the food waste recycling bin if you are entitled to a collection service.");
+        paper.setHow("Simply remove any food from packaging and place in your food recycling bin (brown bin) ");
+        paper.setTip("Why not try home composting,");
+
+        mRootRef.child("Materials").child("food").setValue(food);
+
+        Material pizzabox = new Material();
+        pizzabox.setName("Pizza Box");
+        pizzabox.setWhat("This is a paper or card");
+        pizzabox.setWhere("This should be placed in the household recycling bin.\n" +
+                "If you have a take out pizza this box may be soiled and needs to be treated differently");
+        pizzabox.setHow("Please make sure items are clean, dry and placed loosely in the bin. If you have a take out pizza, if the whole box is greasy and dirty please place it in the food waste recycle bin. If the top of the box is clean it can be torn off and placed in the household recycle bin. ");
+        pizzabox.setTip("If the pizza box is soiled with grease please put it in the food waste recycling bin along with any uneaten pizza. Clean pizza boxes can be placed in the recycling bin.\n" +
+                "Please note that if you have a frozen pizza or one from a fridge that comes in a box this box will be 100% recyclable and should be placed in the recycle bin or why not leave it in the store.");
+
+        mRootRef.child("Materials").child("pizzabox").setValue(pizzabox);
+
+
+        Material beveragecans = new Material();
+        beveragecans.setName("Beverage Cans");
+        beveragecans.setWhat("Most beverage cans are made of aluminium and a smaller number are made of tin-plated steel");
+        beveragecans.setWhere("These should be placed in the household recycling bin but some Civic Amenity Sites and Bring Banks also accept beverage cans check out the Waste Services Locator on this site for further details.");
+        beveragecans.setHow("Make sure all beverage cans placed in the household recycling bin are clean and dry and placed loosely in the bin.\n" +
+                "You can leave labels on as these are removed through the recycling process.");
+        beveragecans.setTip("Look out for charities such as Every Can Counts at events and festivals: http://www.everycancounts.ie");
+
+        mRootRef.child("Materials").child("beveragecans").setValue(beveragecans);
+
+
+        Material wetwipes = new Material();
+        wetwipes.setName("Wet Wipes");
+        wetwipes.setWhat("This is a soft plastic");
+        wetwipes.setWhere("This should be placed in the general waste bin.");
+        wetwipes.setHow("Baby wipes, cosmetic wipes, bathroom cleaning wipes and moist toilet tissues are NOT recyclable and are NON flushable either even though some labels say they are! They should always be placed in your general waste bin.");
+        wetwipes.setTip("Why not try alternatives to single use disposable items such as wipes? Can you use a flannel or muslin square instead. These items can be washed and reused over & over.");
+
+        mRootRef.child("Materials").child("wetwipes").setValue(wetwipes);
+
+        Material Jewellery = new Material();
+        Jewellery.setName("Jewellery");
+        Jewellery.setWhat("ewellery and watches are accepted by many charities.\n" +
+                "Broken and outdated jewellery can often be repaired and remodelled to make it fashionable and usable again.");
+        Jewellery.setWhere("Donate to charity. Many pieces of jewellery can be recycled or re-sold to raise valuable funds.\n" +
+                "Always check the list of  items accepted by the various charities first as they do vary considerably.\n" +
+                "Check Ireland’s repair director for jewellers that offer repair and remodelling services: http://www.repairmystuff.ie");
+        Jewellery.setHow("Always place jewellery for donation in a separate bag to keep the pieces together – otherwise, they may get lost in the sorting process.");
+        Jewellery.setTip("");
+
+        mRootRef.child("Materials").child("jewellery").setValue(Jewellery);
+
+
+
+
+
+
+
+
+
     }
 
+
 }
+

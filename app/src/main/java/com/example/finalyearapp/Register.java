@@ -93,7 +93,7 @@ public class Register extends AppCompatActivity {
                                 mRootRef.child(UserId).setValue(createUser);
 
 
-                                startActivity(new Intent(Register.this, Menu.class));
+                                startActivity(new Intent(Register.this, MainMenu.class));
                             }
                         }
 

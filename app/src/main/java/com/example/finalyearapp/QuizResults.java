@@ -130,7 +130,7 @@ public class QuizResults extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(QuizResults.this, Menu.class));
+                startActivity(new Intent(QuizResults.this, MainMenu.class));
             }
         });
 
