@@ -21,7 +21,7 @@ public class QuizMenu extends AppCompatActivity implements QuizAdapter.OnClickLi
     private QuizAdapter adapter;
 
     private int[] myImageList = new int[]{R.drawable.energy, R.drawable.ocean,R.drawable.plastic, R.drawable.pollution,R.drawable.recycle,R.drawable.sun,R.drawable.energy};
-    private String[] myImageNameList = new String[]{"Energy","Ocean" ,"Plastic","Pollution","Recycle","Sun","Energy"};
+
 
 
     @Override
@@ -78,7 +78,6 @@ public class QuizMenu extends AppCompatActivity implements QuizAdapter.OnClickLi
 
         for(int i = 0; i < 7; i++){
             QuizModel quizModel = new QuizModel();
-            quizModel.setName(myImageNameList[i]);
             quizModel.setImage_drawable(myImageList[i]);
             list.add(quizModel);
         }

@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".RecycleMaterial.Materialview"></activity>
+        <activity android:name=".RecycleMaterial.recyclewhat" />
+        <activity android:name=".RecycleMaterial.recyclemenu" />
         <activity android:name=".Leaderboard.Leaderboard" />
         <activity android:name=".Quiz" />
         <activity android:name=".PollutionQuiz" />

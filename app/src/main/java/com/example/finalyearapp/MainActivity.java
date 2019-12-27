@@ -136,6 +136,8 @@ public class MainActivity extends AppCompatActivity {
        mFirebaseAuth.addAuthStateListener((mAuthStateListener));
 
         DatabaseReference mRootRef = FirebaseDatabase.getInstance().getReference().child("Questions");
+
+        DatabaseReference mRootRef1 = FirebaseDatabase.getInstance().getReference().child("Materials");
         Question newQuestion = new Question();
 
         newQuestion.setQuestion("How many tonnes of plastic is dumped in the ocean each year");
@@ -452,7 +454,7 @@ public class MainActivity extends AppCompatActivity {
         paper.setHow("Please make sure items are clean, dry and placed loosely in the bin.");
         paper.setTip("If paper or card become wet or dirty on its way to the sorting facility it may not be recycled.");
 
-        mRootRef.child("Materials").child("paper").setValue(paper);
+    mRootRef1.child("paper").setValue(paper);
 
 
 
@@ -462,7 +464,7 @@ public class MainActivity extends AppCompatActivity {
         glassbottles.setWhere("All clear glass, green and brown glass should be placed into glass recycling containers at your local bring bank.");
         glassbottles.setHow("Find your local facilities please check our waste services locator");
         glassbottles.setTip("Please make sure all bottles are clean and empty before recycling");
-        mRootRef.child("Materials").child("glassbottles").setValue(glassbottles);
+    mRootRef1.child("glassbottles").setValue(glassbottles);
 
         Material aerosols = new Material();
         aerosols.setName("Aerosols");
@@ -470,7 +472,7 @@ public class MainActivity extends AppCompatActivity {
         aerosols.setWhere("These should be brought to your local civic amenity site and if this is not an option please place them in your general waste bin.");
         aerosols.setHow("Find your local facilities please check our waste services locator");
         aerosols.setTip("In Ireland, as per 2nd Schedule category 1 waste of The Waste Management Act, 1996,  aerosols fall into the category of hazardous waste and therefore cannot be placed in the household recycle bin. ");
-        mRootRef.child("Materials").child("aerosols").setValue(aerosols);
+        mRootRef1.child("aerosols").setValue(aerosols);
 
         Material medicine = new Material();
         medicine.setName("Medicines");
@@ -478,7 +480,7 @@ public class MainActivity extends AppCompatActivity {
         medicine.setWhere("Return unused or unwanted medicines to the pharmacy or dispose of at your local civic amenity site if it accepts this type of hazardous waste. Check the waste services locator on this site.");
         medicine.setHow("Find your local facilities please check our waste services locator");
         medicine.setTip("");
-        mRootRef.child("Materials").child("medicine").setValue(medicine);
+    mRootRef1.child("medicine").setValue(medicine);
 
         Material battery = new Material();
         battery.setName("Batteries");
@@ -487,7 +489,7 @@ public class MainActivity extends AppCompatActivity {
         battery.setHow("Find your local facilities please check our waste services locator, When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill");
         battery.setTip("Most supermarkets will have battery boxes where you can leave your used batteries for free.\n" +
                 "If you use a lot of batteries why not try using rechargeable ones instead.");
-        mRootRef.child("Materials").child("battery").setValue(battery);
+    mRootRef1.child("battery").setValue(battery);
 
 
         Material food = new Material();
@@ -497,7 +499,7 @@ public class MainActivity extends AppCompatActivity {
         paper.setHow("Simply remove any food from packaging and place in your food recycling bin (brown bin) ");
         paper.setTip("Why not try home composting,");
 
-        mRootRef.child("Materials").child("food").setValue(food);
+    mRootRef1.child("food").setValue(food);
 
         Material pizzabox = new Material();
         pizzabox.setName("Pizza Box");
@@ -508,7 +510,7 @@ public class MainActivity extends AppCompatActivity {
         pizzabox.setTip("If the pizza box is soiled with grease please put it in the food waste recycling bin along with any uneaten pizza. Clean pizza boxes can be placed in the recycling bin.\n" +
                 "Please note that if you have a frozen pizza or one from a fridge that comes in a box this box will be 100% recyclable and should be placed in the recycle bin or why not leave it in the store.");
 
-        mRootRef.child("Materials").child("pizzabox").setValue(pizzabox);
+    mRootRef1.child("pizzabox").setValue(pizzabox);
 
 
         Material beveragecans = new Material();
@@ -519,7 +521,7 @@ public class MainActivity extends AppCompatActivity {
                 "You can leave labels on as these are removed through the recycling process.");
         beveragecans.setTip("Look out for charities such as Every Can Counts at events and festivals: http://www.everycancounts.ie");
 
-        mRootRef.child("Materials").child("beveragecans").setValue(beveragecans);
+    mRootRef1.child("beveragecans").setValue(beveragecans);
 
 
         Material wetwipes = new Material();
@@ -529,7 +531,7 @@ public class MainActivity extends AppCompatActivity {
         wetwipes.setHow("Baby wipes, cosmetic wipes, bathroom cleaning wipes and moist toilet tissues are NOT recyclable and are NON flushable either even though some labels say they are! They should always be placed in your general waste bin.");
         wetwipes.setTip("Why not try alternatives to single use disposable items such as wipes? Can you use a flannel or muslin square instead. These items can be washed and reused over & over.");
 
-        mRootRef.child("Materials").child("wetwipes").setValue(wetwipes);
+    mRootRef1.child("wetwipes").setValue(wetwipes);
 
         Material Jewellery = new Material();
         Jewellery.setName("Jewellery");
@@ -541,7 +543,7 @@ public class MainActivity extends AppCompatActivity {
         Jewellery.setHow("Always place jewellery for donation in a separate bag to keep the pieces together – otherwise, they may get lost in the sorting process.");
         Jewellery.setTip("");
 
-        mRootRef.child("Materials").child("jewellery").setValue(Jewellery);
+       mRootRef1.child("jewellery").setValue(Jewellery);
 
 
 

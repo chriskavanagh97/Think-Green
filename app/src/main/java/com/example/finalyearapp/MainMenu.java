@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.finalyearapp.Leaderboard.Leaderboard;
+import com.example.finalyearapp.RecycleMaterial.recyclemenu;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 
@@ -141,6 +142,17 @@ public class MainMenu extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainMenu.this,
                         Leaderboard.class);
+
+                startActivity(intent);
+            }
+        });
+        ImageView recycle = (ImageView) findViewById(R.id.recycle);
+        recycle.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainMenu.this,
+                        recyclemenu.class);
 
                 startActivity(intent);
             }
