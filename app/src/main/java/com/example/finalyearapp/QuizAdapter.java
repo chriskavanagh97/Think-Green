@@ -45,7 +45,7 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.MyViewHolder> 
     public void onBindViewHolder(QuizAdapter.MyViewHolder holder, int position) {
 
         holder.iv.setImageResource(imageModelArrayList.get(position).getImage_drawable());
-        holder.time.setText(imageModelArrayList.get(position).getName());
+
     }
 
     @Override
@@ -55,7 +55,7 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.MyViewHolder> 
 
     class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
-        TextView time;
+
         ImageView iv;
         OnClickListener onClickListener;
 
@@ -64,7 +64,7 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.MyViewHolder> 
 
             this.onClickListener = onClickListener;
 
-            time = (TextView) itemView.findViewById(R.id.tv);
+
             iv = (ImageView) itemView.findViewById(R.id.iv);
 
             itemView.setOnClickListener(this);
