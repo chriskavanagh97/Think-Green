@@ -22,7 +22,8 @@ public class Materialview extends AppCompatActivity {
 
 
 
-    String name = "aerosols";
+
+    //String name = "aerosols";
 
     TextView what , how , tip , where, title;
 
@@ -36,6 +37,9 @@ public class Materialview extends AppCompatActivity {
         where = (TextView) findViewById(R.id.Where);
         tip = (TextView) findViewById(R.id.Tip);
         title = (TextView) findViewById(R.id.Title);
+
+        Intent intent = getIntent();
+        String name = intent.getStringExtra("name");
 
         DatabaseReference databaseref = FirebaseDatabase.getInstance().getReference().child("Materials").child(String.valueOf(name));
         databaseref.addValueEventListener(new ValueEventListener() {

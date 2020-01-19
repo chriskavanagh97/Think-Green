@@ -2,6 +2,7 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/colorPrimary"
     android:layout_height="match_parent">
 
 
@@ -9,9 +10,9 @@
         android:id="@+id/Friends"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
         android:text="Friends"
-        android:textColor="#FFFFFF"
-        android:background="#3F51B5"
+        android:textColor="#000000"
         android:textSize="36sp"
         android:textStyle="bold" />
 
@@ -22,6 +23,7 @@
 
         <TextView
             android:id="@+id/Name"
+            android:textColor="#000000"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -32,25 +34,27 @@
 
         <TextView
             android:id="@+id/Email"
+            android:textColor="#000000"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Email"
+            android:text="Username"
 
             android:textSize="24sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/Number"
+            android:textColor="#000000"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Number"
+            android:text="Score"
 
             android:textSize="24sp"
 
 
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -61,16 +65,6 @@
         android:scrollbars="vertical">
 
     </androidx.recyclerview.widget.RecyclerView>
-
-
-    <Button
-        android:id="@+id/Home"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="#3F51B5"
-        android:text="Home"
-        android:textColor="#FFFEFE"
-        android:textStyle="bold"/>
 
 
 </LinearLayout>

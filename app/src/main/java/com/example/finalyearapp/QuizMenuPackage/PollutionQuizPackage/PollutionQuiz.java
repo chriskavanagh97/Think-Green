@@ -1,5 +1,4 @@
-package com.example.finalyearapp;
-
+package com.example.finalyearapp.QuizMenuPackage.PollutionQuizPackage;
 
 
 import android.content.Intent;
@@ -14,15 +13,21 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.finalyearapp.Question;
+import com.example.finalyearapp.QuizResults;
+import com.example.finalyearapp.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Objects;
 import java.util.Random;
 
-public class Quiz extends AppCompatActivity {
+public class PollutionQuiz extends AppCompatActivity {
 
     private Button b1;
     private Button b2;
@@ -31,18 +36,24 @@ public class Quiz extends AppCompatActivity {
     private TextView t1_question;
     private TextView next;
     private TextView description;
-    private int total = 1;
+
     private int incorrect = 0;
     private int correct =0;
     private Random rand = new Random();
     int n;
+    private DatabaseReference mRootRef;
+    private String userid;
+
+Intent intent = getIntent();
+int total = intent.getIntExtra("quiznum", 0);
+
 
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quiz);
+        setContentView(R.layout.activity_pollution);
 
         b1 = (Button) findViewById(R.id.option1);
         b2 = (Button) findViewById(R.id.option2);
@@ -53,9 +64,27 @@ public class Quiz extends AppCompatActivity {
         t1_question = (TextView) findViewById(R.id.questionsTxt);
 
         description =  (TextView) findViewById(R.id.description);
+
         UpdateQuestion();
     }
+
+    public void showMessage(String title, String Message){
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(true);
+        builder.setTitle(title);
+        builder.setMessage(Message);
+        builder.show();
+
+
+    }
     private void UpdateQuestion(){
+
+        FirebaseAuth mFirebaseAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = mFirebaseAuth.getCurrentUser();
+        userid = Objects.requireNonNull(user).getUid();
+        mRootRef = FirebaseDatabase.getInstance().getReference().child("Review Questions");
+
         if(total >4) {
 
             description.setText("Completed");
@@ -64,18 +93,19 @@ public class Quiz extends AppCompatActivity {
         }
         else
         {
-            int n = rand.nextInt(9);
-            int n2 = n + 1;
-            DatabaseReference databaseref = FirebaseDatabase.getInstance().getReference().child("Questions").child("Plastic").child(String.valueOf(n2));
+
+            //if the number has been selected, so add the selected items to a list.
+            DatabaseReference databaseref = FirebaseDatabase.getInstance().getReference().child("Questions").child("Pollution").child(String.valueOf(total));
             databaseref.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     final Question question = dataSnapshot.getValue(Question.class);
-                    t1_question.setText(question.getQuestion());
+                    t1_question.setText(Objects.requireNonNull(question).getQuestion());
                     b1.setText(question.getAnswer1());
                     b2.setText(question.getAnswer2());
                     b3.setText(question.getAnswer3());
                     b4.setText(question.getAnswerCorrect());
+
 
 
                     b1.setOnClickListener(new View.OnClickListener(){
@@ -90,7 +120,13 @@ public class Quiz extends AppCompatActivity {
                                     b1.setBackgroundColor(Color.RED);
                                     b4.setBackgroundColor(Color.GREEN);
 
+
                                     showMessage("Wrong", question.getDescription());
+
+                                    Question newQuestion = new Question();
+                                    newQuestion.setId(question.getId());
+
+                                    mRootRef.child(userid).child("Pollution").push().setValue(newQuestion);
 
 
                                 }
@@ -109,8 +145,16 @@ public class Quiz extends AppCompatActivity {
                                     b2.setBackgroundColor(Color.RED);
                                     b4.setBackgroundColor(Color.GREEN);
 
+
                                     showMessage("Wrong", question.getDescription());
 
+
+
+                                    Question newQuestion = new Question();
+                                    newQuestion.setId(question.getId());
+
+
+                                    mRootRef.child(userid).child("Pollution").push().setValue(newQuestion);
 
 
 
@@ -132,6 +176,11 @@ public class Quiz extends AppCompatActivity {
 
                                     showMessage("Wrong", question.getDescription());
 
+                                    Question newQuestion = new Question();
+                                    newQuestion.setId(question.getId());
+
+                                    mRootRef.child(userid).child("Pollution").push().setValue(newQuestion);
+
                                 }
                             }, 1500);
                         }
@@ -147,7 +196,10 @@ public class Quiz extends AppCompatActivity {
                                     correct++;
                                     b4.setBackgroundColor(Color.GREEN);
 
+
+
                                     showMessage("Correct", question.getDescription());
+
 
 
                                 }
@@ -191,21 +243,11 @@ public class Quiz extends AppCompatActivity {
     private void details(){
 
         total = total -1 ;
-        Intent resultintent = new Intent(Quiz.this, QuizResults.class);
+        Intent resultintent = new Intent(PollutionQuiz.this, QuizResults.class);
         resultintent.putExtra("total",String.valueOf(total));
         resultintent.putExtra("correct",String.valueOf(correct));
         resultintent.putExtra("incorrect",String.valueOf(incorrect));
         startActivity(resultintent);
-
-    }
-    public void showMessage(String title, String Message){
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setCancelable(true);
-        builder.setTitle(title);
-        builder.setMessage(Message);
-        builder.show();
-
 
     }
 

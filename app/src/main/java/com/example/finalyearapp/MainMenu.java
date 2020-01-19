@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.finalyearapp.Leaderboard.Leaderboard;
+import com.example.finalyearapp.QuizMenuPackage.QuizMenu;
 import com.example.finalyearapp.RecycleMaterial.recyclemenu;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -61,8 +62,8 @@ public class MainMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                maincontent.animate().translationX(-735);
-                mainmenu.animate().translationX(-735);
+                maincontent.animate().translationX(-660);
+                mainmenu.animate().translationX(-660);
             }
         });
         //=========================================================================================================================================================================================
@@ -95,7 +96,7 @@ public class MainMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
-                Intent intToMain = new Intent(MainMenu.this, MainActivity.class);
+                Intent intToMain = new Intent(MainMenu.this, HomeScreen .class);
                 startActivity(intToMain);
 
             }

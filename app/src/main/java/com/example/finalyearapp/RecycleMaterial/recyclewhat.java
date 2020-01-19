@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.widget.EditText;
 
 
 import com.example.finalyearapp.R;
@@ -47,15 +49,31 @@ public class recyclewhat extends AppCompatActivity {
 
 
         recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+        EditText search = (EditText) findViewById(R.id.search);
 
-        Query queryRef = database.orderByChild("score").limitToLast(10);
-        queryRef.addValueEventListener(new ValueEventListener() {
+        search.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+                filter(s.toString());
+
+            }
+        });
+
+
+        database.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                //Material user =dataSnapshot.getValue(Material.class);
-
-                //leaderboardlist.add(new Material(user.getMaterialname(),user.getEmail(),user.getScore()));
 
 
                 for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren())
@@ -74,13 +92,21 @@ public class recyclewhat extends AppCompatActivity {
 
             }
         });
+    }
 
+    private void filter(String text)
+    {
+        ArrayList<Material> filteredList = new ArrayList<Material>();
 
+        for (Material item : materials)
+        {
+            if(item.getName().toLowerCase().contains(text.toLowerCase())){
+                filteredList.add(item);
 
+            }
 
-
-
-
+        }
+        adapter.filterlist(filteredList);
     }
 
 

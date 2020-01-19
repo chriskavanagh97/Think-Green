@@ -9,20 +9,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HomeScreen"></activity>
+        <activity
+            android:name=".QuizMenuPackage.PollutionQuizPackage.pollutionQuizmenu"
+            android:label="@string/title_activity_pollution_quizmenu"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".QuizMenuPackage.OceanQuizzMenu.OceanQuizMenu" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".RecycleMaterial.Materialview" />
         <activity android:name=".RecycleMaterial.recyclewhat" />
         <activity android:name=".RecycleMaterial.recyclemenu" />
         <activity android:name=".Leaderboard.Leaderboard" />
-        <activity android:name=".Quiz" />
-        <activity android:name=".PollutionQuiz" />
+        <activity android:name=".QuizMenuPackage.PlasticQuizMenu.Quiz" />
+        <activity android:name=".QuizMenuPackage.PollutionQuizPackage.PollutionQuiz" />
         <activity android:name=".ViewUser" />
         <activity android:name=".ReviewQuestions" />
         <activity android:name=".QuizResults" />
-        <activity android:name=".QuizMenu" />
+        <activity android:name=".QuizMenuPackage.QuizMenu" />
         <activity android:name=".Register" />
         <activity android:name=".MainMenu" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".HomeScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -29,7 +29,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             super(itemView);
             txtView= (TextView) itemView.findViewById(R.id.textView);
             txtView2= (TextView) itemView.findViewById(R.id.textView2);
-            //txtView3= (TextView) itemView.findViewById(R.id.textView3);
             txtView3= (TextView) itemView.findViewById(R.id.textView3);
 
         }
@@ -63,9 +62,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         //replace the contents of the view with that element
         final User user = UserList.get(position);
 
-        holder.txtView.setText(user.getUsername());
+        holder.txtView2.setText(user.getUsername());
 
-        holder.txtView2.setText(user.getEmail());
+        holder.txtView.setText(position);
 
         holder.txtView3.setText(String.valueOf((user.getScore())));
     }

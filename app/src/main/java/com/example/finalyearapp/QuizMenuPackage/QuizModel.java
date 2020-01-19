@@ -1,4 +1,4 @@
-package com.example.finalyearapp;
+package com.example.finalyearapp.QuizMenuPackage;
 
 public class QuizModel {
 

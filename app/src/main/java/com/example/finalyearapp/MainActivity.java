@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
                 else{
+
                     Toast.makeText(MainActivity.this,"You are Logged out",Toast.LENGTH_SHORT).show();
 
                 }
@@ -454,7 +455,7 @@ public class MainActivity extends AppCompatActivity {
         paper.setHow("Please make sure items are clean, dry and placed loosely in the bin.");
         paper.setTip("If paper or card become wet or dirty on its way to the sorting facility it may not be recycled.");
 
-    mRootRef1.child("paper").setValue(paper);
+    mRootRef1.child("Paper").setValue(paper);
 
 
 
@@ -464,7 +465,7 @@ public class MainActivity extends AppCompatActivity {
         glassbottles.setWhere("All clear glass, green and brown glass should be placed into glass recycling containers at your local bring bank.");
         glassbottles.setHow("Find your local facilities please check our waste services locator");
         glassbottles.setTip("Please make sure all bottles are clean and empty before recycling");
-    mRootRef1.child("glassbottles").setValue(glassbottles);
+    mRootRef1.child("Glass bottles and Jars").setValue(glassbottles);
 
         Material aerosols = new Material();
         aerosols.setName("Aerosols");
@@ -472,7 +473,7 @@ public class MainActivity extends AppCompatActivity {
         aerosols.setWhere("These should be brought to your local civic amenity site and if this is not an option please place them in your general waste bin.");
         aerosols.setHow("Find your local facilities please check our waste services locator");
         aerosols.setTip("In Ireland, as per 2nd Schedule category 1 waste of The Waste Management Act, 1996,  aerosols fall into the category of hazardous waste and therefore cannot be placed in the household recycle bin. ");
-        mRootRef1.child("aerosols").setValue(aerosols);
+        mRootRef1.child("Aerosols").setValue(aerosols);
 
         Material medicine = new Material();
         medicine.setName("Medicines");
@@ -480,7 +481,7 @@ public class MainActivity extends AppCompatActivity {
         medicine.setWhere("Return unused or unwanted medicines to the pharmacy or dispose of at your local civic amenity site if it accepts this type of hazardous waste. Check the waste services locator on this site.");
         medicine.setHow("Find your local facilities please check our waste services locator");
         medicine.setTip("");
-    mRootRef1.child("medicine").setValue(medicine);
+    mRootRef1.child("Medicines").setValue(medicine);
 
         Material battery = new Material();
         battery.setName("Batteries");
@@ -489,7 +490,7 @@ public class MainActivity extends AppCompatActivity {
         battery.setHow("Find your local facilities please check our waste services locator, When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill");
         battery.setTip("Most supermarkets will have battery boxes where you can leave your used batteries for free.\n" +
                 "If you use a lot of batteries why not try using rechargeable ones instead.");
-    mRootRef1.child("battery").setValue(battery);
+    mRootRef1.child("Batteries").setValue(battery);
 
 
         Material food = new Material();
@@ -498,8 +499,7 @@ public class MainActivity extends AppCompatActivity {
         paper.setWhere("This should be placed in the food waste recycling bin if you are entitled to a collection service.");
         paper.setHow("Simply remove any food from packaging and place in your food recycling bin (brown bin) ");
         paper.setTip("Why not try home composting,");
-
-    mRootRef1.child("food").setValue(food);
+        mRootRef1.child("Food Waste").setValue(food);
 
         Material pizzabox = new Material();
         pizzabox.setName("Pizza Box");
@@ -509,8 +509,7 @@ public class MainActivity extends AppCompatActivity {
         pizzabox.setHow("Please make sure items are clean, dry and placed loosely in the bin. If you have a take out pizza, if the whole box is greasy and dirty please place it in the food waste recycle bin. If the top of the box is clean it can be torn off and placed in the household recycle bin. ");
         pizzabox.setTip("If the pizza box is soiled with grease please put it in the food waste recycling bin along with any uneaten pizza. Clean pizza boxes can be placed in the recycling bin.\n" +
                 "Please note that if you have a frozen pizza or one from a fridge that comes in a box this box will be 100% recyclable and should be placed in the recycle bin or why not leave it in the store.");
-
-    mRootRef1.child("pizzabox").setValue(pizzabox);
+        mRootRef1.child("Pizza Box").setValue(pizzabox);
 
 
         Material beveragecans = new Material();
@@ -520,8 +519,7 @@ public class MainActivity extends AppCompatActivity {
         beveragecans.setHow("Make sure all beverage cans placed in the household recycling bin are clean and dry and placed loosely in the bin.\n" +
                 "You can leave labels on as these are removed through the recycling process.");
         beveragecans.setTip("Look out for charities such as Every Can Counts at events and festivals: http://www.everycancounts.ie");
-
-    mRootRef1.child("beveragecans").setValue(beveragecans);
+        mRootRef1.child("Beverage Cans").setValue(beveragecans);
 
 
         Material wetwipes = new Material();
@@ -530,8 +528,7 @@ public class MainActivity extends AppCompatActivity {
         wetwipes.setWhere("This should be placed in the general waste bin.");
         wetwipes.setHow("Baby wipes, cosmetic wipes, bathroom cleaning wipes and moist toilet tissues are NOT recyclable and are NON flushable either even though some labels say they are! They should always be placed in your general waste bin.");
         wetwipes.setTip("Why not try alternatives to single use disposable items such as wipes? Can you use a flannel or muslin square instead. These items can be washed and reused over & over.");
-
-    mRootRef1.child("wetwipes").setValue(wetwipes);
+        mRootRef1.child("Wet Wipes").setValue(wetwipes);
 
         Material Jewellery = new Material();
         Jewellery.setName("Jewellery");
@@ -542,8 +539,298 @@ public class MainActivity extends AppCompatActivity {
                 "Check Ireland’s repair director for jewellers that offer repair and remodelling services: http://www.repairmystuff.ie");
         Jewellery.setHow("Always place jewellery for donation in a separate bag to keep the pieces together – otherwise, they may get lost in the sorting process.");
         Jewellery.setTip("");
+        mRootRef1.child("Jewellery").setValue(Jewellery);
 
-       mRootRef1.child("jewellery").setValue(Jewellery);
+        Material Aluminium = new Material();
+        Aluminium.setName("Aluminium trays");
+        Aluminium.setWhat("Aluminium foil and trays are a type of metal similar to tins & cans.");
+        Aluminium.setWhere("Aluminium foil and trays can be placed in the household recycling bin but only if completely clean.");
+        Aluminium.setHow("Aluminium can be recycled over and over without losing any of its properties" +
+                "All food residue must be removed, then place the foil in the bin clean, dry and loosely.\n" +
+                "Scrunch kitchen foil and tubs to form a ball – the bigger the ball, the easier it is to recycle..");
+        Aluminium.setTip("");
+        mRootRef1.child("Aluminium trays").setValue(Aluminium);
+
+        Material chair = new Material();
+        chair.setName("Chair");
+        chair.setWhat("This is furniture / a bulky item");
+        chair.setWhere("Furniture at the end of its useful life can often be recycled, especially items made from wood and metal. Most furniture can be recycled at your local civic amenity site and some local authorities may also provide a bulky goods collection service for a fee.");
+        chair.setHow("");
+        chair.setTip("If you have a piece of furniture that is still usable, you could consider selling it, passing it on to someone else or donating it – some charity shops accept furniture for resale.");
+        mRootRef1.child("Chair").setValue(chair);
+
+      Material Animalbedding = new Material();
+      Animalbedding.setName("Animal bedding & waste");
+      Animalbedding.setWhat("Household animal bedding generally consists of old dog and cat beds");
+      Animalbedding.setWhere("These items when no longer fit for purpose should be placed in the general waste bin.");
+      Animalbedding.setHow("");
+      Animalbedding.setTip("If bedding is in good condition an animal shelter may accept it as a donation.");
+      mRootRef1.child("Animal bedding & waste").setValue(Animalbedding);
+
+        Material Asbestos = new Material();
+        Asbestos.setName("Asbestos");
+        Asbestos.setWhat("Asbestos is a hazardous waste and must be disposed of safely.");
+        Asbestos.setWhere("These items when no longer fit for purpose should be placed in the general waste bin.");
+        Asbestos.setHow("Asbestos should be removed & disposed of by a specialist hazardous waste contractor \n" + "You can search for specialised contractors on the National Waste Collection Permit site: www.nwcpo.ie.");
+        Asbestos.setTip("Asbestos is extremely hazardous.\n" + "If you find asbestos in your home, call an expert!");
+        mRootRef1.child("Asbestos").setValue(Asbestos);
+
+        Material Ash = new Material();
+        Ash.setName("Ash");
+        Ash.setWhat("Ash is produced generally from coal, wood or turf.");
+        Ash.setWhere("These items when no longer fit for purpose should be placed in the general waste bin.");
+        Ash.setHow("");
+        Ash.setTip("If bedding is in good condition an animal shelter may accept it as a donation.");
+        mRootRef1.child("Ash").setValue(Ash);
+
+        Material Barbecues = new Material();
+        Barbecues.setName("Barbecues");
+        Barbecues.setWhat("Barbecues are a household bulky item and are generally made of metal.");
+        Barbecues.setWhere("Some Civic Amenity Sites will accept metal items.\n" +
+                "Check the map for your local civic amenity site on the Waste Services Locator on this site");
+        Barbecues.setHow("");
+        Barbecues.setTip("Disposable BBQs should be placed in the general waste bins.\n" +
+                "Ensure ash is fully cold..");
+        mRootRef1.child("Barbecues").setValue(Barbecues);
+
+        Material Bathroom = new Material();
+        Bathroom.setName("Bathroom suites");
+        Bathroom.setWhat("Bathroom suites no longer fit for purpose can be disposed of similarly to construction and demolition (C&D) waste.");
+        Bathroom.setWhere("Skip hire companies provide varying skip services.\n" +
+                "Some civic amenity sites also accept this material. Check the waste services locator on this site for further detail.");
+        Bathroom.setHow("");
+        Bathroom.setTip("Before disposing of bathroom suites always consider reuse.");
+
+        mRootRef1.child("Bathroom suites").setValue(Bathroom);
+
+        Material Bedding = new Material();
+        Bedding.setName("Bedding & blankets");
+        Bedding.setWhat("Bedding and blankets generally cover duvets, blankets, bed sheets, duvet covers, pillows and throws.");
+        Bedding.setWhere("Pillows and duvets due to hygiene reasons (unless new & unused) should be placed in the general waste bin.\n" +
+                "Other textiles such as duvet covers or blankets can be recycled in textile banks.");
+        Bedding.setHow("");
+        Bedding.setTip("If you have NEW unused and unwanted items these can be donated to charity.\n" +
+                "If you have used ones which are in good condition perhaps you could donate them to an animal shelter.");
+        mRootRef1.child("Bedding & blankets").setValue(Bedding);
+
+        Material Bicycles = new Material();
+        Bicycles.setName("Bicycles");
+        Bicycles.setWhat("Bicycles are generally made of metal or aluminium which is recyclable..");
+        Bicycles.setWhere("Check the waste services locator on this site for recycling options.  There are also bicycle refurbishment projects listed on www.crni.ie");
+        Bicycles.setHow("");
+        Bicycles.setTip("Even bicycles in poor condition can be repaired, refurbished and re-used. \n" +
+                "However if your bicycle is beyond repair the main parts of your old bike can be recycled at your nearest civic amenity site.");
+        mRootRef1.child("Bicycles").setValue(Bicycles);
+
+        Material Blacktray = new Material();
+        Blacktray.setName("Black Trays");
+        Blacktray.setWhat("Rigid trays which any type of meat can be purchased in, they come in many colours and will normally have a soft film covering.");
+        Blacktray.setWhere("The rigid plastic tray can be placed in the household recycling bin and the softer plastic cover should go into the general waste bin.");
+        Blacktray.setHow("All rigid trays regardless of the colour, number, symbol or lack thereof can be placed in the household recycling bin. Trays should be clean, if there is a soak pad this must be removed [place it in the black or food waste bin], you then need to clean out the tray by carefully washing it ensuring you do not splash any liquid on the counter tops or sink or if you are a bit unsure about washing it in the sink you can simply wipe out any excess liquid with paper towels and then dispose of these in the food waste recycling bin [this will ensure no bacteria gets spread on counters or sink]");
+        Blacktray.setTip("");
+
+        mRootRef1.child("Black Tray").setValue(Blacktray);
+        Material Blender = new Material();
+        Blender.setName("Blender");
+        Blender.setWhat("This is an electrical item [WEEE]");
+        Blender.setWhere("This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator in this app.");
+        Blender.setHow("When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. By recycling you are also helping to conserve natural resources such as plastics, glass and metals as they are recovered for use again in industry.");
+        Blender.setTip("It’s easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it?");
+        mRootRef1.child("Blender").setValue(Blender);
+
+        Material Books = new Material();
+        Books.setName("Books");
+        Books.setWhat("Books are made from paper and card.");
+        Books.setWhere("Books should be placed in the household recycling bin.\n" +
+                "Large volumes can be taken to most local civic amenity sites");
+        Books.setHow("");
+        Books.setTip("Books can be passed onto somebody else or if in good condition could be sold");
+        mRootRef1.child("Books").setValue(Books);
+
+        Material Cardboard = new Material();
+        Cardboard.setName("Cardboard Packaging");
+        Cardboard.setWhat("Cardboard packaging is generally made from heavy duty paper based material and comes in many shapes and sizes.");
+        Cardboard.setWhere("This should be placed in the household recycling bin or if you have large volumes check the waste services locator");
+        Cardboard.setHow("Please make sure items are clean, dry and placed loosely in the bin.");
+        Cardboard.setTip("Soiled or wet cardboard cannot be recycled.");
+        mRootRef1.child("Cardboard Packaging").setValue(Cardboard);
+
+        Material Carpet = new Material();
+        Carpet.setName("Carpet");
+        Carpet.setWhat("Carpets are generally made from bound synthetic fibres or wool.\n" +
+                "Due to the different materials used to manufacture carpets they are currently unrecyclable..");
+        Carpet.setWhere("Small quantities can be placed in the household general waste bin but larger quantities should be disposed of by hiring a skip or taking the material to a waste transfer station.");
+        Carpet.setHow("");
+        Carpet.setTip("Why not give to a carpenter it can be reused in different ways ");
+
+        mRootRef1.child("Carpet").setValue(Carpet);
+        Material Christmastreefake = new Material();
+
+        Christmastreefake.setName("Christmas trees(fake)");
+        Christmastreefake.setWhat("Fake Christmas trees are made of many types of material which generally renders them unsuitable for recycling.\n" +
+                "Many trees of this type are reused over and over.");
+        Christmastreefake.setWhere("When no longer fit for purpose, fake Christmas trees should be placed in the general waste bin for disposal.");
+        Christmastreefake.setHow("");
+        Christmastreefake.setTip("They can be reused over and over again why not give it to fruends or family");
+        mRootRef1.child("Christmas trees(fake)").setValue(Christmastreefake);
+
+        Material Cartons = new Material();
+        Cartons.setName("Cartons");
+        Cartons.setWhat("Cartons are generally made of paperboard and small amounts of polyethylene with an aluminum foil lining, ");
+        Cartons.setWhere("Cartons should be placed in the household recycling bin.");
+        Cartons.setHow("Make sure all Cartons placed in the household recycling bin are clean and dry and placed loosely in the bin.");
+        Cartons.setTip("Make sure Carton is empty when recycling ");
+        mRootRef1.child("Cartons").setValue(Cartons);
+
+        Material Christmas = new Material();
+        Christmas.setName("Christmas decorations");
+        Christmas.setWhat("Many Christmas decorations are made of a combination of materials which sometimes renders them unsuitable for recycling.");
+        Christmas.setWhere("Any old decoration made from a single material such as paper, card or rigid plastic only can be placed in the recycling bin.\n" +
+                "If you are not sure what the decoration is made of or unsure if it is made of multiple materials then place the item in the general waste bin.\n" +
+                "If a decoration has any sort of plug or is powered by a battery (remove battery separately for recycling), it is considered a WEEE item and should be disposed of correctly – This should be brought to a WEEE drop-off recycling point or Civic Amenity Site");
+        Christmas.setHow("");
+        Christmas.setTip("Reuse your decorations each year or perhaps swap then with friends.\n" +
+                "It’s easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it?");
+        mRootRef1.child("Christmas decorations").setValue(Christmas);
+
+        Material CDs = new Material();
+        CDs.setName("CDs");
+        CDs.setWhat("DVD’s & CD’s are generally made of  poly-carbonate plastic covered by an aluminium coating");
+        CDs.setWhere("DVD’s & CD’s should be placed in the general waste bin.\n" +
+                "The cases for both can be placed in the household recycling bin, ");
+        CDs.setHow("For the cases remove paper sleeves and any soft plastic lining where possible.");
+        CDs.setTip("Instead of disposing of suitable DVD’s and CD’s once you are finished with them, why not give to friends or family or donate them to a charity shop for someone else to use?\n" +
+                "This is particularly relevant for music, films or box sets.");
+        mRootRef1.child("CDs").setValue(CDs);
+
+        Material freezers = new Material();
+        freezers.setName("Chest freezers");
+        freezers.setWhat("This is an electrical item [WEEE].");
+        freezers.setWhere("This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator ");
+        freezers.setHow("When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. By recycling you are also helping to conserve natural resources such as plastics, glass and metals as they are recovered for use again in industry.");
+        freezers.setTip("It’s easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it?.");
+
+        mRootRef1.child("Chest freezers").setValue(freezers);
+
+
+
+        /* Ash.setName("Ash");
+        Ash.setWhat("Ash is produced generally from coal, wood or turf.");
+        Ash.setWhere("These items when no longer fit for purpose should be placed in the general waste bin.");
+        Ash.setHow("");
+        Ash.setTip("If bedding is in good condition an animal shelter may accept it as a donation.");
+
+        mRootRef1.child("Ash").setValue(Ash);
+
+
+
+        Material Ash = new Material();
+
+        Jewellery.setName("Animal bedding & waste");
+        Jewellery.setWhat("Household animal bedding generally consists of old dog and cat beds");
+        Jewellery.setWhere("These items when no longer fit for purpose should be placed in the general waste bin.");
+        Jewellery.setHow("");
+        Jewellery.setTip("If bedding is in good condition an animal shelter may accept it as a donation.");
+
+        mRootRef1.child("Animal bedding & waste").setValue(Animalbedding);Material Animalbedding = new Material();
+
+        Jewellery.setName("Animal bedding & waste");
+        Jewellery.setWhat("Household animal bedding generally consists of old dog and cat beds");
+        Jewellery.setWhere("These items when no longer fit for purpose should be placed in the general waste bin.");
+        Jewellery.setHow("");
+        Jewellery.setTip("If bedding is in good condition an animal shelter may accept it as a donation.");
+
+        mRootRef1.child("Animal bedding & waste").setValue(Animalbedding);
+
+        Material Animalbedding = new Material();
+
+        Jewellery.setName("Animal bedding & waste");
+        Jewellery.setWhat("Household animal bedding generally consists of old dog and cat beds");
+        Jewellery.setWhere("These items when no longer fit for purpose should be placed in the general waste bin.");
+        Jewellery.setHow("");
+        Jewellery.setTip("If bedding is in good condition an animal shelter may accept it as a donation.");
+
+        mRootRef1.child("Animal bedding & waste").setValue(Animalbedding);
+
+        Material Animalbedding = new Material();
+
+        Jewellery.setName("Animal bedding & waste");
+        Jewellery.setWhat("Household animal bedding generally consists of old dog and cat beds");
+        Jewellery.setWhere("These items when no longer fit for purpose should be placed in the general waste bin.");
+        Jewellery.setHow("");
+        Jewellery.setTip("If bedding is in good condition an animal shelter may accept it as a donation.");
+
+        mRootRef1.child("Animal bedding & waste").setValue(Animalbedding);
+
+        Material Animalbedding = new Material();
+
+        Jewellery.setName("Animal bedding & waste");
+        Jewellery.setWhat("Household animal bedding generally consists of old dog and cat beds");
+        Jewellery.setWhere("These items when no longer fit for purpose should be placed in the general waste bin.");
+        Jewellery.setHow("");
+        Jewellery.setTip("If bedding is in good condition an animal shelter may accept it as a donation.");
+
+        mRootRef1.child("Animal bedding & waste").setValue(Animalbedding);
+
+        Material Animalbedding = new Material();
+
+        Jewellery.setName("Animal bedding & waste");
+        Jewellery.setWhat("Household animal bedding generally consists of old dog and cat beds");
+        Jewellery.setWhere("These items when no longer fit for purpose should be placed in the general waste bin.");
+        Jewellery.setHow("");
+        Jewellery.setTip("If bedding is in good condition an animal shelter may accept it as a donation.");
+
+        mRootRef1.child("Animal bedding & waste").setValue(Animalbedding);
+
+        Material Animalbedding = new Material();
+
+        Jewellery.setName("Animal bedding & waste");
+        Jewellery.setWhat("Household animal bedding generally consists of old dog and cat beds");
+        Jewellery.setWhere("These items when no longer fit for purpose should be placed in the general waste bin.");
+        Jewellery.setHow("");
+        Jewellery.setTip("If bedding is in good condition an animal shelter may accept it as a donation.");
+
+        mRootRef1.child("Animal bedding & waste").setValue(Animalbedding);
+
+        Material Animalbedding = new Material();
+
+        Jewellery.setName("Animal bedding & waste");
+        Jewellery.setWhat("Household animal bedding generally consists of old dog and cat beds");
+        Jewellery.setWhere("These items when no longer fit for purpose should be placed in the general waste bin.");
+        Jewellery.setHow("");
+        Jewellery.setTip("If bedding is in good condition an animal shelter may accept it as a donation.");
+
+        mRootRef1.child("Animal bedding & waste").setValue(Animalbedding);
+
+        Material Animalbedding = new Material();
+
+        Jewellery.setName("Animal bedding & waste");
+        Jewellery.setWhat("Household animal bedding generally consists of old dog and cat beds");
+        Jewellery.setWhere("These items when no longer fit for purpose should be placed in the general waste bin.");
+        Jewellery.setHow("");
+        Jewellery.setTip("If bedding is in good condition an animal shelter may accept it as a donation.");
+
+        mRootRef1.child("Animal bedding & waste").setValue(Animalbedding);
+
+        Material Animalbedding = new Material();
+
+        Jewellery.setName("Animal bedding & waste");
+        Jewellery.setWhat("Household animal bedding generally consists of old dog and cat beds");
+        Jewellery.setWhere("These items when no longer fit for purpose should be placed in the general waste bin.");
+        Jewellery.setHow("");
+        Jewellery.setTip("If bedding is in good condition an animal shelter may accept it as a donation.");
+
+        mRootRef1.child("Animal bedding & waste").setValue(Animalbedding);
+
+        Material Animalbedding = new Material();
+
+        Jewellery.setName("Animal bedding & waste");
+        Jewellery.setWhat("Household animal bedding generally consists of old dog and cat beds");
+        Jewellery.setWhere("These items when no longer fit for purpose should be placed in the general waste bin.");
+        Jewellery.setHow("");
+        Jewellery.setTip("If bedding is in good condition an animal shelter may accept it as a donation.");
+
+        mRootRef1.child("Animal bedding & waste").setValue(Animalbedding);
 
 
 
@@ -551,6 +838,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+       */
 
 
     }

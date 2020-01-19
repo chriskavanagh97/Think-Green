@@ -1,4 +1,4 @@
-package com.example.finalyearapp;
+package com.example.finalyearapp.QuizMenuPackage;
 
 
 import android.content.Intent;
@@ -9,6 +9,13 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.finalyearapp.QuizMenuPackage.OceanQuizzMenu.OceanQuizMenu;
+import com.example.finalyearapp.QuizMenuPackage.PollutionQuizPackage.PollutionQuiz;
+import com.example.finalyearapp.QuizMenuPackage.PlasticQuizMenu.Quiz;
+import com.example.finalyearapp.QuizMenuPackage.PollutionQuizPackage.pollutionQuizmenu;
+import com.example.finalyearapp.R;
+import com.example.finalyearapp.ReviewQuestions;
 
 import java.util.ArrayList;
 
@@ -35,7 +42,7 @@ public class QuizMenu extends AppCompatActivity implements QuizAdapter.OnClickLi
             @Override
             public void onClick(View v) {
 
-                Intent inttoPQuiz = new Intent(QuizMenu.this, PollutionQuiz.class);
+                Intent inttoPQuiz = new Intent(QuizMenu.this, pollutionQuizmenu.class);
                 startActivity(inttoPQuiz);
 
             }
@@ -46,7 +53,7 @@ public class QuizMenu extends AppCompatActivity implements QuizAdapter.OnClickLi
             @Override
             public void onClick(View v) {
 
-                Intent inttoQuiz = new Intent(QuizMenu.this, Quiz.class);
+                Intent inttoQuiz = new Intent(QuizMenu.this, OceanQuizMenu.class);
                 startActivity(inttoQuiz);
 
             }

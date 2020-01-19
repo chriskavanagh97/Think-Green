@@ -8,18 +8,24 @@
         android:id="@+id/textView"
         android:layout_width="135dp"
         android:layout_height="match_parent"
-        android:text="TextView" />
+        android:gravity="left"
+        android:text="TextView"
+        android:textColor="#000000" />
 
     <TextView
         android:id="@+id/textView2"
+        android:textColor="#000000"
         android:layout_width="135dp"
         android:layout_height="match_parent"
+        android:gravity="right"
         android:text="TextView" />
 
     <TextView
         android:id="@+id/textView3"
+        android:textColor="#000000"
         android:layout_width="143dp"
         android:layout_height="match_parent"
+        android:gravity="right"
         android:text="TextView" />
 
 

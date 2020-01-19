@@ -8,7 +8,9 @@
         android:id="@+id/textView"
         android:layout_width="135dp"
         android:layout_height="match_parent"
-        android:text="TextView" />
+        android:text="TextView"
+        android:textStyle="bold"
+        android:textColor="#111111" />
 
 
 

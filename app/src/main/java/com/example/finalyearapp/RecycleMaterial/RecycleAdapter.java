@@ -1,13 +1,16 @@
 package com.example.finalyearapp.RecycleMaterial;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.finalyearapp.MainActivity;
 import com.example.finalyearapp.R;
 
 
@@ -32,6 +35,20 @@ public class RecycleAdapter extends RecyclerView.Adapter<com.example.finalyearap
 
 
         }
+      /*  @Override
+        public void onClick(View view){
+
+            int position = this.getLayoutPosition();
+            String name = materials.get(position).toString();
+            // before test with starting new activity, you can try make a Toast to display name and position
+            Intent intent= new Intent(view.getContext(), Materialview.class);
+            intent.putExtra("name" ,name);
+            intent.putExtra("posistion" ,position);
+            view.getContext().startActivity(intent);
+
+
+
+        }*/
     }
 
     public RecycleAdapter(ArrayList<Material>materials, Context context)
@@ -64,11 +81,28 @@ public class RecycleAdapter extends RecyclerView.Adapter<com.example.finalyearap
 
         holder.txtView.setText(material.getName());
 
+        holder.txtView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), Materialview.class);
+                intent.putExtra("name" ,material.getName());
+                v.getContext().startActivity(intent);
+
+
+            }
+        });
+
     }
     // Return the size of your dataset
     @Override
     public int getItemCount()
     {
         return materials.size();
+    }
+    public void filterlist(ArrayList<Material> filteredlist){
+
+        materials = filteredlist;
+        notifyDataSetChanged();
+
     }
 }

@@ -1,15 +1,12 @@
 package com.example.finalyearapp.RecycleMaterial;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.example.finalyearapp.MainMenu;
-import com.example.finalyearapp.QuizMenu;
 import com.example.finalyearapp.R;
 
 
@@ -46,7 +43,7 @@ public class recyclemenu extends AppCompatActivity {
                 Intent intomaterial = new Intent(recyclemenu.this, Materialview.class);
 
 
-                intomaterial.putExtra("title", name);
+                intomaterial.putExtra("name", name);
                 startActivity(intomaterial);
 
 

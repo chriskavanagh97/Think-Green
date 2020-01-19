@@ -1,7 +1,7 @@
 package com.example.finalyearapp;
 
 
-class Question {
+public class Question {
     public Question() {
 
     }
