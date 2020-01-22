@@ -64,7 +64,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
         holder.txtView2.setText(user.getUsername());
 
-        holder.txtView.setText(position);
+        holder.txtView.setText(user.getEmail());
 
         holder.txtView3.setText(String.valueOf((user.getScore())));
     }

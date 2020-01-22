@@ -2,9 +2,11 @@ package com.example.finalyearapp;
 
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -14,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.finalyearapp.Leaderboard.Leaderboard;
+import com.example.finalyearapp.News.ArticlesActivity;
 import com.example.finalyearapp.QuizMenuPackage.QuizMenu;
 import com.example.finalyearapp.RecycleMaterial.recyclemenu;
 import com.google.firebase.auth.FirebaseAuth;
@@ -33,6 +36,7 @@ public class MainMenu extends AppCompatActivity {
     TextView emaiil;
     RelativeLayout maincontent;
     LinearLayout mainmenu;
+    ImageView News;
 
 
 
@@ -56,6 +60,15 @@ public class MainMenu extends AppCompatActivity {
                 mainmenu.animate().translationX(0);
 
 
+            }
+        });
+        News = (ImageView) findViewById(R.id.News);
+        News.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainMenu.this, ArticlesActivity.class);
+
+                startActivity(intent);
             }
         });
         maincontent.setOnClickListener(new View.OnClickListener() {

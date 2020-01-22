@@ -110,17 +110,21 @@ public class Materialview extends AppCompatActivity {
 
         });
         home = (Button) findViewById(R.id.Home);
-        home.setOnClickListener(new View.OnClickListener() {
+        home.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Materialview.this , Menu.class);
-                startActivity(intent);
+                Intent intent1 = new Intent(Materialview.this , Menu.class);
+                startActivity(intent1);
             }
         });
+
         listview = (Button) findViewById(R.id.ItemList);
-        listview.setOnClickListener(new View.OnClickListener() {
+        listview.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 Intent intent = new Intent(Materialview.this , recyclewhat.class);
                 startActivity(intent);
             }

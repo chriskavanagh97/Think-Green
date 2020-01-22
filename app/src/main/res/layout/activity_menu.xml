@@ -62,9 +62,9 @@
 
     <RelativeLayout
         android:id="@+id/mainContent"
-        android:layout_width="416dp"
+        android:layout_width="380dp"
         android:layout_height="match_parent"
-        android:background="@drawable/background"
+        android:background="@color/colorPrimary"
         android:translationX="-280dp">
 
         <androidx.appcompat.widget.Toolbar
@@ -91,8 +91,8 @@
 
                 <ImageView
                     android:id="@+id/Leaderboard"
-                    android:layout_width="101dp"
-                    android:layout_height="115dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="255dp"
                     android:src="@drawable/leaderboard" />
@@ -118,11 +118,12 @@
 
                 <ImageView
                     android:id="@+id/recycle"
-                    android:layout_width="101dp"
-                    android:layout_height="115dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="255dp"
                     android:src="@drawable/recyclemenu" />
+
 
                 <TextView
                     android:layout_width="102dp"
@@ -135,6 +136,7 @@
 
                 </TextView>
 
+
             </LinearLayout>
 
             <LinearLayout
@@ -145,8 +147,8 @@
 
                 <ImageView
                     android:id="@+id/Quiz"
-                    android:layout_width="101dp"
-                    android:layout_height="115dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="255dp"
                     android:src="@drawable/quizmenu" />
@@ -165,6 +167,36 @@
             </LinearLayout>
 
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+        <ImageView
+            android:id="@+id/News"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="60dp"
+            android:src="@drawable/quizmenu" />
+
+        <TextView
+            android:layout_width="102dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="90dp"
+            android:text="Environment News"
+            android:textColor="#181C34"
+            android:textSize="16sp">
+        </TextView>
+        </LinearLayout>
+        </LinearLayout>
+
 
     </RelativeLayout>
 </LinearLayout>
