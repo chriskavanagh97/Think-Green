@@ -33,22 +33,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<com.example.finalyearap
             super(itemView);
             txtView= (TextView) itemView.findViewById(R.id.textView);
 
-
         }
-      /*  @Override
-        public void onClick(View view){
-
-            int position = this.getLayoutPosition();
-            String name = materials.get(position).toString();
-            // before test with starting new activity, you can try make a Toast to display name and position
-            Intent intent= new Intent(view.getContext(), Materialview.class);
-            intent.putExtra("name" ,name);
-            intent.putExtra("posistion" ,position);
-            view.getContext().startActivity(intent);
-
-
-
-        }*/
     }
 
     public RecycleAdapter(ArrayList<Material>materials, Context context)

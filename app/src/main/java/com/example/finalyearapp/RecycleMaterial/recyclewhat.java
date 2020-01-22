@@ -41,8 +41,7 @@ public class recyclewhat extends AppCompatActivity {
 
         LinearLayoutManager mLayoutManager= new LinearLayoutManager(this);
 
-        mLayoutManager.setReverseLayout(true);
-        mLayoutManager.setStackFromEnd(true);
+
         recyclerView.setLayoutManager(mLayoutManager);
 
         DatabaseReference database = FirebaseDatabase.getInstance().getReference().child("Materials");

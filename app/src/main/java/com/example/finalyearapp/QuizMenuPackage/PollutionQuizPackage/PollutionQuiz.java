@@ -36,6 +36,7 @@ public class PollutionQuiz extends AppCompatActivity {
     private TextView t1_question;
     private TextView next;
     private TextView description;
+    int total;
 
     private int incorrect = 0;
     private int correct =0;
@@ -44,15 +45,15 @@ public class PollutionQuiz extends AppCompatActivity {
     private DatabaseReference mRootRef;
     private String userid;
 
-Intent intent = getIntent();
-int total = intent.getIntExtra("quiznum", 0);
-
 
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
         setContentView(R.layout.activity_pollution);
 
         b1 = (Button) findViewById(R.id.option1);
@@ -80,12 +81,21 @@ int total = intent.getIntExtra("quiznum", 0);
     }
     private void UpdateQuestion(){
 
+        Intent intent = getIntent();
+        String number = intent.getStringExtra("quiznum");
+        int total1 = Integer.parseInt(number);
+        int total2 = total1 + 5;
+
+     total = total1;
+
+
+
         FirebaseAuth mFirebaseAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mFirebaseAuth.getCurrentUser();
         userid = Objects.requireNonNull(user).getUid();
         mRootRef = FirebaseDatabase.getInstance().getReference().child("Review Questions");
 
-        if(total >4) {
+        if(total > total2) {
 
             description.setText("Completed");
             details();
@@ -218,8 +228,7 @@ int total = intent.getIntExtra("quiznum", 0);
                                     b1.setBackgroundColor(Color.LTGRAY);
                                     b3.setBackgroundColor(Color.LTGRAY);
                                     b4.setBackgroundColor(Color.LTGRAY);
-                                    description.setText("");
-                                    description.setBackgroundColor(Color.WHITE);
+
                                     total = total + 1;
 
                                     UpdateQuestion();
@@ -242,7 +251,7 @@ int total = intent.getIntExtra("quiznum", 0);
     }
     private void details(){
 
-        total = total -1 ;
+
         Intent resultintent = new Intent(PollutionQuiz.this, QuizResults.class);
         resultintent.putExtra("total",String.valueOf(total));
         resultintent.putExtra("correct",String.valueOf(correct));

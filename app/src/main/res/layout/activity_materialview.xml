@@ -21,9 +21,9 @@
         <TextView
 
             android:id="@+id/Title"
-            android:layout_width="219dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|center"
+            android:layout_width="293dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
             android:fontFamily="sans-serif-light"
             android:text="Title"
             android:textAppearance="@style/TextAppearance.AppCompat.Display4"
@@ -75,7 +75,7 @@
     <LinearLayout
 
         android:layout_width="match_parent"
-        android:layout_height="671dp"
+        android:layout_height="600dp"
         android:orientation="vertical">
 
 
@@ -169,7 +169,27 @@
         </TextView>
 
     </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/Home"
+        android:layout_width="206dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@color/colorPrimary"
+        android:text="Home" />
+
+    <Button
+        android:id="@+id/ItemList"
+        android:layout_width="207dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@color/colorPrimary"
+        android:text="Item List" />
+
+</LinearLayout>
 
     </LinearLayout>
-
-

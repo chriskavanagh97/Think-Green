@@ -14,6 +14,7 @@
             android:label="@string/title_activity_pollution_quizmenu"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".QuizMenuPackage.OceanQuizzMenu.OceanQuizMenu" />
+        <activity android:name=".QuizMenuPackage.OceanQuizzMenu.Oceanquizz" />
         <activity android:name=".MainActivity" />
         <activity android:name=".RecycleMaterial.Materialview" />
         <activity android:name=".RecycleMaterial.recyclewhat" />

@@ -36,6 +36,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-storage:19.1.0'
 
     implementation 'org.tensorflow:tensorflow-android:1.2.0-rc0'
+    //‘org.tensorflow:tensorflow-android:1.2.0-preview
 
 
     implementation 'androidx.recyclerview:recyclerview:1.1.0'

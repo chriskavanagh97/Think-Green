@@ -7,7 +7,8 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -27,12 +28,12 @@ import java.util.Random;
 
 public class Quiz extends AppCompatActivity {
 
-    private Button b1;
-    private Button b2;
-    private Button b3;
-    private Button b4;
+    private RadioButton b1;
+    private RadioButton b2;
+    private RadioButton b3;
+    private RadioButton b4;
     private TextView t1_question;
-    private TextView next;
+
     private TextView description;
     private int total = 1;
     private int incorrect = 0;
@@ -47,11 +48,11 @@ public class Quiz extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
-        b1 = (Button) findViewById(R.id.option1);
-        b2 = (Button) findViewById(R.id.option2);
-        b3 = (Button) findViewById(R.id.option3);
-        b4 = (Button) findViewById(R.id.option4);
-        next = (TextView) findViewById(R.id.timerTxt);
+        b1 = (RadioButton) findViewById(R.id.option1);
+        b2 = (RadioButton) findViewById(R.id.option2);
+        b3 = (RadioButton) findViewById(R.id.option3);
+        b4 = (RadioButton) findViewById(R.id.option4);
+
 
         t1_question = (TextView) findViewById(R.id.questionsTxt);
 
@@ -59,6 +60,8 @@ public class Quiz extends AppCompatActivity {
         UpdateQuestion();
     }
     private void UpdateQuestion(){
+
+
         if(total >4) {
 
             description.setText("Completed");
@@ -94,6 +97,9 @@ public class Quiz extends AppCompatActivity {
                                     b4.setBackgroundColor(Color.GREEN);
 
                                     showMessage("Wrong", question.getDescription());
+                                    total = total + 1;
+
+                                    UpdateQuestion();
 
 
                                 }
@@ -113,6 +119,9 @@ public class Quiz extends AppCompatActivity {
                                     b4.setBackgroundColor(Color.GREEN);
 
                                     showMessage("Wrong", question.getDescription());
+                                    total = total + 1;
+
+                                    UpdateQuestion();
 
 
 
@@ -134,6 +143,9 @@ public class Quiz extends AppCompatActivity {
                                     b4.setBackgroundColor(Color.GREEN);
 
                                     showMessage("Wrong", question.getDescription());
+                                    total = total + 1;
+
+                                    UpdateQuestion();
 
                                 }
                             }, 1500);
@@ -151,29 +163,11 @@ public class Quiz extends AppCompatActivity {
                                     b4.setBackgroundColor(Color.GREEN);
 
                                     showMessage("Correct", question.getDescription());
-
-
-                                }
-                            }, 1500);
-                        }
-                    });
-                    next.setOnClickListener(new View.OnClickListener(){
-
-                        @Override
-                        public void onClick(View v) {
-                            Handler handler = new Handler();
-                            handler.postDelayed(new Runnable() {
-                                @Override
-                                public void run() {
-                                    b2.setBackgroundColor(Color.LTGRAY);
-                                    b1.setBackgroundColor(Color.LTGRAY);
-                                    b3.setBackgroundColor(Color.LTGRAY);
-                                    b4.setBackgroundColor(Color.LTGRAY);
-                                    description.setText("");
-                                    description.setBackgroundColor(Color.WHITE);
                                     total = total + 1;
 
                                     UpdateQuestion();
+
+
                                 }
                             }, 1500);
                         }

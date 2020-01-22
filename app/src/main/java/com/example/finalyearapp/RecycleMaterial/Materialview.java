@@ -5,10 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.finalyearapp.MainActivity;
 import com.example.finalyearapp.R;
+import com.example.finalyearapp.Register;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -26,6 +32,8 @@ public class Materialview extends AppCompatActivity {
     //String name = "aerosols";
 
     TextView what , how , tip , where, title;
+    ImageButton facebook, twitter , linkedIn;
+    Button home, listview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,12 +65,66 @@ public class Materialview extends AppCompatActivity {
 
             }
 
+
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
         });
 
+
+        facebook = (ImageButton) findViewById(R.id.Facebook);
+        facebook.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v){
+                Intent intent=new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                String shareBody = title.getText().toString() + "/n" + what.getText().toString()  + "/n" + where.getText().toString()  + "/n" + how.getText().toString()  + "/n" + tip.getText().toString();
+                String shareSub = "Your subject here";
+
+                intent.putExtra(Intent.EXTRA_SUBJECT, shareBody);
+                intent.putExtra(Intent.EXTRA_TEXT, shareSub);
+
+                startActivity(Intent.createChooser(intent,"Share using"));
+            }
+
+
+        });
+        twitter = (ImageButton) findViewById(R.id.Twitter);
+        twitter.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v){
+                Intent intent=new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                String shareBody = title + "/n" + what  + "/n" + where  + "/n" + how  + "/n" + tip;
+                String shareSub = "Your subject here";
+
+                intent.putExtra(Intent.EXTRA_SUBJECT, shareBody);
+                intent.putExtra(Intent.EXTRA_TEXT, shareSub);
+
+                startActivity(Intent.createChooser(intent,"Share using"));
+            }
+
+
+        });
+        home = (Button) findViewById(R.id.Home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Materialview.this , Menu.class);
+                startActivity(intent);
+            }
+        });
+        listview = (Button) findViewById(R.id.ItemList);
+        listview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Materialview.this , recyclewhat.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }

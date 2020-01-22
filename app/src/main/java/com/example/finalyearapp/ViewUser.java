@@ -63,29 +63,6 @@ public class ViewUser extends AppCompatActivity {
 
             }
         });
-       /* DatabaseReference database2 = FirebaseDatabase.getInstance().getReference().child("Score").child(userid);
-        database2.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                final Score score = dataSnapshot.getValue(Score.class);
-                int Score = score.getScore();
-
-                int score1 = 0;
-                score1 = score1 + Score;
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });*/
-
-       /* home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(ViewUser.this, MainMenu.class));
-            }
-        });*/
 
     }
     protected void onStart() {

@@ -12,6 +12,10 @@ import com.example.finalyearapp.R;
 
 public class OceanQuizMenu extends AppCompatActivity {
 
+    String Level1 = "1";
+    String Level2 = "6";
+    String Level3 = "11";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,10 +31,10 @@ public class OceanQuizMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                int questionnumber = 1;
+
                 Intent intent = new Intent(OceanQuizMenu.this, Oceanquizz.class);
 
-                intent.putExtra("quiznum", questionnumber);
+                intent.putExtra("quiznum", Level1);
                 startActivity(intent);
 
 
@@ -41,10 +45,10 @@ public class OceanQuizMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                int questionnumber = 4;
+
                 Intent intent = new Intent(OceanQuizMenu.this, Oceanquizz.class);
 
-                intent.putExtra("quiznum", questionnumber);
+                intent.putExtra("quiznum", Level2);
                 startActivity(intent);
 
             }
@@ -54,10 +58,10 @@ public class OceanQuizMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                int questionnumber = 7;
+
                 Intent intent = new Intent(OceanQuizMenu.this, Oceanquizz.class);
 
-                intent.putExtra("quiznum", questionnumber);
+                intent.putExtra("quiznum", Level3);
                 startActivity(intent);
 
             }

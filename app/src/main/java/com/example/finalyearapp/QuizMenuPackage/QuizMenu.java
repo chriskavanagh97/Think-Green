@@ -64,7 +64,7 @@ public class QuizMenu extends AppCompatActivity implements QuizAdapter.OnClickLi
             @Override
             public void onClick(View v) {
 
-                Intent inttoQuiz = new Intent(QuizMenu.this, ReviewQuestions.class);
+                Intent inttoQuiz = new Intent(QuizMenu.this, Quiz.class);
                 startActivity(inttoQuiz);
 
             }
@@ -73,7 +73,7 @@ public class QuizMenu extends AppCompatActivity implements QuizAdapter.OnClickLi
         recyclerView = (RecyclerView) findViewById(R.id.recycler);
 
         imageModelArrayList = quizzes();
-        adapter = new QuizAdapter(this, imageModelArrayList, this);
+        adapter = new QuizAdapter(this, imageModelArrayList);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
 

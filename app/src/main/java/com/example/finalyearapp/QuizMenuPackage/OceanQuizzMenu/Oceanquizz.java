@@ -35,14 +35,9 @@ public class Oceanquizz extends AppCompatActivity  {
     private Button b4;
     private TextView t1_question;
     private TextView next;
-    private TextView description;
-    private int total = 1;
     private int incorrect = 0;
     private int correct =0;
-    private Random rand = new Random();
-    int n;
-
-
+    int total;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,13 +52,22 @@ public class Oceanquizz extends AppCompatActivity  {
 
         t1_question = (TextView) findViewById(R.id.questionsTxt);
 
-        description =  (TextView) findViewById(R.id.description);
+
         UpdateQuestion();
     }
     private void UpdateQuestion(){
-        if(total >4) {
 
-            description.setText("Completed");
+
+        Intent intent = getIntent();
+        String number = intent.getStringExtra("quiznum");
+        int total1 = Integer.parseInt(number);
+        int total2 = total1 + 5;
+
+        total = total1;
+
+        if(total > total2) {
+
+
             details();
 
         }
@@ -171,8 +175,6 @@ public class Oceanquizz extends AppCompatActivity  {
                                     b1.setBackgroundColor(Color.LTGRAY);
                                     b3.setBackgroundColor(Color.LTGRAY);
                                     b4.setBackgroundColor(Color.LTGRAY);
-                                    description.setText("");
-                                    description.setBackgroundColor(Color.WHITE);
                                     total = total + 1;
 
                                     UpdateQuestion();

@@ -6,6 +6,36 @@
     android:layout_height="match_parent"
     tools:context=".QuizResults">
 
+    <LinearLayout
+        style="@style/TextAppearance.Compat.Notification.Title"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginBottom="151dp"
+        android:background="#A4dada"
+        android:orientation="vertical"
+
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/result1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.084">
+
+
+        <TextView
+
+            android:id="@+id/Title"
+            android:layout_width="293dp"
+            android:layout_height="86dp"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif-light"
+            android:text="Quiz Results"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+            android:textColor="#070606"
+            android:textSize="36sp">
+
+        </TextView>
+    </LinearLayout>
+
     <TextView
         android:id="@+id/title1"
         android:layout_width="101dp"

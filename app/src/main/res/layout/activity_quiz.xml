@@ -4,129 +4,80 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/plasticbackground"
+    android:background="@drawable/quizbackground"
     tools:context=".QuizMenuPackage.PlasticQuizMenu.Quiz">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="397dp"
+        android:layout_marginTop="390dp"
+        android:layout_centerHorizontal="true"
         android:orientation="vertical">
+
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="140dp"
             android:id="@+id/questionsTxt"
-            android:padding="10dp"
+            android:layout_width="373dp"
+            android:layout_height="121dp"
+            android:layout_gravity="center_horizontal"
             android:text="what is this question"
             android:textAlignment="center"
             android:textColor="#393737"
-            android:textSize="28sp"
+            android:textSize="20sp"
 
             />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:padding="5dp"
-            android:paddingTop="5dp"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal">
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_weight="1"
-                android:background="#efeef3"
-                android:padding="10dp"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                android:text="Option1"
+            <RadioButton
                 android:id="@+id/option1"
-                />
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="#efeef3"
-                android:padding="10dp"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                android:text="Option2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="option1"
+                android:textSize="15sp"
+                 />
+
+            <RadioButton
                 android:id="@+id/option2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="option1"
+                android:textSize="15sp"
+                 />
 
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:padding="5dp"
-            android:paddingTop="5dp"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal">
-
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_weight="1"
-                android:background="#efeef3"
-                android:padding="10dp"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                android:text="Option3"
+            <RadioButton
                 android:id="@+id/option3"
-                />
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="#efeef3"
-                android:padding="10dp"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                android:text="Option4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="option1"
+                android:textSize="15sp"
+                 />
+
+            <RadioButton
                 android:id="@+id/option4"
-
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:orientation="horizontal"
-            android:padding="5dp"
-            android:paddingTop="5dp"
-            android:layout_marginTop="10dp"
-            >
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="option1"
+                android:textSize="15sp"
+                 />
 
 
-        </LinearLayout>
+        </RadioGroup>
 
-        <TextView
-            android:id="@+id/timerTxt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Next ->"
-            android:textAlignment="center"
-            android:textSize="28sp" />
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="280dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/submitanswer" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:orientation="horizontal"
-            android:padding="5dp"
-            android:paddingTop="5dp"
-            android:layout_marginTop="10dp"
-            >
-
-        </LinearLayout>
 
     </LinearLayout>
-
 
 
 </RelativeLayout>

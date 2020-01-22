@@ -4,8 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
     tools:context=".QuizMenuPackage.QuizMenu">
+
+
+    <LinearLayout
+        style="@style/TextAppearance.Compat.Notification.Title"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#A4dada"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/recycler"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.084">
+
+
+        <TextView
+
+            android:id="@+id/Title"
+            android:layout_width="293dp"
+            android:layout_height="86dp"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif-light"
+            android:text="Quiz Menu"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+            android:textColor="#070606"
+            android:textSize="36sp">
+
+        </TextView>
+    </LinearLayout>
 
     <Button
         android:id="@+id/Plastic"
@@ -14,10 +42,10 @@
         android:text="Plastic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintHorizontal_bias="0.421"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.573" />
+        app:layout_constraintVertical_bias="0.976" />
 
     <Button
         android:id="@+id/Pollution"
@@ -26,20 +54,20 @@
         android:text="Pollution"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.696" />
+        app:layout_constraintVertical_bias="0.976" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="428dp"
+        android:layout_height="444dp"
         android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.243"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintVertical_bias="0.376"
+        tools:layout_editor_absoluteX="-9dp" />
 
     <Button
         android:id="@+id/Review"
@@ -48,8 +76,8 @@
         android:text="Review Questions"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.937"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.853" />
+        app:layout_constraintVertical_bias="0.976" />
 </androidx.constraintlayout.widget.ConstraintLayout>

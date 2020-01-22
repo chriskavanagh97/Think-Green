@@ -16,8 +16,8 @@
 
             <ImageView
                 android:id="@+id/iv"
-                android:layout_width="160dp"
-                android:layout_height="230dp"
+                android:layout_width="239dp"
+                android:layout_height="329dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/energy" />
 

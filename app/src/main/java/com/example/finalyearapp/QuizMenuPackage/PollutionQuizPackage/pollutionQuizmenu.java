@@ -34,7 +34,7 @@ public class pollutionQuizmenu extends AppCompatActivity {
                 int questionnumber = 1;
                 Intent intent = new Intent(pollutionQuizmenu.this, PollutionQuiz.class);
 
-                intent.putExtra("quiznum", questionnumber);
+                intent.putExtra("quiznum", String.valueOf(questionnumber));
                 startActivity(intent);
 
 
@@ -48,7 +48,7 @@ public class pollutionQuizmenu extends AppCompatActivity {
                 int questionnumber = 4;
                 Intent intent = new Intent(pollutionQuizmenu.this, PollutionQuiz.class);
 
-                intent.putExtra("quiznum", questionnumber);
+                intent.putExtra("quiznum", String.valueOf(questionnumber));
                 startActivity(intent);
 
             }
@@ -61,7 +61,7 @@ public class pollutionQuizmenu extends AppCompatActivity {
                 int questionnumber = 7;
                 Intent intent = new Intent(pollutionQuizmenu.this, PollutionQuiz.class);
 
-                intent.putExtra("quiznum", questionnumber);
+                intent.putExtra("quiznum", String.valueOf(questionnumber));
                 startActivity(intent);
 
             }
