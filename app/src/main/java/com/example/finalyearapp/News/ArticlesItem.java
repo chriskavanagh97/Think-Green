@@ -1,8 +1,5 @@
 package com.example.finalyearapp.News;
 
-/**
- * Created by Crypt055 on 26/11/16.
- */
 
 public class ArticlesItem {
 
@@ -10,7 +7,24 @@ public class ArticlesItem {
     private String title;
     private String description;
     private String url;
+    private String name;
+    private String date;
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
 
     public ArticlesItem() {
         super();

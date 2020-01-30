@@ -51,7 +51,7 @@ public class ArticlesActivity extends AppCompatActivity {
         setTitle(name);
 
 
-        FEED_URL = "https://newsapi.org/v2/everything?q=climatecrisis&from=2020-01-21&sortBy=publishedAt&apiKey=e31fb6b25b2d4051ac0b1b62f49d2d69";
+        FEED_URL = "https://newsapi.org/v2/everything?q=climate&from=2020-01-21&sortBy=publishedAt&apiKey=e31fb6b25b2d4051ac0b1b62f49d2d69";
         mListView = (ListView) findViewById(R.id.listView);
 
 
@@ -163,12 +163,16 @@ public class AsyncHttpTask extends AsyncTask<String, Void, String> {
                 String title = post.optString("title");
                 String image = post.optString("urlToImage");
                 String description = post.optString("description");
+                String Company = post.optString("name");
+                String date = post.optString("publishedAt");
                 String url = post.optString("url");
                 item = new ArticlesItem();
                 item.setTitle(title);
                 item.setImage(image);
                 item.setUrl(url);
                 item.setDescription(description);
+                item.setDate(date);
+                item.setName(Company);
 
                 mListData.add(item);
             }

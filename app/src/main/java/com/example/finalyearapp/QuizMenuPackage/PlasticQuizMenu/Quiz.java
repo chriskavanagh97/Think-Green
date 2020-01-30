@@ -2,11 +2,15 @@ package com.example.finalyearapp.QuizMenuPackage.PlasticQuizMenu;
 
 
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -32,16 +36,17 @@ public class Quiz extends AppCompatActivity {
     private RadioButton b2;
     private RadioButton b3;
     private RadioButton b4;
+    Button popup;
+    String answeresult;
     private TextView t1_question;
-
+    String answer;
     private TextView description;
     private int total = 1;
     private int incorrect = 0;
     private int correct =0;
-    private Random rand = new Random();
     int n;
 
-
+    Dialog myDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,11 +59,33 @@ public class Quiz extends AppCompatActivity {
         b4 = (RadioButton) findViewById(R.id.option4);
 
 
+
+
         t1_question = (TextView) findViewById(R.id.questionsTxt);
 
         description =  (TextView) findViewById(R.id.description);
         UpdateQuestion();
+
+        myDialog = new Dialog(this);
     }
+    public void ShowPopup(View v) {
+
+            TextView txtclose;
+            Button btnFollow;
+            myDialog.setContentView(R.layout.custompopup);
+            txtclose =(TextView) myDialog.findViewById(R.id.txtclose);
+            txtclose.setText("M");
+
+            txtclose.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    myDialog.dismiss();
+                }
+            });
+            myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            myDialog.show();
+    }
+
     private void UpdateQuestion(){
 
 
@@ -70,9 +97,9 @@ public class Quiz extends AppCompatActivity {
         }
         else
         {
-            int n = rand.nextInt(9);
-            int n2 = n + 1;
-            DatabaseReference databaseref = FirebaseDatabase.getInstance().getReference().child("Questions").child("Plastic").child(String.valueOf(n2));
+
+
+            DatabaseReference databaseref = FirebaseDatabase.getInstance().getReference().child("Questions").child("Plastic").child(String.valueOf(total));
             databaseref.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -88,92 +115,77 @@ public class Quiz extends AppCompatActivity {
 
                         @Override
                         public void onClick(View v) {
-                            Handler handler = new Handler();
-                            handler.postDelayed(new Runnable() {
-                                @Override
-                                public void run() {
-                                    incorrect++;
-                                    b1.setBackgroundColor(Color.RED);
-                                    b4.setBackgroundColor(Color.GREEN);
 
-                                    showMessage("Wrong", question.getDescription());
-                                    total = total + 1;
+                            boolean checked = ((RadioButton) v).isChecked();
 
-                                    UpdateQuestion();
+                            switch (v.getId())
+                            {
+                                case R.id.option1:
+                                    if (checked)
+                                        answer = "wrong";
 
 
-                                }
-                            }, 1500);
+                                case R.id.option2:
+                                    if (checked)
+                                        answer = "wrong";
+
+
+                                case R.id.option3:
+                                    if (checked)
+                                        answer = "wrong";
+
+
+                                case R.id.option4:
+                                    if (checked)
+                                        answer = "correct";
+
+
+                            }
+
                         }
                     });
-                    b2.setOnClickListener(new View.OnClickListener(){
 
+                    popup = (Button) findViewById(R.id.popup);
+                    popup.setOnClickListener(new View.OnClickListener() {
                         @Override
-                        public void onClick(View v) {
-                            Handler handler = new Handler();
-                            handler.postDelayed(new Runnable() {
+                        public void onClick(View v)
+                        {
+
+
+                            TextView txtclose;
+                            Button btnFollow;
+                            myDialog.setContentView(R.layout.custompopup);
+                            txtclose =(TextView) myDialog.findViewById(R.id.txtclose);
+                            txtclose.setText("X");
+
+                            TextView txtanswer = (TextView) myDialog.findViewById(R.id.Answer);
+
+                            if (answer.equals("wrong"))
+                            {
+                                txtanswer.setText("Sorry this is Incorrect");
+                                incorrect ++;
+                            }
+                            else {
+                                txtanswer.setText("Well done this is correct");
+                                correct ++;
+
+                            }
+
+                            TextView textview = (TextView) myDialog.findViewById(R.id.description);
+                            textview.setText(question.getDescription());
+
+                            txtclose.setOnClickListener(new View.OnClickListener() {
                                 @Override
-                                public void run() {
-                                    incorrect++;
-                                    b2.setBackgroundColor(Color.RED);
-                                    b4.setBackgroundColor(Color.GREEN);
-
-                                    showMessage("Wrong", question.getDescription());
-                                    total = total + 1;
-
-                                    UpdateQuestion();
-
-
-
-
+                                public void onClick(View v) {
+                                    myDialog.dismiss();
+                                    total ++;
                                 }
-                            }, 1500);
+                            });
+                            myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                            myDialog.show();
                         }
-                    });
-                    b3.setOnClickListener(new View.OnClickListener(){
 
-                        @Override
-                        public void onClick(View v) {
-                            Handler handler = new Handler();
-                            handler.postDelayed(new Runnable() {
-                                @Override
-                                public void run() {
-                                    incorrect++;
-                                    b3.setBackgroundColor(Color.RED);
-                                    b4.setBackgroundColor(Color.GREEN);
-
-                                    showMessage("Wrong", question.getDescription());
-                                    total = total + 1;
-
-                                    UpdateQuestion();
-
-                                }
-                            }, 1500);
-                        }
-                    });
-                    b4.setOnClickListener(new View.OnClickListener(){
-
-                        @Override
-                        public void onClick(View v) {
-                            Handler handler = new Handler();
-                            handler.postDelayed(new Runnable() {
-                                @Override
-                                public void run() {
-                                    correct++;
-                                    b4.setBackgroundColor(Color.GREEN);
-
-                                    showMessage("Correct", question.getDescription());
-                                    total = total + 1;
-
-                                    UpdateQuestion();
-
-
-                                }
-                            }, 1500);
-                        }
-                    });
-
-
+                        });
                 }
 
 
@@ -193,16 +205,6 @@ public class Quiz extends AppCompatActivity {
         resultintent.putExtra("correct",String.valueOf(correct));
         resultintent.putExtra("incorrect",String.valueOf(incorrect));
         startActivity(resultintent);
-
-    }
-    public void showMessage(String title, String Message){
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setCancelable(true);
-        builder.setTitle(title);
-        builder.setMessage(Message);
-        builder.show();
-
 
     }
 

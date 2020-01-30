@@ -18,9 +18,6 @@ import java.util.ArrayList;
 
 import static android.view.View.GONE;
 
-/**
- * Created by Crypt055 on 26/11/16.
- */
 
 public class ArticlesViewAdapter extends ArrayAdapter<ArticlesItem> {
 
@@ -61,6 +58,8 @@ public class ArticlesViewAdapter extends ArrayAdapter<ArticlesItem> {
             holder.titleTextView = (TextView) row.findViewById(R.id.list_item_title);
             holder.imageView = (ImageView) row.findViewById(R.id.list_item_image);
             holder.descriptionTextView = (TextView) row.findViewById(R.id.list_item_description);
+            holder.companyname = (TextView) row.findViewById(R.id.Company);
+            holder.date = (TextView) row.findViewById(R.id.Date);
             row.setTag(holder);
         } else {
             holder = (ViewHolder) row.getTag();
@@ -70,33 +69,21 @@ public class ArticlesViewAdapter extends ArrayAdapter<ArticlesItem> {
 
             ArticlesItem item = mListData.get(position);
 
-            if (!TextUtils.isEmpty(Html.fromHtml(item.getTitle()))) {
+
 
             holder.titleTextView.setText(Html.fromHtml(item.getTitle()));
 
-        } else {
-
-                holder.titleTextView.setVisibility(GONE);
-            }
-
-        if ((item.getDescription()).toString() != "null") {
 
             holder.descriptionTextView.setText(Html.fromHtml(item.getDescription()));
+            holder.companyname.setText(Html.fromHtml(item.getName()));
+            holder.date.setText(Html.fromHtml(item.getDate()));
 
-        } else {
-            holder.descriptionTextView.setVisibility(GONE);
-
-        }
-
-            if ((item.getImage()).toString() != "null" && !TextUtils.isEmpty(item.getImage())) {
 
                 Picasso.get().load(item.getImage()).into(holder.imageView);
 
 
-            } else {
 
-                holder.imageView.setImageResource(R.drawable.pollutionbackground);
-            }
+
 
 
 
@@ -108,6 +95,7 @@ public class ArticlesViewAdapter extends ArrayAdapter<ArticlesItem> {
         TextView titleTextView;
         ImageView imageView;
         TextView descriptionTextView;
+        TextView companyname, date;
 
     }
 }

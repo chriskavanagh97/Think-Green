@@ -5,16 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
+    android:background="@drawable/homebackground"
     tools:context=".MainMenu">
 
 
     <LinearLayout
         android:id="@+id/mainmenu"
-        android:layout_width="280dp"
+        android:layout_width="260dp"
         android:layout_height="match_parent"
         android:background="@color/colorPrimaryDark"
         android:orientation="vertical"
-        android:translationX="-280dp">
+        android:translationX="-260dp">
 
         <ImageView
             android:layout_width="181dp"
@@ -34,7 +35,9 @@
             android:background="@drawable/bgbtnmenu"
             android:text="Sign out"
             android:textSize="18sp"
-            android:textStyle="italic"></Button>
+            android:textStyle="italic">
+
+        </Button>
 
         <Button
             android:id="@+id/setting"
@@ -45,7 +48,9 @@
             android:background="@drawable/bgbtnmenu"
             android:text="Setting"
             android:textSize="18sp"
-            android:textStyle="italic"></Button>
+            android:textStyle="italic">
+
+        </Button>
 
         <Button
             android:id="@+id/profile"
@@ -56,16 +61,22 @@
             android:background="@drawable/bgbtnmenu"
             android:text="Profile"
             android:textSize="18sp"
-            android:textStyle="italic"></Button>
+            android:textStyle="italic">
+
+        </Button>
 
     </LinearLayout>
 
     <RelativeLayout
         android:id="@+id/mainContent"
-        android:layout_width="380dp"
+        android:layout_width="360dp"
         android:layout_height="match_parent"
         android:background="@color/colorPrimary"
-        android:translationX="-280dp">
+        android:translationX="-260dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/homebackground"/>
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -75,7 +86,9 @@
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:logo="@drawable/ic_menu">
 
+
         </androidx.appcompat.widget.Toolbar>
+
 
         <LinearLayout
             android:layout_width="match_parent"

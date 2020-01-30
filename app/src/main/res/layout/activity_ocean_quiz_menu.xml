@@ -9,24 +9,24 @@
 
     <ImageView
         android:id="@+id/ButtonOne"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="87dp"
+        android:layout_height="81dp"
         android:src="@drawable/bubble1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.973" />
 
     <ImageView
         android:id="@+id/ButtonTwo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="192dp"
+        android:layout_width="86dp"
+        android:layout_height="71dp"
+        android:layout_marginBottom="188dp"
         android:src="@drawable/bubble2"
         app:layout_constraintBottom_toTopOf="@+id/ButtonOne"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
@@ -42,12 +42,13 @@
 
     <ImageView
         android:id="@+id/ButtonThree"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
+        android:layout_width="96dp"
+        android:layout_height="89dp"
+        android:layout_marginBottom="12dp"
         android:src="@drawable/bubble3"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

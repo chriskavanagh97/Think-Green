@@ -10,14 +10,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="397dp"
-        android:layout_marginTop="390dp"
+        android:layout_marginTop="335dp"
         android:layout_centerHorizontal="true"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/questionsTxt"
-            android:layout_width="373dp"
-            android:layout_height="121dp"
+            android:layout_width="312dp"
+            android:layout_height="94dp"
             android:layout_gravity="center_horizontal"
             android:text="what is this question"
             android:textAlignment="center"
@@ -70,11 +70,11 @@
         </RadioGroup>
 
         <Button
-            android:id="@+id/button3"
-            android:layout_width="280dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/submitanswer" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/submitanswer"
+            android:id="@+id/popup"
+            android:textColor="#0E0101" />
 
 
     </LinearLayout>
