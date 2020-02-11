@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 
 
-public class QuizMenu extends AppCompatActivity implements QuizAdapter.OnClickListener {
+public class QuizMenu extends AppCompatActivity  {
 
     private RecyclerView recyclerView;
     private ArrayList<QuizModel> imageModelArrayList;
@@ -102,29 +102,5 @@ public class QuizMenu extends AppCompatActivity implements QuizAdapter.OnClickLi
         Intent intent = getIntent();
     }
 
-    @Override
-    public void onClickListener(int posistion) {
 
-        int itemclicked = Integer.parseInt(String.valueOf(imageModelArrayList.get(posistion)));
-
-        if (itemclicked == 1) {
-
-
-            Intent inttoQuiz = new Intent(QuizMenu.this, ReviewQuestions.class);
-            startActivity(inttoQuiz);
-
-        }
-        if (itemclicked == 2) {
-
-
-            Intent inttoQuiz = new Intent(QuizMenu.this, PollutionQuiz.class);
-            startActivity(inttoQuiz);
-        }
-        if (itemclicked == 3) {
-
-
-            Intent inttoQuiz = new Intent(QuizMenu.this, Quiz.class);
-            startActivity(inttoQuiz);
-        }
-    }
 }

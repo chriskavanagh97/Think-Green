@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#A4dada</color>
-    <color name="colorPrimaryDark">#169CDA</color>
+    <color name="colorPrimaryDark">#A4DADA</color>
     <color name="colorAccent">#D81B60</color>
+
+
+    <color name="semi_transparent">#66000000</color>
 </resources>

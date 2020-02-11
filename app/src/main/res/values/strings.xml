@@ -1,6 +1,97 @@
 <resources>
     <string name="app_name">FinalYearapp</string>
+    <string name="foodq2">In a week how much do you spend on takeaways, restaurants etc</string>
+    <string name="foodq3">How muh food do you buy locally</string>
+    <string name="travelq1">What kind of method do you use to travel</string>
+    <string name="travelq2">Which of these vehicles best describes the vehicle you use most</string>
+    <string name="travelq3">How many hours a week do you spend in your vehicle</string>
+    <string name="travelq4">Hours spent on a train per week</string>
+    <string name="travelq5">Hours spent on a bus per week</string>
+    <string name="travelq6">How many return flights have you made to the following regions</string>
+
+
     <string name="title_activity_pollution_quizmenu">pollutionQuizmenu</string>
 
+
+    <string-array name="foodvalues">
+        <item>meat in every meal</item>
+        <item>meat in some meals</item>
+        <item>meat very rarely</item>
+        <item>no beef</item>
+        <item>vegetarian</item>
+        <item>vegan</item>
+    </string-array>
+
+    <string-array name="localfood">
+        <item>Nearly all the food I buy is organic</item>
+        <item>Some of the food i buy is organic</item>
+        <item>I do not care whether it is organic or not</item>
+    </string-array>
+
+
+    <string-array name="foodcosts">
+        <item>0</item>
+        <item>€1-€10</item>
+        <item>€10-€50</item>
+        <item>€50+</item>
+    </string-array>
+
+    <string-array name="travel">
+        <item>car</item>
+        <item>motor bike</item>
+        <item>Neither - I cycle , walk or use public transport</item>
+    </string-array>
+
+
+
+    <string-array name="carhours">
+        <item>under 2</item>
+        <item>2 to 5</item>
+        <item>5 to 15</item>
+        <item>15 to 25</item>
+        <item>over 25+</item>
+    </string-array>
+
+    <string-array name="bushours">
+        <item>I dont use the bus</item>
+        <item>Under 1</item>
+        <item>1 to 3</item>
+        <item>3 to 6</item>
+        <item>6 to 10</item>
+        <item> 10 + </item>
+    </string-array>
+
+    <string-array name="trainhours">
+        <item>I dont use the train </item>
+        <item>under 2 hours </item>
+        <item>2 to 5</item>
+        <item>5 to 15</item>
+        <item>15 to 25</item>
+        <item>over 25+</item>
+    </string-array>
+
+
+    <string name="description_info">Info</string>
+    <string name="request_permission">This app needs camera permission.</string>
+    <string name="camera_error">This device doesn\'t support Camera2 API.</string>
+    <string name="toggle_turn_on">NN:On</string>
+    <string name="toggle_turn_off">NN:Off</string>
+    <string name="toggle">Use NNAPI</string>
+    <string name="tflite">tflite</string>
+    <string name="nnapi">NNAPI</string>
+    <string name="threads">Threads:</string>
+
+    <string name="model">Model:</string>
+    <string-array name="models">
+        <item>Float</item>
+        <item>Quantized</item>
+    </string-array>
+
+    <string name="device">Device:</string>
+    <string-array name="devices">
+        <item>CPU</item>
+        <item>GPU</item>
+        <item>NNAPI</item>
+    </string-array>
 
 </resources>

@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".Register">
 
+    <ImageView
+        android:layout_width="580dp"
+        android:layout_height="725dp"
+        android:layout_gravity="center"
+        android:src="@drawable/homebackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="3dp">
+
+    </ImageView>
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="59dp"

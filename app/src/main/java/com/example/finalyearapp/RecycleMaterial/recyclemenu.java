@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.example.finalyearapp.MachineLearning.ClassifierActivity;
 import com.example.finalyearapp.R;
 
 
@@ -35,6 +36,16 @@ public class recyclemenu extends AppCompatActivity {
             }
         });
 
+        ImageView classification = (ImageView) findViewById(R.id.imageclassification);
+        quiz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent inttoQuiz = new Intent(recyclemenu.this, ClassifierActivity.class);
+                startActivity(inttoQuiz);
+
+            }
+        });
         ImageView recycle = (ImageView) findViewById(R.id.recycle);
         recycle.setOnClickListener(new View.OnClickListener() {
             @Override

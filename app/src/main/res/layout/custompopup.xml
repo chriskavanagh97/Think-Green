@@ -3,8 +3,8 @@
     android:orientation="vertical"
     android:layout_width="350dp"
     android:layout_height="475dp"
-    android:background="@color/colorPrimary"
     android:padding="5dp"
+    android:background="#FFFFFF"
     android:layout_gravity="center">
 
     <TextView
@@ -26,7 +26,7 @@
         android:text="TextView"
         android:textStyle="bold"
         android:textSize="20sp"
-        android:textColor="#FFFFFF"/>
+        android:textColor="#0E0000"/>
 
     <LinearLayout
         android:layout_marginTop="15dp"
@@ -38,6 +38,7 @@
         android:id="@+id/description"
         android:layout_width="match_parent"
         android:layout_height="259dp"
+        android:textSize="20sp"
         android:text="TextView"
         android:layout_marginTop="20dp"/>
 

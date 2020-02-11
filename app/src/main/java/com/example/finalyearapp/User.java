@@ -7,6 +7,7 @@ public class User {
     String firstName;
     String username;
     String email;
+    int posistion;
     private int score;
 
 
@@ -18,8 +19,8 @@ public class User {
         this.email = email;
         this.score = score;
     }
-    public User(String username, String email, int score ){
-        this.username = username;
+    public User(int posistion, String email, int score ){
+        this.posistion = posistion;
         this.email = email;
         this.score = score;
 

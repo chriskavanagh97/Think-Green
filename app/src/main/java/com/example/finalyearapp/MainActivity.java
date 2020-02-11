@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -68,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         //When Login is clicked it will check if each box contains a value and then check if the values are correct
         //=========================================================================================================================================================================================
 
-        Button login = (Button) findViewById(R.id.LoginButton);
+        ImageButton login = (ImageButton) findViewById(R.id.login);
         login.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -114,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
         //Creating a register intent so if people haven't signed up that they can register
         //=========================================================================================================================================================================================
 
-        TextView registerButton = (TextView) findViewById(R.id.Register);
+        ImageButton registerButton = (ImageButton) findViewById(R.id.Register);
         registerButton.setOnClickListener(new View.OnClickListener(){
 
             @Override
@@ -204,7 +205,7 @@ public class MainActivity extends AppCompatActivity {
         newQuestion4.setAnswerCorrect("25,0000");
         newQuestion4.setDescription("majority of it ends up in the ocean through deliberate dumping of garbage into waterways, inefficient waste infrastructure, and simple littering.");
         newQuestion4.setScore(100);
-        newQuestion4.setId(5);
+        newQuestion4.setId(1);
 
 
         mRootRef.child("Plastic").child("5").setValue(newQuestion4);
@@ -218,7 +219,7 @@ public class MainActivity extends AppCompatActivity {
         newQuestion5.setDescription("Plastic will never ever disappear, it will continually break down into smaller pieces, it highlights the importance of reducing plastic usage ");
         newQuestion5.setScore(100);
         mRootRef.child("Plastic").child("6").setValue(newQuestion5);
-        newQuestion5.setId(6);
+        newQuestion5.setId(2);
 
         Question newQuestion6 = new Question();
 
@@ -230,7 +231,7 @@ public class MainActivity extends AppCompatActivity {
         newQuestion6.setAnswerCorrect("Both A and c");
         newQuestion6.setDescription("Plastic bags are often mistaken for  jellyfish and consumed by turtles, plastic often floats and bobbles which is why it is mistaken for marine life");
         newQuestion6.setScore(100);
-        newQuestion6.setId(7);
+        newQuestion6.setId(3);
 
 
         mRootRef.child("Plastic").child("7").setValue(newQuestion6);
@@ -245,7 +246,7 @@ public class MainActivity extends AppCompatActivity {
         newQuestion7.setAnswerCorrect("693");
         newQuestion7.setDescription("A 2015 Plymouth University study compiled reports recorded from around the world and found evidence of 44,000 animals becoming entangled or swallowing plastic debris");
         newQuestion7.setScore(100);
-        newQuestion7.setId(8);
+        newQuestion7.setId(4);
 
 
         mRootRef.child("Plastic").child("8").setValue(newQuestion7);
@@ -261,7 +262,7 @@ public class MainActivity extends AppCompatActivity {
         newQuestion8.setAnswerCorrect("9%");
         newQuestion8.setDescription("if current production and management trends continue in the U.S., 12 billion Mt of plastic waste will end up in landfills or the ocean by 2050.");
         newQuestion8.setScore(100);
-        newQuestion8.setId(9);
+        newQuestion8.setId(1);
 
 
         mRootRef.child("Plastic").child("9").setValue(newQuestion8);
@@ -346,7 +347,7 @@ public class MainActivity extends AppCompatActivity {
         pollutionquiz4.setAnswerCorrect("1669 Gigatonnes");
         pollutionquiz4.setDescription("1669 Gigatonnes of CO2 over the 26 year period. 1 Gigatonne is equal to 1 billion tonnes. This study emphasizes the important role forests play in mitigating greenhouse gas emissions");
         pollutionquiz4.setScore(100);
-        pollutionquiz4.setId(5);
+        pollutionquiz4.setId(1);
 
         mRootRef.child("Pollution").child("5").setValue(pollutionquiz4);
 
@@ -360,7 +361,7 @@ public class MainActivity extends AppCompatActivity {
         pollutionquiz5.setAnswerCorrect("stopping the production of polluting materials");
         pollutionquiz5.setDescription("Toxins can be reduced through the substitution of nonpolluting alternatives, such as oxygen for chlorine in the bleaching of wood, or through green chemistry");
         pollutionquiz5.setScore(100);
-        pollutionquiz5.setId(6);
+        pollutionquiz5.setId(2);
 
         mRootRef.child("Pollution").child("6").setValue(pollutionquiz5);
 
@@ -426,7 +427,7 @@ public class MainActivity extends AppCompatActivity {
         ocean5.setAnswerCorrect("39%");
         ocean5.setDescription("According to the World Resources Institute, in 1995 2.2 billion people, or 39 percent of the world's population, lived on or within 100 kilometers of a seashore. Recent studies reveal that up to 600 million people live in Low Elevation Coastal Zones and 200 million people live within coastal flood plains. ");
         ocean5.setScore(100);
-        ocean5.setId(5);
+        ocean5.setId(1);
 
         mRootRef.child("Ocean").child("5").setValue(ocean5);
 
@@ -438,7 +439,7 @@ public class MainActivity extends AppCompatActivity {
         ocean6.setAnswerCorrect("coastal");
         ocean6.setDescription("Most areas of the world’s ocean are experiencing habitat loss, but coastal areas with their closeness to human population centres, have suffered disproportionately. Habitat los here has far reaching impacts on the entire ocean’s biodiversity. These critical areas which include estuaries, swamps, marshes and wetlands, serve as breeding grounds or nurseries for nearly all marine species");
         ocean6.setScore(100);
-        ocean6.setId(6);
+        ocean6.setId(2);
 
         mRootRef.child("Ocean").child("6").setValue(ocean6);
 
@@ -452,7 +453,7 @@ public class MainActivity extends AppCompatActivity {
         ocean7.setAnswerCorrect("90 percent");
         ocean7.setDescription("Industrial finishing accounts for wiping out 90% of large predatory fish, such as swordfish, marlin, and the biggest types of tuna. Since 1950, more than 50 million tons of tuna and other top predators have been taken from the pacific.");
         ocean7.setScore(100);
-        ocean7.setId(7);
+        ocean7.setId(3);
 
         mRootRef.child("Ocean").child("7").setValue(ocean7);
 
@@ -465,7 +466,7 @@ public class MainActivity extends AppCompatActivity {
         ocean8.setAnswerCorrect("Shelled Animals");
         ocean8.setDescription("When Carbon dioxide dissolves in the ocean, carbonic acid is formed. This leads to higher acidity, mainly near the surface, which has ben proven to inhibit shell growth in marine animals. Its also suspected as a cause of reproductive disorders in some fish");
         ocean8.setScore(100);
-        ocean8.setId(8);
+        ocean8.setId(4);
 
         mRootRef.child("Ocean").child("8").setValue(ocean8);
 
@@ -477,7 +478,7 @@ public class MainActivity extends AppCompatActivity {
         ocean9.setAnswerCorrect("Bottom feeding fish");
         ocean9.setDescription("");
         ocean9.setScore(100);
-        ocean9.setId(9);
+        ocean9.setId(1);
 
         mRootRef.child("Ocean").child("9").setValue(ocean9);
 

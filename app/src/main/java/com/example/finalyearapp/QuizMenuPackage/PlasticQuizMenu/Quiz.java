@@ -1,18 +1,20 @@
 package com.example.finalyearapp.QuizMenuPackage.PlasticQuizMenu;
 
 
-
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -20,6 +22,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.finalyearapp.Question;
+
 import com.example.finalyearapp.QuizResults;
 import com.example.finalyearapp.R;
 import com.google.firebase.database.DataSnapshot;
@@ -28,30 +31,48 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.Random;
+
+
 
 public class Quiz extends AppCompatActivity {
+
+    private int score;
+    String description;
+    int id;
+    private boolean answered;
+    private RadioGroup rbGroup;
 
     private RadioButton b1;
     private RadioButton b2;
     private RadioButton b3;
     private RadioButton b4;
-    Button popup;
-    String answeresult;
+    private Button popup;
+
+
+    private long timeLeftInMillis;
+    boolean answer;
+
     private TextView t1_question;
-    String answer;
-    private TextView description;
-    private int total = 1;
+    private TextView next;
     private int incorrect = 0;
     private int correct =0;
-    int n;
+    int total = 1;
+    int answerNr;
+
+
 
     Dialog myDialog;
 
+
+
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
+
+
 
         b1 = (RadioButton) findViewById(R.id.option1);
         b2 = (RadioButton) findViewById(R.id.option2);
@@ -60,158 +81,156 @@ public class Quiz extends AppCompatActivity {
 
 
 
-
+        total ++;
         t1_question = (TextView) findViewById(R.id.questionsTxt);
-
-        description =  (TextView) findViewById(R.id.description);
         UpdateQuestion();
 
+
+
         myDialog = new Dialog(this);
-    }
-    public void ShowPopup(View v) {
 
-            TextView txtclose;
-            Button btnFollow;
-            myDialog.setContentView(R.layout.custompopup);
-            txtclose =(TextView) myDialog.findViewById(R.id.txtclose);
-            txtclose.setText("M");
-
-            txtclose.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    myDialog.dismiss();
-                }
-            });
-            myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-            myDialog.show();
     }
 
-    private void UpdateQuestion(){
 
 
-        if(total >4) {
 
-            description.setText("Completed");
+
+    private void UpdateQuestion() {
+
+
+        if (total > 5) {
             details();
-
-        }
-        else
-        {
-
+        } else {
 
             DatabaseReference databaseref = FirebaseDatabase.getInstance().getReference().child("Questions").child("Plastic").child(String.valueOf(total));
             databaseref.addValueEventListener(new ValueEventListener() {
+
                 @Override
+
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
                     final Question question = dataSnapshot.getValue(Question.class);
+
                     t1_question.setText(question.getQuestion());
                     b1.setText(question.getAnswer1());
                     b2.setText(question.getAnswer2());
                     b3.setText(question.getAnswer3());
                     b4.setText(question.getAnswerCorrect());
-
-
-                    b1.setOnClickListener(new View.OnClickListener(){
-
-                        @Override
-                        public void onClick(View v) {
-
-                            boolean checked = ((RadioButton) v).isChecked();
-
-                            switch (v.getId())
-                            {
-                                case R.id.option1:
-                                    if (checked)
-                                        answer = "wrong";
-
-
-                                case R.id.option2:
-                                    if (checked)
-                                        answer = "wrong";
-
-
-                                case R.id.option3:
-                                    if (checked)
-                                        answer = "wrong";
-
-
-                                case R.id.option4:
-                                    if (checked)
-                                        answer = "correct";
-
-
-                            }
-
-                        }
-                    });
+                    description = question.getDescription();
+                    id = question.getId();
 
                     popup = (Button) findViewById(R.id.popup);
                     popup.setOnClickListener(new View.OnClickListener() {
                         @Override
-                        public void onClick(View v)
-                        {
+                        public void onClick(View v) {
 
+                            rbGroup = (RadioGroup) findViewById(R.id.rbGroup);
+                            RadioButton rbSelected = findViewById(rbGroup.getCheckedRadioButtonId());
+                            int answerNr = rbGroup.indexOfChild(rbSelected);
 
-                            TextView txtclose;
-                            Button btnFollow;
-                            myDialog.setContentView(R.layout.custompopup);
-                            txtclose =(TextView) myDialog.findViewById(R.id.txtclose);
-                            txtclose.setText("X");
+                            if (answerNr == id) {
 
-                            TextView txtanswer = (TextView) myDialog.findViewById(R.id.Answer);
+                                answer = true;
 
-                            if (answer.equals("wrong"))
-                            {
-                                txtanswer.setText("Sorry this is Incorrect");
-                                incorrect ++;
-                            }
-                            else {
-                                txtanswer.setText("Well done this is correct");
-                                correct ++;
-
+                            } else {
+                                answer = false;
                             }
 
-                            TextView textview = (TextView) myDialog.findViewById(R.id.description);
-                            textview.setText(question.getDescription());
+                            ShowPopup();
 
-                            txtclose.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-                                    myDialog.dismiss();
-                                    total ++;
-                                }
-                            });
-                            myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                            myDialog.show();
                         }
 
-                        });
+
+                    });
+
                 }
-
-
                 @Override
                 public void onCancelled(@NonNull DatabaseError databaseError) {
 
+
                 }
             });
-
         }
     }
+
+    public void ShowPopup() {
+
+            TextView txtclose;
+            Button btnFollow;
+            myDialog.setContentView(R.layout.custompopup);
+            txtclose = (TextView) myDialog.findViewById(R.id.txtclose);
+            txtclose.setText("X");
+
+            TextView txtanswer = (TextView) myDialog.findViewById(R.id.Answer);
+            if (answer== false) {
+                txtanswer.setBackgroundColor(Color.RED);
+                txtanswer.setText("Sorry this is Incorrect");
+                incorrect++;
+
+            } else {
+                txtanswer.setBackgroundColor(Color.GREEN);
+                txtanswer.setText("Well done this is correct");
+                correct++;
+
+            }
+
+
+            TextView textview = (TextView) myDialog.findViewById(R.id.description);
+            textview.setText(description);
+            txtclose.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+
+                    myDialog.dismiss();
+                    total++;
+                    UpdateQuestion();
+
+                }
+
+            });
+            myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            myDialog.show();
+
+        }
+
+
+
+
+
+
+
+
+
+
     private void details(){
 
+
+
         total = total -1 ;
+
         Intent resultintent = new Intent(Quiz.this, QuizResults.class);
         resultintent.putExtra("total",String.valueOf(total));
         resultintent.putExtra("correct",String.valueOf(correct));
         resultintent.putExtra("incorrect",String.valueOf(incorrect));
         startActivity(resultintent);
 
+
+
     }
+
+
+
 
 
     protected void onStart() {
+
         super.onStart();
+
         Intent intent = getIntent();
+
+    }
     }
 
-}
+
+

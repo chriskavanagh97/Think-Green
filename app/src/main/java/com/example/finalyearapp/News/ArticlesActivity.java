@@ -10,15 +10,11 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.finalyearapp.R;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -26,7 +22,6 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-
 import javax.net.ssl.HttpsURLConnection;
 
 
@@ -51,7 +46,7 @@ public class ArticlesActivity extends AppCompatActivity {
         setTitle(name);
 
 
-        FEED_URL = "https://newsapi.org/v2/everything?q=climate&from=2020-01-21&sortBy=publishedAt&apiKey=e31fb6b25b2d4051ac0b1b62f49d2d69";
+        FEED_URL = "https://newsapi.org/v2/everything?q=climate-crisis&from=2020-01-21&sortBy=popularity&apiKey=e31fb6b25b2d4051ac0b1b62f49d2d69";
         mListView = (ListView) findViewById(R.id.listView);
 
 

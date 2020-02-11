@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.MyViewHolder> {
 
-    OnClickListener monClickListener;
+
 
     private LayoutInflater inflater;
     private ArrayList<QuizModel> imageModelArrayList;
@@ -60,6 +60,7 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.MyViewHolder> 
 
 
                     Intent intent = new Intent(v.getContext(), OceanQuizMenu.class);
+                    v.getContext().startActivity(intent);
 
 
 
@@ -80,7 +81,7 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.MyViewHolder> 
 
 
         ImageView iv;
-        OnClickListener onClickListener;
+
 
         public MyViewHolder( View itemView ) {
             super(itemView);
@@ -91,10 +92,6 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.MyViewHolder> 
         }
 
     }
-    public interface OnClickListener {
-        void onClickListener(int posistion);
 
-
-    }
 
 }

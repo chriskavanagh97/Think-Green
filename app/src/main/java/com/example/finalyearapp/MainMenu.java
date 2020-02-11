@@ -15,6 +15,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.example.finalyearapp.Carbonfootprint.StepOne;
 import com.example.finalyearapp.Leaderboard.Leaderboard;
 import com.example.finalyearapp.News.ArticlesActivity;
 import com.example.finalyearapp.QuizMenuPackage.QuizMenu;
@@ -95,6 +96,16 @@ public class MainMenu extends AppCompatActivity {
 
                 Intent inttoQuiz = new Intent(MainMenu.this, QuizMenu.class);
                 startActivity(inttoQuiz);
+
+            }
+        });
+        ImageView carbonfootprint = (ImageView) findViewById(R.id.Carbonfootprint);
+        carbonfootprint.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent footprint = new Intent(MainMenu.this, StepOne.class);
+                startActivity(footprint);
 
             }
         });

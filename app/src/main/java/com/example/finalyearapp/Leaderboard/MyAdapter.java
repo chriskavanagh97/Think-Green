@@ -61,10 +61,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         //get element from your dataset at this position
         //replace the contents of the view with that element
         final User user = UserList.get(position);
-
-        holder.txtView2.setText(user.getUsername());
-
-        holder.txtView.setText(user.getEmail());
+        int i = 1;
+        holder.txtView.setText(String.valueOf(i));
+        i ++;
+        holder.txtView2.setText(user.getEmail());
 
         holder.txtView3.setText(String.valueOf((user.getScore())));
     }

@@ -20,12 +20,12 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/Leaderboard"
+                android:id="@+id/imageclassification"
                 android:layout_width="122dp"
                 android:layout_height="148dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="255dp"
-                android:src="@drawable/plastic" />
+                android:src="@drawable/imageclassification" />
 
             <TextView
                 android:layout_width="102dp"
@@ -83,10 +83,10 @@
 
             <TextView
                 android:layout_width="105dp"
-                android:layout_height="37dp"
+                android:layout_height="65dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginBottom="304dp"
-                android:text="Games"
+                android:text="What to do with my Materials"
                 android:textColor="#181C34"
                 android:textSize="16sp">
 

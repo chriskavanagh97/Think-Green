@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:background="@drawable/homebackground"
+
     tools:context=".MainMenu">
 
 
@@ -71,12 +71,10 @@
         android:id="@+id/mainContent"
         android:layout_width="360dp"
         android:layout_height="match_parent"
-        android:background="@color/colorPrimary"
-        android:translationX="-260dp">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/homebackground"/>
+        android:translationX="-260dp"
+        android:background="@drawable/homebackground">
+
+
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -85,69 +83,46 @@
             android:background="@color/colorPrimaryDark"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:logo="@drawable/ic_menu">
-
-
         </androidx.appcompat.widget.Toolbar>
+
 
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="horizontal"
             android:weightSum="3">
 
             <LinearLayout
-                android:layout_width="10dp"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/Leaderboard"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="117dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="255dp"
                     android:src="@drawable/leaderboard" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="37dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginBottom="304dp"
-                    android:text="Leaderboard"
-                    android:textColor="#181C34"
-                    android:textSize="16sp">
-
-                </TextView>
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/recycle"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="117dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="255dp"
                     android:src="@drawable/recyclemenu" />
-
-
-                <TextView
-                    android:layout_width="102dp"
-                    android:layout_height="37dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginBottom="304dp"
-                    android:text="Recycle"
-                    android:textColor="#181C34"
-                    android:textSize="16sp">
-
-                </TextView>
 
 
             </LinearLayout>
@@ -161,21 +136,11 @@
                 <ImageView
                     android:id="@+id/Quiz"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="117dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="255dp"
                     android:src="@drawable/quizmenu" />
 
-                <TextView
-                    android:layout_width="102dp"
-                    android:layout_height="35dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginBottom="304dp"
-                    android:text="Quiz Menu"
-                    android:textColor="#181C34"
-                    android:textSize="16sp">
-
-                </TextView>
 
             </LinearLayout>
 
@@ -185,33 +150,44 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="3">
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-        <ImageView
-            android:id="@+id/News"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="60dp"
-            android:src="@drawable/quizmenu" />
 
-        <TextView
-            android:layout_width="102dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginBottom="90dp"
-            android:text="Environment News"
-            android:textColor="#181C34"
-            android:textSize="16sp">
-        </TextView>
-        </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="232dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/News"
+                    android:layout_width="wrap_content"
+                    android:layout_height="117dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="60dp"
+                    android:src="@drawable/news" />
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="232dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/Carbonfootprint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="117dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="60dp"
+                    android:src="@drawable/news" />
+
+
+
+            </LinearLayout>
         </LinearLayout>
 
 
     </RelativeLayout>
 </LinearLayout>
-
-

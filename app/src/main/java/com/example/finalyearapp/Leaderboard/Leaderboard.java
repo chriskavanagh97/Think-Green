@@ -2,13 +2,11 @@ package com.example.finalyearapp.Leaderboard;
 
 import android.content.Intent;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.finalyearapp.R;
 import com.example.finalyearapp.User;
 import com.google.firebase.database.DataSnapshot;
@@ -58,19 +56,20 @@ public class Leaderboard extends AppCompatActivity {
 
 
         Query queryRef = database.orderByChild("score").limitToLast(10);
-        queryRef.addValueEventListener(new ValueEventListener() {
+        queryRef.addValueEventListener(new ValueEventListener()
+        {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot)
+            {
 
-                //User user =dataSnapshot.getValue(User.class);
 
-                //leaderboardlist.add(new User(user.getUsername(),user.getEmail(),user.getScore()));
 
 
                 for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren())
                 {
+                    int i = 1;
                     User p = dataSnapshot1.getValue(User.class);
-                    leaderboardlist.add(new User(p.getUsername(),p.getEmail(),p.getScore()));
+                    leaderboardlist.add(new User(i,p.getEmail(),p.getScore()));
                 }
 
 
