@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/calculatorbackground"
+    tools:context=".Carbonfootprint.StepFour">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Home"
+        android:textColor="#0C0000"
+        android:textSize="30sp" />
+
+    <TextView
+        android:layout_width="273dp"
+        android:layout_height="86dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:text="How would you best describe your diet"
+        android:id="@+id/textView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#0C0000"
+        android:textSize="20sp" />
+
+
+    <Spinner
+        android:id="@+id/values"
+        android:layout_width="209dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp" />
+
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:text="submit" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_marginBottom="15dp"
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="HOW YOU USE ENERGY AT HOME PLAYS A BIG PART IN YOUR CARBON IMPACT ON THE WORLD."
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#050505"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_marginBottom="15dp"
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="105dp"
+            android:text="19 million UK homes have poor levels of energy efficiency – meaning that people are wasting energy and money heating the street around their home!"
+            android:textColor="#070000" />
+
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="255dp"
+            android:layout_height="101dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/home" />
+    </LinearLayout>
+
+
+</LinearLayout>
+

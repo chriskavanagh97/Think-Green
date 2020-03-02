@@ -14,6 +14,7 @@
  limitations under the License.
 -->
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -26,31 +27,32 @@
         android:orientation="vertical">
 
 
-        <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
+        <FrameLayout
             android:id="@+id/container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@android:color/black"
-            tools:context="org.tensorflow.lite.examples.classification.com.example.finalyearapp.MachineLearning.CameraActivity" />
+            tools:context="org.tensorflow.lite.examples.classification.com.example.finalyearapp.MachineLearning.CameraActivity" >
+
+            <include
+                android:id="@+id/bottom_sheet_layout"
+                layout="@layout/layout_bottom_sheet" />
+        </FrameLayout>
 
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="52dp"
             android:layout_alignParentTop="true"
             android:background="@color/semi_transparent">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/tfl2_logo" />
+                android:layout_width="300dp"
+                android:layout_height="150dp"
+                android:src="@drawable/thinkgreen" />
         </androidx.appcompat.widget.Toolbar>
 
     </RelativeLayout>
 
-    <include
-        android:id="@+id/bottom_sheet_layout"
-        layout="@layout/layout_bottom_sheet" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

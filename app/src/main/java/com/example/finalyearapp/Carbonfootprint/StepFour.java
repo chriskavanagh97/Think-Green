@@ -1,0 +1,432 @@
+package com.example.finalyearapp.Carbonfootprint;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.finalyearapp.R;
+
+public class StepFour extends AppCompatActivity {
+    int i = 1;
+    Spinner mySpinner;
+    TextView text;
+
+    String housesize;
+    int population;
+    int bedrooms;
+    String heating;
+    int degrees;
+
+    String kwh;
+    int yearlyvalue;
+
+    TextView tv1;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_step_one);
+
+        text = findViewById(R.id.textView);
+        mySpinner = (Spinner) findViewById(R.id.values);
+        Calculator();
+
+
+
+
+
+    }
+
+    public void Calculator()
+    {
+
+
+        if(i >5) {
+            Toast.makeText(StepFour.this, "finito" , Toast.LENGTH_SHORT).show();
+            Calculation();
+
+        }
+        else {
+
+            if(i == 1)
+            {
+
+                String message = getString(R.string.homeq1);
+                text.setText(message);
+
+                ArrayAdapter<String> myAdapter = new ArrayAdapter<>(StepFour.this,
+                        android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.home1));
+
+                myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                mySpinner.setAdapter((myAdapter));
+            }
+            if(i == 2)
+            {
+                String message = getString(R.string.homeq2);
+                text.setText(message);
+
+                ArrayAdapter<String> myAdapter = new ArrayAdapter<>(StepFour.this,
+                        android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.home2));
+
+                myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                mySpinner.setAdapter((myAdapter));
+            }
+
+            if(i == 3)
+            {
+                String message = getString(R.string.homeq3);
+                text.setText(message);
+
+                ArrayAdapter<String> myAdapter = new ArrayAdapter<>(StepFour.this,
+                        android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.home3));
+
+                myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                mySpinner.setAdapter((myAdapter));
+            }
+            if(i == 4)
+            {
+                String message = getString(R.string.homeq4);
+                text.setText(message);
+
+                ArrayAdapter<String> myAdapter = new ArrayAdapter<>(StepFour.this,
+                        android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.home4));
+
+                myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                mySpinner.setAdapter((myAdapter));
+            }
+            if(i == 5)
+            {
+                String message = getString(R.string.homeq5);
+                text.setText(message);
+
+                ArrayAdapter<String> myAdapter = new ArrayAdapter<>(StepFour.this,
+                        android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.home4));
+
+                myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                mySpinner.setAdapter((myAdapter));
+            }
+
+            Button submit = (Button) findViewById(R.id.submit);
+            submit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v)
+                {
+                    if(i == 1 & mySpinner.getSelectedItem().equals("detatched")){
+
+                        housesize = "detatched";
+                        Calculator();
+
+                    }
+/*
+===========================================================================================================
+QUESTION TWO ANSWERS
+===========================================================================================================
+ */
+
+                    else if(i == 1 & mySpinner.getSelectedItem().equals("semi detatched"))
+                    {
+
+                        housesize = "semi detatched";
+                        i = i + 1;
+                        Calculator();
+                    }
+                    else if(i == 1 & mySpinner.getSelectedItem().equals("terrace")) {
+
+                        housesize = "terrace";
+                        i = i + 1;
+                        Calculator();
+                    }
+
+                    else if(i == 1 & mySpinner.getSelectedItem().equals("flat")) {
+
+                        housesize = "flat";
+                        i = i + 1;
+                        Calculator();
+                    }
+
+                    else if(i == 2 & mySpinner.getSelectedItem().equals("1")) {
+
+                        bedrooms = 1;
+                        i = i + 1;
+                        Calculator();
+                    }
+
+                    else if(i == 2 & mySpinner.getSelectedItem().equals("2")) {
+
+                        bedrooms = 2;
+                        i = i + 1;
+                        Calculator();
+                    }
+
+                    else if(i == 2 & mySpinner.getSelectedItem().equals("3")) {
+
+                        bedrooms = 3;
+                        i = i + 1;
+                        Calculator();
+                    }
+
+                    else if(i == 2 & mySpinner.getSelectedItem().equals("4 or more")) {
+
+                        bedrooms = 4;
+                        i = i + 1;
+                        Calculator();
+                    }
+
+
+/*
+===========================================================================================================
+QUESTION THREE ANSWERS
+===========================================================================================================
+ */
+
+                    else if(i == 3 & mySpinner.getSelectedItem().equals("1")) {
+
+                        population = 1;
+                        i = i + 1;
+                        Calculator();
+                    }
+
+                    else if(i == 3 & mySpinner.getSelectedItem().equals("2")) {
+
+                        population = 2;
+                        i = i + 1;
+                        Calculator();
+                    }
+
+                    else if(i == 3 & mySpinner.getSelectedItem().equals("3")) {
+
+                        population = 3;
+                        i = i + 1;
+                        Calculator();
+                    }
+
+                    else if(i == 3 & mySpinner.getSelectedItem().equals("4")) {
+
+                        population = 4;
+                        i = i + 1;
+                        Calculator();
+                    }
+                    else if(i == 3 & mySpinner.getSelectedItem().equals("5 or more")) {
+
+                        population = 5;
+                        i = i + 1;
+                        Calculator();
+                    }
+/*
+===========================================================================================================
+QUESTION FOUR ANSWERS
+===========================================================================================================
+ */
+
+                    else if(i == 4 & mySpinner.getSelectedItem().equals("electricity")) {
+
+                        heating = "electricity";
+                        i = i + 1;
+                        Calculator();
+                    }
+
+                    else if(i == 4 & mySpinner.getSelectedItem().equals("wood")) {
+
+                        heating = "wood";
+                        i = i + 1;
+                        Calculator();
+                    }
+
+                    else if(i == 4 & mySpinner.getSelectedItem().equals("oil")) {
+
+                        heating = "oil";
+                        i = i + 1;
+                        Calculator();
+                    }
+                    else if(i == 4 & mySpinner.getSelectedItem().equals("gass")) {
+
+                        heating = "gass";
+                        i = i + 1;
+                        Calculator();
+                    }
+
+
+/*
+===========================================================================================================
+QUESTION FIVE ANSWERS
+===========================================================================================================
+ */
+
+
+                    else if(i == 5 & mySpinner.getSelectedItem().equals("below 14 degrees")) {
+
+                        degrees = 10;
+                        i = i + 1;
+                        Calculator();
+                    }
+
+                    else if(i == 5 & mySpinner.getSelectedItem().equals("14 to 17 degrees")) {
+
+                        degrees = 15;
+                        i = i + 1;
+                        Calculator();
+                    }
+
+                    else if(i == 5 & mySpinner.getSelectedItem().equals("18 to 21 degrees")) {
+
+                        degrees = 20;
+                        i = i + 1;
+                        Calculator();
+                    }
+                    else if(i == 5 & mySpinner.getSelectedItem().equals("over 21 degrees")) {
+
+                        degrees = 25;
+                        i = i + 1;
+                        Calculator();
+                    }
+
+
+
+                    else {
+                        Toast.makeText(StepFour.this, "submitted", Toast.LENGTH_SHORT).show();
+                        i = i + 1;
+                        Calculator();
+
+                    }
+
+                }
+            });
+
+
+
+        }
+    }
+    public void Calculation(){
+
+
+        Toast.makeText(StepFour.this, population + "\n" + heating, Toast.LENGTH_SHORT).show();
+
+        if(population <= 2)
+        {
+            kwh = "low";
+            kwh();
+        }
+        else if(population <= 3 & housesize.equals("terrace") || population <= 3 & housesize.equals("flat"))
+        {
+            kwh = "low";
+            kwh();
+        }
+        else if(population == 3  & housesize.equals("semi detatched"))
+        {
+            kwh = "medium";
+            kwh();
+        }
+        else if(population > 3 & bedrooms <=3 ){
+
+            kwh = "medium";
+        }
+        else if(population > 4  ){
+
+            kwh = "high";
+            kwh();
+        }
+
+    }
+
+    public void kwh(){
+
+        Toast.makeText(StepFour.this, kwh + heating, Toast.LENGTH_SHORT).show();
+
+        if (kwh.equals("low") &  heating.equals("electricity") || kwh.equals("low") &  heating.equals("wood")) {
+
+            yearlyvalue = 609;
+
+            Toast.makeText(StepFour.this, "parsing method ", Toast.LENGTH_SHORT).show();
+
+            parsing();
+
+
+        }
+        else if (kwh.equals("medium") &  heating.equals("electricity") || kwh.equals("medium") &  heating.equals("wood")) {
+
+            yearlyvalue = 802;
+            Toast.makeText(StepFour.this, "parsing method ", Toast.LENGTH_SHORT).show();
+            parsing();
+
+
+        }
+        else if (kwh.equals("high") &  heating.equals("electricity") || kwh.equals("high") &  heating.equals("wood")) {
+
+            yearlyvalue = 1134;
+            Toast.makeText(StepFour.this, "parsing method ", Toast.LENGTH_SHORT).show();
+            parsing();
+
+
+        }
+        else if (kwh.equals("low") &  heating.equals("gass") || kwh.equals("low") &  heating.equals("oil")) {
+
+            yearlyvalue = 415;
+            Toast.makeText(StepFour.this, "parsing method ", Toast.LENGTH_SHORT).show();
+            parsing();
+
+
+        }
+        else if (kwh.equals("medium") &  heating.equals("gass") || kwh.equals("medium") &  heating.equals("oil")) {
+
+            yearlyvalue = 662;
+            Toast.makeText(StepFour.this, "parsing method ", Toast.LENGTH_SHORT).show();
+            parsing();
+
+
+        }
+        else if (kwh.equals("high") &  heating.equals("gass") || kwh.equals("high") &  heating.equals("oil")) {
+
+            yearlyvalue = 824;
+            Toast.makeText(StepFour.this, "parsing method ", Toast.LENGTH_SHORT).show();
+            parsing();
+
+
+        }
+    }
+    public void parsing()
+    {
+        Toast.makeText(StepFour.this, "parsing groups", Toast.LENGTH_SHORT).show();
+        Intent i = getIntent();
+
+        String mpg = i.getStringExtra("mpg");
+        String miles = i.getStringExtra("miles");
+        String bushours = i.getStringExtra("train");
+        String trainhours = i.getStringExtra("bus");
+
+        String beauty = i.getStringExtra("beauty");
+        String entertainment = i.getStringExtra("clothes");
+        String household = i.getStringExtra("entertainment");
+        String clothes = i.getStringExtra("house");
+        Toast.makeText(StepFour.this, "parsing method completed ", Toast.LENGTH_SHORT).show();
+
+        Toast.makeText(StepFour.this, mpg + "\n" + miles + "\n" + bushours  + "\n" + trainhours  + "\n" + beauty  + "\n" + entertainment  + "\n" + household  + "\n" + clothes  + "\n" + yearlyvalue, Toast.LENGTH_SHORT).show();
+        Toast.makeText(StepFour.this, mpg + "\n" + miles + "\n" + bushours  + "\n" + trainhours  + "\n" + beauty  + "\n" + entertainment  + "\n" + household  + "\n" + clothes  + "\n" + yearlyvalue, Toast.LENGTH_SHORT).show();
+        Toast.makeText(StepFour.this, mpg + "\n" + miles + "\n" + bushours  + "\n" + trainhours  + "\n" + beauty  + "\n" + entertainment  + "\n" + household  + "\n" + clothes  + "\n" + yearlyvalue, Toast.LENGTH_SHORT).show();
+        Toast.makeText(StepFour.this, mpg + "\n" + miles + "\n" + bushours  + "\n" + trainhours  + "\n" + beauty  + "\n" + entertainment  + "\n" + household  + "\n" + clothes  + "\n" + yearlyvalue, Toast.LENGTH_SHORT).show();
+        Toast.makeText(StepFour.this, mpg + "\n" + miles + "\n" + bushours  + "\n" + trainhours  + "\n" + beauty  + "\n" + entertainment  + "\n" + household  + "\n" + clothes  + "\n" + yearlyvalue, Toast.LENGTH_SHORT).show();
+
+
+
+
+
+    }
+
+    public void showMessage(String title, String Message){
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(true);
+        builder.setTitle(title);
+        builder.setMessage(Message);
+        builder.show();
+
+
+    }
+}

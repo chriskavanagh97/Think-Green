@@ -9,6 +9,18 @@
     <string name="travelq5">Hours spent on a bus per week</string>
     <string name="travelq6">How many return flights have you made to the following regions</string>
 
+    <string name="homeq1">What kind of house do you live in?></string>
+    <string name="homeq2">How many bedrooms does your house have</string>
+    <string name="homeq3">How many people live in your house</string>
+    <string name="homeq4">What is the main source for heating your home</string>
+    <string name="homeq5">How warm do you keep your home in winter</string>
+
+
+    <string name="stuffq1">In the last 12 months, have much have spent on any of these new household items?</string>
+    <string name="stuffq2">In a typical month, how much do you spend on clothes and footwear</string>
+    <string name="stuffq3">In a typical month, how much do you spend on health, beauty and grooming products?</string>
+    <string name="stuffq4">In a typical month, how much do you spend on phone, internet and TV contracts?</string>
+
 
     <string name="title_activity_pollution_quizmenu">pollutionQuizmenu</string>
 
@@ -42,33 +54,97 @@
         <item>Neither - I cycle , walk or use public transport</item>
     </string-array>
 
-
-
-    <string-array name="carhours">
-        <item>under 2</item>
-        <item>2 to 5</item>
-        <item>5 to 15</item>
-        <item>15 to 25</item>
-        <item>over 25+</item>
+    <string-array name="travel2">
+        <item>Electric car</item>
+        <item>Plug-in Hybrid car</item>
+        <item>Hybrid car</item>
+        <item>small petrol or diesel car</item>
+        <item>medium petrol or diesel car</item>
+        <item>large petrol or diesel car</item>
     </string-array>
 
-    <string-array name="bushours">
-        <item>I dont use the bus</item>
-        <item>Under 1</item>
-        <item>1 to 3</item>
-        <item>3 to 6</item>
-        <item>6 to 10</item>
-        <item> 10 + </item>
+    <string-array name="travel3">
+        <item>0 to 120km</item>
+        <item>120km to 250km</item>
+        <item>250km to 370km</item>
+        <item>370km to 500km</item>
+        <item>500+</item>
     </string-array>
 
-    <string-array name="trainhours">
-        <item>I dont use the train </item>
-        <item>under 2 hours </item>
-        <item>2 to 5</item>
-        <item>5 to 15</item>
-        <item>15 to 25</item>
-        <item>over 25+</item>
+    <string-array name="travel4">
+        <item>I dont travel by train</item>
+        <item>under 2 hours</item>
+        <item>2 to 5 hours</item>
+        <item>5 to 15 hours</item>
+        <item>15 to 25 hours</item>
+        <item>over 25 hours</item>
     </string-array>
+
+    <string-array name="travel5">
+        <item>I dont travel by bus</item>
+        <item>under 1 hour</item>
+        <item>1 to 3 hours</item>
+        <item>3 to 6 hours</item>
+        <item>6 to 10 hours</item>
+        <item>over 10 hours</item>
+    </string-array>
+
+    <string-array name="travel6">
+        <item>meat in every meal</item>
+        <item>meat in some meals</item>
+        <item>meat very rarely</item>
+        <item>no beef</item>
+        <item>vegetarian</item>
+        <item>vegan</item>
+    </string-array>
+
+    <string-array name="travel7">
+        <item>meat in every meal</item>
+        <item>meat in some meals</item>
+        <item>meat very rarely</item>
+        <item>no beef</item>
+        <item>vegetarian</item>
+        <item>vegan</item>
+    </string-array>
+
+    <string-array name="home1">
+        <item>detatched</item>
+        <item>semi detatched</item>
+        <item>terrace</item>
+        <item>flat</item>
+    </string-array>
+
+    <string-array name="home2">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4 or more</item>
+    </string-array>
+
+    <string-array name="home3">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5 or more</item>
+    </string-array>
+
+    <string-array name="home4">
+        <item>electricity</item>
+        <item>wood</item>
+        <item>oil</item>
+        <item>gass</item>
+    </string-array>
+
+    <string-array name="home5">
+        <item>below 14 degrees</item>
+        <item>14 to 17 degrees</item>
+        <item>18 to 21 degrees</item>
+        <item>over 21 degrees</item>
+    </string-array>
+
+
+
 
 
     <string name="description_info">Info</string>

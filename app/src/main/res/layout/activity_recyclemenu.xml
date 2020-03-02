@@ -8,16 +8,17 @@
 
 
     <LinearLayout
-        android:weightSum="3"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:layout_weight="1"
-            android:orientation="vertical"
             android:layout_width="10dp"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/imageclassification"
@@ -41,10 +42,10 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_weight="1"
-            android:orientation="vertical"
             android:layout_width="0dp"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/recycle"
@@ -68,10 +69,10 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_weight="1"
-            android:orientation="vertical"
             android:layout_width="0dp"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/Quiz"

@@ -3,7 +3,7 @@ package com.example.finalyearapp;
 
 import java.util.Map;
 
-class Score {
+public class Score {
 
 
     private String Username;

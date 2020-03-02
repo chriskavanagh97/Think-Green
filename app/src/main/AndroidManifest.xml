@@ -3,6 +3,7 @@
     package="com.example.finalyearapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Carbonfootprint.StepTwo"></activity>
+        <activity android:name=".Carbonfootprint.StepFour"></activity>
+        <activity android:name=".Carbonfootprint.StepThree" />
+        <activity android:name=".Carbonfootprint.StepTwo" />
         <activity android:name=".Carbonfootprint.StepOne" />
         <activity android:name=".News.ArticlesActivity" />
         <activity
@@ -29,10 +32,14 @@
         <activity android:name=".QuizMenuPackage.PollutionQuizPackage.PollutionQuiz" />
         <activity android:name=".ViewUser" />
         <activity android:name=".ReviewQuestions" />
-        <activity android:name=".QuizResults" />
+        <activity android:name=".QuizMenuPackage.QuizResults" />
         <activity android:name=".QuizMenuPackage.QuizMenu" />
         <activity android:name=".Register" />
         <activity android:name=".MainMenu" />
+        <activity
+            android:name=".MachineLearning.ClassifierActivity"
+            android:label="@string/activity_name_classification"
+            android:screenOrientation="portrait" />
         <activity android:name=".HomeScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
