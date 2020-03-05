@@ -46,7 +46,7 @@ public class ArticlesActivity extends AppCompatActivity {
         setTitle(name);
 
 
-        FEED_URL = "https://newsapi.org/v2/everything?q=climate-crisis&from=2020-01-21&sortBy=popularity&apiKey=e31fb6b25b2d4051ac0b1b62f49d2d69";
+        FEED_URL = "https://newsapi.org/v2/everything?q=climate crisis&from=2020-02-05&apiKey=e31fb6b25b2d4051ac0b1b62f49d2d69";
         mListView = (ListView) findViewById(R.id.listView);
 
 

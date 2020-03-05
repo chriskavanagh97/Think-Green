@@ -413,6 +413,19 @@ QUESTION FIVE ANSWERS
         Toast.makeText(StepFour.this, mpg + "\n" + miles + "\n" + bushours  + "\n" + trainhours  + "\n" + beauty  + "\n" + entertainment  + "\n" + household  + "\n" + clothes  + "\n" + yearlyvalue, Toast.LENGTH_SHORT).show();
         Toast.makeText(StepFour.this, mpg + "\n" + miles + "\n" + bushours  + "\n" + trainhours  + "\n" + beauty  + "\n" + entertainment  + "\n" + household  + "\n" + clothes  + "\n" + yearlyvalue, Toast.LENGTH_SHORT).show();
 
+        String url = "https://apis.berkeley.edu/coolclimate/footprint-sandbox? input_size=" + population +
+                "&input_footprint_transportation_miles1="+miles+
+                "&input_footprint_transportation_mpg1="+ mpg +
+                "&input_footprint_transportation_bus="+ bushours +
+                "&input_footprint_transportation_commuter=" + trainhours +
+                "&input_footprint_shopping_goods_default_furnitureappliances=" + household +
+                "&input_footprint_shopping_goods_default_clothing=" + clothes +
+                "&input_footprint_shopping_goods_default_other_personalcare=" + beauty +
+                "&input_footprint_shopping_goods_default_other_entertainment=" + entertainment +
+                "&input_footprint_housing_electricity_dollars="+yearlyvalue+
+                "&input_footprint_housing_naturalgas_dollars="+ yearlyvalue +
+                " -H \"accept: application/json\" -H \"app_id: dae89a90\" -H \"app_key: 88000d3ffd63f5312b37f888b9c2c792";
+
 
 
 
