@@ -1,4 +1,18 @@
-
+/*
+ * Copyright 2019 The TensorFlow Authors. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
 package com.example.finalyearapp.MachineLearning;
 
@@ -23,7 +37,6 @@ import android.os.Trace;
 import androidx.annotation.NonNull;
 import androidx.annotation.UiThread;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import android.util.Size;
 import android.view.Surface;
 import android.view.View;
@@ -36,15 +49,14 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.finalyearapp.MachineLearning.env.ImageUtils;
+import com.example.finalyearapp.MachineLearning.env.Logger;
+import com.example.finalyearapp.MachineLearning.tflite.Classifier;
 import com.example.finalyearapp.R;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import java.nio.ByteBuffer;
 import java.util.List;
-import com.example.finalyearapp.MachineLearning.env.ImageUtils;
-import com.example.finalyearapp.MachineLearning.env.Logger;
-import com.example.finalyearapp.MachineLearning.tflite.Classifier.Device;
-import com.example.finalyearapp.MachineLearning.tflite.Classifier.Model;
-import com.example.finalyearapp.MachineLearning.tflite.Classifier.Recognition;
+
 
 public abstract class CameraActivity extends AppCompatActivity
     implements OnImageAvailableListener,
@@ -69,7 +81,7 @@ public abstract class CameraActivity extends AppCompatActivity
   private Runnable imageConverter;
   private LinearLayout bottomSheetLayout;
   private LinearLayout gestureLayout;
-  private BottomSheetBehavior sheetBehavior;
+  private BottomSheetBehavior<LinearLayout> sheetBehavior;
   protected TextView recognitionTextView,
       recognition1TextView,
       recognition2TextView,
@@ -87,8 +99,8 @@ public abstract class CameraActivity extends AppCompatActivity
   private Spinner deviceSpinner;
   private TextView threadsTextView;
 
-  private Model model = Model.QUANTIZED;
-  private Device device = Device.CPU;
+  private Classifier.Model model = Classifier.Model.QUANTIZED_EFFICIENTNET;
+  private Classifier.Device device = Classifier.Device.CPU;
   private int numThreads = -1;
 
   @Override
@@ -98,9 +110,6 @@ public abstract class CameraActivity extends AppCompatActivity
     getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
     setContentView(R.layout.activity_camera);
-    Toolbar toolbar = findViewById(R.id.toolbar);
-    setSupportActionBar(toolbar);
-    getSupportActionBar().setDisplayShowTitleEnabled(false);
 
     if (hasPermission()) {
       setFragment();
@@ -184,8 +193,8 @@ public abstract class CameraActivity extends AppCompatActivity
     plusImageView.setOnClickListener(this);
     minusImageView.setOnClickListener(this);
 
-    model = Model.valueOf(modelSpinner.getSelectedItem().toString().toUpperCase());
-    device = Device.valueOf(deviceSpinner.getSelectedItem().toString());
+    model = Classifier.Model.valueOf(modelSpinner.getSelectedItem().toString().toUpperCase());
+    device = Classifier.Device.valueOf(deviceSpinner.getSelectedItem().toString());
     numThreads = Integer.parseInt(threadsTextView.getText().toString().trim());
   }
 
@@ -512,9 +521,9 @@ public abstract class CameraActivity extends AppCompatActivity
   }
 
   @UiThread
-  protected void showResultsInBottomSheet(List<Recognition> results) {
+  protected void showResultsInBottomSheet(List<Classifier.Recognition> results) {
     if (results != null && results.size() >= 3) {
-      Recognition recognition = results.get(0);
+      Classifier.Recognition recognition = results.get(0);
       if (recognition != null) {
         if (recognition.getTitle() != null) recognitionTextView.setText(recognition.getTitle());
         if (recognition.getConfidence() != null)
@@ -522,7 +531,7 @@ public abstract class CameraActivity extends AppCompatActivity
               String.format("%.2f", (100 * recognition.getConfidence())) + "%");
       }
 
-      Recognition recognition1 = results.get(1);
+      Classifier.Recognition recognition1 = results.get(1);
       if (recognition1 != null) {
         if (recognition1.getTitle() != null) recognition1TextView.setText(recognition1.getTitle());
         if (recognition1.getConfidence() != null)
@@ -530,7 +539,7 @@ public abstract class CameraActivity extends AppCompatActivity
               String.format("%.2f", (100 * recognition1.getConfidence())) + "%");
       }
 
-      Recognition recognition2 = results.get(2);
+      Classifier.Recognition recognition2 = results.get(2);
       if (recognition2 != null) {
         if (recognition2.getTitle() != null) recognition2TextView.setText(recognition2.getTitle());
         if (recognition2.getConfidence() != null)
@@ -560,11 +569,11 @@ public abstract class CameraActivity extends AppCompatActivity
     inferenceTimeTextView.setText(inferenceTime);
   }
 
-  protected Model getModel() {
+  protected Classifier.Model getModel() {
     return model;
   }
 
-  private void setModel(Model model) {
+  private void setModel(Classifier.Model model) {
     if (this.model != model) {
       LOGGER.d("Updating  model: " + model);
       this.model = model;
@@ -572,15 +581,15 @@ public abstract class CameraActivity extends AppCompatActivity
     }
   }
 
-  protected Device getDevice() {
+  protected Classifier.Device getDevice() {
     return device;
   }
 
-  private void setDevice(Device device) {
+  private void setDevice(Classifier.Device device) {
     if (this.device != device) {
       LOGGER.d("Updating  device: " + device);
       this.device = device;
-      final boolean threadsEnabled = device == Device.CPU;
+      final boolean threadsEnabled = device == Classifier.Device.CPU;
       plusImageView.setEnabled(threadsEnabled);
       minusImageView.setEnabled(threadsEnabled);
       threadsTextView.setText(threadsEnabled ? String.valueOf(numThreads) : "N/A");
@@ -632,9 +641,9 @@ public abstract class CameraActivity extends AppCompatActivity
   @Override
   public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
     if (parent == modelSpinner) {
-      setModel(Model.valueOf(parent.getItemAtPosition(pos).toString().toUpperCase()));
+      setModel(Classifier.Model.valueOf(parent.getItemAtPosition(pos).toString().toUpperCase()));
     } else if (parent == deviceSpinner) {
-      setDevice(Device.valueOf(parent.getItemAtPosition(pos).toString()));
+      setDevice(Classifier.Device.valueOf(parent.getItemAtPosition(pos).toString()));
     }
   }
 

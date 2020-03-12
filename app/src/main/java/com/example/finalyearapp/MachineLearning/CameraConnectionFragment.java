@@ -1,3 +1,19 @@
+/*
+ * Copyright 2019 The TensorFlow Authors. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.example.finalyearapp.MachineLearning;
 
 import android.annotation.SuppressLint;
@@ -43,10 +59,15 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
-import com.example.finalyearapp.MachineLearning.customview.AutoFitTextureView;
-import com.example.finalyearapp.MachineLearning.env.Logger;
-import com.example.finalyearapp.R;
+import org.tensorflow.lite.examples.classification.customview.AutoFitTextureView;
+import org.tensorflow.lite.examples.classification.env.Logger;
 
+/**
+ * Camera Connection Fragment that captures images from camera.
+ *
+ * <p>Instantiated by newInstance.</p>
+ */
+@SuppressWarnings("FragmentNotInstantiable")
 public class CameraConnectionFragment extends Fragment {
   private static final Logger LOGGER = new Logger();
 
@@ -334,11 +355,9 @@ public class CameraConnectionFragment extends Fragment {
     } catch (final NullPointerException e) {
       // Currently an NPE is thrown when the Camera2API is used but not supported on the
       // device this code runs.
-      // TODO(andrewharp): abstract ErrorDialog/RuntimeException handling out into new method and
-      // reuse throughout app.
-      ErrorDialog.newInstance(getString(R.string.camera_error))
+      ErrorDialog.newInstance(getString(R.string.tfe_ic_camera_error))
           .show(getChildFragmentManager(), FRAGMENT_DIALOG);
-      throw new RuntimeException(getString(R.string.camera_error));
+      throw new IllegalStateException(getString(R.string.tfe_ic_camera_error));
     }
 
     cameraConnectionCallback.onPreviewSizeChosen(previewSize, sensorOrientation);

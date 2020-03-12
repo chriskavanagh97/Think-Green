@@ -26,12 +26,11 @@ import android.util.TypedValue;
 import android.widget.Toast;
 import java.io.IOException;
 import java.util.List;
-import com.example.finalyearapp.MachineLearning.env.BorderedText;
-import com.example.finalyearapp.MachineLearning.env.Logger;
-import com.example.finalyearapp.MachineLearning.tflite.Classifier;
-import com.example.finalyearapp.MachineLearning.tflite.Classifier.Device;
-import com.example.finalyearapp.MachineLearning.tflite.Classifier.Model;
-import com.example.finalyearapp.R;
+import org.tensorflow.lite.examples.classification.env.BorderedText;
+import org.tensorflow.lite.examples.classification.env.Logger;
+import org.tensorflow.lite.examples.classification.tflite.Classifier;
+import org.tensorflow.lite.examples.classification.tflite.Classifier.Device;
+import org.tensorflow.lite.examples.classification.tflite.Classifier.Model;
 
 public class ClassifierActivity extends CameraActivity implements OnImageAvailableListener {
   private static final Logger LOGGER = new Logger();
@@ -49,8 +48,7 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
 
   @Override
   protected int getLayoutId() {
-
-    return R.layout.camera_connection_fragment;
+    return R.layout.tfe_ic_camera_connection_fragment;
   }
 
   @Override
@@ -134,12 +132,12 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
       classifier.close();
       classifier = null;
     }
-    if (device == Device.GPU && model == Model.QUANTIZED) {
+    if (device == Device.GPU
+        && (model == Model.QUANTIZED_MOBILENET || model == Model.QUANTIZED_EFFICIENTNET)) {
       LOGGER.d("Not creating classifier: GPU doesn't support quantized models.");
       runOnUiThread(
           () -> {
-            Toast.makeText(this, "GPU does not yet supported quantized models.", Toast.LENGTH_LONG)
-                .show();
+            Toast.makeText(this, R.string.tfe_ic_gpu_quant_error, Toast.LENGTH_LONG).show();
           });
       return;
     }
