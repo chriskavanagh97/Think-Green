@@ -314,19 +314,23 @@ QUESTION FIVE ANSWERS
             kwh = "low";
             kwh();
         }
-        else if(population <= 3 & housesize.equals("terrace") || population <= 3 & housesize.equals("flat"))
+        else if(population == 3 & housesize.equals("terrace") || population == 3 & housesize.equals("flat"))
         {
             kwh = "low";
             kwh();
         }
-        else if(population == 3  & housesize.equals("semi detatched"))
+        else if(population == 3  & housesize.equals("semi detatched")|| population == 3  & housesize.equals("detatched"))
         {
             kwh = "medium";
             kwh();
         }
-        else if(population > 3 & bedrooms <=3 ){
+        else if(population == 4 & bedrooms <=3  & housesize.equals("flat") || population == 4 & bedrooms <=3  & housesize.equals("terrace") || population == 4 & bedrooms <=3  & housesize.equals("semi detatched")){
 
             kwh = "medium";
+        } else if(population == 4 & bedrooms > 3){
+
+            kwh = "high";
+            kwh();
         }
         else if(population > 4  ){
 

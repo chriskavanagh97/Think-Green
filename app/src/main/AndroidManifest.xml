@@ -12,7 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Carbonfootprint.StepFour"></activity>
+        <activity android:name=".News.NewsSelection"></activity>
+        <activity android:name=".Carbonfootprint.Results" />
+        <activity android:name=".Carbonfootprint.XmlPullParserActivity" />
+        <activity android:name=".Carbonfootprint.StepFour" />
         <activity android:name=".Carbonfootprint.StepThree" />
         <activity android:name=".Carbonfootprint.StepTwo" />
         <activity android:name=".Carbonfootprint.StepOne" />
