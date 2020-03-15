@@ -86,6 +86,30 @@ public class QuizMenu extends AppCompatActivity  {
         for(int i = 0; i < 7; i++){
             QuizModel quizModel = new QuizModel();
             quizModel.setImage_drawable(myImageList[i]);
+            if(i == 0)
+            {
+                quizModel.setName("energy");
+            }
+            else if(i == 1)
+            {
+                quizModel.setName("ocean");
+            }
+            else if(i == 2)
+            {
+                quizModel.setName("plastic");
+            }
+            else if(i == 3)
+            {
+                quizModel.setName("pollution");
+            }   else if(i == 4)
+            {
+                quizModel.setName("recycle");
+            }
+            else if(i == 5)
+            {
+                quizModel.setName("sun");
+            }
+
             list.add(quizModel);
         }
 

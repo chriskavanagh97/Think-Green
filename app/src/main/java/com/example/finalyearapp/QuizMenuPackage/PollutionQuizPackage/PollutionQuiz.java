@@ -99,7 +99,7 @@ public class PollutionQuiz extends AppCompatActivity {
             details();
         } else {
 
-            DatabaseReference databaseref = FirebaseDatabase.getInstance().getReference().child("Questions").child("Ocean").child(String.valueOf(total));
+            DatabaseReference databaseref = FirebaseDatabase.getInstance().getReference().child("Questions").child("Pollution").child(String.valueOf(total));
             databaseref.addValueEventListener(new ValueEventListener() {
 
                 @Override

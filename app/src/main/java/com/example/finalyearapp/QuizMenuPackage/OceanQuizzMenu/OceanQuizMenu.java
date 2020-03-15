@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.example.finalyearapp.QuizMenuPackage.PlasticQuizMenu.Quiz;
 import com.example.finalyearapp.QuizMenuPackage.PollutionQuizPackage.PollutionQuiz;
 import com.example.finalyearapp.R;
 
@@ -41,6 +42,40 @@ public class OceanQuizMenu extends AppCompatActivity {
                     intent.putExtra("quiznum", Level1);
                     startActivity(intent);
                 }
+                else if (quiztype.equals("plastic")) {
+                    Intent intent = new Intent(OceanQuizMenu.this, Quiz.class);
+
+                    intent.putExtra("quiznum", Level1);
+                    startActivity(intent);
+                }
+                else if (quiztype.equals("energy")) {
+                    Intent intent = new Intent(OceanQuizMenu.this, PollutionQuiz.class);
+
+                    intent.putExtra("quiznum", Level1);
+                    startActivity(intent);
+                }
+                else if (quiztype.equals("sun")) {
+                    Intent intent = new Intent(OceanQuizMenu.this, PollutionQuiz.class);
+
+                    intent.putExtra("quiznum", Level1);
+                    startActivity(intent);
+                }
+                else if (quiztype.equals("ocean")) {
+                    Intent intent = new Intent(OceanQuizMenu.this, Oceanquizz.class);
+
+                    intent.putExtra("quiznum", Level1);
+                    startActivity(intent);
+                }
+                else if (quiztype.equals("recycle")) {
+                    Intent intent = new Intent(OceanQuizMenu.this, PollutionQuiz.class);
+
+                    intent.putExtra("quiznum", Level1);
+                    startActivity(intent);
+                }
+
+
+
+
 
             }
         });
@@ -49,11 +84,42 @@ public class OceanQuizMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                if (quiztype.equals("pollution")) {
+                    Intent intent = new Intent(OceanQuizMenu.this, PollutionQuiz.class);
 
-                Intent intent = new Intent(OceanQuizMenu.this, Oceanquizz.class);
+                    intent.putExtra("quiznum", Level2);
+                    startActivity(intent);
+                }
+                else if (quiztype.equals("plastic")) {
+                    Intent intent = new Intent(OceanQuizMenu.this, Quiz.class);
 
-                intent.putExtra("quiznum", Level2);
-                startActivity(intent);
+                    intent.putExtra("quiznum", Level2);
+                    startActivity(intent);
+                }
+                else if (quiztype.equals("energy")) {
+                    Intent intent = new Intent(OceanQuizMenu.this, PollutionQuiz.class);
+
+                    intent.putExtra("quiznum", Level2);
+                    startActivity(intent);
+                }
+                else if (quiztype.equals("sun")) {
+                    Intent intent = new Intent(OceanQuizMenu.this, PollutionQuiz.class);
+
+                    intent.putExtra("quiznum", Level2);
+                    startActivity(intent);
+                }
+                else if (quiztype.equals("ocean")) {
+                    Intent intent = new Intent(OceanQuizMenu.this, Oceanquizz.class);
+
+                    intent.putExtra("quiznum", Level2);
+                    startActivity(intent);
+                }
+                else if (quiztype.equals("recycle")) {
+                    Intent intent = new Intent(OceanQuizMenu.this, PollutionQuiz.class);
+
+                    intent.putExtra("quiznum", Level2);
+                    startActivity(intent);
+                }
 
             }
         });
@@ -63,10 +129,42 @@ public class OceanQuizMenu extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                Intent intent = new Intent(OceanQuizMenu.this, Oceanquizz.class);
+                if (quiztype.equals("pollution")) {
+                    Intent intent = new Intent(OceanQuizMenu.this, PollutionQuiz.class);
 
-                intent.putExtra("quiznum", Level3);
-                startActivity(intent);
+                    intent.putExtra("quiznum", Level3);
+                    startActivity(intent);
+                }
+                else if (quiztype.equals("plastic")) {
+                    Intent intent = new Intent(OceanQuizMenu.this, Quiz.class);
+
+                    intent.putExtra("quiznum", Level3);
+                    startActivity(intent);
+                }
+                else if (quiztype.equals("energy")) {
+                    Intent intent = new Intent(OceanQuizMenu.this, PollutionQuiz.class);
+
+                    intent.putExtra("quiznum", Level3);
+                    startActivity(intent);
+                }
+                else if (quiztype.equals("sun")) {
+                    Intent intent = new Intent(OceanQuizMenu.this, Oceanquizz.class);
+
+                    intent.putExtra("quiznum", Level3);
+                    startActivity(intent);
+                }
+                else if (quiztype.equals("ocean")) {
+                    Intent intent = new Intent(OceanQuizMenu.this, PollutionQuiz.class);
+
+                    intent.putExtra("quiznum", Level3);
+                    startActivity(intent);
+                }
+                else if (quiztype.equals("recycle")) {
+                    Intent intent = new Intent(OceanQuizMenu.this, PollutionQuiz.class);
+
+                    intent.putExtra("quiznum", Level3);
+                    startActivity(intent);
+                }
 
             }
         });

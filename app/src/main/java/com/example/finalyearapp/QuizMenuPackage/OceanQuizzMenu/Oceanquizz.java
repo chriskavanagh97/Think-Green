@@ -57,6 +57,11 @@ private ImageView image;
 
     Dialog myDialog;
 
+    Intent intent = getIntent();
+    String number = intent.getStringExtra("quiznum");
+
+
+
 
 
     @Override
@@ -68,7 +73,7 @@ private ImageView image;
 
         image = (ImageView) findViewById(R.id.imageView) ;
 
-        image.setImageResource(R.drawable.bubble1);
+        image.setImageResource(R.drawable.ocean);
 
 
 
@@ -95,16 +100,15 @@ private ImageView image;
 
     private void UpdateQuestion() {
 
-        Intent intent = getIntent();
-        String number = intent.getStringExtra("quiznum");
-        int total1 = Integer.parseInt(number);
-        int total2 = total1 + 5;
 
-        if (total > 5) {
+        int total1 = Integer.parseInt(number);
+        final int  total2 = total1 + 5;
+
+        if (total1 > total2) {
             details();
         } else {
 
-            DatabaseReference databaseref = FirebaseDatabase.getInstance().getReference().child("Questions").child("Ocean").child(String.valueOf(total));
+            DatabaseReference databaseref = FirebaseDatabase.getInstance().getReference().child("Questions").child("Ocean").child(String.valueOf(total1));
             databaseref.addValueEventListener(new ValueEventListener() {
 
                 @Override
