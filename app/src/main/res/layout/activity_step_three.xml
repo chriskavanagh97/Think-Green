@@ -78,7 +78,7 @@
             android:layout_width="255dp"
             android:layout_height="101dp"
             android:layout_gravity="center"
-            app:srcCompat="@drawable/home" />
+            app:srcCompat="@drawable/bubble1" />
     </LinearLayout>
 
 
