@@ -68,7 +68,7 @@ private ImageView image;
 
         image = (ImageView) findViewById(R.id.imageView) ;
 
-        image.setImageResource(R.drawable.oceanicon);
+        image.setImageResource(R.drawable.bubble1);
 
 
 

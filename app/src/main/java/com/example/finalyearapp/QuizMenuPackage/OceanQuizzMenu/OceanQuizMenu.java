@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.example.finalyearapp.QuizMenuPackage.PollutionQuizPackage.PollutionQuiz;
 import com.example.finalyearapp.R;
 
 public class OceanQuizMenu extends AppCompatActivity {
@@ -15,7 +16,7 @@ public class OceanQuizMenu extends AppCompatActivity {
     String Level1 = "1";
     String Level2 = "6";
     String Level3 = "11";
-
+    String quiztype;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,16 +28,19 @@ public class OceanQuizMenu extends AppCompatActivity {
         buttonTwo = (ImageView) findViewById(R.id.ButtonTwo);
         buttonThree = (ImageView) findViewById(R.id.ButtonThree);
 
+        Intent intent = getIntent();
+        quiztype = intent.getStringExtra("name");
+
         buttonOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                if (quiztype.equals("pollution")) {
+                    Intent intent = new Intent(OceanQuizMenu.this, PollutionQuiz.class);
 
-                Intent intent = new Intent(OceanQuizMenu.this, Oceanquizz.class);
-
-                intent.putExtra("quiznum", Level1);
-                startActivity(intent);
-
+                    intent.putExtra("quiznum", Level1);
+                    startActivity(intent);
+                }
 
             }
         });

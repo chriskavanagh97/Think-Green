@@ -69,7 +69,7 @@ public class PollutionQuiz extends AppCompatActivity {
 
         image = (ImageView) findViewById(R.id.imageView) ;
 
-        image.setImageResource(R.drawable.pollutionicon);
+        image.setImageResource(R.drawable.bubble2);
 
         b1 = (RadioButton) findViewById(R.id.option1);
         b2 = (RadioButton) findViewById(R.id.option2);

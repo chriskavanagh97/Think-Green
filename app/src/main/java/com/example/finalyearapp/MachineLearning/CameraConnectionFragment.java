@@ -52,6 +52,11 @@ import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+
+import com.example.finalyearapp.MachineLearning.customview.AutoFitTextureView;
+import com.example.finalyearapp.MachineLearning.env.Logger;
+import com.example.finalyearapp.R;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -59,8 +64,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
-import org.tensorflow.lite.examples.classification.customview.AutoFitTextureView;
-import org.tensorflow.lite.examples.classification.env.Logger;
+
 
 /**
  * Camera Connection Fragment that captures images from camera.

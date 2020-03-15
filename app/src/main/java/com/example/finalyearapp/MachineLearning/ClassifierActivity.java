@@ -24,13 +24,15 @@ import android.os.SystemClock;
 import android.util.Size;
 import android.util.TypedValue;
 import android.widget.Toast;
+
+import com.example.finalyearapp.MachineLearning.env.BorderedText;
+import com.example.finalyearapp.MachineLearning.env.Logger;
+import com.example.finalyearapp.MachineLearning.tflite.Classifier;
+import com.example.finalyearapp.R;
+
 import java.io.IOException;
 import java.util.List;
-import org.tensorflow.lite.examples.classification.env.BorderedText;
-import org.tensorflow.lite.examples.classification.env.Logger;
-import org.tensorflow.lite.examples.classification.tflite.Classifier;
-import org.tensorflow.lite.examples.classification.tflite.Classifier.Device;
-import org.tensorflow.lite.examples.classification.tflite.Classifier.Model;
+
 
 public class ClassifierActivity extends CameraActivity implements OnImageAvailableListener {
   private static final Logger LOGGER = new Logger();
@@ -48,7 +50,7 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
 
   @Override
   protected int getLayoutId() {
-    return R.layout.tfe_ic_camera_connection_fragment;
+    return R.layout.camera_connection_fragment;
   }
 
   @Override
@@ -120,20 +122,20 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
       // Defer creation until we're getting camera frames.
       return;
     }
-    final Device device = getDevice();
-    final Model model = getModel();
+    final Classifier.Device device = getDevice();
+    final Classifier.Model model = getModel();
     final int numThreads = getNumThreads();
     runInBackground(() -> recreateClassifier(model, device, numThreads));
   }
 
-  private void recreateClassifier(Model model, Device device, int numThreads) {
+  private void recreateClassifier(Classifier.Model model, Classifier.Device device, int numThreads) {
     if (classifier != null) {
       LOGGER.d("Closing classifier.");
       classifier.close();
       classifier = null;
     }
-    if (device == Device.GPU
-        && (model == Model.QUANTIZED_MOBILENET || model == Model.QUANTIZED_EFFICIENTNET)) {
+    if (device == Classifier.Device.GPU
+        && (model == Classifier.Model.QUANTIZED_MOBILENET || model == Classifier.Model.QUANTIZED_EFFICIENTNET)) {
       LOGGER.d("Not creating classifier: GPU doesn't support quantized models.");
       runOnUiThread(
           () -> {

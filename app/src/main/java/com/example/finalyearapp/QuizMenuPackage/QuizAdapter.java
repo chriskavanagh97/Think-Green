@@ -15,6 +15,7 @@ import com.example.finalyearapp.QuizMenuPackage.OceanQuizzMenu.OceanQuizMenu;
 import com.example.finalyearapp.QuizMenuPackage.PlasticQuizMenu.Quiz;
 import com.example.finalyearapp.QuizMenuPackage.PollutionQuizPackage.pollutionQuizmenu;
 import com.example.finalyearapp.R;
+import com.example.finalyearapp.RecycleMaterial.Material;
 import com.example.finalyearapp.RecycleMaterial.Materialview;
 
 import java.util.ArrayList;
@@ -52,6 +53,7 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.MyViewHolder> 
     public void onBindViewHolder(QuizAdapter.MyViewHolder holder, final int position) {
 
         holder.iv.setImageResource(imageModelArrayList.get(position).getImage_drawable());
+        final QuizModel model = imageModelArrayList.get(position);
 
         holder.iv.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,7 +62,11 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.MyViewHolder> 
 
 
                     Intent intent = new Intent(v.getContext(), OceanQuizMenu.class);
-                    v.getContext().startActivity(intent);
+
+                intent.putExtra("name" ,model.getName());
+                v.getContext().startActivity(intent);
+
+
 
 
 
