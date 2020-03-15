@@ -52,14 +52,14 @@
             android:layout_width="75dp"
             android:layout_height="match_parent"
             android:background="#00FFFFFF"
-            tools:srcCompat="@drawable/facebook" />
+            tools:srcCompat="@drawable/bubble1" />
 
         <ImageButton
             android:id="@+id/Twitter"
             android:layout_width="75dp"
             android:layout_height="match_parent"
             android:background="#00FFFFFF"
-            app:srcCompat="@drawable/twitter" />
+            app:srcCompat="@drawable/bubble2" />
 
         <ImageButton
             android:id="@+id/LinkedIn"
@@ -67,7 +67,7 @@
             android:layout_gravity=""
             android:layout_height="match_parent"
             android:background="#00FFFFFF"
-            app:srcCompat="@drawable/linedin" />
+            app:srcCompat="@drawable/bubble3" />
 
     </LinearLayout>
 
@@ -110,7 +110,7 @@
             android:layout_marginTop="15dp"
 
 
-            app:srcCompat="@drawable/what" />
+            app:srcCompat="@drawable/why" />
 
         <TextView
             android:id="@+id/Where"
@@ -132,7 +132,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
 
-            app:srcCompat="@drawable/how" />
+            app:srcCompat="@drawable/why" />
 
         <TextView
             android:id="@+id/How"
