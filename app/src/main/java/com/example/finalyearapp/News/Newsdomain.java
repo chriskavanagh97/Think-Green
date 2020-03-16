@@ -19,7 +19,7 @@ public class Newsdomain extends AppCompatActivity {
     private ArrayList<Newsmenumodel> imageModelArrayList;
     private Newsadapter adapter;
 
-    private int[] myImageList = new int[]{R.drawable.energy, R.drawable.ocean, R.drawable.plastic, R.drawable.pollution, R.drawable.recycle, R.drawable.sun, R.drawable.energy};
+    private int[] myImageList = new int[]{R.drawable.rte, R.drawable.theirishtimes, R.drawable.time, R.drawable.independentt, R.drawable.cnn, R.drawable.sun, R.drawable.energy};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,15 +43,15 @@ public class Newsdomain extends AppCompatActivity {
             Newsmenumodel newsmodell = new Newsmenumodel();
             newsmodell.setImage_drawable(myImageList[i]);
             if (i == 0) {
-                newsmodell.setName("energy");
+                newsmodell.setName("rte");
             } else if (i == 1) {
-                newsmodell.setName("ocean");
+                newsmodell.setName("the-irish-times");
             } else if (i == 2) {
-                newsmodell.setName("plastic");
+                newsmodell.setName("time");
             } else if (i == 3) {
-                newsmodell.setName("pollution");
+                newsmodell.setName("Independent");
             } else if (i == 4) {
-                newsmodell.setName("recycle");
+                newsmodell.setName("cnn");
             } else if (i == 5) {
                 newsmodell.setName("sun");
             }

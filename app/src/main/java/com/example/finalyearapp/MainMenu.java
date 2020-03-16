@@ -18,6 +18,7 @@ import androidx.appcompat.widget.Toolbar;
 import com.example.finalyearapp.Carbonfootprint.StepOne;
 import com.example.finalyearapp.Leaderboard.Leaderboard;
 import com.example.finalyearapp.News.ArticlesActivity;
+import com.example.finalyearapp.News.NewsSelection;
 import com.example.finalyearapp.QuizMenuPackage.QuizMenu;
 import com.example.finalyearapp.RecycleMaterial.recyclemenu;
 import com.google.firebase.auth.FirebaseAuth;
@@ -67,7 +68,7 @@ public class MainMenu extends AppCompatActivity {
         News.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainMenu.this, ArticlesActivity.class);
+                Intent intent = new Intent(MainMenu.this, NewsSelection.class);
 
                 startActivity(intent);
             }

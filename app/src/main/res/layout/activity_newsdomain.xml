@@ -6,4 +6,44 @@
     android:layout_height="match_parent"
     tools:context=".News.Newsdomain">
 
+
+    <LinearLayout
+        style="@style/TextAppearance.Compat.Notification.Title"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#A4dada"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/recycler"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.084">
+
+
+        <TextView
+
+            android:id="@+id/Title"
+            android:layout_width="293dp"
+            android:layout_height="86dp"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif-light"
+            android:text="Domain selection"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+            android:textColor="#070606"
+            android:textSize="36sp">
+
+        </TextView>
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="428dp"
+        android:layout_height="444dp"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.376"
+        tools:layout_editor_absoluteX="-9dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
