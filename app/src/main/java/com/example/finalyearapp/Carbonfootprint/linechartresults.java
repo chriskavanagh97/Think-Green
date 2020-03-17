@@ -38,17 +38,9 @@ public class linechartresults extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_linechart);
 
-        LineChartresult newresult = new LineChartresult();
-        FirebaseAuth mFirebaseAuth = FirebaseAuth.getInstance();
-        String userid = mFirebaseAuth.getCurrentUser().getUid();
+        linechart= (LineChart) findViewById(R.id.linechart);
 
-        newresult.setCarbonfootprint(12.1);
-
-        mRootRef.child("Carbonfootprint").child(userid).setValue(newresult);
-
-         linechart= (LineChart) findViewById(R.id.linechart);
-
-         if (total>5 )
+         if (total>1 )
          {
 
          }else {

@@ -12,7 +12,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.finalyearapp.Carbonfootprint.LineChartresult;
 import com.example.finalyearapp.RecycleMaterial.Material;
+import com.github.mikephil.charting.charts.LineChart;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -136,6 +138,43 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
        mFirebaseAuth.addAuthStateListener((mAuthStateListener));
+
+     FirebaseAuth mFirebaseAuth = FirebaseAuth.getInstance();
+     String userid = mFirebaseAuth.getCurrentUser().getUid();
+
+     DatabaseReference mRootRef2 = FirebaseDatabase.getInstance().getReference().child("Carbonfootprint");
+     LineChartresult newresult = new LineChartresult();
+
+
+     newresult.setCarbonfootprint(13.3);
+
+     mRootRef2.child(userid).child("1").setValue(newresult);
+
+     LineChartresult newresult1 = new LineChartresult();
+
+
+     newresult1.setCarbonfootprint(12.7);
+
+     mRootRef2.child(userid).child("2").setValue(newresult);
+     LineChartresult newresult2 = new LineChartresult();
+
+
+     newresult2.setCarbonfootprint(12.1);
+
+     mRootRef2.child(userid).child("3").setValue(newresult);
+
+     LineChartresult newresult3 = new LineChartresult();
+
+
+     newresult3.setCarbonfootprint(9.1);
+
+     mRootRef2.child(userid).child("4").setValue(newresult);
+
+
+
+
+
+
 
         DatabaseReference mRootRef = FirebaseDatabase.getInstance().getReference().child("Questions");
 
