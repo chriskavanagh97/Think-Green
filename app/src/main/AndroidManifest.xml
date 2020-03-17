@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".News.Newsdomain"></activity>
+        <activity android:name=".Carbonfootprint.linechartresults"></activity>
+        <activity android:name=".News.Newsdomain" />
         <activity android:name=".Carbonfootprint.Results" />
         <activity android:name=".News.NewsSelection" />
         <activity android:name=".Carbonfootprint.XmlPullParserActivity" />

@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.finalyearapp.Carbonfootprint.StepOne;
+import com.example.finalyearapp.Carbonfootprint.linechartresults;
 import com.example.finalyearapp.Leaderboard.Leaderboard;
 import com.example.finalyearapp.News.ArticlesActivity;
 import com.example.finalyearapp.News.NewsSelection;
@@ -105,7 +106,7 @@ public class MainMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent footprint = new Intent(MainMenu.this, StepOne.class);
+                Intent footprint = new Intent(MainMenu.this, linechartresults.class);
                 startActivity(footprint);
 
             }
