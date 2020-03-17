@@ -2,17 +2,20 @@ package com.example.finalyearapp.Carbonfootprint;
 
 public class LineChartresult {
 
-    private int carbonfootprint;
+    private double carbonfootprint;
+    public LineChartresult() {
 
-    public int getCarbonfootprint() {
+    }
+
+    public double getCarbonfootprint() {
         return carbonfootprint;
     }
 
-    public void setCarbonfootprint(int carbonfootprint) {
+    public void setCarbonfootprint(double carbonfootprint) {
         this.carbonfootprint = carbonfootprint;
     }
 
-    public LineChartresult(int carbonfootprint) {
+    public LineChartresult(double carbonfootprint) {
         this.carbonfootprint = carbonfootprint;
     }
 }

@@ -13,6 +13,7 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -24,14 +25,26 @@ import java.util.ArrayList;
 public class linechartresults extends AppCompatActivity {
 
     LineChart linechart;
+
+    private FirebaseAuth mFirebaseAuth;
+    private FirebaseAuth.AuthStateListener mAuthStateListener;
+    DatabaseReference mRootRef = FirebaseDatabase.getInstance().getReference();
     ArrayList<Entry> dataVals = new ArrayList<>();
     int total =1;
-    int score;
+    double score;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_linechart);
+
+        LineChartresult newresult = new LineChartresult();
+        FirebaseAuth mFirebaseAuth = FirebaseAuth.getInstance();
+        String userid = mFirebaseAuth.getCurrentUser().getUid();
+
+        newresult.setCarbonfootprint(12.1);
+
+        mRootRef.child("Carbonfootprint").child(userid).setValue(newresult);
 
          linechart= (LineChart) findViewById(R.id.linechart);
 
@@ -48,11 +61,7 @@ public class linechartresults extends AppCompatActivity {
 
                      final LineChartresult linechats = dataSnapshot.getValue(LineChartresult.class);
                       score = linechats.getCarbonfootprint();
-                     dataVals.add(new Entry(0, 15));
-                     dataVals.add(new Entry(1, 18));
-                     dataVals.add(new Entry(2, 12));
-                     dataVals.add(new Entry(3, 10));
-                     dataVals.add(new Entry(4, 17));
+
 
                      total++;
                  }
