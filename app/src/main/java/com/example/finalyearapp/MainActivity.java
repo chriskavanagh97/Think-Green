@@ -143,32 +143,29 @@ public class MainActivity extends AppCompatActivity {
      String userid = mFirebaseAuth.getCurrentUser().getUid();
 
      DatabaseReference mRootRef2 = FirebaseDatabase.getInstance().getReference().child("Carbonfootprint");
+
      LineChartresult newresult = new LineChartresult();
 
 
-     newresult.setCarbonfootprint(13.3);
+     newresult.setCarbonfootprint(13.3f);
 
      mRootRef2.child(userid).child("1").setValue(newresult);
-
      LineChartresult newresult1 = new LineChartresult();
 
 
-     newresult1.setCarbonfootprint(12.7);
+     newresult1.setCarbonfootprint(12.7f);
 
-     mRootRef2.child(userid).child("2").setValue(newresult);
+     mRootRef2.child(userid).child("2").setValue(newresult1);
+
      LineChartresult newresult2 = new LineChartresult();
+     newresult2.setCarbonfootprint(12.1f);
+     mRootRef2.child(userid).child("3").setValue(newresult2);
 
 
-     newresult2.setCarbonfootprint(12.1);
-
-     mRootRef2.child(userid).child("3").setValue(newresult);
 
      LineChartresult newresult3 = new LineChartresult();
-
-
-     newresult3.setCarbonfootprint(9.1);
-
-     mRootRef2.child(userid).child("4").setValue(newresult);
+     newresult3.setCarbonfootprint(9.1f);
+     mRootRef2.child(userid).child("4").setValue(newresult3);
 
 
 

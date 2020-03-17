@@ -31,41 +31,45 @@ public class linechartresults extends AppCompatActivity {
     DatabaseReference mRootRef = FirebaseDatabase.getInstance().getReference();
     ArrayList<Entry> dataVals = new ArrayList<>();
     int total =1;
-    double score;
+    float score;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_linechart);
 
-        linechart= (LineChart) findViewById(R.id.linechart);
+        linechart = (LineChart) findViewById(R.id.linechart);
 
-         if (total>1 )
-         {
+        FirebaseAuth mFirebaseAuth = FirebaseAuth.getInstance();
+        String userid = mFirebaseAuth.getCurrentUser().getUid();
 
-         }else {
+        if (total > 4) {
+            Display();
 
-
-             DatabaseReference databaseref = FirebaseDatabase.getInstance().getReference().child("Questions").child("Pollution").child(String.valueOf(total));
-             databaseref.addValueEventListener(new ValueEventListener() {
-                 @Override
-                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                     final LineChartresult linechats = dataSnapshot.getValue(LineChartresult.class);
-                      score = linechats.getCarbonfootprint();
+        } else {
 
 
-                     total++;
-                 }
+            DatabaseReference databaseref = FirebaseDatabase.getInstance().getReference().child("Carbonfootprint").child(userid).child(String.valueOf(total));
+            databaseref.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                 @Override
-                 public void onCancelled(@NonNull DatabaseError databaseError) {
+                    final LineChartresult linechats = dataSnapshot.getValue(LineChartresult.class);
+                    score = linechats.getCarbonfootprint();
+                    //float confirm = total.floatValue();
+                    dataVals.add(new Entry(total, score));
+                    total++;
+                }
 
-                 }
-             });
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
 
-         }
+                }
+            });
 
+        }
+    }
+    public void Display(){
 
 
 
@@ -86,3 +90,4 @@ public class linechartresults extends AppCompatActivity {
 
     }
 }
+
