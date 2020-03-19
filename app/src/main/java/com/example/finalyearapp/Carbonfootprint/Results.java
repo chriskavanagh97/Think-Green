@@ -79,6 +79,19 @@ public class Results extends AppCompatActivity {
 
             }
         });
+
+        Button analysis = (Button) findViewById(R.id.analysis);
+        analysis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent resultintent = new Intent(Results.this, transport.class);
+
+
+                startActivity(resultintent);
+
+            }
+        });
     }
 
     public void calculator(){
