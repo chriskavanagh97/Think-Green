@@ -149,23 +149,23 @@ public class MainActivity extends AppCompatActivity {
 
      newresult.setCarbonfootprint(13.3f);
 
-     mRootRef2.child(userid).child("1").setValue(newresult);
+     mRootRef2.child(userid).child("0").setValue(newresult);
      LineChartresult newresult1 = new LineChartresult();
 
 
      newresult1.setCarbonfootprint(12.7f);
 
-     mRootRef2.child(userid).child("2").setValue(newresult1);
+     mRootRef2.child(userid).child("1").setValue(newresult1);
 
      LineChartresult newresult2 = new LineChartresult();
      newresult2.setCarbonfootprint(12.1f);
-     mRootRef2.child(userid).child("3").setValue(newresult2);
+     mRootRef2.child(userid).child("2").setValue(newresult2);
 
 
 
      LineChartresult newresult3 = new LineChartresult();
      newresult3.setCarbonfootprint(9.1f);
-     mRootRef2.child(userid).child("4").setValue(newresult3);
+     mRootRef2.child(userid).child("3").setValue(newresult3);
 
 
 
