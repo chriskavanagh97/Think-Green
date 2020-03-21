@@ -99,9 +99,9 @@ public class Results extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent resultintent = new Intent(Results.this, transport.class);
-                resultintent.putExtra("result","home");
-                startActivity(resultintent);
+                Intent resultintent2 = new Intent(Results.this, transport.class);
+                resultintent2.putExtra("result","home");
+                startActivity(resultintent2);
 
             }
         });
@@ -110,9 +110,9 @@ public class Results extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent resultintent = new Intent(Results.this, transport.class);
-                resultintent.putExtra("result","purchasing");
-                startActivity(resultintent);
+                Intent resultintent3 = new Intent(Results.this, transport.class);
+                resultintent3.putExtra("result","purchasing");
+                startActivity(resultintent3);
 
             }
         });
@@ -121,9 +121,9 @@ public class Results extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent resultintent = new Intent(Results.this, transport.class);
-                resultintent.putExtra("result","food");
-                startActivity(resultintent);
+                Intent resultintent4 = new Intent(Results.this, transport.class);
+                resultintent4.putExtra("result","food");
+                startActivity(resultintent4);
 
             }
         });
