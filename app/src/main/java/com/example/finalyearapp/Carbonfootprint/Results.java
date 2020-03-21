@@ -80,14 +80,49 @@ public class Results extends AppCompatActivity {
             }
         });
 
-        Button analysis = (Button) findViewById(R.id.analysis);
+        Button analysis = (Button) findViewById(R.id.transport);
         analysis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 Intent resultintent = new Intent(Results.this, transport.class);
+                resultintent.putExtra("result","transport");
 
 
+
+                startActivity(resultintent);
+
+            }
+        });
+        Button home = (Button) findViewById(R.id.home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent resultintent = new Intent(Results.this, transport.class);
+                resultintent.putExtra("result","home");
+                startActivity(resultintent);
+
+            }
+        });
+        Button purchasing = (Button) findViewById(R.id.purchasing);
+        purchasing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent resultintent = new Intent(Results.this, transport.class);
+                resultintent.putExtra("result","purchasing");
+                startActivity(resultintent);
+
+            }
+        });
+        Button food = (Button) findViewById(R.id.food);
+        food.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent resultintent = new Intent(Results.this, transport.class);
+                resultintent.putExtra("result","food");
                 startActivity(resultintent);
 
             }

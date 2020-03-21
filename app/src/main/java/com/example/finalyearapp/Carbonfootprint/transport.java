@@ -2,6 +2,7 @@ package com.example.finalyearapp.Carbonfootprint;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -25,10 +26,37 @@ public class transport extends AppCompatActivity {
 
         description = findViewById(R.id.description);
         category = findViewById(R.id.category);
-        transport();
-        home();
-        Stuff();
-        food();
+        Intent i = getIntent();
+        String result = i.getStringExtra("result");
+        if (result.equals("transport"))
+        {
+            transport();
+        }
+        else if(result.equals("home"))
+        {
+            home();
+
+
+        }
+        else if(result.equals("purchasing"))
+        {
+
+            Stuff();
+
+
+        }
+
+        else if(result.equals("food"))
+        {
+            food();
+
+
+        }
+
+
+
+
+
 
     }
 
