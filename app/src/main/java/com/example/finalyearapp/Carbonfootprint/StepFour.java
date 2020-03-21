@@ -397,6 +397,10 @@ QUESTION FIVE ANSWERS
     }
     public void parsing()
     {
+        Intent resultintent = new Intent(StepFour.this, Results.class);
+        startActivity(resultintent);
+
+
         Toast.makeText(StepFour.this, "parsing groups", Toast.LENGTH_SHORT).show();
         Intent i = getIntent();
 
@@ -429,6 +433,7 @@ QUESTION FIVE ANSWERS
                 "&input_footprint_housing_electricity_dollars="+yearlyvalue+
                 "&input_footprint_housing_naturalgas_dollars="+ yearlyvalue +
                 " -H \"accept: application/json\" -H \"app_id: dae89a90\" -H \"app_key: 88000d3ffd63f5312b37f888b9c2c792";
+
 
 
 

@@ -107,7 +107,7 @@ public class MainMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent footprint = new Intent(MainMenu.this, Results.class);
+                Intent footprint = new Intent(MainMenu.this, StepOne.class);
                 startActivity(footprint);
 
             }

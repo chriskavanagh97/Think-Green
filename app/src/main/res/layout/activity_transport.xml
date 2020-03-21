@@ -112,9 +112,9 @@
 
     <TextView
         android:id="@+id/description"
-        android:layout_width="430dp"
+        android:layout_width="379dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="330dp"
         android:text="description"
         android:textAllCaps="false"
         android:textColor="#090808"
