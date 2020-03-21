@@ -1,6 +1,6 @@
 package com.example.finalyearapp.Carbonfootprint;
 
-import androidx.appcompat.app.AlertDialog;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import com.example.finalyearapp.R;
 
-import org.w3c.dom.Text;
+
 
 public class StepFour extends AppCompatActivity {
     int i = 1;
@@ -350,7 +350,7 @@ QUESTION FIVE ANSWERS
 
             yearlyvalue = 609;
 
-            Toast.makeText(StepFour.this, "parsing method ", Toast.LENGTH_SHORT).show();
+
 
             parsing();
 
@@ -359,7 +359,7 @@ QUESTION FIVE ANSWERS
         else if (kwh.equals("medium") &  heating.equals("electricity") || kwh.equals("medium") &  heating.equals("wood")) {
 
             yearlyvalue = 802;
-            Toast.makeText(StepFour.this, "parsing method ", Toast.LENGTH_SHORT).show();
+
             parsing();
 
 
@@ -367,7 +367,7 @@ QUESTION FIVE ANSWERS
         else if (kwh.equals("high") &  heating.equals("electricity") || kwh.equals("high") &  heating.equals("wood")) {
 
             yearlyvalue = 1134;
-            Toast.makeText(StepFour.this, "parsing method ", Toast.LENGTH_SHORT).show();
+
             parsing();
 
 
@@ -375,7 +375,7 @@ QUESTION FIVE ANSWERS
         else if (kwh.equals("low") &  heating.equals("gass") || kwh.equals("low") &  heating.equals("oil")) {
 
             yearlyvalue = 415;
-            Toast.makeText(StepFour.this, "parsing method ", Toast.LENGTH_SHORT).show();
+
             parsing();
 
 
@@ -383,7 +383,7 @@ QUESTION FIVE ANSWERS
         else if (kwh.equals("medium") &  heating.equals("gass") || kwh.equals("medium") &  heating.equals("oil")) {
 
             yearlyvalue = 662;
-            Toast.makeText(StepFour.this, "parsing method ", Toast.LENGTH_SHORT).show();
+
             parsing();
 
 
@@ -391,7 +391,7 @@ QUESTION FIVE ANSWERS
         else if (kwh.equals("high") &  heating.equals("gass") || kwh.equals("high") &  heating.equals("oil")) {
 
             yearlyvalue = 824;
-            Toast.makeText(StepFour.this, "parsing method ", Toast.LENGTH_SHORT).show();
+
             parsing();
 
 
@@ -403,7 +403,7 @@ QUESTION FIVE ANSWERS
         startActivity(resultintent);
 
 
-        Toast.makeText(StepFour.this, "parsing groups", Toast.LENGTH_SHORT).show();
+       /* Toast.makeText(StepFour.this, "parsing groups", Toast.LENGTH_SHORT).show();
         Intent i = getIntent();
 
         String mpg = i.getStringExtra("mpg");
@@ -446,20 +446,13 @@ QUESTION FIVE ANSWERS
                    text3.setText(obj.getPurchasing());
                    text4.setText(obj.getFood());
                    text5.setText(obj.getTotal());
+                   */
 
 
 
-
-    }
-
-    public void showMessage(String title, String Message){
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setCancelable(true);
-        builder.setTitle(title);
-        builder.setMessage(Message);
-        builder.show();
 
 
     }
+
+
 }

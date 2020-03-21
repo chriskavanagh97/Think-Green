@@ -96,8 +96,9 @@ public class Results extends AppCompatActivity {
 
     public void calculator(){
 
+        Toast.makeText(Results.this, "Display screen activated" + dataVals2  , Toast.LENGTH_SHORT).show();
         Intent resultintent = new Intent(Results.this, linechartresults.class);
-        resultintent.putExtra("beauty",dataVals2);
+        resultintent.putExtra("results",dataVals2);
 
         startActivity(resultintent);
 
