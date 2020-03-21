@@ -16,6 +16,11 @@ public class HandleXml {
     private String total = "total";
     private String urlstring = null;
     private XmlPullParserFactory xmlFactoryObject;
+
+    public String getTotal() {
+        return total;
+    }
+
     public volatile boolean parsingComplete=true;
 
     public String getTransport() {

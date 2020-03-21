@@ -14,6 +14,8 @@ import android.widget.Toast;
 
 import com.example.finalyearapp.R;
 
+import org.w3c.dom.Text;
+
 public class StepFour extends AppCompatActivity {
     int i = 1;
     Spinner mySpinner;
@@ -33,7 +35,7 @@ public class StepFour extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_step_one);
+        setContentView(R.layout.activity_step_four);
 
         text = findViewById(R.id.textView);
         mySpinner = (Spinner) findViewById(R.id.values);
@@ -413,15 +415,9 @@ QUESTION FIVE ANSWERS
         String entertainment = i.getStringExtra("clothes");
         String household = i.getStringExtra("entertainment");
         String clothes = i.getStringExtra("house");
-        Toast.makeText(StepFour.this, "parsing method completed ", Toast.LENGTH_SHORT).show();
-
-        Toast.makeText(StepFour.this, mpg + "\n" + miles + "\n" + bushours  + "\n" + trainhours  + "\n" + beauty  + "\n" + entertainment  + "\n" + household  + "\n" + clothes  + "\n" + yearlyvalue, Toast.LENGTH_SHORT).show();
-        Toast.makeText(StepFour.this, mpg + "\n" + miles + "\n" + bushours  + "\n" + trainhours  + "\n" + beauty  + "\n" + entertainment  + "\n" + household  + "\n" + clothes  + "\n" + yearlyvalue, Toast.LENGTH_SHORT).show();
-        Toast.makeText(StepFour.this, mpg + "\n" + miles + "\n" + bushours  + "\n" + trainhours  + "\n" + beauty  + "\n" + entertainment  + "\n" + household  + "\n" + clothes  + "\n" + yearlyvalue, Toast.LENGTH_SHORT).show();
-        Toast.makeText(StepFour.this, mpg + "\n" + miles + "\n" + bushours  + "\n" + trainhours  + "\n" + beauty  + "\n" + entertainment  + "\n" + household  + "\n" + clothes  + "\n" + yearlyvalue, Toast.LENGTH_SHORT).show();
-        Toast.makeText(StepFour.this, mpg + "\n" + miles + "\n" + bushours  + "\n" + trainhours  + "\n" + beauty  + "\n" + entertainment  + "\n" + household  + "\n" + clothes  + "\n" + yearlyvalue, Toast.LENGTH_SHORT).show();
 
         String url = "https://apis.berkeley.edu/coolclimate/footprint-sandbox? input_size=" + population +
+                "&input_footprint_transportation_fuel1=1"+
                 "&input_footprint_transportation_miles1="+miles+
                 "&input_footprint_transportation_mpg1="+ mpg +
                 "&input_footprint_transportation_bus="+ bushours +
@@ -434,7 +430,22 @@ QUESTION FIVE ANSWERS
                 "&input_footprint_housing_naturalgas_dollars="+ yearlyvalue +
                 " -H \"accept: application/json\" -H \"app_id: dae89a90\" -H \"app_key: 88000d3ffd63f5312b37f888b9c2c792";
 
+                    HandleXml obj;
+                   TextView text1 = findViewById(R.id.transport);
+                   TextView text2 = findViewById(R.id.home);
+                   TextView text3 = findViewById(R.id.purchasing);
+                   TextView text4 = findViewById(R.id.food);
+                   TextView text5 = findViewById(R.id.total);
 
+                   obj = new HandleXml(url);
+                   obj.fetchXML();
+
+                   while (obj.parsingComplete);
+                   text1.setText(obj.getTransport());
+                   text2.setText(obj.getHome());
+                   text3.setText(obj.getPurchasing());
+                   text4.setText(obj.getFood());
+                   text5.setText(obj.getTotal());
 
 
 
