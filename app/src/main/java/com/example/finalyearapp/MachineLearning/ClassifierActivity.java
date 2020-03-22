@@ -30,9 +30,9 @@ import com.example.finalyearapp.MachineLearning.env.Logger;
 import com.example.finalyearapp.MachineLearning.tflite.Classifier;
 import com.example.finalyearapp.R;
 
+
 import java.io.IOException;
 import java.util.List;
-
 
 public class ClassifierActivity extends CameraActivity implements OnImageAvailableListener {
   private static final Logger LOGGER = new Logger();

@@ -1,3 +1,17 @@
+/* Copyright 2019 The TensorFlow Authors. All Rights Reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+==============================================================================*/
 
 package com.example.finalyearapp.MachineLearning.tflite;
 
@@ -9,13 +23,6 @@ import android.os.Trace;
 
 import com.example.finalyearapp.MachineLearning.env.Logger;
 
-import java.io.IOException;
-import java.nio.MappedByteBuffer;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import java.util.PriorityQueue;
 import org.tensorflow.lite.DataType;
 import org.tensorflow.lite.Interpreter;
 
@@ -32,6 +39,14 @@ import org.tensorflow.lite.support.image.ops.ResizeWithCropOrPadOp;
 import org.tensorflow.lite.support.image.ops.Rot90Op;
 import org.tensorflow.lite.support.label.TensorLabel;
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer;
+
+import java.io.IOException;
+import java.nio.MappedByteBuffer;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.PriorityQueue;
 
 /** A classifier specialized to label images using TensorFlow Lite. */
 public abstract class Classifier {
@@ -98,7 +113,7 @@ public abstract class Classifier {
    * @return A classifier with the desired configuration.
    */
   public static Classifier create(Activity activity, Model model, Device device, int numThreads)
-          throws IOException {
+      throws IOException {
     if (model == Model.QUANTIZED_MOBILENET) {
       return new ClassifierQuantizedMobileNet(activity, device, numThreads);
     } else if (model == Model.FLOAT_MOBILENET) {
@@ -211,7 +226,7 @@ public abstract class Classifier {
     DataType imageDataType = tflite.getInputTensor(imageTensorIndex).dataType();
     int probabilityTensorIndex = 0;
     int[] probabilityShape =
-            tflite.getOutputTensor(probabilityTensorIndex).shape(); // {1, NUM_CLASSES}
+        tflite.getOutputTensor(probabilityTensorIndex).shape(); // {1, NUM_CLASSES}
     DataType probabilityDataType = tflite.getOutputTensor(probabilityTensorIndex).dataType();
 
     // Creates the input tensor.
@@ -248,8 +263,8 @@ public abstract class Classifier {
 
     // Gets the map of label and probability.
     Map<String, Float> labeledProbability =
-            new TensorLabel(labels, probabilityProcessor.process(outputProbabilityBuffer))
-                    .getMapWithFloatValue();
+        new TensorLabel(labels, probabilityProcessor.process(outputProbabilityBuffer))
+            .getMapWithFloatValue();
     Trace.endSection();
 
     // Gets top-k results.
@@ -293,12 +308,12 @@ public abstract class Classifier {
     int numRoration = sensorOrientation / 90;
     // TODO(b/143564309): Fuse ops inside ImageProcessor.
     ImageProcessor imageProcessor =
-            new ImageProcessor.Builder()
-                    .add(new ResizeWithCropOrPadOp(cropSize, cropSize))
-                    .add(new ResizeOp(imageSizeX, imageSizeY, ResizeMethod.NEAREST_NEIGHBOR))
-                    .add(new Rot90Op(numRoration))
-                    .add(getPreprocessNormalizeOp())
-                    .build();
+        new ImageProcessor.Builder()
+            .add(new ResizeWithCropOrPadOp(cropSize, cropSize))
+            .add(new ResizeOp(imageSizeX, imageSizeY, ResizeMethod.NEAREST_NEIGHBOR))
+            .add(new Rot90Op(numRoration))
+            .add(getPreprocessNormalizeOp())
+            .build();
     return imageProcessor.process(inputImageBuffer);
   }
 
@@ -306,15 +321,15 @@ public abstract class Classifier {
   private static List<Recognition> getTopKProbability(Map<String, Float> labelProb) {
     // Find the best classifications.
     PriorityQueue<Recognition> pq =
-            new PriorityQueue<>(
-                    MAX_RESULTS,
-                    new Comparator<Recognition>() {
-                      @Override
-                      public int compare(Recognition lhs, Recognition rhs) {
-                        // Intentionally reversed to put high confidence at the head of the queue.
-                        return Float.compare(rhs.getConfidence(), lhs.getConfidence());
-                      }
-                    });
+        new PriorityQueue<>(
+            MAX_RESULTS,
+            new Comparator<Recognition>() {
+              @Override
+              public int compare(Recognition lhs, Recognition rhs) {
+                // Intentionally reversed to put high confidence at the head of the queue.
+                return Float.compare(rhs.getConfidence(), lhs.getConfidence());
+              }
+            });
 
     for (Map.Entry<String, Float> entry : labelProb.entrySet()) {
       pq.add(new Recognition("" + entry.getKey(), entry.getKey(), entry.getValue(), null));

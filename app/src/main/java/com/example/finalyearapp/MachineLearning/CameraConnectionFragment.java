@@ -53,6 +53,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+
 import com.example.finalyearapp.MachineLearning.customview.AutoFitTextureView;
 import com.example.finalyearapp.MachineLearning.env.Logger;
 import com.example.finalyearapp.R;
@@ -64,7 +65,6 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
-
 
 /**
  * Camera Connection Fragment that captures images from camera.
@@ -141,13 +141,13 @@ public class CameraConnectionFragment extends Fragment {
       new TextureView.SurfaceTextureListener() {
         @Override
         public void onSurfaceTextureAvailable(
-            final SurfaceTexture texture, final int width, final int height) {
+                final SurfaceTexture texture, final int width, final int height) {
           openCamera(width, height);
         }
 
         @Override
         public void onSurfaceTextureSizeChanged(
-            final SurfaceTexture texture, final int width, final int height) {
+                final SurfaceTexture texture, final int width, final int height) {
           configureTransform(width, height);
         }
 
@@ -285,7 +285,7 @@ public class CameraConnectionFragment extends Fragment {
 
   @Override
   public View onCreateView(
-      final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
+          final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
     return inflater.inflate(layout, container, false);
   }
 
