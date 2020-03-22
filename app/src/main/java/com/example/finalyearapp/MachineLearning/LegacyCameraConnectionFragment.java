@@ -1,20 +1,5 @@
 package com.example.finalyearapp.MachineLearning;
 
-/*
- * Copyright 2019 The TensorFlow Authors. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *       http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 
 import android.annotation.SuppressLint;
 import android.app.Fragment;
@@ -32,6 +17,7 @@ import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
 
+
 import com.example.finalyearapp.MachineLearning.customview.AutoFitTextureView;
 import com.example.finalyearapp.MachineLearning.env.ImageUtils;
 import com.example.finalyearapp.MachineLearning.env.Logger;
@@ -39,7 +25,6 @@ import com.example.finalyearapp.R;
 
 import java.io.IOException;
 import java.util.List;
-
 
 public class LegacyCameraConnectionFragment extends Fragment {
   private static final Logger LOGGER = new Logger();
@@ -68,7 +53,7 @@ public class LegacyCameraConnectionFragment extends Fragment {
       new TextureView.SurfaceTextureListener() {
         @Override
         public void onSurfaceTextureAvailable(
-            final SurfaceTexture texture, final int width, final int height) {
+                final SurfaceTexture texture, final int width, final int height) {
 
           int index = getCameraId();
           camera = Camera.open(index);
@@ -108,7 +93,7 @@ public class LegacyCameraConnectionFragment extends Fragment {
 
         @Override
         public void onSurfaceTextureSizeChanged(
-            final SurfaceTexture texture, final int width, final int height) {}
+                final SurfaceTexture texture, final int width, final int height) {}
 
         @Override
         public boolean onSurfaceTextureDestroyed(final SurfaceTexture texture) {
@@ -123,7 +108,7 @@ public class LegacyCameraConnectionFragment extends Fragment {
 
   @SuppressLint("ValidFragment")
   public LegacyCameraConnectionFragment(
-      final Camera.PreviewCallback imageListener, final int layout, final Size desiredSize) {
+          final Camera.PreviewCallback imageListener, final int layout, final Size desiredSize) {
     this.imageListener = imageListener;
     this.layout = layout;
     this.desiredSize = desiredSize;
@@ -131,7 +116,7 @@ public class LegacyCameraConnectionFragment extends Fragment {
 
   @Override
   public View onCreateView(
-      final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
+          final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
     return inflater.inflate(layout, container, false);
   }
 
