@@ -12,13 +12,15 @@ import com.example.finalyearapp.R;
 
 public class NewsSelection extends AppCompatActivity {
 
-    ImageButton customize, latest;
+    ImageView customize, latest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_selection);
 
+        customize = findViewById(R.id.custom);
+        latest = findViewById(R.id.latest);
 
 
         customize.setOnClickListener(new View.OnClickListener() {

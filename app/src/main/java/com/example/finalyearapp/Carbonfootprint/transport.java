@@ -28,6 +28,7 @@ public class transport extends AppCompatActivity {
         category = findViewById(R.id.category);
         Intent i = getIntent();
         String result = i.getStringExtra("result");
+
         if (result.equals("transport"))
         {
             transport();
