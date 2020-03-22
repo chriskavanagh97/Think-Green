@@ -98,7 +98,7 @@ public abstract class Classifier {
    * @return A classifier with the desired configuration.
    */
   public static Classifier create(Activity activity, Model model, Device device, int numThreads)
-      throws IOException {
+          throws IOException {
     if (model == Model.QUANTIZED_MOBILENET) {
       return new ClassifierQuantizedMobileNet(activity, device, numThreads);
     } else if (model == Model.FLOAT_MOBILENET) {
@@ -132,7 +132,7 @@ public abstract class Classifier {
     private RectF location;
 
     public Recognition(
-        final String id, final String title, final Float confidence, final RectF location) {
+            final String id, final String title, final Float confidence, final RectF location) {
       this.id = id;
       this.title = title;
       this.confidence = confidence;
@@ -211,7 +211,7 @@ public abstract class Classifier {
     DataType imageDataType = tflite.getInputTensor(imageTensorIndex).dataType();
     int probabilityTensorIndex = 0;
     int[] probabilityShape =
-        tflite.getOutputTensor(probabilityTensorIndex).shape(); // {1, NUM_CLASSES}
+            tflite.getOutputTensor(probabilityTensorIndex).shape(); // {1, NUM_CLASSES}
     DataType probabilityDataType = tflite.getOutputTensor(probabilityTensorIndex).dataType();
 
     // Creates the input tensor.
@@ -248,8 +248,8 @@ public abstract class Classifier {
 
     // Gets the map of label and probability.
     Map<String, Float> labeledProbability =
-        new TensorLabel(labels, probabilityProcessor.process(outputProbabilityBuffer))
-            .getMapWithFloatValue();
+            new TensorLabel(labels, probabilityProcessor.process(outputProbabilityBuffer))
+                    .getMapWithFloatValue();
     Trace.endSection();
 
     // Gets top-k results.
@@ -293,12 +293,12 @@ public abstract class Classifier {
     int numRoration = sensorOrientation / 90;
     // TODO(b/143564309): Fuse ops inside ImageProcessor.
     ImageProcessor imageProcessor =
-        new ImageProcessor.Builder()
-            .add(new ResizeWithCropOrPadOp(cropSize, cropSize))
-            .add(new ResizeOp(imageSizeX, imageSizeY, ResizeMethod.NEAREST_NEIGHBOR))
-            .add(new Rot90Op(numRoration))
-            .add(getPreprocessNormalizeOp())
-            .build();
+            new ImageProcessor.Builder()
+                    .add(new ResizeWithCropOrPadOp(cropSize, cropSize))
+                    .add(new ResizeOp(imageSizeX, imageSizeY, ResizeMethod.NEAREST_NEIGHBOR))
+                    .add(new Rot90Op(numRoration))
+                    .add(getPreprocessNormalizeOp())
+                    .build();
     return imageProcessor.process(inputImageBuffer);
   }
 
@@ -306,15 +306,15 @@ public abstract class Classifier {
   private static List<Recognition> getTopKProbability(Map<String, Float> labelProb) {
     // Find the best classifications.
     PriorityQueue<Recognition> pq =
-        new PriorityQueue<>(
-            MAX_RESULTS,
-            new Comparator<Recognition>() {
-              @Override
-              public int compare(Recognition lhs, Recognition rhs) {
-                // Intentionally reversed to put high confidence at the head of the queue.
-                return Float.compare(rhs.getConfidence(), lhs.getConfidence());
-              }
-            });
+            new PriorityQueue<>(
+                    MAX_RESULTS,
+                    new Comparator<Recognition>() {
+                      @Override
+                      public int compare(Recognition lhs, Recognition rhs) {
+                        // Intentionally reversed to put high confidence at the head of the queue.
+                        return Float.compare(rhs.getConfidence(), lhs.getConfidence());
+                      }
+                    });
 
     for (Map.Entry<String, Float> entry : labelProb.entrySet()) {
       pq.add(new Recognition("" + entry.getKey(), entry.getKey(), entry.getValue(), null));
