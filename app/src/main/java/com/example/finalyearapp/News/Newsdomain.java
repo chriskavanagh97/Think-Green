@@ -19,7 +19,7 @@ public class Newsdomain extends AppCompatActivity {
     private ArrayList<Newsmenumodel> imageModelArrayList;
     private Newsadapter adapter;
 
-    private int[] myImageList = new int[]{R.drawable.rte, R.drawable.theirishtimes, R.drawable.time, R.drawable.independentt, R.drawable.cnn, R.drawable.sun, R.drawable.energy};
+    private int[] myImageList = new int[]{R.drawable.rte, R.drawable.irishtimes, R.drawable.time, R.drawable.independent, R.drawable.cnn, R.drawable.sun, R.drawable.energy};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

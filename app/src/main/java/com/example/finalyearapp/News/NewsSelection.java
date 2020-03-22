@@ -19,8 +19,7 @@ public class NewsSelection extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_selection);
 
-        customize = (ImageButton) findViewById(R.id.imageButton);
-        latest = (ImageButton) findViewById(R.id.imageButton2);
+
 
         customize.setOnClickListener(new View.OnClickListener() {
             @Override
