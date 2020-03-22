@@ -48,10 +48,18 @@ public class ArticlesActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String domain = intent.getStringExtra("name");
 
-        FEED_URL = "https://newsapi.org/v2/everything?q=climate crisis&sources=" + domain + "&apiKey=e31fb6b25b2d4051ac0b1b62f49d2d69";
+        if(domain.equals("latest")){
+            FEED_URL = "https://newsapi.org/v2/everything?q=climate crisis&apiKey=e31fb6b25b2d4051ac0b1b62f49d2d69";
+
+        }else
+            {
+
+
+            FEED_URL = "https://newsapi.org/v2/everything?q=climate crisis&sources=" + domain + "&apiKey=e31fb6b25b2d4051ac0b1b62f49d2d69";
+
+
+        }
         mListView = (ListView) findViewById(R.id.listView);
-
-
 
 
         //Initialize with empty data

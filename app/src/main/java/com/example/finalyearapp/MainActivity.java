@@ -179,10 +179,10 @@ public class MainActivity extends AppCompatActivity {
         Question newQuestion = new Question();
 
         newQuestion.setQuestion("How many tonnes of plastic is dumped in the ocean each year");
-        newQuestion.setAnswer1("750,000 ");
+        newQuestion.setAnswer1("8,000,000  ");
         newQuestion.setAnswer2("200,000 ");
         newQuestion.setAnswer3("10,000,000 ");
-        newQuestion.setAnswerCorrect("8,000,000 ");
+        newQuestion.setAnswer4("7,500,00");
         newQuestion.setCategory("Plastic");
         newQuestion.setDescription("We are facing a crisis, there is too much plastic in the ocean due to illegal dumping. Recycle safely or Stop using plastics");
         newQuestion.setScore(100);
@@ -196,11 +196,11 @@ public class MainActivity extends AppCompatActivity {
         newQuestion1.setQuestion("What type of supermarket bag is more ecofriendly, paper or plastic?");
         newQuestion1.setAnswer1("Plastic");
         newQuestion1.setAnswer2("Paper");
-        newQuestion1.setAnswer3("Either");
-        newQuestion1.setAnswerCorrect("Neither");
+        newQuestion1.setAnswer3("Neither");
+        newQuestion1.setAnswer4("Either");
         newQuestion1.setDescription("Manufacturing and disposing of paper and plastic bags is bad for the environment use your own reusable bags ");
         newQuestion1.setScore(100);
-        newQuestion1.setId(2);
+        newQuestion1.setId(3);
 
         mRootRef.child("Plastic").child("2").setValue(newQuestion1);
 
@@ -210,10 +210,10 @@ public class MainActivity extends AppCompatActivity {
         newQuestion2.setAnswer1("25%");
         newQuestion2.setAnswer2("11%");
         newQuestion2.setAnswer3("2%");
-        newQuestion2.setAnswerCorrect("10%");
+        newQuestion2.setAnswer4("10%");
         newQuestion2.setDescription("Only 10% of energy comes from renewable sources, the other 90 comes from oil, gas and coals etc");
         newQuestion2.setScore(100);
-        newQuestion2.setId(3);
+        newQuestion2.setId(4);
 
 
         mRootRef.child("Plastic").child("3").setValue(newQuestion2);
@@ -224,7 +224,7 @@ public class MainActivity extends AppCompatActivity {
         newQuestion3.setAnswer1("hemp");
         newQuestion3.setAnswer2("sheep skin");
         newQuestion3.setAnswer3("Panda Excrement");
-        newQuestion3.setAnswerCorrect("All of the above");
+        newQuestion3.setAnswer4("All of the above");
         newQuestion3.setDescription("All of these can be used although hemp is the cleanest out of them all and it easily recycled ");
         newQuestion3.setScore(100);
         newQuestion3.setId(4);
@@ -235,10 +235,10 @@ public class MainActivity extends AppCompatActivity {
         Question newQuestion4 = new Question();
 
         newQuestion4.setQuestion("How much single use plastic bottles are thrown out each hour in the US");
-        newQuestion4.setAnswer1("1,000");
+        newQuestion4.setAnswer1("25,0000");
         newQuestion4.setAnswer2("12,500");
         newQuestion4.setAnswer3("20,000");
-        newQuestion4.setAnswerCorrect("25,0000");
+        newQuestion4.setAnswer4("1,000");
         newQuestion4.setDescription("majority of it ends up in the ocean through deliberate dumping of garbage into waterways, inefficient waste infrastructure, and simple littering.");
         newQuestion4.setScore(100);
         newQuestion4.setId(1);
@@ -249,9 +249,9 @@ public class MainActivity extends AppCompatActivity {
 
         newQuestion5.setQuestion("What happens to plastic");
         newQuestion5.setAnswer1("It is biodegradable material os it eventually disintegrates");
-        newQuestion5.setAnswer2("It is dumped into the ocean for the fish to eat");
+        newQuestion5.setAnswer2("It never fully goes away, it just breaks into little pieces");
         newQuestion5.setAnswer3("There is no such thing as plastic waste, all plastic is recycled");
-        newQuestion5.setAnswerCorrect("It never fully goes away, it just breaks into little pieces");
+        newQuestion5.setAnswer4("It is dumped into the ocean for the fish to eat");
         newQuestion5.setDescription("Plastic will never ever disappear, it will continually break down into smaller pieces, it highlights the importance of reducing plastic usage ");
         newQuestion5.setScore(100);
         mRootRef.child("Plastic").child("6").setValue(newQuestion5);
@@ -264,10 +264,10 @@ public class MainActivity extends AppCompatActivity {
         newQuestion6.setAnswer1("They mistake it for food and cannot digest it");
         newQuestion6.setAnswer2("It is not dangerous as they use it to build their habitats");
         newQuestion6.setAnswer3("They get tangled in it and can reduce their ability to swim");
-        newQuestion6.setAnswerCorrect("Both A and c");
+        newQuestion6.setAnswer4("Both A and c");
         newQuestion6.setDescription("Plastic bags are often mistaken for  jellyfish and consumed by turtles, plastic often floats and bobbles which is why it is mistaken for marine life");
         newQuestion6.setScore(100);
-        newQuestion6.setId(3);
+        newQuestion6.setId(4);
 
 
         mRootRef.child("Plastic").child("7").setValue(newQuestion6);
@@ -279,10 +279,10 @@ public class MainActivity extends AppCompatActivity {
         newQuestion7.setAnswer1("52");
         newQuestion7.setAnswer2("693");
         newQuestion7.setAnswer3("1,326");
-        newQuestion7.setAnswerCorrect("693");
+        newQuestion7.setAnswer4("693");
         newQuestion7.setDescription("A 2015 Plymouth University study compiled reports recorded from around the world and found evidence of 44,000 animals becoming entangled or swallowing plastic debris");
         newQuestion7.setScore(100);
-        newQuestion7.setId(4);
+        newQuestion7.setId(3);
 
 
         mRootRef.child("Plastic").child("8").setValue(newQuestion7);
@@ -293,12 +293,12 @@ public class MainActivity extends AppCompatActivity {
 
         newQuestion8.setQuestion("What percent of its plastic does the US recycle?");
         newQuestion8.setAnswer1("70%");
-        newQuestion8.setAnswer2("35%");
+        newQuestion8.setAnswer2("9%");
         newQuestion8.setAnswer3("50%");
-        newQuestion8.setAnswerCorrect("9%");
+        newQuestion8.setAnswer4("35%");
         newQuestion8.setDescription("if current production and management trends continue in the U.S., 12 billion Mt of plastic waste will end up in landfills or the ocean by 2050.");
         newQuestion8.setScore(100);
-        newQuestion8.setId(1);
+        newQuestion8.setId(2);
 
 
         mRootRef.child("Plastic").child("9").setValue(newQuestion8);
@@ -307,13 +307,13 @@ public class MainActivity extends AppCompatActivity {
 
         mRootRef.child("Plastic").child("6").setValue(newQuestion5);
         newQuestion9.setQuestion("Approximately, Americans use about how many plastic drinking straws per day");
-        newQuestion9.setAnswer1("25,000");
+        newQuestion9.setAnswer1("500,000,000");
         newQuestion9.setAnswer2("250,000,000");
         newQuestion9.setAnswer3("100,000");
-        newQuestion9.setAnswerCorrect("500,000,000");
+        newQuestion9.setAnswer4("200,000,000");
         newQuestion9.setDescription("On average, Americans use 1.6 plastic drinking straws every day, totaling to 500 million per day. That’s enough to fill up 125 school buses a day, or 46,400 school buses a year! ");
         newQuestion9.setScore(100);
-        newQuestion9.setId(10);
+        newQuestion9.setId(1);
 
 
         mRootRef.child("Plastic").child("10").setValue(newQuestion9);
@@ -325,10 +325,10 @@ public class MainActivity extends AppCompatActivity {
         pollutionquiz.setAnswer1("100");
         pollutionquiz.setAnswer2("200,000");
         pollutionquiz.setAnswer3("2,000,000");
-        pollutionquiz.setAnswerCorrect("3,700,000");
+        pollutionquiz.setAnswer4("3,700,000");
         pollutionquiz.setDescription("According to statistics from the UN, 3.7 million deaths are attributed to outdoor air pollution. ");
         pollutionquiz.setScore(100);
-        pollutionquiz.setId(1);
+        pollutionquiz.setId(4);
 
 
         mRootRef.child("Pollution").child("1").setValue(pollutionquiz);
@@ -338,10 +338,11 @@ public class MainActivity extends AppCompatActivity {
 
         pollutionquiz1.setQuestion("Facemasks are often used in China during air pollution episodes. What is the percentage range of ambient air particles that are filtered by standard facemasks?");
         pollutionquiz1.setAnswer1("90 - 100%");
-        pollutionquiz1.setAnswer2("1- 15%");
+        pollutionquiz1.setAnswer2("48 - 75%");
         pollutionquiz1.setAnswer3("26 - 40%");
-        pollutionquiz1.setAnswerCorrect("48 - 75%");
-        pollutionquiz1.setDescription("A study in Particle and Fibre Toxicology tested 6 types of standard facemasks used in China and found that the most effective facemask removed only 75% of ambient air particles and the least effective mask removed 48%.");
+        pollutionquiz1.setAnswer4("1 - 15%");
+        pollutionquiz1.setDescription("A study in Particle and Fibre Toxicology tested 6 types of standard facemasks used in China and found that the most effective facemask removed only 75% of ambient air particles and the least effective mask removed 48%." +
+                "It is important to realise we cause this air pollution and using face masks does not prevent our interaction with it the only prevention is recycling and a healthy green lifestyle");
         pollutionquiz1.setScore(100);
         pollutionquiz1.setId(2);
 
@@ -354,9 +355,9 @@ public class MainActivity extends AppCompatActivity {
         pollutionquiz2.setQuestion("Does Environmental pollution exposure during pregnancy increase risk factor for pre-term (premature) birth");
         pollutionquiz2.setAnswer1("No only smoking causes this");
         pollutionquiz2.setAnswer2("no the air you breathin doesnt effect your baby");
-        pollutionquiz2.setAnswer3("only if you work in polluted areas");
-        pollutionquiz2.setAnswerCorrect("yes regular exposure to pollution increase chances of pre term");
-        pollutionquiz2.setDescription("A study in Particle and Fibre Toxicology tested 6 types of standard facemasks used in China and found that the most effective facemask removed only 75% of ambient air particles and the least effective mask removed 48%.");
+        pollutionquiz2.setAnswer3("yes regular exposure to pollution increase chances of pre term");
+        pollutionquiz2.setAnswer4("only if you are in polluted areas");
+        pollutionquiz2.setDescription("Yes there is umerous studies that increased access to pollution can affect pregnancy. We need to remove this pollution");
         pollutionquiz2.setScore(100);
         pollutionquiz2.setId(3);
 
@@ -368,7 +369,7 @@ public class MainActivity extends AppCompatActivity {
         pollutionquiz3.setAnswer1("Malaria");
         pollutionquiz3.setAnswer2("Mumps");
         pollutionquiz3.setAnswer3("Cholera");
-        pollutionquiz3.setAnswerCorrect("Tuberculosis");
+        pollutionquiz3.setAnswer4("Tuberculosis");
         pollutionquiz3.setDescription("A study based in Durban, South Africa published in BMC Public Health suggests an increased risk of childhood tuberculosis when exposed to these types of indoor air pollutants.");
         pollutionquiz3.setScore(100);
         pollutionquiz3.setId(4);
@@ -376,11 +377,11 @@ public class MainActivity extends AppCompatActivity {
         mRootRef.child("Pollution").child("4").setValue(pollutionquiz3);
         Question pollutionquiz4 = new Question();
         pollutionquiz4.setQuestion("How much CO2 was removed from the atmosphere by Brazilian forest plantations between 1990 and 2016?");
-        pollutionquiz4.setAnswer1("1,000 tonnes");
+        pollutionquiz4.setAnswer1("1669 Gigatonnes");
         pollutionquiz4.setAnswer2("10 gigatonnes");
 
         pollutionquiz4.setAnswer3("100 gigatones");
-        pollutionquiz4.setAnswerCorrect("1669 Gigatonnes");
+        pollutionquiz4.setAnswer4("700,000 tonnes");
         pollutionquiz4.setDescription("1669 Gigatonnes of CO2 over the 26 year period. 1 Gigatonne is equal to 1 billion tonnes. This study emphasizes the important role forests play in mitigating greenhouse gas emissions");
         pollutionquiz4.setScore(100);
         pollutionquiz4.setId(1);
@@ -391,13 +392,13 @@ public class MainActivity extends AppCompatActivity {
 
         Question pollutionquiz5 = new Question();
         pollutionquiz5.setQuestion("Which of the following is the most effective strategy to reduce the impact of toxic waste");
-        pollutionquiz5.setAnswer1("reusing raw materials");
+        pollutionquiz5.setAnswer1("stopping the production of polluting materials");
         pollutionquiz5.setAnswer2("raising taxes on companies that pollute");
         pollutionquiz5.setAnswer3("recycling polluting materials");
-        pollutionquiz5.setAnswerCorrect("stopping the production of polluting materials");
+        pollutionquiz5.setAnswer4("reusing raw materials");
         pollutionquiz5.setDescription("Toxins can be reduced through the substitution of nonpolluting alternatives, such as oxygen for chlorine in the bleaching of wood, or through green chemistry");
         pollutionquiz5.setScore(100);
-        pollutionquiz5.setId(2);
+        pollutionquiz5.setId(1);
 
         mRootRef.child("Pollution").child("6").setValue(pollutionquiz5);
 
@@ -405,23 +406,22 @@ public class MainActivity extends AppCompatActivity {
         ocean.setQuestion("Other than melting land-based ice sheets, which of these factors has made the largest contribution to the rise in sea level over the past 100 years?");
         ocean.setAnswer1("Climate change including Rain");
         ocean.setAnswer2("melting sea ice");
-
-        ocean.setAnswer3("increased river run off");
-        ocean.setAnswerCorrect("warming of ocean surface waters");
+        ocean.setAnswer3("warming of ocean surface waters");
+        ocean.setAnswer4("increased river run offs");
         ocean.setDescription("As the ocean warms, it expands and sea level rises, accounting for about a third of the approximately 20-centimeter sea level rise seen in the past century. Water released by melting land-based ice sheets contributes the other two-thirds of sea level rise");
         ocean.setScore(100);
-        ocean.setId(1);
+        ocean.setId(3);
 
         mRootRef.child("Ocean").child("1").setValue(ocean);
 
         Question ocean2 = new Question();
         ocean2.setQuestion("What percentage of heat from global warming has the ocean absorbed in the past 40 years?");
         ocean2.setAnswer1("20%");
-        ocean2.setAnswer2("66%");
-
+        ocean2.setAnswer2("93%");
         ocean2.setAnswer3("5%");
-        ocean2.setAnswerCorrect("93%");
-        ocean2.setDescription("Water resists changes in temperature; it is slow to heat up and slow to cool down. In scientific terms, water has high heat capacity. This means that, so far, Earth's ocean has been able to absorb and hold a majority of the heat from Earth's atmosphere");
+        ocean2.setAnswer4("66%");
+        ocean2.setDescription("Water resists changes in temperature; it is slow to heat up and slow to cool down. In scientific terms, water has high heat capacity. This means that, so far, Earth's ocean has been able to absorb and hold a majority of the heat from Earth's atmosphere" +
+                "Although as we continue to cause a rise in global warming the ocean will absorb less and we will begin to feel the full effects ");
         ocean2.setScore(100);
         ocean2.setId(2);
 
@@ -432,9 +432,8 @@ public class MainActivity extends AppCompatActivity {
         ocean3.setQuestion("Melting sea ice has the potential to raise sea level by how many metres");
         ocean3.setAnswer1("15");
         ocean3.setAnswer2("30");
-
-        ocean3.setAnswer3("45");
-        ocean3.setAnswerCorrect("0");
+        ocean3.setAnswer3("0");
+        ocean3.setAnswer4("35");
         ocean3.setDescription("Melting sea ice cannot raise global sea level since the ice is already floating. (Think of an ice cube melting in a glass full of water.) However, Arctic sea ice is thinning and the long-term summer average has decreased by 34 percent since 1979. Ice from glaciers and ice sheets, which form on land, does add water to Earth's ocean when it melts and does contribute to sea level rise.");
         ocean3.setScore(100);
         ocean3.setId(3);
@@ -446,33 +445,22 @@ public class MainActivity extends AppCompatActivity {
         ocean4.setQuestion("What percentage of the world's population lives within 100 kilometers of the shoreline?");
         ocean4.setAnswer1("10");
         ocean4.setAnswer2("80%");
-
         ocean4.setAnswer3("25%");
-        ocean4.setAnswerCorrect("39%");
+        ocean4.setAnswer4("39%");
         ocean4.setDescription("According to the World Resources Institute, in 1995 2.2 billion people, or 39 percent of the world's population, lived on or within 100 kilometers of a seashore. Recent studies reveal that up to 600 million people live in Low Elevation Coastal Zones and 200 million people live within coastal flood plains. ");
         ocean4.setScore(100);
         ocean4.setId(4);
 
         mRootRef.child("Ocean").child("4").setValue(ocean4);
 
-        Question ocean5 = new Question();
-        ocean5.setQuestion("Sea level rise contributes to more frequent flooding in which of these coastal areas?");
-        ocean5.setAnswer1("Venice");
-        ocean5.setAnswer2("Bangladesh");
-        ocean5.setAnswer3("");
-        ocean5.setAnswerCorrect("39%");
-        ocean5.setDescription("According to the World Resources Institute, in 1995 2.2 billion people, or 39 percent of the world's population, lived on or within 100 kilometers of a seashore. Recent studies reveal that up to 600 million people live in Low Elevation Coastal Zones and 200 million people live within coastal flood plains. ");
-        ocean5.setScore(100);
-        ocean5.setId(1);
 
-        mRootRef.child("Ocean").child("5").setValue(ocean5);
 
         Question ocean6 = new Question();
         ocean6.setQuestion("What area of the ocean is suffering the most from habitat destruction?");
         ocean6.setAnswer1("Ocean Floor");
-        ocean6.setAnswer2("Deep Sea");
+        ocean6.setAnswer2("coastal");
         ocean6.setAnswer3("Coral reefs");
-        ocean6.setAnswerCorrect("coastal");
+        ocean6.setAnswer4("Deep Sea");
         ocean6.setDescription("Most areas of the world’s ocean are experiencing habitat loss, but coastal areas with their closeness to human population centres, have suffered disproportionately. Habitat los here has far reaching impacts on the entire ocean’s biodiversity. These critical areas which include estuaries, swamps, marshes and wetlands, serve as breeding grounds or nurseries for nearly all marine species");
         ocean6.setScore(100);
         ocean6.setId(2);
@@ -486,7 +474,7 @@ public class MainActivity extends AppCompatActivity {
         ocean7.setAnswer1("10 percent");
         ocean7.setAnswer2("20 percent");
         ocean7.setAnswer3("60 percent");
-        ocean7.setAnswerCorrect("90 percent");
+        ocean7.setAnswer4("90 percent");
         ocean7.setDescription("Industrial finishing accounts for wiping out 90% of large predatory fish, such as swordfish, marlin, and the biggest types of tuna. Since 1950, more than 50 million tons of tuna and other top predators have been taken from the pacific.");
         ocean7.setScore(100);
         ocean7.setId(3);
@@ -499,7 +487,7 @@ public class MainActivity extends AppCompatActivity {
         ocean8.setAnswer1("Marine animals");
         ocean8.setAnswer2("Bottom feeding fish");
         ocean8.setAnswer3("Sea birds");
-        ocean8.setAnswerCorrect("Shelled Animals");
+        ocean8.setAnswer4("Shelled Animals");
         ocean8.setDescription("When Carbon dioxide dissolves in the ocean, carbonic acid is formed. This leads to higher acidity, mainly near the surface, which has ben proven to inhibit shell growth in marine animals. Its also suspected as a cause of reproductive disorders in some fish");
         ocean8.setScore(100);
         ocean8.setId(4);
@@ -508,11 +496,11 @@ public class MainActivity extends AppCompatActivity {
 
         Question ocean9 = new Question();
         ocean9.setQuestion("Industrial fishing is estimated to have wiped out what percent of large predatory fish?");
-        ocean9.setAnswer1("Marine animals");
+        ocean9.setAnswer1("Bottom feeding fish");
         ocean9.setAnswer2("Shelled Animals");
         ocean9.setAnswer3("Sea birds");
-        ocean9.setAnswerCorrect("Bottom feeding fish");
-        ocean9.setDescription("");
+        ocean9.setAnswer4("Marine Animals");
+        ocean9.setDescription("Thi sis the cause of over fishing, this results in a complete destruction of the habitat of fishes which further affects the environment ");
         ocean9.setScore(100);
         ocean9.setId(1);
 
@@ -522,13 +510,13 @@ public class MainActivity extends AppCompatActivity {
 
         Question ocean10 = new Question();
         ocean10.setQuestion("Where does most ocean pollution come from?");
-        ocean10.setAnswer1("Natural & unpreventable causes");
+        ocean10.setAnswer1("Land activities");
         ocean10.setAnswer2("Marine Activities");
         ocean10.setAnswer3("All three are divided equally");
-        ocean10.setAnswerCorrect("Land activities");
+        ocean10.setAnswer4("Natural & unpreventable causes");
         ocean10.setDescription("More than 80 percent of all ocean pollution comes from land. Oil from cities and factories washes down drains into the ocean, runoff from files and lawns carries fertilizer to the sea, and tons of solid garbage – most of it plastic – winds up bobbing in the ocean. ");
         ocean10.setScore(100);
-        ocean10.setId(10);
+        ocean10.setId(1);
 
         mRootRef.child("Ocean").child("10").setValue(ocean8);
 
@@ -538,22 +526,22 @@ public class MainActivity extends AppCompatActivity {
         ocean11.setAnswer1("All of the above");
         ocean11.setAnswer2("Eat itself");
         ocean11.setAnswer3("Grow too quickly");
-        ocean11.setAnswerCorrect("Bleach");
+        ocean11.setAnswer4("Bleach");
         ocean11.setDescription("Coral reefs are in trouble across the globe due to the rising greenhouse gas levels heat the ocean. Elevated temperatures trigger mass episodes of bleaching, in which corals eject their symbiotic algae. Bleaching slows coral growth, makes them susceptible to disease, and can lead to large – scale reef die offs");
         ocean11.setScore(100);
-        ocean11.setId(11);
+        ocean11.setId(4);
 
         mRootRef.child("Ocean").child("11").setValue(ocean11);
 
         Question ocean12 = new Question();
         ocean12.setQuestion("Which ocean's fish stocks have taken the hardest hit from overfishing?");
         ocean12.setAnswer1("West Indies, Atlantic Ocean");
-        ocean12.setAnswer2("Hawaiian Islands, Pacific Ocean");
+        ocean12.setAnswer2("Phoenix Islands, Pacific Ocean");
         ocean12.setAnswer3("Andaman Islands, Indian Ocean");
-        ocean12.setAnswerCorrect("Phoenix Islands, Pacific Ocean");
+        ocean12.setAnswer4("Hawaiian Islands");
         ocean12.setDescription("The Phoenix Islands Protected Area, established by the tiny Pacific nation of Kiribati in 2006, is the worlds largest marine protected area. A swath of ocean the size of California protects pristine reefs and eight atolls teeming with fish and birds");
         ocean12.setScore(100);
-        ocean12.setId(12);
+        ocean12.setId(2);
 
         mRootRef.child("Ocean").child("12").setValue(ocean12);
 
@@ -563,11 +551,11 @@ public class MainActivity extends AppCompatActivity {
         ocean13.setQuestion("Which ocean's fish stocks have taken the hardest hit from overfishing?");
         ocean13.setAnswer1("Pacific");
         ocean13.setAnswer2("Artic");
-        ocean13.setAnswer3("Indian");
-        ocean13.setAnswerCorrect("Atlantic");
+        ocean13.setAnswer3("Atlantic");
+        ocean13.setAnswer4("Indian");
         ocean13.setDescription("Nearly a third of the worlds fish stocks are over fished and the Atlantic has take then hardest hit. In many regions of the Atlantic, more than 45 Percent of stocks are overfished.");
         ocean13.setScore(100);
-        ocean13.setId(13);
+        ocean13.setId(3);
 
         mRootRef.child("Ocean").child("13").setValue(ocean13);
 
@@ -576,22 +564,22 @@ public class MainActivity extends AppCompatActivity {
         ocean15.setAnswer1("14C");
         ocean15.setAnswer2("24.6C");
         ocean15.setAnswer3("29.3C");
-        ocean15.setAnswerCorrect("17C");
+        ocean15.setAnswer4("17C");
         ocean15.setDescription("In July 2009, the worlds oceans set a record for high temperatures. The average water temperature worldwide was 17 degrees Celsius, according to the national Climatic Data Centre. Global warming is a direct factor is sending ocean temperatures this high");
         ocean15.setScore(100);
-        ocean15.setId(15);
+        ocean15.setId(4);
 
         mRootRef.child("Ocean").child("15").setValue(ocean15);
 
         Question ocean14 = new Question();
         ocean14.setQuestion("How much has the global mean sea level risen over the last century?");
-        ocean14.setAnswer1("Not at all");
+        ocean14.setAnswer1("4 - 8 inches");
         ocean14.setAnswer2("1 to 3 inches");
         ocean14.setAnswer3("15 to 20 inches");
-        ocean14.setAnswerCorrect("4 to 8 inches");
+        ocean14.setAnswer4("Not at all");
         ocean14.setDescription("Core samples, tide gauge readings and, most recently the satellite measurements tell us that over the last century, the global mean sea level has risen by 4 to 8 inches. When sea levels rise rapidly, even a small increase can have the devastating effects on coastal habitats.");
         ocean14.setScore(100);
-        ocean14.setId(14);
+        ocean14.setId(1);
 
         mRootRef.child("Ocean").child("14").setValue(ocean14);
 

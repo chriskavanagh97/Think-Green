@@ -36,6 +36,7 @@ public class NewsSelection extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(NewsSelection.this, ArticlesActivity.class);
+                intent.putExtra("name", "latest");
                 startActivity(intent);
 
             }

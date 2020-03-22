@@ -11,7 +11,7 @@ public class Question {
     private String Answer1;
     private String Answer2;
     private String Answer3;
-    private String AnswerCorrect;
+    private String Answer4;
     private String Category;
     private int Id;
 
@@ -74,13 +74,7 @@ public class Question {
         Answer3 = answer3;
     }
 
-    public String getAnswerCorrect() {
-        return AnswerCorrect;
-    }
 
-    public void setAnswerCorrect(String answerCorrect) {
-        AnswerCorrect = answerCorrect;
-    }
 
     public int getScore() {
         return score;
@@ -99,13 +93,21 @@ public class Question {
         Id = id;
     }
 
-    public Question(int id , String question, String difficulty, String answer1, String answer2, String answer3, String answerCorrect, int score, String description, String category) {
+    public String getAnswer4() {
+        return Answer4;
+    }
+
+    public void setAnswer4(String answer4) {
+        Answer4 = answer4;
+    }
+
+    public Question(int id , String question, String difficulty, String answer1, String answer2, String answer3, String answer4, int score, String description, String category) {
         Question = question;
         Difficulty = difficulty;
         Answer1 = answer1;
         Answer2 = answer2;
         Answer3 = answer3;
-        AnswerCorrect = answerCorrect;
+        Answer4 = answer4;
         this.score = score;
         Description = description;
         Category = category;

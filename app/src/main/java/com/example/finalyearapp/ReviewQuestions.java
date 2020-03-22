@@ -114,7 +114,7 @@ public class ReviewQuestions extends AppCompatActivity {
                     b1.setText(question.getAnswer1());
                     b2.setText(question.getAnswer2());
                     b3.setText(question.getAnswer3());
-                    b4.setText(question.getAnswerCorrect());
+                    b4.setText(question.getAnswer4());
 
 
 

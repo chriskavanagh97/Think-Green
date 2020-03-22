@@ -12,10 +12,12 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.finalyearapp.MainActivity;
 import com.example.finalyearapp.Question;
 import com.example.finalyearapp.QuizMenuPackage.QuizResults;
 import com.example.finalyearapp.R;
@@ -112,7 +114,7 @@ public class PollutionQuiz extends AppCompatActivity {
                     b1.setText(question.getAnswer1());
                     b2.setText(question.getAnswer2());
                     b3.setText(question.getAnswer3());
-                    b4.setText(question.getAnswerCorrect());
+                    b4.setText(question.getAnswer4());
                     description = question.getDescription();
                     id = question.getId();
 
@@ -123,7 +125,8 @@ public class PollutionQuiz extends AppCompatActivity {
 
                             rbGroup = (RadioGroup) findViewById(R.id.rbGroup);
                             RadioButton rbSelected = findViewById(rbGroup.getCheckedRadioButtonId());
-                            int answerNr = rbGroup.indexOfChild(rbSelected);
+                            int answerNr = rbGroup.indexOfChild(rbSelected) + 1;
+                            Toast.makeText(PollutionQuiz.this,"answer no =" + answerNr,Toast.LENGTH_SHORT).show();
 
                             if (answerNr == id) {
 

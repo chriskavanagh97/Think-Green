@@ -109,7 +109,7 @@ public class Quiz extends AppCompatActivity {
                     b1.setText(question.getAnswer1());
                     b2.setText(question.getAnswer2());
                     b3.setText(question.getAnswer3());
-                    b4.setText(question.getAnswerCorrect());
+                    b4.setText(question.getAnswer4());
                     description = question.getDescription();
                     id = question.getId();
 
@@ -120,7 +120,7 @@ public class Quiz extends AppCompatActivity {
 
                             rbGroup = (RadioGroup) findViewById(R.id.rbGroup);
                             RadioButton rbSelected = findViewById(rbGroup.getCheckedRadioButtonId());
-                            int answerNr = rbGroup.indexOfChild(rbSelected);
+                            int answerNr = rbGroup.indexOfChild(rbSelected) + 1;
 
                             if (answerNr == id) {
 
