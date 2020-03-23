@@ -4,32 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".QuizMenuPackage.RecycleQuiz">
+    tools:context=".QuizMenuPackage.RecycleQuiz"
+    android:background="@drawable/recyclebackground">
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="405dp"
-        android:layout_height="294dp"
+        android:layout_width="374dp"
+        android:layout_height="241dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.172"
+        app:layout_constraintVertical_bias="0.187"
         app:srcCompat="@drawable/aluminium" />
-
-    <EditText
-        android:id="@+id/editText4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:text="Recycle"
-        android:textColor="#050505"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/question"
@@ -38,18 +26,18 @@
         android:layout_marginTop="32dp"
         android:text="Can you reycle milk jugs?"
         android:textColor="#070707"
-        android:textSize="24sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
     <Button
         android:id="@+id/yes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="121dp"
+        android:layout_height="49dp"
         android:layout_marginStart="72dp"
-        android:layout_marginBottom="212dp"
-        android:text="Yes"
+        android:layout_marginBottom="236dp"
+        android:background="@drawable/yes"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -57,32 +45,34 @@
 
     <Button
         android:id="@+id/no"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="212dp"
-        android:text="No"
+        android:layout_width="124dp"
+        android:layout_height="47dp"
+        android:layout_marginBottom="236dp"
+        android:background="@drawable/no"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.423"
+        app:layout_constraintHorizontal_bias="0.351"
         app:layout_constraintStart_toEndOf="@+id/yes" />
 
     <TextView
         android:id="@+id/solution"
-        android:layout_width="334dp"
-        android:layout_height="77dp"
-        android:text="TextView"
+        android:layout_width="342dp"
+        android:layout_height="125dp"
+        android:text="Solution"
+        android:textColor="#0A0A0A"
+        android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/question"
-        app:layout_constraintVertical_bias="0.579" />
+        app:layout_constraintVertical_bias="0.598" />
 
     <Button
         android:id="@+id/next"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="next"
+        android:layout_width="146dp"
+        android:layout_height="47dp"
+        android:background="@drawable/next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
