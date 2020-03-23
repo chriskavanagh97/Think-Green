@@ -52,7 +52,7 @@ public class StepFour extends AppCompatActivity {
 
 
         if(i >5) {
-            Toast.makeText(StepFour.this, "finito" , Toast.LENGTH_SHORT).show();
+
             Calculation();
 
         }
@@ -293,7 +293,7 @@ QUESTION FIVE ANSWERS
 
 
                     else {
-                        Toast.makeText(StepFour.this, "submitted", Toast.LENGTH_SHORT).show();
+
                         i = i + 1;
                         Calculator();
 
@@ -309,7 +309,7 @@ QUESTION FIVE ANSWERS
     public void Calculation(){
 
 
-        Toast.makeText(StepFour.this, population + "\n" + heating, Toast.LENGTH_SHORT).show();
+
 
         if(population <= 2)
         {
@@ -344,7 +344,7 @@ QUESTION FIVE ANSWERS
 
     public void kwh(){
 
-        Toast.makeText(StepFour.this, kwh + heating, Toast.LENGTH_SHORT).show();
+
 
         if (kwh.equals("low") &  heating.equals("electricity") || kwh.equals("low") &  heating.equals("wood")) {
 
@@ -399,11 +399,11 @@ QUESTION FIVE ANSWERS
     }
     public void parsing()
     {
-        //Intent resultintent = new Intent(StepFour.this, Results.class);
-        //startActivity(resultintent);
+        Intent resultintent = new Intent(StepFour.this, Results.class);
+        startActivity(resultintent);
 
 
-        Toast.makeText(StepFour.this, "parsing groups", Toast.LENGTH_SHORT).show();
+       /* Toast.makeText(StepFour.this, "parsing groups", Toast.LENGTH_SHORT).show();
         Intent i = getIntent();
 
         String mpg = i.getStringExtra("mpg");
@@ -447,7 +447,7 @@ QUESTION FIVE ANSWERS
                    text4.setText(obj.getFood());
                    text5.setText(obj.getTotal());
 
-
+*/
 
 
 

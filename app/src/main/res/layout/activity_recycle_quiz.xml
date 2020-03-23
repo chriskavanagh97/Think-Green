@@ -9,55 +9,56 @@
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="374dp"
-        android:layout_height="241dp"
+        android:layout_width="305dp"
+        android:layout_height="210dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.187"
+        app:layout_constraintVertical_bias="0.153"
         app:srcCompat="@drawable/aluminium" />
 
     <TextView
         android:id="@+id/question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="60dp"
         android:text="Can you reycle milk jugs?"
         android:textColor="#070707"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
     <Button
         android:id="@+id/yes"
-        android:layout_width="121dp"
-        android:layout_height="49dp"
+        android:layout_width="91dp"
+        android:layout_height="40dp"
         android:layout_marginStart="72dp"
-        android:layout_marginBottom="236dp"
+        android:layout_marginBottom="248dp"
         android:background="@drawable/yes"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.165"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/no"
-        android:layout_width="124dp"
-        android:layout_height="47dp"
-        android:layout_marginBottom="236dp"
+        android:layout_width="86dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="248dp"
         android:background="@drawable/no"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.351"
+        app:layout_constraintHorizontal_bias="0.302"
         app:layout_constraintStart_toEndOf="@+id/yes" />
 
     <TextView
         android:id="@+id/solution"
-        android:layout_width="342dp"
-        android:layout_height="125dp"
+        android:layout_width="306dp"
+        android:layout_height="124dp"
         android:text="Solution"
         android:textColor="#0A0A0A"
         android:textStyle="italic"

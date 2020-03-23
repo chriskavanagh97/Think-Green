@@ -59,7 +59,7 @@ public class Results extends AppCompatActivity {
 
                     dataVals2.add(score);
                     //float confirm = total.floatValue();
-                    Toast.makeText(Results.this, "Display screen activated" + score  , Toast.LENGTH_SHORT).show();
+                  //  Toast.makeText(Results.this, "Display screen activated" + score  , Toast.LENGTH_SHORT).show();
 
                 }
 
@@ -131,9 +131,9 @@ public class Results extends AppCompatActivity {
 
     public void calculator(){
 
-        Toast.makeText(Results.this, "Display screen activated" + dataVals2  , Toast.LENGTH_SHORT).show();
+        //Toast.makeText(Results.this, "Float array: calculator method" + dataVals2  , Toast.LENGTH_SHORT).show();
         Intent resultintent = new Intent(Results.this, linechartresults.class);
-        resultintent.putExtra("results",dataVals2);
+        //resultintent.putExtra("results",dataVals2);
 
         startActivity(resultintent);
 
