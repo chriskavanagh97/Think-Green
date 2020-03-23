@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.finalyearapp.R;
@@ -24,12 +25,15 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 public class linechartresults extends AppCompatActivity {
 
     LineChart linechart;
     Button display;
+    TextView results;
     float score;
     int total = 0;
     private FirebaseAuth mFirebaseAuth;
@@ -91,6 +95,7 @@ public class linechartresults extends AppCompatActivity {
 
     public void Display(){
 
+        results = findViewById(R.id.results);
 
         Toast.makeText(linechartresults.this, "Float array:" + dataVals2  , Toast.LENGTH_SHORT).show();
 
@@ -121,11 +126,25 @@ public class linechartresults extends AppCompatActivity {
         linechart.invalidate();
 
         float difference = dataVals2.get(3)- dataVals2.get(0);
+        float differencepositive = dataVals2.get(0)- dataVals2.get(3);
         float total = dataVals2.get(0) + dataVals2.get(1) + dataVals2.get(2) + dataVals2.get(3);
         float average = total / 4;
+        float nationalaverage =14;
+        float posave = nationalaverage - average;
 
-        if(difference< 0)
+
+        if(difference< 0 & average < nationalaverage)
         {
+            results.setText("Congratulations your footprint is improving you have lowered you footprint by: " + differencepositive + "\n" +
+            "Your average result is: " + average + " Keep up the good work" + "\n" +
+                    "Your average is  " + posave + " lower than the national average " +  " Way to lead by example ");
+
+        }
+        else
+        {
+            results.setText("Your footprint has increased by " + difference + " from your first test this is not good "+ "\n" +
+                    " Your average result is: " + average +  " Please revisit our tips section to lower your footprint" + "\n" +
+                    "your average is  " + (average - nationalaverage) + " ");
 
         }
 
