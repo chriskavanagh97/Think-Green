@@ -10,6 +10,7 @@ import android.widget.ImageView;
 
 import com.example.finalyearapp.QuizMenuPackage.PlasticQuizMenu.Quiz;
 import com.example.finalyearapp.QuizMenuPackage.PollutionQuizPackage.PollutionQuiz;
+import com.example.finalyearapp.QuizMenuPackage.RecycleQuiz;
 import com.example.finalyearapp.R;
 
 public class OceanQuizMenu extends AppCompatActivity {
@@ -67,7 +68,7 @@ public class OceanQuizMenu extends AppCompatActivity {
                     startActivity(intent);
                 }
                 else if (quiztype.equals("recycle")) {
-                    Intent intent = new Intent(OceanQuizMenu.this, PollutionQuiz.class);
+                    Intent intent = new Intent(OceanQuizMenu.this, RecycleQuiz.class);
 
                     intent.putExtra("quiznum", Level1);
                     startActivity(intent);

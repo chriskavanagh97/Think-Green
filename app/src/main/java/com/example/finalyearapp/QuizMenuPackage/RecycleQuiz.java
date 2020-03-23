@@ -25,14 +25,16 @@ public class RecycleQuiz extends AppCompatActivity {
         setContentView(R.layout.activity_recycle_quiz);
 
         Quiz();
+
+    }
+
+    public void Quiz(){
         picture = findViewById(R.id.imageView6);
         question = findViewById(R.id.question);
         yes = findViewById(R.id.yes);
         no = findViewById(R.id.no);
+        solution = findViewById(R.id.solution);
         next = findViewById(R.id.next);
-    }
-
-    public void Quiz(){
 
         if(total >11){
 
@@ -100,7 +102,7 @@ public class RecycleQuiz extends AppCompatActivity {
             }
             else if(total == 2)
             {
-                picture.setImageResource(R.drawable.aluminium);
+                picture.setImageResource(R.drawable.receipts);
                 question.setText("Can you recycle aluminium cans");
 
                 yes.setOnClickListener(new View.OnClickListener() {
@@ -113,8 +115,8 @@ public class RecycleQuiz extends AppCompatActivity {
                 no.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        solution.setText(" Wrong! \n" +
-                                "Aluminum cans are able to become other aluminum products over and over and over again. Remember to give them a quick rinse, but please don't crush them before putting them in your bin — crushed cans can miss the sorter and end up in the landfill.");
+                        solution.setText("  Correct! \n" +
+                                "Most receipts are made from thermal paper and contain Bisphenol A, which shouldn't enter the recycling stream (or else your receipt would become toilet paper and give your backside some unwanted quality time with that chemical). The move here is to politely decline a receipt or opt for an electronic version whenever possible.");
                     }
                 });
 
@@ -129,7 +131,7 @@ public class RecycleQuiz extends AppCompatActivity {
             }
             else if(total == 3)
             {
-                picture.setImageResource(R.drawable.aluminium);
+                picture.setImageResource(R.drawable.mail);
                 question.setText("Can you recycle aluminium cans");
 
                 yes.setOnClickListener(new View.OnClickListener() {
@@ -142,8 +144,8 @@ public class RecycleQuiz extends AppCompatActivity {
                 no.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        solution.setText(" Wrong! \n" +
-                                "Aluminum cans are able to become other aluminum products over and over and over again. Remember to give them a quick rinse, but please don't crush them before putting them in your bin — crushed cans can miss the sorter and end up in the landfill.");
+                        solution.setText("  Wrong! \n" +
+                                "Whether it's glossy, non-glossy, construction, or a plain envelope, that mail can be recycled. It's doesn't hurt to remove the clear window panes from envelopes, but most are actually made from cellulose, which can be recycled with paper. Want to stop that junk mail altogether?");
                     }
                 });
 
@@ -158,7 +160,7 @@ public class RecycleQuiz extends AppCompatActivity {
             }
             else if(total == 4)
         {
-            picture.setImageResource(R.drawable.aluminium);
+            picture.setImageResource(R.drawable.crispsbag);
             question.setText("Can you recycle aluminium cans");
 
             yes.setOnClickListener(new View.OnClickListener() {
@@ -171,8 +173,8 @@ public class RecycleQuiz extends AppCompatActivity {
             no.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    solution.setText(" Wrong! \n" +
-                            "Aluminum cans are able to become other aluminum products over and over and over again. Remember to give them a quick rinse, but please don't crush them before putting them in your bin — crushed cans can miss the sorter and end up in the landfill.");
+                    solution.setText(" Correct! \n" +
+                            "When it comes to items like bagged salad, chips, cookies, and candy, if the bag is soft enough to crush in your hand, it’s usually not recyclable. Some special receptacles do exist for these, but your best bet is to avoid this type of packaging as much as you can.");
                 }
             });
 
@@ -187,7 +189,7 @@ public class RecycleQuiz extends AppCompatActivity {
         }
             else if(total == 5)
             {
-                picture.setImageResource(R.drawable.aluminium);
+                picture.setImageResource(R.drawable.winbottle);
                 question.setText("Can you recycle aluminium cans");
 
                 yes.setOnClickListener(new View.OnClickListener() {
@@ -201,7 +203,7 @@ public class RecycleQuiz extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         solution.setText(" Wrong! \n" +
-                                "Aluminum cans are able to become other aluminum products over and over and over again. Remember to give them a quick rinse, but please don't crush them before putting them in your bin — crushed cans can miss the sorter and end up in the landfill.");
+                                "Amber, emerald, and clear glass can all come back as other glass products for basically all of eternity. But you should still try to repurpose 'em as much as possible before you toss 'em in your recycling bin.");
                     }
                 });
 
@@ -216,7 +218,7 @@ public class RecycleQuiz extends AppCompatActivity {
             }
             else if(total == 6)
             {
-                picture.setImageResource(R.drawable.aluminium);
+                picture.setImageResource(R.drawable.milkjudge);
                 question.setText("Can you recycle aluminium cans");
 
                 yes.setOnClickListener(new View.OnClickListener() {
@@ -229,8 +231,8 @@ public class RecycleQuiz extends AppCompatActivity {
                 no.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        solution.setText(" Wrong! \n" +
-                                "Aluminum cans are able to become other aluminum products over and over and over again. Remember to give them a quick rinse, but please don't crush them before putting them in your bin — crushed cans can miss the sorter and end up in the landfill.");
+                        solution.setText("Wrong! \n" +
+                                "Pretty much all plastic bottles, jugs, and jars (save for yogurt or pudding containers, which may need to be recycled elsewhere) are recyclable. Just be sure to rinse them out beforehand!");
                     }
                 });
 
@@ -245,14 +247,14 @@ public class RecycleQuiz extends AppCompatActivity {
             }
             else if(total == 7)
             {
-                picture.setImageResource(R.drawable.aluminium);
+                picture.setImageResource(R.drawable.mirror);
                 question.setText("Can you recycle aluminium cans");
 
                 yes.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        solution.setText("Correct! \n" +
-                                "Aluminum cans are able to become other aluminum products over and over and over again. Remember to give them a quick rinse, but please don't crush them before putting them in your bin — crushed cans can miss the sorter and end up in the landfill.");
+                        solution.setText("Wrong! \n" +
+                                "Sadly, even though mirrors might seem like glass, lots of chemicals go into making them reflective, and those chemicals can't safely enter recycling streams. Womp.");
                     }
                 });
                 no.setOnClickListener(new View.OnClickListener() {
@@ -273,7 +275,7 @@ public class RecycleQuiz extends AppCompatActivity {
 
             }else if(total == 8)
             {
-                picture.setImageResource(R.drawable.aluminium);
+                picture.setImageResource(R.drawable.styrofoam);
                 question.setText("Can you recycle aluminium cans");
 
                 yes.setOnClickListener(new View.OnClickListener() {
@@ -287,7 +289,7 @@ public class RecycleQuiz extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         solution.setText(" Correct! \n" +
-                                "Sadly, even though mirrors might seem like glass, lots of chemicals go into making them reflective, and those chemicals can't safely enter recycling streams. Womp.");
+                                "Some special systems can handle styrofoam, but they’re not very common, so when you can, refuse things like packing peanuts and coated cups and containers...since styrofoam can sit in landfills for centuries..");
                     }
                 });
 
@@ -301,7 +303,7 @@ public class RecycleQuiz extends AppCompatActivity {
 
             }else if(total == 9)
             {
-                picture.setImageResource(R.drawable.aluminium);
+                picture.setImageResource(R.drawable.magazine);
                 question.setText("Can you recycle aluminium cans");
 
                 yes.setOnClickListener(new View.OnClickListener() {
@@ -314,8 +316,8 @@ public class RecycleQuiz extends AppCompatActivity {
                 no.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        solution.setText(" Correct! \n" +
-                                "Sadly, even though mirrors might seem like glass, lots of chemicals go into making them reflective, and those chemicals can't safely enter recycling streams. Womp.");
+                        solution.setText("Wrong! \n" +
+                                "There's a misconception that glossy paper can't be recycled, but that shiny coating doesn't actually contaminate the paper, so these days, nearly all community recycling programs will accept glossy magazines and catalogs.");
                     }
                 });
 
@@ -329,7 +331,7 @@ public class RecycleQuiz extends AppCompatActivity {
 
             }else if(total == 10)
             {
-                picture.setImageResource(R.drawable.aluminium);
+                picture.setImageResource(R.drawable.ceramics);
                 question.setText("Can you recycle aluminium cans");
 
                 yes.setOnClickListener(new View.OnClickListener() {
@@ -342,8 +344,8 @@ public class RecycleQuiz extends AppCompatActivity {
                 no.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        solution.setText(" Correct! \n" +
-                                "Sadly, even though mirrors might seem like glass, lots of chemicals go into making them reflective, and those chemicals can't safely enter recycling streams. Womp.");
+                        solution.setText("Correct! \n" +
+                                "Ceramics contain a bunch of chemicals that make them ultra-heat tolerant and, like mirrors, those chemicals don't belong in recycling streams");
                     }
                 });
 
@@ -355,51 +357,23 @@ public class RecycleQuiz extends AppCompatActivity {
                     }
                 });
 
-            }else if(total == 8)
+            }else if(total ==11)
             {
-                picture.setImageResource(R.drawable.aluminium);
+                picture.setImageResource(R.drawable.chewinggum);
                 question.setText("Can you recycle aluminium cans");
 
                 yes.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        solution.setText(" Wrong! \n" +
-                                "Some special systems can handle styrofoam, but they’re not very common, so when you can, refuse things like packing peanuts and coated cups and containers...since styrofoam can sit in landfills for centuries.");
+                        solution.setText("Wrong! \n" +
+                                "A good rule of thumb: Don't recycle anything smaller than a Post-It, even if it's made from a recyclable material. Items like gum wrappers are too small to be picked up by traditional sorters and can end up as contamination. Go ahead and compost any small pieces of paper instead.");
                     }
                 });
                 no.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        solution.setText(" Correct! \n" +
-                                "Sadly, even though mirrors might seem like glass, lots of chemicals go into making them reflective, and those chemicals can't safely enter recycling streams. Womp.");
-                    }
-                });
-
-                next.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        total++;
-                        Quiz();
-                    }
-                });
-
-            }else if(total == 8)
-            {
-                picture.setImageResource(R.drawable.aluminium);
-                question.setText("Can you recycle aluminium cans");
-
-                yes.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        solution.setText(" Wrong! \n" +
-                                "Some special systems can handle styrofoam, but they’re not very common, so when you can, refuse things like packing peanuts and coated cups and containers...since styrofoam can sit in landfills for centuries.");
-                    }
-                });
-                no.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        solution.setText(" Correct! \n" +
-                                "Sadly, even though mirrors might seem like glass, lots of chemicals go into making them reflective, and those chemicals can't safely enter recycling streams. Womp.");
+                        solution.setText("Correct! \n" +
+                                "A good rule of thumb: Don't recycle anything smaller than a Post-It, even if it's made from a recyclable material. Items like gum wrappers are too small to be picked up by traditional sorters and can end up as contamination. Go ahead and compost any small pieces of paper instead.");
                     }
                 });
 
@@ -412,10 +386,11 @@ public class RecycleQuiz extends AppCompatActivity {
                 });
 
             }
+            }
 
 
 
         }
 
     }
-}
+
