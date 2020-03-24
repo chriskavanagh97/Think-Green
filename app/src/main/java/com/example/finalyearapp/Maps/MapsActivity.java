@@ -3,9 +3,15 @@ package com.example.finalyearapp.Maps;
 import androidx.appcompat.widget.Toolbar;
 
 import androidx.fragment.app.FragmentActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
@@ -24,7 +30,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
-
+import java.util.ArrayList;
 
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
@@ -34,6 +40,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     Double lat , lng;
     RelativeLayout maincontent;
     LinearLayout mainmenu;
+    RecyclerView recyclerView;
+    ArrayList<Location> locations = new ArrayList<>();
+    RecycleAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +68,36 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             }
         });
+
+        recyclerView = findViewById(R.id.my_recycler_view);
+        recyclerView.setHasFixedSize(true);
+
+        LinearLayoutManager mLayoutManager= new LinearLayoutManager(this);
+
+
+        recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+        EditText search = (EditText) findViewById(R.id.search);
+
+        search.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+                filter(s.toString());
+
+            }
+        });
+
     }
 
 
@@ -103,6 +142,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 address = address1 + " , " + address2;
                 coordinantes = lat + "," + lng;
 
+                locations.add(new Location( name,  address,  city,  state));
+
+
+                adapter = new RecycleAdapter(locations,MapsActivity.this);
+                recyclerView.setAdapter(adapter);
 
                 mMap = googleMap;
 
@@ -121,5 +165,19 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
 
 
+    }
+    private void filter(String text)
+    {
+        ArrayList<Location> filteredList = new ArrayList<Location>();
+
+        for (Location item : locations)
+        {
+            if(item.getName().toLowerCase().contains(text.toLowerCase())){
+                filteredList.add(item);
+
+            }
+
+        }
+        adapter.filterlist(filteredList);
     }
 }
