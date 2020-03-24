@@ -1,23 +1,36 @@
 package com.example.finalyearapp.Maps;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
 
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.example.finalyearapp.R;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -41,6 +54,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
 
+
     // Add a marker in Sydney and move the camera
     LatLng Marker ;
 
@@ -55,7 +69,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     RecyclerView recyclerView;
     ArrayList<Location> locations = new ArrayList<>();
     RecycleAdapter adapter;
-    String singlevalue ;
+    String singlevalue;
+
 
 
     @Override
@@ -83,8 +98,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         });
 
 
-
-
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,11 +110,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         });
 
 
-
         recyclerView = findViewById(R.id.my_recycler_view);
         recyclerView.setHasFixedSize(true);
 
-        LinearLayoutManager mLayoutManager= new LinearLayoutManager(this);
+        LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
 
 
         recyclerView.setLayoutManager(mLayoutManager);
@@ -126,8 +138,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             }
         });
-
     }
+
 
 
     @Override
@@ -276,6 +288,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             if(item.getCity().toLowerCase().contains(text.toLowerCase())){
                 filteredList.add(item);
 
+            }
+            else if(item.getAddress().toLowerCase().contains(text.toLowerCase())){
+                filteredList.add(item);
             }
 
         }
