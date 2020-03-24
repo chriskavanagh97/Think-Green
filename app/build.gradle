@@ -69,6 +69,8 @@ dependencies {
 
     implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
 
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+
 
 }
 apply plugin: 'com.google.gms.google-services'

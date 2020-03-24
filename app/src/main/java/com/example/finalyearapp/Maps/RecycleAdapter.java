@@ -35,6 +35,12 @@ public class RecycleAdapter extends RecyclerView.Adapter<com.example.finalyearap
         {
             super(itemView);
             txtView= (TextView) itemView.findViewById(R.id.textView);
+            txtView2= (TextView) itemView.findViewById(R.id.textView2);
+            txtView3= (TextView) itemView.findViewById(R.id.textView3);
+            txtView4= (TextView) itemView.findViewById(R.id.textView4);
+            txtView5= (TextView) itemView.findViewById(R.id.textView5);
+
+
 
         }
     }
@@ -53,7 +59,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<com.example.finalyearap
 // create a new view
 
         LayoutInflater inflater= LayoutInflater.from(parent.getContext());
-        View itemView= inflater.inflate(R.layout.recycler_layout, parent, false);
+        View itemView= inflater.inflate(R.layout.locationslayout, parent, false);
         com.example.finalyearapp.Maps.RecycleAdapter.MyViewHolder viewHolder= new com.example.finalyearapp.Maps.RecycleAdapter.MyViewHolder(itemView);
 
         return viewHolder;

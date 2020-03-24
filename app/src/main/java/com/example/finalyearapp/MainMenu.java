@@ -19,6 +19,8 @@ import com.example.finalyearapp.Carbonfootprint.Results;
 import com.example.finalyearapp.Carbonfootprint.StepOne;
 import com.example.finalyearapp.Carbonfootprint.linechartresults;
 import com.example.finalyearapp.Leaderboard.Leaderboard;
+import com.example.finalyearapp.Maps.MapsActivity;
+import com.example.finalyearapp.Maps.locations;
 import com.example.finalyearapp.News.ArticlesActivity;
 import com.example.finalyearapp.News.NewsSelection;
 import com.example.finalyearapp.QuizMenuPackage.QuizMenu;
@@ -40,7 +42,7 @@ public class MainMenu extends AppCompatActivity {
     TextView emaiil;
     RelativeLayout maincontent;
     LinearLayout mainmenu;
-    ImageView News;
+    ImageView News, map;
 
 
 
@@ -71,6 +73,15 @@ public class MainMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainMenu.this, NewsSelection.class);
+
+                startActivity(intent);
+            }
+        });
+        map = (ImageView) findViewById(R.id.maps);
+        map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainMenu.this, MapsActivity.class);
 
                 startActivity(intent);
             }
