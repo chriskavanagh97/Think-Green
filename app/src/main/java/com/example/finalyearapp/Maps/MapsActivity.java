@@ -142,7 +142,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 address = address1 + " , " + address2;
                 coordinantes = lat + "," + lng;
 
-                locations.add(new Location( name,  address,  city,  state));
+                locations.add(new Location( name,  address,  city,  state, coordinantes));
 
 
                 adapter = new RecycleAdapter(locations,MapsActivity.this);
@@ -172,7 +172,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         for (Location item : locations)
         {
-            if(item.getName().toLowerCase().contains(text.toLowerCase())){
+            if(item.getCity().toLowerCase().contains(text.toLowerCase())){
                 filteredList.add(item);
 
             }

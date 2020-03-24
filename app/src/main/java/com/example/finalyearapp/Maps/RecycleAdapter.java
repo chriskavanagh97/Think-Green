@@ -29,7 +29,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<com.example.finalyearap
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView txtView,txtView2, txtView3, txtView4, txtView5 ;
+        public TextView txtView,txtView2, txtView3, txtView4 ;
 
         public MyViewHolder(View itemView)
         {
@@ -38,7 +38,6 @@ public class RecycleAdapter extends RecyclerView.Adapter<com.example.finalyearap
             txtView2= (TextView) itemView.findViewById(R.id.textView2);
             txtView3= (TextView) itemView.findViewById(R.id.textView3);
             txtView4= (TextView) itemView.findViewById(R.id.textView4);
-            txtView5= (TextView) itemView.findViewById(R.id.textView5);
 
 
 
@@ -77,15 +76,14 @@ public class RecycleAdapter extends RecyclerView.Adapter<com.example.finalyearap
         holder.txtView2.setText(Location.getAddress());
         holder.txtView3.setText(Location.getCity());
         holder.txtView4.setText(Location.getState());
-        holder.txtView5.setText(Location.getCoordinantes());
 
 
         holder.txtView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // Intent intent = new Intent(v.getContext(), Locationview.class);
-               // intent.putExtra("name" ,Location.getName());
-               // v.getContext().startActivity(intent);
+               Intent intent = new Intent(v.getContext(), MapsActivity.class);
+               intent.putExtra("location" ,Location.getCoordinantes());
+                v.getContext().startActivity(intent);
 
 
             }

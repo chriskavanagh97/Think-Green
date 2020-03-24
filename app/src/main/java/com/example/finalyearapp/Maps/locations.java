@@ -46,6 +46,7 @@ public class locations extends AppCompatActivity
 
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+
         EditText search = (EditText) findViewById(R.id.search);
 
         search.addTextChangedListener(new TextWatcher() {
@@ -100,7 +101,7 @@ public class locations extends AppCompatActivity
 
 
 
-                locations.add(new Location( name,  address,  city,  state));
+                locations.add(new Location( name,  address,  city,  state, coordinantes ));
 
 
                 adapter = new RecycleAdapter(locations,locations.this);
@@ -125,7 +126,7 @@ public class locations extends AppCompatActivity
 
         for (Location item : locations)
         {
-            if(item.getName().toLowerCase().contains(text.toLowerCase())){
+            if(item.getCity().toLowerCase().contains(text.toLowerCase())){
                 filteredList.add(item);
 
             }
