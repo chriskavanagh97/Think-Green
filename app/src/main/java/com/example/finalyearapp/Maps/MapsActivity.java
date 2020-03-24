@@ -3,9 +3,7 @@ package com.example.finalyearapp.Maps;
 import androidx.fragment.app.FragmentActivity;
 
 import android.os.Bundle;
-import android.widget.Toast;
 
-import com.example.finalyearapp.Carbonfootprint.linechartresults;
 import com.example.finalyearapp.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -25,7 +23,7 @@ import java.io.UnsupportedEncodingException;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    String name, address,  city,  state,  coordinantes ;
+    String name, address,  city,  state,  coordinantes;
     Double lat , lng;
 
     @Override
@@ -80,17 +78,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 address = address1 + " , " + address2;
                 coordinantes = lat + "," + lng;
 
-                Toast.makeText(MapsActivity.this, "Coordinants : " + lat + " "  + lng , Toast.LENGTH_SHORT).show();
-                LatLng name = new LatLng(-24,151);
-
-                mMap.addMarker(new MarkerOptions().position(name).title("Marker in Sydney") );
 
                 mMap = googleMap;
 
                 // Add a marker in Sydney and move the camera
-               // LatLng sydney = new LatLng(-34, 151);
-               // mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-                mMap.moveCamera(CameraUpdateFactory.newLatLng(name));
+                LatLng Marker = new LatLng(lat, lng);
+                mMap.addMarker(new MarkerOptions().position(Marker).title(name + " " + address));
+                mMap.moveCamera(CameraUpdateFactory.newLatLng(Marker));
+
             }
         }catch (UnsupportedEncodingException e) {
             e.printStackTrace();
@@ -99,5 +94,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+
     }
 }
