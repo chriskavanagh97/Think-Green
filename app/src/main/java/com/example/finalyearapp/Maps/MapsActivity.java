@@ -7,10 +7,12 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -40,9 +42,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     Double lat , lng;
     RelativeLayout maincontent;
     LinearLayout mainmenu;
+    Button sessiontype;
     RecyclerView recyclerView;
     ArrayList<Location> locations = new ArrayList<>();
     RecycleAdapter adapter;
+    String singlevalue ;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +62,19 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         maincontent = (RelativeLayout) findViewById(R.id.mainContent);
         mainmenu = (LinearLayout) findViewById(R.id.mainmenu);
 
+        sessiontype = (Button) findViewById(R.id.sessionType);
+
+        sessiontype.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                maincontent.animate().translationX(-785);
+                mainmenu.animate().translationX(-785);
+            }
+        });
+
+
+
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setOnClickListener(new View.OnClickListener() {
@@ -68,6 +86,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             }
         });
+
+
 
         recyclerView = findViewById(R.id.my_recycler_view);
         recyclerView.setHasFixedSize(true);
@@ -101,67 +121,124 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
 
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
     @Override
     public void onMapReady(GoogleMap googleMap) {
 
-        String json;
-        try {
-            InputStream is = getAssets().open("BringBanks.json");
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-            json = new String(buffer, "UTF-8");
+        Intent value = getIntent();
+        singlevalue = value.getStringExtra("value");
 
 
-            JSONObject obj = new JSONObject(json);
-            JSONArray m_jArry = obj.getJSONArray("Bringbanks");
+        if(singlevalue.equals("true"))
+        {
 
 
-            for (int i = 0; i < m_jArry.length(); i++) {
 
-                JSONObject jo_inside = m_jArry.getJSONObject(i);
-
-
-                name = jo_inside.getString("Name");
-                String address1 = jo_inside.getString("Address");
-                String address2 = jo_inside.getString("Address2");
-                city = jo_inside.getString("City");
-                state = jo_inside.getString("State");
-                lat = jo_inside.getDouble("lat");
-                lng = jo_inside.getDouble("lng");
-                address = address1 + " , " + address2;
-                coordinantes = lat + "," + lng;
-
-                locations.add(new Location( name,  address,  city,  state, coordinantes));
+            String json;
+            try {
+                InputStream is = getAssets().open("BringBanks.json");
+                int size = is.available();
+                byte[] buffer = new byte[size];
+                is.read(buffer);
+                is.close();
+                json = new String(buffer, "UTF-8");
 
 
-                adapter = new RecycleAdapter(locations,MapsActivity.this);
-                recyclerView.setAdapter(adapter);
+                JSONObject obj = new JSONObject(json);
+                JSONArray m_jArry = obj.getJSONArray("Bringbanks");
 
-                mMap = googleMap;
 
-                // Add a marker in Sydney and move the camera
-                LatLng Marker = new LatLng(lat, lng);
-                mMap.addMarker(new MarkerOptions().position(Marker).title(name + " " + address));
-                mMap.moveCamera(CameraUpdateFactory.newLatLng(Marker));
+                for (int i = 0; i < m_jArry.length(); i++) {
 
+                    JSONObject jo_inside = m_jArry.getJSONObject(i);
+
+
+                    name = jo_inside.getString("Name");
+                    String address1 = jo_inside.getString("Address");
+                    String address2 = jo_inside.getString("Address2");
+                    city = jo_inside.getString("City");
+                    state = jo_inside.getString("State");
+                    lat = jo_inside.getDouble("lat");
+                    lng = jo_inside.getDouble("lng");
+                    address = address1 + " , " + address2;
+                    coordinantes = lat + "," + lng;
+
+
+
+                    locations.add(new Location(name, address, city, state, coordinantes, lat ,lng ));
+
+                    adapter = new RecycleAdapter(locations, MapsActivity.this);
+                    recyclerView.setAdapter(adapter);
+
+                    mMap = googleMap;
+
+                    // Add a marker in Sydney and move the camera
+                    LatLng Marker = new LatLng(lat, lng);
+                    mMap.addMarker(new MarkerOptions().position(Marker).title(name + " " + address));
+                    mMap.moveCamera(CameraUpdateFactory.newLatLng(Marker));
+
+                }
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
-        }catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
-            e.printStackTrace();
+
+
+        }else {
+
+
+            String json;
+            try {
+                InputStream is = getAssets().open("BringBanks.json");
+                int size = is.available();
+                byte[] buffer = new byte[size];
+                is.read(buffer);
+                is.close();
+                json = new String(buffer, "UTF-8");
+
+
+                JSONObject obj = new JSONObject(json);
+                JSONArray m_jArry = obj.getJSONArray("Bringbanks");
+
+
+                for (int i = 0; i < m_jArry.length(); i++) {
+
+                    JSONObject jo_inside = m_jArry.getJSONObject(i);
+
+
+                    name = jo_inside.getString("Name");
+                    String address1 = jo_inside.getString("Address");
+                    String address2 = jo_inside.getString("Address2");
+                    city = jo_inside.getString("City");
+                    state = jo_inside.getString("State");
+                    lat = jo_inside.getDouble("lat");
+                    lng = jo_inside.getDouble("lng");
+                    address = address1 + " , " + address2;
+                    coordinantes = lat + "," + lng;
+
+                    locations.add(new Location(name, address, city, state, coordinantes ,lat ,lng ));
+
+
+                    adapter = new RecycleAdapter(locations, MapsActivity.this);
+                    recyclerView.setAdapter(adapter);
+
+                    mMap = googleMap;
+
+                    // Add a marker in Sydney and move the camera
+                    LatLng Marker = new LatLng(lat, lng);
+                    mMap.addMarker(new MarkerOptions().position(Marker).title(name + " " + address));
+                    mMap.moveCamera(CameraUpdateFactory.newLatLng(Marker));
+
+                }
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         }
 
 

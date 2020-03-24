@@ -101,7 +101,7 @@ public class locations extends AppCompatActivity
 
 
 
-                locations.add(new Location( name,  address,  city,  state, coordinantes ));
+                //locations.add(new Location(name, address, city, state, coordinantes, lat ,lng ));
 
 
                 adapter = new RecycleAdapter(locations,locations.this);

@@ -82,6 +82,7 @@ public class MainMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainMenu.this, MapsActivity.class);
+                intent.putExtra("value", "false");
 
                 startActivity(intent);
             }

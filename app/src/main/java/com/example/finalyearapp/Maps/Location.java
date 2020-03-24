@@ -7,13 +7,33 @@ public class Location {
     String city;
     String state;
     String coordinantes;
+    Double lat;
+    Double lng;
 
-    public Location(String name, String address, String city, String state, String coordinantes) {
+    public Double getLat() {
+        return lat;
+    }
+
+    public void setLat(Double lat) {
+        this.lat = lat;
+    }
+
+    public Double getLng() {
+        return lng;
+    }
+
+    public void setLng(Double lng) {
+        this.lng = lng;
+    }
+
+    public Location(String name, String address, String city, String state, String coordinantes, Double lat, Double lng) {
         this.name = name;
         this.address = address;
         this.city = city;
         this.state = state;
         this.coordinantes = coordinantes;
+        this.lat = lat;
+        this.lng = lng;
     }
 
     public String getName() {
