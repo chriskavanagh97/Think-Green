@@ -82,7 +82,8 @@ public class RecycleAdapter extends RecyclerView.Adapter<com.example.finalyearap
             @Override
             public void onClick(View v) {
                Intent intent = new Intent(v.getContext(), MapsActivity.class);
-               intent.putExtra("coordinates" ,Location.getCoordinantes());
+               intent.putExtra("lat" ,Location.getLat());
+               intent.putExtra("lng" ,Location.getLng());
                intent.putExtra("address" ,Location.getAddress());
                intent.putExtra("city" ,Location.getCity());
                intent.putExtra("name" ,Location.getName());

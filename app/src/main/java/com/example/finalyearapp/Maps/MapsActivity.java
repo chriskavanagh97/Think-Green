@@ -38,8 +38,17 @@ import java.util.ArrayList;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+
+
+
+    // Add a marker in Sydney and move the camera
+    LatLng Marker ;
+
     String name, address,  city,  state,  coordinantes;
     Double lat , lng;
+
+    String name2, address2;
+    Double lat2 ,lng2;
     RelativeLayout maincontent;
     LinearLayout mainmenu;
     Button sessiontype;
@@ -126,12 +135,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         Intent value = getIntent();
         singlevalue = value.getStringExtra("value");
+        mMap = googleMap;
 
 
         if(singlevalue.equals("true"))
         {
 
+            address2 = value.getStringExtra("address");
+            name2 = value.getStringExtra("name");
+            lat2 = value.getDoubleExtra("lat", 1);
+            lng2 = value.getDoubleExtra("lng", 1);
 
+            Marker = new LatLng(lat2, lng2);
+            mMap.addMarker(new MarkerOptions().position(Marker).title(name2 + " " + address2));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Marker, 15));
 
             String json;
             try {
@@ -145,6 +162,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                 JSONObject obj = new JSONObject(json);
                 JSONArray m_jArry = obj.getJSONArray("Bringbanks");
+
+
 
 
                 for (int i = 0; i < m_jArry.length(); i++) {
@@ -169,14 +188,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     adapter = new RecycleAdapter(locations, MapsActivity.this);
                     recyclerView.setAdapter(adapter);
 
-                    mMap = googleMap;
+
 
                     // Add a marker in Sydney and move the camera
-                    LatLng Marker = new LatLng(lat, lng);
+                    Marker = new LatLng(lat, lng);
                     mMap.addMarker(new MarkerOptions().position(Marker).title(name + " " + address));
-                    mMap.moveCamera(CameraUpdateFactory.newLatLng(Marker));
+
+
+
 
                 }
+
+
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             } catch (IOException e) {
@@ -186,7 +209,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
 
 
-        }else {
+        }
+        else {
 
 
             String json;
