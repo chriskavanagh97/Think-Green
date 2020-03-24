@@ -1,8 +1,13 @@
 package com.example.finalyearapp.Maps;
 
+import androidx.appcompat.widget.Toolbar;
+
 import androidx.fragment.app.FragmentActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.example.finalyearapp.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -20,11 +25,15 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 
+
+
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     String name, address,  city,  state,  coordinantes;
     Double lat , lng;
+    RelativeLayout maincontent;
+    LinearLayout mainmenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +43,22 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+
+        maincontent = (RelativeLayout) findViewById(R.id.mainContent);
+        mainmenu = (LinearLayout) findViewById(R.id.mainmenu);
+
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                maincontent.animate().translationX(0);
+                mainmenu.animate().translationX(0);
+
+
+            }
+        });
     }
 
 
