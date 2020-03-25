@@ -377,7 +377,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
         Toast.makeText(this, "Info window clicked",
                 Toast.LENGTH_SHORT).show();
 
-        myDialog.setContentView(R.layout.custompopup);
+        myDialog.setContentView(R.layout.mapspopup);
         TextView txtclose;
         Button btnFollow;
 
