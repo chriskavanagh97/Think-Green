@@ -46,6 +46,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 
 
+import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
@@ -180,6 +181,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
             marker.remove();
         }
     }
+
 
 
     @Override
@@ -603,6 +605,8 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
 
                 marker.showInfoWindow();
 
+                mTripMarkers.add(marker);
+
 
             }
             else{
@@ -610,5 +614,23 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
                 polylineData.getPolyline().setZIndex(0);
             }
         }
+    }
+
+    public void zoomRoute(List<LatLng> lstLatLngRoute) {
+
+        if (mMap == null || lstLatLngRoute == null || lstLatLngRoute.isEmpty()) return;
+
+        LatLngBounds.Builder boundsBuilder = new LatLngBounds.Builder();
+        for (LatLng latLngPoint : lstLatLngRoute)
+            boundsBuilder.include(latLngPoint);
+
+        int routePadding = 120;
+        LatLngBounds latLngBounds = boundsBuilder.build();
+
+        mMap.animateCamera(
+                CameraUpdateFactory.newLatLngBounds(latLngBounds, routePadding),
+                600,
+                null
+        );
     }
     }
