@@ -1,7 +1,9 @@
 package com.example.finalyearapp.Maps;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
 
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -10,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 
@@ -17,6 +20,8 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.location.Location;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -32,8 +37,10 @@ import android.widget.Toast;
 import com.example.finalyearapp.R;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.GeofencingApi;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationResult;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -44,6 +51,16 @@ import com.google.android.gms.maps.model.LatLngBounds;
 
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Polyline;
+import com.google.android.gms.maps.model.PolylineOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.maps.DirectionsApiRequest;
+import com.google.maps.GeoApiContext;
+import com.google.maps.PendingResult;
+import com.google.maps.internal.PolylineEncoding;
+import com.google.maps.model.DirectionsResult;
+import com.google.maps.model.DirectionsRoute;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -56,13 +73,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWindowClickListener, OnMapReadyCallback {
+public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWindowClickListener, OnMapReadyCallback , GoogleMap.OnPolylineClickListener {
 
     private GoogleMap mMap;
     Location mLastLocation;
     com.google.android.gms.maps.model.Marker mCurrLocationMarker;
     Dialog myDialog;
-
+    GeoApiContext mCGeoApiContext = null;
+    String TAG = "MapsActivity";
+    Location location;
 
 
 
@@ -72,7 +91,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
     LatLng Markerblue;
     LatLng MarkerRed;
     LatLng MarkerYellow;
-
+    Location currentlocation;
 
     String name, address, city, state, coordinantes;
     Double lat, lng;
@@ -87,6 +106,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
     RecycleAdapter adapter;
     String singlevalue;
 
+     FusedLocationProviderClient mFusedLocationProviderClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,7 +117,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-
+        mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
         maincontent = (RelativeLayout) findViewById(R.id.mainContent);
         mainmenu = (LinearLayout) findViewById(R.id.mainmenu);
 
@@ -165,33 +185,16 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
         singlevalue = value.getStringExtra("value");
         mMap = googleMap;
         mMap.setOnInfoWindowClickListener(this);
-
-        LocationCallback mLocationCallback = new LocationCallback() {
-            @Override
-            public void onLocationResult(LocationResult locationResult) {
-                List<Location> locationList = locationResult.getLocations();
-                if (locationList.size() > 0) {
-                    //The last location in the list is the newest
-                    Location location = locationList.get(locationList.size() - 1);
-                    Log.i("MapsActivity", "Location: " + location.getLatitude() + " " + location.getLongitude());
-                    mLastLocation = location;
-                    if (mCurrLocationMarker != null) {
-                        mCurrLocationMarker.remove();
-                    }
-
-                    //Place current location marker
-                    LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
-                    MarkerOptions markerOptions = new MarkerOptions();
-                    markerOptions.position(latLng);
-                    markerOptions.title("Current Position");
-                    markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));
-                    mCurrLocationMarker = mMap.addMarker(markerOptions);
+        mMap.getUiSettings().setAllGesturesEnabled(false);
+        mMap.setOnPolylineClickListener(this);
 
 
-                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 20));
-                }
-            }
-        };
+        if(mCGeoApiContext == null) {
+
+            mCGeoApiContext = new GeoApiContext.Builder().apiKey(getString(R.string.google_maps_key)).build();
+        }
+
+
 
         if (singlevalue.equals("true")) {
 
@@ -294,6 +297,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
 
         } else {
 
+            getDeviceLocation();
 
             String json;
             try {
@@ -337,21 +341,21 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
 
                         MarkerYellow = new LatLng(lat, lng);
                         mMap.addMarker(new MarkerOptions().position(MarkerYellow).title(name + " " + address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
-                        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(MarkerYellow, 7));
+
                     } else if (name.equals("Lighting Dropoff")) {
                         MarkerRed = new LatLng(lat, lng);
                         mMap.addMarker(new MarkerOptions().position(MarkerRed).title(name + " " + address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
-                        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(MarkerRed, 7));
+
 
                     } else if (name.equals("Civic Amenity Site")) {
                         Markerblue = new LatLng(lat, lng);
                         mMap.addMarker(new MarkerOptions().position(Markerblue).title(name + " " + address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
-                        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Markerblue, 7));
+
 
                     } else if (name.equals("Electrical Retailers")) {
                         Marker = new LatLng(lat, lng);
                         mMap.addMarker(new MarkerOptions().position(Marker).title(name + " " + address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
-                        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Marker, 7));
+
 
                     }
 
@@ -394,6 +398,14 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
                 "\n");
 
         }
+        Button route = myDialog.findViewById(R.id.route);
+        route.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myDialog.dismiss();
+                calculateDirections(marker);
+            }
+        });
         txtclose.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -409,11 +421,123 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
         myDialog.show();
 
     }
+    private void getDeviceLocation() {
+        /*
+         * Get the best and most recent location of the device, which may be null in rare
+         * cases when a location is not available.
+         */
+        try {
+                Task locationResult = mFusedLocationProviderClient.getLastLocation();
+                locationResult.addOnCompleteListener(this, new OnCompleteListener() {
+                    @Override
+                    public void onComplete(@NonNull Task task) {
+                        if (task.isSuccessful()) {
+                            // Set the map's camera position to the current location of the device.
+                             currentlocation = (Location) task.getResult();
+                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
+                                    new LatLng(currentlocation.getLatitude(),
+                                            currentlocation.getLongitude()), 13));
+                        } else {
+                            Log.d(TAG, "Current location is null. Using defaults.");
+
+                        }
+                    }
+                });
+
+        } catch(SecurityException e)  {
+            Log.e("Exception: %s", e.getMessage());
+        }
+    }
+    private void calculateDirections(Marker marker){
+        try {
+            Task locationResult = mFusedLocationProviderClient.getLastLocation();
+            locationResult.addOnCompleteListener(this, new OnCompleteListener() {
+                @Override
+                public void onComplete(@NonNull Task task) {
+                    if (task.isSuccessful()) {
+                        // Set the map's camera position to the current location of the device.
+                        currentlocation = (Location) task.getResult();
+                        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
+                                new LatLng(currentlocation.getLatitude(),
+                                        currentlocation.getLongitude()), 13));
+                    } else {
+                        Log.d(TAG, "Current location is null. Using defaults.");
+
+                    }
+
+                    Log.d(TAG, "calculateDirections: calculating directions.");
+
+                    com.google.maps.model.LatLng destination = new com.google.maps.model.LatLng(
+                            marker.getPosition().latitude,
+                            marker.getPosition().longitude
+                    );
+                    DirectionsApiRequest directions = new DirectionsApiRequest(mCGeoApiContext);
+
+                    directions.alternatives(true);
+
+                    directions.origin(
+                            new com.google.maps.model.LatLng(
+                                    currentlocation.getLatitude(),
+                                    currentlocation.getLongitude()
+                    )
+        );
+                    Log.d(TAG, "calculateDirections: destination: " + destination.toString());
+                    directions.destination(destination).setCallback(new PendingResult.Callback<DirectionsResult>() {
+                        @Override
+                        public void onResult(DirectionsResult result) {
+                            Log.d(TAG, "calculateDirections: routes: " + result.routes[0].toString());
+                            Log.d(TAG, "calculateDirections: duration: " + result.routes[0].legs[0].duration);
+                            Log.d(TAG, "calculateDirections: distance: " + result.routes[0].legs[0].distance);
+                            Log.d(TAG, "calculateDirections: geocodedWayPoints: " + result.geocodedWaypoints[0].toString());
+
+                            addPolylinesToMap(result);
+                        }
+
+                        @Override
+                        public void onFailure(Throwable e) {
+                            Log.e(TAG, "calculateDirections: Failed to get directions: " + e.getMessage() );
+
+                        }
+                    });
+                }
+            });
+
+        } catch(SecurityException e)  {
+            Log.e("Exception: %s", e.getMessage());
+        }
 
 
+    }
+    private void addPolylinesToMap(final DirectionsResult result) {
+        new Handler(Looper.getMainLooper()).post(new Runnable() {
+            @Override
+            public void run() {
+                Log.d(TAG, "run: result routes: " + result.routes.length);
 
+                for (DirectionsRoute route : result.routes) {
+                    Log.d(TAG, "run: leg: " + route.legs[0].toString());
+                    List<com.google.maps.model.LatLng> decodedPath = PolylineEncoding.decode(route.overviewPolyline.getEncodedPath());
 
+                    List<LatLng> newDecodedPath = new ArrayList<>();
 
+                    // This loops through all the LatLng coordinates of ONE polyline.
+                    for (com.google.maps.model.LatLng latLng : decodedPath) {
+
+//                        Log.d(TAG, "run: latlng: " + latLng.toString());
+
+                        newDecodedPath.add(new LatLng(
+                                latLng.lat,
+                                latLng.lng
+                        ));
+                    }
+                    Polyline polyline = mMap.addPolyline(new PolylineOptions().addAll(newDecodedPath));
+                    polyline.setColor(Color.BLUE);
+                    polyline.setClickable(true);
+
+                }
+            }
+        });
+    }
 
 
     private void filter(String text) {
@@ -432,4 +556,11 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
     }
 
 
+    @Override
+    public void onPolylineClick(Polyline polyline) {
+
+        polyline.setColor(Color.RED);
+        polyline.setZIndex(1);
+
+    }
 }

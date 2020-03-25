@@ -69,6 +69,9 @@ dependencies {
 
     implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
 
+    implementation 'com.google.maps:google-maps-services:0.11.0'
+    implementation 'org.slf4j:slf4j-simple:1.7.25'
+
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
     implementation 'com.google.android.gms:play-services-location:17.0.0'
 
