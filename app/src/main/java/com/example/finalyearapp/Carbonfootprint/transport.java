@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.finalyearapp.R;
@@ -14,12 +15,13 @@ import com.example.finalyearapp.R;
 public class transport extends AppCompatActivity {
 
     TextView tip1, tip2, tip3, description, category;
+    LinearLayout background;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transport);
-
+         background = findViewById(R.id.background);
         tip1 = findViewById(R.id.tip1);
         tip2 = findViewById(R.id.tip2);
         tip3 = findViewById(R.id.tip3);
@@ -73,11 +75,26 @@ public class transport extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                background.setBackgroundResource(R.drawable.publictransporttip);
                 tip1.setTextColor(Color.BLACK);
                 tip2.setTextColor(Color.YELLOW);
                 description.setText("One of the most important changes you can make to the environment is changing your diet. The production of meat and dairy products is one of the major causes of greenhouse gas emissions. So why not cut out meat from your diet and have a more carbon friendly dinner.\n" +
                         "\n");
                 category.setText("EAT LESS MEAT AND DAIRY");
+            }
+        });
+        tip1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                background.setBackgroundResource(R.drawable.publictransporttip);
+                tip1.setTextColor(Color.YELLOW);
+                tip2.setTextColor(Color.BLACK);
+                tip3.setTextColor(Color.BLACK);
+                description.setText("Everything you buy has a footprint, so try to choose products that have been sustainably sourced. Buying seasonally produced food supports your local agricultural economy but it also helps the environment by cutting down on the packaging, transport and high intensity farming process needed for out of season foods.\n" +
+                        "\n" +
+                        "Seasonal food is also cheaper.");
+                category.setText("EAT “IN SEASON”");
             }
         });
         tip3.setOnClickListener(new View.OnClickListener() {
@@ -86,7 +103,7 @@ public class transport extends AppCompatActivity {
 
                 tip1.setTextColor(Color.BLACK);
                 tip2.setTextColor(Color.BLACK);
-                tip3.setHintTextColor(Color.YELLOW);
+                tip3.setTextColor(Color.YELLOW);
                 description.setText("The way a food is farmed is a hugely important part of how sustainable that type of food is. Constant farming of the same crop types will drain nutrients from the soil. Then farming this crop all year long will give no time for the soil to recover.\n" +
                         "\n" +
                         "By having a colourful plate, we will be ensuring a more nutritious, natural, flavourful and exciting meal – one that is in sync with your ecosystem.");
@@ -174,6 +191,7 @@ public class transport extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                background.setBackgroundResource(R.drawable.publictransporttip);
                 tip1.setTextColor(Color.BLACK);
                 tip2.setTextColor(Color.YELLOW);
                 description.setText("If you have to use your car, then use it properly. There are some bad habits people have that make the impacts of cars a lot worse. Smarter driving can help limit some of the emissions of car usage.\n" +
@@ -184,13 +202,27 @@ public class transport extends AppCompatActivity {
                 category.setText("DRIVE SMARTER");
             }
         });
+        tip1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                background.setBackgroundResource(R.drawable.cycletip);
+                tip1.setTextColor(Color.YELLOW);
+                tip2.setTextColor(Color.BLACK);
+                tip3.setTextColor(Color.BLACK);
+                description.setText("The most eco-friendly mode of transport is cycling, it creates no emission, uses no resources and keeps you fit and healthy. And if all that doesn’t sway your opinion - you will save money while helping save the environment.\n" +
+                        "\n" +
+                        "By cycling more, you are also taking cars off the road that would otherwise cause congestion and pollution.");
+                category.setText("CYCLE");
+            }
+        });
         tip3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 tip1.setTextColor(Color.BLACK);
                 tip2.setTextColor(Color.BLACK);
-                tip3.setHintTextColor(Color.YELLOW);
+                tip3.setTextColor(Color.YELLOW);
                 description.setText("Public transport is a great alternative to driving and will reduce your carbon footprint dramatically.\n" +
                         "\n" +
                         "By taking the train or bus, it means fewer cars on the road overall, resulting in less carbon dioxide being produced. And the cars that remain would have quicker journeys due to decreased congestion on the roads, again resulting in a CO2 reduction.\n" +

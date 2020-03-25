@@ -83,6 +83,8 @@ public class linechartresults extends AppCompatActivity {
         display.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                display.setVisibility(display.GONE);
                 Toast.makeText(linechartresults.this, "Float array: on start" + dataVals2, Toast.LENGTH_SHORT).show();
                 Toast.makeText(linechartresults.this, "Float array: on start" + total, Toast.LENGTH_SHORT).show();
                 linechart = (LineChart) findViewById(R.id.linechart);

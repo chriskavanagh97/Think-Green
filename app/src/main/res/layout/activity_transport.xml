@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/cycle"
+    android:background="@drawable/cycletip"
+    android:id="@+id/background"
     tools:context=".Carbonfootprint.transport">
 
     <EditText
@@ -112,14 +113,14 @@
 
     <TextView
         android:id="@+id/description"
-        android:layout_width="379dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="330dp"
-        android:text="description"
+        android:layout_width="326dp"
+        android:layout_height="279dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="260dp"
         android:textAllCaps="false"
         android:textColor="#090808"
-        android:textSize="18sp"
-        android:textStyle="bold">
+        android:textSize="14sp"
+        android:textStyle="italic">
 
     </TextView>
 </LinearLayout>

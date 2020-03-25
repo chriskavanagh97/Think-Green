@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context=".Carbonfootprint.linechartresults">
 
 
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/linechart"
-        android:layout_width="293dp"
-        android:layout_height="439dp"
+        android:layout_width="333dp"
+        android:layout_height="358dp"
+        android:background="#FFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.415"
@@ -47,12 +49,15 @@
 
     <TextView
         android:id="@+id/results"
-        android:layout_width="377dp"
-        android:layout_height="109dp"
+        android:layout_width="318dp"
+        android:layout_height="166dp"
 
-        app:layout_constraintBottom_toTopOf="@+id/display"
+        android:layout_marginTop="8dp"
+        android:textColor="#090808"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linechart" />
 
