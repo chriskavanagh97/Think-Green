@@ -7,14 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.finalyearapp.MainActivity;
 import com.example.finalyearapp.R;
-import com.example.finalyearapp.Maps.Location;
-
 
 
 import java.util.ArrayList;
@@ -23,7 +19,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<com.example.finalyearap
 
 
 
-    private ArrayList<Location> Locations;
+    private ArrayList<place> places;
     private Context mContext;
 // Provide a reference to the views for each data item
 
@@ -44,9 +40,9 @@ public class RecycleAdapter extends RecyclerView.Adapter<com.example.finalyearap
         }
     }
 
-    public RecycleAdapter(ArrayList<Location>Locations, Context context)
+    public RecycleAdapter(ArrayList<place> places, Context context)
     {
-        this.Locations = Locations;
+        this.places = places;
         this.mContext = context;
     }
 
@@ -70,23 +66,23 @@ public class RecycleAdapter extends RecyclerView.Adapter<com.example.finalyearap
 
         //get element from your dataset at this position
         //replace the contents of the view with that element
-        final Location Location = Locations.get(position);
+        final place place = places.get(position);
 
-        holder.txtView.setText(Location.getName());
-        holder.txtView2.setText(Location.getAddress());
-        holder.txtView3.setText(Location.getCity());
-        holder.txtView4.setText(Location.getState());
+        holder.txtView.setText(place.getName());
+        holder.txtView2.setText(place.getAddress());
+        holder.txtView3.setText(place.getCity());
+        holder.txtView4.setText(place.getState());
 
 
         holder.txtView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                Intent intent = new Intent(v.getContext(), MapsActivity.class);
-               intent.putExtra("lat" ,Location.getLat());
-               intent.putExtra("lng" ,Location.getLng());
-               intent.putExtra("address" ,Location.getAddress());
-               intent.putExtra("city" ,Location.getCity());
-               intent.putExtra("name" ,Location.getName());
+               intent.putExtra("lat" , place.getLat());
+               intent.putExtra("lng" , place.getLng());
+               intent.putExtra("address" , place.getAddress());
+               intent.putExtra("city" , place.getCity());
+               intent.putExtra("name" , place.getName());
 
                intent.putExtra("value", "true");
                 v.getContext().startActivity(intent);
@@ -99,11 +95,11 @@ public class RecycleAdapter extends RecyclerView.Adapter<com.example.finalyearap
     @Override
     public int getItemCount()
     {
-        return Locations.size();
+        return places.size();
     }
-    public void filterlist(ArrayList<Location> filteredlist){
+    public void filterlist(ArrayList<place> filteredlist){
 
-        Locations = filteredlist;
+        places = filteredlist;
         notifyDataSetChanged();
 
     }

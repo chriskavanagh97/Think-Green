@@ -11,7 +11,6 @@ import android.text.TextWatcher;
 import android.widget.EditText;
 
 import com.example.finalyearapp.R;
-import com.example.finalyearapp.RecycleMaterial.Material;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -28,7 +27,7 @@ public class locations extends AppCompatActivity
 
 
     RecyclerView recyclerView;
-    ArrayList <Location> locations = new ArrayList<>();
+    ArrayList <place> places = new ArrayList<>();
     String name, address,  city,  state,  coordinantes , lat , lng;
     RecycleAdapter adapter;
 
@@ -101,10 +100,10 @@ public class locations extends AppCompatActivity
 
 
 
-                //locations.add(new Location(name, address, city, state, coordinantes, lat ,lng ));
+                //places.add(new place(name, address, city, state, coordinantes, lat ,lng ));
 
 
-                adapter = new RecycleAdapter(locations,locations.this);
+                adapter = new RecycleAdapter(places,locations.this);
                 recyclerView.setAdapter(adapter);
 
 
@@ -122,9 +121,9 @@ public class locations extends AppCompatActivity
 
     private void filter(String text)
     {
-        ArrayList<Location> filteredList = new ArrayList<Location>();
+        ArrayList<place> filteredList = new ArrayList<place>();
 
-        for (Location item : locations)
+        for (place item : places)
         {
             if(item.getCity().toLowerCase().contains(text.toLowerCase())){
                 filteredList.add(item);

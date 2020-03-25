@@ -1,6 +1,6 @@
 package com.example.finalyearapp.Maps;
 
-public class Location {
+public class place {
 
     String name;
     String address;
@@ -26,7 +26,7 @@ public class Location {
         this.lng = lng;
     }
 
-    public Location(String name, String address, String city, String state, String coordinantes, Double lat, Double lng) {
+    public place(String name, String address, String city, String state, String coordinantes, Double lat, Double lng) {
         this.name = name;
         this.address = address;
         this.city = city;
