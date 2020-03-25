@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 
 import android.location.Location;
@@ -20,6 +22,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 
 import com.example.finalyearapp.R;
@@ -49,11 +52,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWindowClickListener, OnMapReadyCallback {
 
     private GoogleMap mMap;
     Location mLastLocation;
     com.google.android.gms.maps.model.Marker mCurrLocationMarker;
+
 
 
 
@@ -153,6 +157,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Intent value = getIntent();
         singlevalue = value.getStringExtra("value");
         mMap = googleMap;
+        mMap.setOnInfoWindowClickListener(this);
 
         LocationCallback mLocationCallback = new LocationCallback() {
             @Override
@@ -189,20 +194,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             lat2 = value.getDoubleExtra("lat", 1);
             lng2 = value.getDoubleExtra("lng", 1);
 
-            if (name.equals("Bring Bank")) {
+            if (name2.equals("Bring Bank")) {
                 // Add a marker in Sydney and move the camera
                 MarkerYellow = new LatLng(lat2, lng2);
                 mMap.addMarker(new MarkerOptions().position(MarkerYellow).title(name2 + " " + address2).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(MarkerYellow, 15));
-            } else if (name.equals("Lighting Dropoff")) {
+            } else if (name2.equals("Lighting Dropoff")) {
                 MarkerRed = new LatLng(lat2, lng2);
                 mMap.addMarker(new MarkerOptions().position(MarkerRed).title(name2 + " " + address2).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(MarkerRed, 15));
-            } else if (name.equals("Civic Amenity Site")) {
+            } else if (name2.equals("Civic Amenity Site")) {
                 Markerblue = new LatLng(lat2, lng2);
                 mMap.addMarker(new MarkerOptions().position(Markerblue).title(name2 + " " + address2).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Markerblue, 15));
-            } else if (name.equals("Electrical Retailers")) {
+            } else if (name2.equals("Electrical Retailers")) {
                 Marker = new LatLng(lat2, lng2);
                 mMap.addMarker(new MarkerOptions().position(Marker).title(name2 + " " + address2).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Marker, 15));
@@ -358,6 +363,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
     }
+
+    @Override
+    public void onInfoWindowClick(Marker marker)
+    {
+        Toast.makeText(this, "Info window clicked",
+                Toast.LENGTH_SHORT).show();
+
+
+
+    }
+
+
 
     private void filter(String text) {
         ArrayList<place> filteredList = new ArrayList<place>();
