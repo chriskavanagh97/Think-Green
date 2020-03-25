@@ -80,6 +80,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
     String TAG = "MapsActivity";
     Location location;
     private ArrayList<PolylineData> mPolylineData = new ArrayList<>();
+    private ArrayList<Marker> mTripMarkers = new ArrayList<>();
 
 
 
@@ -104,7 +105,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
     RecycleAdapter adapter;
     String singlevalue;
 
-     FusedLocationProviderClient mFusedLocationProviderClient;
+    FusedLocationProviderClient mFusedLocationProviderClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -174,6 +175,11 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
             }
         });
     }
+    private void removeTripMarkers(){
+        for(Marker marker: mTripMarkers){
+            marker.remove();
+        }
+    }
 
 
     @Override
@@ -183,7 +189,8 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
         singlevalue = value.getStringExtra("value");
         mMap = googleMap;
         mMap.setOnInfoWindowClickListener(this);
-        mMap.getUiSettings().setAllGesturesEnabled(false);
+        mMap.getUiSettings().setCompassEnabled(false);
+        mMap.getUiSettings().setMapToolbarEnabled(false);
         mMap.setOnPolylineClickListener(this);
 
 
@@ -387,13 +394,13 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
         txtclose.setText("X");
 
         TextView txtanswer = (TextView) myDialog.findViewById(R.id.Answer);
-         txtanswer.setText(marker.getTitle());
+        txtanswer.setText(marker.getTitle());
         if(marker.getTitle().contains("Bring Bank") ){
 
 
-        TextView textview = (TextView) myDialog.findViewById(R.id.description);
-        textview.setText("Bring banks are recycling containers provided by your local authority. These facilities typically accept glass bottles and jars, aluminium and tin cans. Bring Banks are FREE.\n" +
-                "\n");
+            TextView textview = (TextView) myDialog.findViewById(R.id.description);
+            textview.setText("Bring banks are recycling containers provided by your local authority. These facilities typically accept glass bottles and jars, aluminium and tin cans. Bring Banks are FREE.\n" +
+                    "\n");
 
         }
         Button route = myDialog.findViewById(R.id.route);
@@ -425,22 +432,22 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
          * cases when a location is not available.
          */
         try {
-                Task locationResult = mFusedLocationProviderClient.getLastLocation();
-                locationResult.addOnCompleteListener(this, new OnCompleteListener() {
-                    @Override
-                    public void onComplete(@NonNull Task task) {
-                        if (task.isSuccessful()) {
-                            // Set the map's camera position to the current location of the device.
-                             currentlocation = (Location) task.getResult();
-                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
-                                    new LatLng(currentlocation.getLatitude(),
-                                            currentlocation.getLongitude()), 13));
-                        } else {
-                            Log.d(TAG, "Current location is null. Using defaults.");
+            Task locationResult = mFusedLocationProviderClient.getLastLocation();
+            locationResult.addOnCompleteListener(this, new OnCompleteListener() {
+                @Override
+                public void onComplete(@NonNull Task task) {
+                    if (task.isSuccessful()) {
+                        // Set the map's camera position to the current location of the device.
+                        currentlocation = (Location) task.getResult();
+                        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
+                                new LatLng(currentlocation.getLatitude(),
+                                        currentlocation.getLongitude()), 13));
+                    } else {
+                        Log.d(TAG, "Current location is null. Using defaults.");
 
-                        }
                     }
-                });
+                }
+            });
 
         } catch(SecurityException e)  {
             Log.e("Exception: %s", e.getMessage());
@@ -477,8 +484,8 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
                             new com.google.maps.model.LatLng(
                                     currentlocation.getLatitude(),
                                     currentlocation.getLongitude()
-                    )
-        );
+                            )
+                    );
                     Log.d(TAG, "calculateDirections: destination: " + destination.toString());
                     directions.destination(destination).setCallback(new PendingResult.Callback<DirectionsResult>() {
                         @Override
@@ -520,6 +527,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
                     mPolylineData.clear();
                     mPolylineData = new ArrayList<>();
                 }
+                double duration = 9999;
 
                 for (DirectionsRoute route : result.routes) {
                     Log.d(TAG, "run: leg: " + route.legs[0].toString());
@@ -538,9 +546,18 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
                         ));
                     }
                     Polyline polyline = mMap.addPolyline(new PolylineOptions().addAll(newDecodedPath));
-                    polyline.setColor(Color.BLUE);
+                    polyline.setColor(Color.GRAY);
                     polyline.setClickable(true);
                     mPolylineData.add(new PolylineData(polyline, route.legs[0]));
+
+                    //highlights shortest duration
+
+                    double tempduration = route.legs[0].duration.inSeconds;
+                    if(tempduration < duration){
+                        duration = tempduration;
+                        onPolylineClick(polyline);
+                    }
+
 
                 }
             }
@@ -567,8 +584,31 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
     @Override
     public void onPolylineClick(Polyline polyline) {
 
-        polyline.setColor(Color.RED);
-        polyline.setZIndex(1);
+        int index = 0;
 
+        for(PolylineData polylineData: mPolylineData){
+            index++;
+            Log.d(TAG, "onPolylineClick: toString: " + polylineData.toString());
+            if(polyline.getId().equals(polylineData.getPolyline().getId())){
+                polylineData.getPolyline().setColor(Color.RED);
+                polylineData.getPolyline().setZIndex(1);
+
+                LatLng endLocation = new LatLng(
+                        polylineData.getLeg().endLocation.lat,
+                        polylineData.getLeg().endLocation.lng);
+
+                Marker marker = mMap.addMarker(new MarkerOptions()
+                        .position(endLocation)
+                        .title("Duration: " + polylineData.getLeg().duration +"\n" + " Distance: " + polylineData.getLeg().distance));
+
+                marker.showInfoWindow();
+
+
+            }
+            else{
+                polylineData.getPolyline().setColor(Color.GRAY);
+                polylineData.getPolyline().setZIndex(0);
+            }
+        }
     }
-}
+    }
