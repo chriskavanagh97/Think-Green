@@ -3,17 +3,15 @@ package com.example.finalyearapp.Maps;
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
 
-import androidx.core.content.ContextCompat;
+
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.Context;
-import android.content.DialogInterface;
+
 import android.content.Intent;
 
 import android.graphics.Color;
@@ -37,9 +35,8 @@ import android.widget.Toast;
 import com.example.finalyearapp.R;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
-import com.google.android.gms.location.GeofencingApi;
-import com.google.android.gms.location.LocationCallback;
-import com.google.android.gms.location.LocationResult;
+
+
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -47,7 +44,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.LatLngBounds;
+
 
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -82,6 +79,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
     GeoApiContext mCGeoApiContext = null;
     String TAG = "MapsActivity";
     Location location;
+    private ArrayList<PolylineData> mPolylineData = new ArrayList<>();
 
 
 
@@ -514,6 +512,15 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
             public void run() {
                 Log.d(TAG, "run: result routes: " + result.routes.length);
 
+                if(mPolylineData.size()>0){
+                    for(PolylineData polylineData : mPolylineData){
+                        polylineData.getPolyline().remove();
+
+                    }
+                    mPolylineData.clear();
+                    mPolylineData = new ArrayList<>();
+                }
+
                 for (DirectionsRoute route : result.routes) {
                     Log.d(TAG, "run: leg: " + route.legs[0].toString());
                     List<com.google.maps.model.LatLng> decodedPath = PolylineEncoding.decode(route.overviewPolyline.getEncodedPath());
@@ -533,6 +540,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
                     Polyline polyline = mMap.addPolyline(new PolylineOptions().addAll(newDecodedPath));
                     polyline.setColor(Color.BLUE);
                     polyline.setClickable(true);
+                    mPolylineData.add(new PolylineData(polyline, route.legs[0]));
 
                 }
             }
