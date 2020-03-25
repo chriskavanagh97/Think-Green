@@ -9,9 +9,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.location.Location;
 import android.os.Bundle;
 import android.text.Editable;
@@ -22,6 +25,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -57,6 +61,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
     private GoogleMap mMap;
     Location mLastLocation;
     com.google.android.gms.maps.model.Marker mCurrLocationMarker;
+    Dialog myDialog;
 
 
 
@@ -95,6 +100,8 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
 
         maincontent = (RelativeLayout) findViewById(R.id.mainContent);
         mainmenu = (LinearLayout) findViewById(R.id.mainmenu);
+
+        myDialog = new Dialog(this);
 
         sessiontype = (Button) findViewById(R.id.sessionType);
 
@@ -370,9 +377,42 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
         Toast.makeText(this, "Info window clicked",
                 Toast.LENGTH_SHORT).show();
 
+        myDialog.setContentView(R.layout.custompopup);
+        TextView txtclose;
+        Button btnFollow;
 
+        txtclose = (TextView) myDialog.findViewById(R.id.txtclose);
+        txtclose.setText("X");
+
+        TextView txtanswer = (TextView) myDialog.findViewById(R.id.Answer);
+         txtanswer.setText(marker.getTitle());
+        if(marker.getTitle().contains("Bring Bank") ){
+
+
+        TextView textview = (TextView) myDialog.findViewById(R.id.description);
+        textview.setText("Bring banks are recycling containers provided by your local authority. These facilities typically accept glass bottles and jars, aluminium and tin cans. Bring Banks are FREE.\n" +
+                "\n");
+
+        }
+        txtclose.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                myDialog.dismiss();
+
+
+            }
+
+        });
+        myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        myDialog.show();
 
     }
+
+
+
+
 
 
 
@@ -390,4 +430,6 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
         }
         adapter.filterlist(filteredList);
     }
+
+
 }
