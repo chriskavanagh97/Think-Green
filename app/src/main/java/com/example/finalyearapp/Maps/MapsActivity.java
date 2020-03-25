@@ -555,9 +555,11 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
                     //highlights shortest duration
 
                     double tempduration = route.legs[0].duration.inSeconds;
+
                     if(tempduration < duration){
                         duration = tempduration;
                         onPolylineClick(polyline);
+                        zoomRoute(polyline.getPoints());
                     }
 
 
