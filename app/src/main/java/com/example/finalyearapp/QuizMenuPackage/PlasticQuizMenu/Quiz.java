@@ -149,43 +149,42 @@ public class Quiz extends AppCompatActivity {
 
     public void ShowPopup() {
 
-            TextView txtclose;
-            Button btnFollow;
-            myDialog.setContentView(R.layout.custompopup);
-            txtclose = (TextView) myDialog.findViewById(R.id.txtclose);
-            txtclose.setText("X");
+        Button close;
+        Button btnFollow;
+        myDialog.setContentView(R.layout.custompopup);
+        close = myDialog.findViewById(R.id.close);
 
-            TextView txtanswer = (TextView) myDialog.findViewById(R.id.Answer);
-            if (answer== false) {
-                txtanswer.setBackgroundColor(Color.RED);
-                txtanswer.setText("Sorry this is Incorrect");
-                incorrect++;
 
-            } else {
-                txtanswer.setBackgroundColor(Color.GREEN);
-                txtanswer.setText("Well done this is correct");
-                correct++;
+        TextView txtanswer = (TextView) myDialog.findViewById(R.id.Answer);
+        if (answer== false) {
+            txtanswer.setBackgroundColor(Color.RED);
+            txtanswer.setText("Sorry this is Incorrect");
+            incorrect++;
+
+        } else {
+            txtanswer.setBackgroundColor(Color.GREEN);
+            txtanswer.setText("Well done this is correct");
+            correct++;
+
+        }
+
+
+        TextView textview = (TextView) myDialog.findViewById(R.id.description);
+        textview.setText(description);
+        close.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                myDialog.dismiss();
+                total++;
+                UpdateQuestion();
 
             }
 
-
-            TextView textview = (TextView) myDialog.findViewById(R.id.description);
-            textview.setText(description);
-            txtclose.setOnClickListener(new View.OnClickListener() {
-
-                @Override
-                public void onClick(View v) {
-
-                    myDialog.dismiss();
-                    total++;
-                    UpdateQuestion();
-
-                }
-
-            });
-            myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-            myDialog.show();
-
+        });
+        myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        myDialog.show();
         }
 
 

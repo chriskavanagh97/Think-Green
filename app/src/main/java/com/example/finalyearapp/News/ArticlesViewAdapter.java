@@ -58,8 +58,6 @@ public class ArticlesViewAdapter extends ArrayAdapter<ArticlesItem> {
             holder.titleTextView = (TextView) row.findViewById(R.id.list_item_title);
             holder.imageView = (ImageView) row.findViewById(R.id.list_item_image);
             holder.descriptionTextView = (TextView) row.findViewById(R.id.list_item_description);
-            holder.companyname = (TextView) row.findViewById(R.id.Company);
-            holder.date = (TextView) row.findViewById(R.id.Date);
             row.setTag(holder);
         } else {
             holder = (ViewHolder) row.getTag();
@@ -75,8 +73,7 @@ public class ArticlesViewAdapter extends ArrayAdapter<ArticlesItem> {
 
 
             holder.descriptionTextView.setText(Html.fromHtml(item.getDescription()));
-            holder.companyname.setText(Html.fromHtml(item.getName()));
-            holder.date.setText(Html.fromHtml(item.getDate()));
+
 
 
                 Picasso.get().load(item.getImage()).into(holder.imageView);

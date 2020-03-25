@@ -23,25 +23,27 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="397dp"
-        android:layout_marginTop="335dp"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="320dp"
+        android:layout_marginBottom="14dp"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/questionsTxt"
-            android:layout_width="273dp"
+            android:layout_width="220dp"
             android:layout_height="88dp"
             android:layout_gravity="center_horizontal"
             android:text="what is this question"
             android:textAlignment="center"
             android:textColor="#393737"
-            android:textSize="17sp"
+            android:textSize="15sp"
 
             />
 
         <RadioGroup
             android:id="@+id/rbGroup"
-            android:layout_width="wrap_content"
+            android:layout_width="122dp"
             android:layout_height="wrap_content">
 
             <RadioButton
@@ -50,43 +52,40 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:text="option1"
-                android:textSize="15sp"
-                 />
+                android:textSize="15sp" />
 
             <RadioButton
                 android:id="@+id/option2"
-                android:layout_width="wrap_content"
+                android:layout_width="110dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:text="option1"
-                android:textSize="15sp"
-                 />
+                android:textSize="15sp" />
 
             <RadioButton
                 android:id="@+id/option3"
-                android:layout_width="wrap_content"
+                android:layout_width="112dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:text="option1"
-                android:textSize="15sp"
-                 />
+                android:textSize="15sp" />
 
             <RadioButton
                 android:id="@+id/option4"
-                android:layout_width="wrap_content"
+                android:layout_width="108dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:text="option1"
-                android:textSize="15sp"
-                 />
+                android:textSize="15sp" />
 
 
         </RadioGroup>
 
         <Button
             android:id="@+id/popup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="237dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
             android:layout_gravity="center"
             android:background="@drawable/submitanswer"
             android:textColor="#0E0101" />

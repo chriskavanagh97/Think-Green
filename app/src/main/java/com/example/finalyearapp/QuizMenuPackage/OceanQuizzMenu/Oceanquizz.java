@@ -161,11 +161,11 @@ private ImageView image;
 
     public void ShowPopup() {
 
-        TextView txtclose;
+        Button close;
         Button btnFollow;
         myDialog.setContentView(R.layout.custompopup);
-        txtclose = (TextView) myDialog.findViewById(R.id.txtclose);
-        txtclose.setText("X");
+        close = myDialog.findViewById(R.id.close);
+
 
         TextView txtanswer = (TextView) myDialog.findViewById(R.id.Answer);
         if (answer== false) {
@@ -183,7 +183,7 @@ private ImageView image;
 
         TextView textview = (TextView) myDialog.findViewById(R.id.description);
         textview.setText(description);
-        txtclose.setOnClickListener(new View.OnClickListener() {
+        close.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
