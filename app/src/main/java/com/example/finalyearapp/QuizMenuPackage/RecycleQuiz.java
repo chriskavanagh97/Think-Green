@@ -103,7 +103,7 @@ public class RecycleQuiz extends AppCompatActivity {
             else if(total == 2)
             {
                 picture.setImageResource(R.drawable.receipts);
-                question.setText("Can you recycle aluminium cans");
+                question.setText("Can you recycle receipts");
 
                 yes.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -132,7 +132,7 @@ public class RecycleQuiz extends AppCompatActivity {
             else if(total == 3)
             {
                 picture.setImageResource(R.drawable.mail);
-                question.setText("Can you recycle aluminium cans");
+                question.setText("Can you recycle mail");
 
                 yes.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -161,7 +161,7 @@ public class RecycleQuiz extends AppCompatActivity {
             else if(total == 4)
         {
             picture.setImageResource(R.drawable.crispsbag);
-            question.setText("Can you recycle aluminium cans");
+            question.setText("Can you recycle crisp bags");
 
             yes.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -190,7 +190,7 @@ public class RecycleQuiz extends AppCompatActivity {
             else if(total == 5)
             {
                 picture.setImageResource(R.drawable.winbottle);
-                question.setText("Can you recycle aluminium cans");
+                question.setText("Can you recycle wine bottle's");
 
                 yes.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -219,7 +219,7 @@ public class RecycleQuiz extends AppCompatActivity {
             else if(total == 6)
             {
                 picture.setImageResource(R.drawable.milkjudge);
-                question.setText("Can you recycle aluminium cans");
+                question.setText("Can you recycle milk jugs");
 
                 yes.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -248,7 +248,7 @@ public class RecycleQuiz extends AppCompatActivity {
             else if(total == 7)
             {
                 picture.setImageResource(R.drawable.mirror);
-                question.setText("Can you recycle aluminium cans");
+                question.setText("Can you recycle mirrors");
 
                 yes.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -276,7 +276,7 @@ public class RecycleQuiz extends AppCompatActivity {
             }else if(total == 8)
             {
                 picture.setImageResource(R.drawable.styrofoam);
-                question.setText("Can you recycle aluminium cans");
+                question.setText("Can you recycle styrofoam");
 
                 yes.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -304,7 +304,7 @@ public class RecycleQuiz extends AppCompatActivity {
             }else if(total == 9)
             {
                 picture.setImageResource(R.drawable.magazine);
-                question.setText("Can you recycle aluminium cans");
+                question.setText("Can you recycle magazines");
 
                 yes.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -332,7 +332,7 @@ public class RecycleQuiz extends AppCompatActivity {
             }else if(total == 10)
             {
                 picture.setImageResource(R.drawable.ceramics);
-                question.setText("Can you recycle aluminium cans");
+                question.setText("Can you recycle ceramics");
 
                 yes.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -360,7 +360,7 @@ public class RecycleQuiz extends AppCompatActivity {
             }else if(total ==11)
             {
                 picture.setImageResource(R.drawable.chewinggum);
-                question.setText("Can you recycle aluminium cans");
+                question.setText("Can you recycle chewing gum");
 
                 yes.setOnClickListener(new View.OnClickListener() {
                     @Override
