@@ -38,26 +38,26 @@
 
     <Button
         android:id="@+id/submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_width="127dp"
+        android:layout_height="46dp"
         android:layout_gravity="center"
-        android:text="submit" />
+        android:layout_marginTop="30dp"
+        android:background="@drawable/next" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="335dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="65dp"
         android:layout_marginBottom="30dp"
         android:orientation="vertical">
 
         <TextView
-            android:layout_marginBottom="15dp"
             android:id="@+id/textView1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
             android:text="Your diet is an important factor into your carbonfootprint"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="#050505"
@@ -66,7 +66,7 @@
         <TextView
             android:id="@+id/textView9"
             android:layout_width="325dp"
-            android:layout_height="86dp"
+            android:layout_height="81dp"
             android:layout_marginBottom="15dp"
             android:text="This question is finding out about your private car/motorbike use — we’ll ask about public transport next. If you walk or cycle everywhere, just click ‘Neither’."
             android:textColor="#070000" />
@@ -74,8 +74,8 @@
 
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="168dp"
-            android:layout_height="116dp"
+            android:layout_width="213dp"
+            android:layout_height="79dp"
             android:layout_gravity="center"
             app:srcCompat="@drawable/travelsection" />
     </LinearLayout>

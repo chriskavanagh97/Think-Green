@@ -39,46 +39,47 @@
 
     <Button
         android:id="@+id/submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_width="127dp"
+        android:layout_height="46dp"
         android:layout_gravity="center"
-        android:text="submit" />
+        android:layout_marginTop="30dp"
+        android:background="@drawable/next" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="335dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="75dp"
         android:layout_marginBottom="30dp"
         android:orientation="vertical">
 
         <TextView
-            android:layout_marginBottom="15dp"
             android:id="@+id/textView1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="HOW YOU USE ENERGY AT HOME PLAYS A BIG PART IN YOUR CARBON IMPACT ON THE WORLD."
+            android:layout_marginBottom="15dp"
+            android:text="How you use your energy at home plays a big part in your carbon impact on this planet"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="#050505"
-            android:textSize="20sp" />
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <TextView
-            android:layout_marginBottom="15dp"
             android:id="@+id/textView9"
             android:layout_width="match_parent"
-            android:layout_height="105dp"
+            android:layout_height="72dp"
+            android:layout_marginBottom="15dp"
             android:text="19 million UK homes have poor levels of energy efficiency – meaning that people are wasting energy and money heating the street around their home!"
             android:textColor="#070000" />
 
 
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="255dp"
-            android:layout_height="101dp"
+            android:layout_width="115dp"
+            android:layout_height="109dp"
             android:layout_gravity="center"
-            app:srcCompat="@drawable/bubble1" />
+            app:srcCompat="@drawable/homesection" />
     </LinearLayout>
 
 

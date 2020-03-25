@@ -38,36 +38,36 @@
 
     <Button
         android:id="@+id/submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_width="127dp"
+        android:layout_height="46dp"
         android:layout_gravity="center"
-        android:text="submit" />
+        android:layout_marginTop="30dp"
+        android:background="@drawable/next" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="335dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="65dp"
         android:layout_marginBottom="30dp"
         android:orientation="vertical">
 
         <TextView
-            android:layout_marginBottom="15dp"
             android:id="@+id/textView1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:layout_marginBottom="15dp"
             android:text="Your diet is an important factor into your carbonfootprint"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="#050505"
             android:textSize="20sp" />
 
         <TextView
-            android:layout_marginBottom="15dp"
             android:id="@+id/textView9"
             android:layout_width="match_parent"
-            android:layout_height="105dp"
+            android:layout_height="85dp"
+            android:layout_marginBottom="15dp"
             android:text="Did you know? A large proportion of greenhouse gas emissions comes from food production, and meat and dairy are associated with much higher carbon emissions than plant-based food"
             android:textColor="#070000" />
 
