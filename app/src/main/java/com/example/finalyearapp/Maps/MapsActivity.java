@@ -343,7 +343,6 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
 
                     mMap = googleMap;
 
-                    // Add a marker in Sydney and move the camera
                     if (name.equals("Bring Bank")) {
 
                         MarkerYellow = new LatLng(lat, lng);
@@ -398,6 +397,29 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
         TextView txtanswer = (TextView) myDialog.findViewById(R.id.Answer);
         txtanswer.setText(marker.getTitle());
         if(marker.getTitle().contains("Bring Bank") ){
+
+
+            TextView textview = (TextView) myDialog.findViewById(R.id.description);
+            textview.setText("Bring banks are recycling containers provided by your local authority. These facilities typically accept glass bottles and jars, aluminium and tin cans. Bring Banks are FREE.\n" +
+                    "\n");
+
+        }else if(marker.getTitle().contains("Bring Bank") ){
+
+
+            TextView textview = (TextView) myDialog.findViewById(R.id.description);
+            textview.setText("Bring banks are recycling containers provided by your local authority. These facilities typically accept glass bottles and jars, aluminium and tin cans. Bring Banks are FREE.\n" +
+                    "\n");
+
+        }
+        else if(marker.getTitle().contains("Bring Bank") ){
+
+
+            TextView textview = (TextView) myDialog.findViewById(R.id.description);
+            textview.setText("Bring banks are recycling containers provided by your local authority. These facilities typically accept glass bottles and jars, aluminium and tin cans. Bring Banks are FREE.\n" +
+                    "\n");
+
+        }
+        else if(marker.getTitle().contains("Bring Bank") ){
 
 
             TextView textview = (TextView) myDialog.findViewById(R.id.description);
