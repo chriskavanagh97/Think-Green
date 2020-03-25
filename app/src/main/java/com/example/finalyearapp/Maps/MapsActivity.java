@@ -205,6 +205,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     // Add a marker in Sydney and move the camera
                     Marker = new LatLng(lat, lng);
                     mMap.addMarker(new MarkerOptions().position(Marker).title(name + " " + address));
+                    mMap.setMyLocationEnabled(true);
 
 
 
@@ -266,6 +267,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     LatLng Marker = new LatLng(lat, lng);
                     mMap.addMarker(new MarkerOptions().position(Marker).title(name + " " + address));
                     mMap.moveCamera(CameraUpdateFactory.newLatLng(Marker));
+                    mMap.setMyLocationEnabled(true);
 
                 }
             } catch (UnsupportedEncodingException e) {

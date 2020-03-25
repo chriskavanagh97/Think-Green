@@ -19,6 +19,7 @@ import com.example.finalyearapp.Carbonfootprint.Results;
 import com.example.finalyearapp.Carbonfootprint.StepOne;
 import com.example.finalyearapp.Carbonfootprint.linechartresults;
 import com.example.finalyearapp.Leaderboard.Leaderboard;
+import com.example.finalyearapp.Maps.Locationservices;
 import com.example.finalyearapp.Maps.MapsActivity;
 import com.example.finalyearapp.Maps.locations;
 import com.example.finalyearapp.News.ArticlesActivity;
@@ -81,7 +82,7 @@ public class MainMenu extends AppCompatActivity {
         map.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainMenu.this, MapsActivity.class);
+                Intent intent = new Intent(MainMenu.this, Locationservices.class);
                 intent.putExtra("value", "false");
 
                 startActivity(intent);

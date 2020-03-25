@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.example.finalyearapp.R;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
+import com.google.android.gms.location.FusedLocationProviderClient;
 
 import static com.example.finalyearapp.Maps.Constants.ERROR_DIALOG_REQUEST;
 import static com.example.finalyearapp.Maps.Constants.PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION;
@@ -29,11 +30,13 @@ public class Locationservices extends AppCompatActivity {
     private static final String TAG = "MapsActivity";
 
     private boolean mLocationPermissionGranted = false;
+    private FusedLocationProviderClient mfusedlocationproviderClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_locationservices);
+        checkMapServices();
     }
 
     private boolean checkMapServices () {
@@ -139,11 +142,27 @@ public class Locationservices extends AppCompatActivity {
             }
         }
 
+
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (checkMapServices()) {
+            if (mLocationPermissionGranted) {
+                getMaps();
+            } else {
+                getLocationPermission();
+            }
+        }
     }
 
 
     public void getMaps(){
         Intent intent = new Intent(Locationservices.this, MapsActivity.class);
+        intent.putExtra("value", "false");
+        startActivity(intent);
 
     }
 }
