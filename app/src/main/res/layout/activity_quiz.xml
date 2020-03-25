@@ -29,13 +29,13 @@
 
         <TextView
             android:id="@+id/questionsTxt"
-            android:layout_width="312dp"
-            android:layout_height="94dp"
+            android:layout_width="273dp"
+            android:layout_height="88dp"
             android:layout_gravity="center_horizontal"
             android:text="what is this question"
             android:textAlignment="center"
             android:textColor="#393737"
-            android:textSize="20sp"
+            android:textSize="17sp"
 
             />
 
