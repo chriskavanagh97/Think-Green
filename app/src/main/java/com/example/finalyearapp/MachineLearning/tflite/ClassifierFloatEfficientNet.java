@@ -1,5 +1,4 @@
 
-
 package com.example.finalyearapp.MachineLearning.tflite;
 
 import android.app.Activity;
@@ -9,13 +8,11 @@ import org.tensorflow.lite.support.common.ops.NormalizeOp;
 
 import java.io.IOException;
 
-/** This TensorFlowLite classifier works with the float MobileNet model. */
-public class ClassifierFloatMobileNet extends Classifier {
+/** This TensorFlowLite classifier works with the float EfficientNet model. */
+public class ClassifierFloatEfficientNet extends Classifier {
 
-  /** Float MobileNet requires additional normalization of the used input. */
-  private static final float IMAGE_MEAN = 127.5f;
-
-  private static final float IMAGE_STD = 127.5f;
+  private static final float IMAGE_MEAN = 127.0f;
+  private static final float IMAGE_STD = 128.0f;
 
   /**
    * Float model does not need dequantization in the post-processing. Setting mean and std as 0.0f
@@ -30,7 +27,7 @@ public class ClassifierFloatMobileNet extends Classifier {
    *
    * @param activity
    */
-  public ClassifierFloatMobileNet(Activity activity, Device device, int numThreads)
+  public ClassifierFloatEfficientNet(Activity activity, Device device, int numThreads)
       throws IOException {
     super(activity, device, numThreads);
   }

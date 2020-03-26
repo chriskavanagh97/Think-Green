@@ -9,28 +9,28 @@ import org.tensorflow.lite.support.common.ops.NormalizeOp;
 
 import java.io.IOException;
 
-/** This TensorFlowLite classifier works with the float MobileNet model. */
-public class ClassifierFloatMobileNet extends Classifier {
-
-  /** Float MobileNet requires additional normalization of the used input. */
-  private static final float IMAGE_MEAN = 127.5f;
-
-  private static final float IMAGE_STD = 127.5f;
+/** This TensorFlow Lite classifier works with the quantized EfficientNet model. */
+public class ClassifierQuantizedEfficientNet extends Classifier {
 
   /**
-   * Float model does not need dequantization in the post-processing. Setting mean and std as 0.0f
-   * and 1.0f, repectively, to bypass the normalization.
+   * The quantized model does not require normalization, thus set mean as 0.0f, and std as 1.0f to
+   * bypass the normalization.
    */
+  private static final float IMAGE_MEAN = 0.0f;
+
+  private static final float IMAGE_STD = 1.0f;
+
+  /** Quantized MobileNet requires additional dequantization to the output probability. */
   private static final float PROBABILITY_MEAN = 0.0f;
 
-  private static final float PROBABILITY_STD = 1.0f;
+  private static final float PROBABILITY_STD = 255.0f;
 
   /**
-   * Initializes a {@code ClassifierFloatMobileNet}.
+   * Initializes a {@code ClassifierQuantizedMobileNet}.
    *
    * @param activity
    */
-  public ClassifierFloatMobileNet(Activity activity, Device device, int numThreads)
+  public ClassifierQuantizedEfficientNet(Activity activity, Device device, int numThreads)
       throws IOException {
     super(activity, device, numThreads);
   }

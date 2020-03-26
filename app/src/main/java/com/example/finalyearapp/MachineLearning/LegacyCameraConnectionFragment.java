@@ -17,11 +17,15 @@ import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
+
+
+import com.example.finalyearapp.MachineLearning.customview.AutoFitTextureView;
+import com.example.finalyearapp.MachineLearning.env.ImageUtils;
+import com.example.finalyearapp.MachineLearning.env.Logger;
+import com.example.finalyearapp.R;
+
 import java.io.IOException;
 import java.util.List;
-import org.tensorflow.lite.examples.classification.customview.AutoFitTextureView;
-import org.tensorflow.lite.examples.classification.env.ImageUtils;
-import org.tensorflow.lite.examples.classification.env.Logger;
 
 public class LegacyCameraConnectionFragment extends Fragment {
   private static final Logger LOGGER = new Logger();
@@ -81,10 +85,9 @@ public class LegacyCameraConnectionFragment extends Fragment {
 
           camera.setPreviewCallbackWithBuffer(imageListener);
           Camera.Size s = camera.getParameters().getPreviewSize();
-          camera.addCallbackBuffer(
-              new byte[ImageUtils.getYUVByteSize(/* width= */ s.height, /* height= */ s.width)]);
+          camera.addCallbackBuffer(new byte[ImageUtils.getYUVByteSize(s.height, s.width)]);
 
-          textureView.setAspectRatio(/* width= */ s.height, /* height= */ s.width);
+          textureView.setAspectRatio(s.height, s.width);
 
           camera.startPreview();
         }
@@ -110,9 +113,6 @@ public class LegacyCameraConnectionFragment extends Fragment {
     this.imageListener = imageListener;
     this.layout = layout;
     this.desiredSize = desiredSize;
-  }
-
-  public LegacyCameraConnectionFragment() {
   }
 
   @Override
