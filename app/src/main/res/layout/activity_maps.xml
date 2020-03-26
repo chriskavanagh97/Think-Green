@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:text="Search for a location: "
                 android:textStyle="bold"
-                android:layout_margin="16dp">
+                android:layout_margin="7dp">
 
             </TextView>
 
@@ -49,7 +49,6 @@
                 android:id="@+id/search"
                 android:layout_width="266dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
                 android:hint="start typing">
 
             </EditText>
@@ -58,6 +57,7 @@
         <androidx.recyclerview.widget.RecyclerView
 
             android:id="@+id/my_recycler_view"
+            android:background="#FFFF"
             android:layout_width="match_parent"
             android:layout_height="650dp"
             android:scrollbars="vertical"

@@ -33,7 +33,6 @@ public class RecycleAdapter extends RecyclerView.Adapter<com.example.finalyearap
             txtView= (TextView) itemView.findViewById(R.id.textView);
             txtView2= (TextView) itemView.findViewById(R.id.textView2);
             txtView3= (TextView) itemView.findViewById(R.id.textView3);
-            txtView4= (TextView) itemView.findViewById(R.id.textView4);
 
 
 
@@ -71,7 +70,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<com.example.finalyearap
         holder.txtView.setText(place.getName());
         holder.txtView2.setText(place.getAddress());
         holder.txtView3.setText(place.getCity());
-        holder.txtView4.setText(place.getState());
+
 
 
         holder.txtView.setOnClickListener(new View.OnClickListener() {
