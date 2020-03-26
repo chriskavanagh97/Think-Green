@@ -1,11 +1,10 @@
 
+
 package com.example.finalyearapp.MachineLearning.customview;
 
-
-import com.example.finalyearapp.MachineLearning.tflite.Classifier;
-
 import java.util.List;
+import org.tensorflow.lite.examples.classification.tflite.Classifier.Recognition;
 
 public interface ResultsView {
-  public void setResults(final List<Classifier.Recognition> results);
+  public void setResults(final List<Recognition> results);
 }

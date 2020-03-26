@@ -32,6 +32,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.example.finalyearapp.MainMenu;
 import com.example.finalyearapp.R;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -131,6 +132,17 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
 
                 maincontent.animate().translationX(-785);
                 mainmenu.animate().translationX(-785);
+            }
+        });
+
+        Button home = (Button) findViewById(R.id.home);
+
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MapsActivity.this, MainMenu.class);
+                startActivity(intent);
             }
         });
 

@@ -50,7 +50,7 @@ public class StepThree extends AppCompatActivity {
 
 
         if(i >4) {
-            Toast.makeText(StepThree.this, "finito" , Toast.LENGTH_SHORT).show();
+
             parsing();
 
 

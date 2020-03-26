@@ -1,3 +1,17 @@
+/* Copyright 2019 The TensorFlow Authors. All Rights Reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+==============================================================================*/
 
 package com.example.finalyearapp.MachineLearning.tflite;
 
@@ -6,14 +20,18 @@ import android.graphics.Bitmap;
 import android.graphics.RectF;
 import android.os.SystemClock;
 import android.os.Trace;
-
-import com.example.finalyearapp.MachineLearning.env.Logger;
-
+import java.io.IOException;
+import java.nio.MappedByteBuffer;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.PriorityQueue;
 import org.tensorflow.lite.DataType;
 import org.tensorflow.lite.Interpreter;
-
+import org.tensorflow.lite.examples.classification.env.Logger;
+import org.tensorflow.lite.examples.classification.tflite.Classifier.Device;
 import org.tensorflow.lite.gpu.GpuDelegate;
-import org.tensorflow.lite.nnapi.NnApiDelegate;
 import org.tensorflow.lite.support.common.FileUtil;
 import org.tensorflow.lite.support.common.TensorOperator;
 import org.tensorflow.lite.support.common.TensorProcessor;
@@ -26,30 +44,13 @@ import org.tensorflow.lite.support.image.ops.Rot90Op;
 import org.tensorflow.lite.support.label.TensorLabel;
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer;
 
-import java.io.IOException;
-import java.nio.MappedByteBuffer;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import java.util.PriorityQueue;
-
 /** A classifier specialized to label images using TensorFlow Lite. */
 public abstract class Classifier {
   private static final Logger LOGGER = new Logger();
 
-  /** The model type used for classification. */
-  public enum Model {
-    FLOAT_MOBILENET,
-    QUANTIZED_MOBILENET,
-    FLOAT_EFFICIENTNET,
-    QUANTIZED_EFFICIENTNET
-  }
-
   /** The runtime device type used for executing classification. */
   public enum Device {
     CPU,
-    NNAPI,
     GPU
   }
 
@@ -65,13 +66,12 @@ public abstract class Classifier {
   /** Image size along the y axis. */
   private final int imageSizeY;
 
-  /** Optional GPU delegate for accleration. */
+  /** Optional GPU delegate for acceleration. */
+  // TODO: Declare a GPU delegate
   private GpuDelegate gpuDelegate = null;
 
-  /** Optional NNAPI delegate for accleration. */
-  private NnApiDelegate nnApiDelegate = null;
-
   /** An instance of the driver class to run model inference with Tensorflow Lite. */
+  // TODO: Declare a TFLite interpreter
   protected Interpreter tflite;
 
   /** Options for configuring the Interpreter. */
@@ -98,19 +98,10 @@ public abstract class Classifier {
    * @param numThreads The number of threads to use for classification.
    * @return A classifier with the desired configuration.
    */
-  public static Classifier create(Activity activity, Model model, Device device, int numThreads)
+  public static Classifier create(Activity activity, Device device, int numThreads)
       throws IOException {
-    if (model == Model.QUANTIZED_MOBILENET) {
-      return new ClassifierQuantizedMobileNet(activity, device, numThreads);
-    } else if (model == Model.FLOAT_MOBILENET) {
-      return new ClassifierFloatMobileNet(activity, device, numThreads);
-    } else if (model == Model.FLOAT_EFFICIENTNET) {
-      return new ClassifierFloatEfficientNet(activity, device, numThreads);
-    } else if (model == Model.QUANTIZED_EFFICIENTNET) {
-      return new ClassifierQuantizedEfficientNet(activity, device, numThreads);
-    } else {
-      throw new UnsupportedOperationException();
-    }
+
+    return new ClassifierFloatMobileNet(activity, device, numThreads);
   }
 
   /** An immutable result returned by a Classifier describing what was recognized. */
@@ -133,7 +124,7 @@ public abstract class Classifier {
     private RectF location;
 
     public Recognition(
-            final String id, final String title, final Float confidence, final RectF location) {
+        final String id, final String title, final Float confidence, final RectF location) {
       this.id = id;
       this.title = title;
       this.confidence = confidence;
@@ -187,11 +178,8 @@ public abstract class Classifier {
   protected Classifier(Activity activity, Device device, int numThreads) throws IOException {
     tfliteModel = FileUtil.loadMappedFile(activity, getModelPath());
     switch (device) {
-      case NNAPI:
-        nnApiDelegate = new NnApiDelegate();
-        tfliteOptions.addDelegate(nnApiDelegate);
-        break;
       case GPU:
+        // TODO: Create a GPU delegate instance and add it to the interpreter options
         gpuDelegate = new GpuDelegate();
         tfliteOptions.addDelegate(gpuDelegate);
         break;
@@ -199,6 +187,7 @@ public abstract class Classifier {
         break;
     }
     tfliteOptions.setNumThreads(numThreads);
+    // TODO: Create a TFLite interpreter instance
     tflite = new Interpreter(tfliteModel, tfliteOptions);
 
     // Loads labels out from the label file.
@@ -242,12 +231,15 @@ public abstract class Classifier {
     // Runs the inference call.
     Trace.beginSection("runInference");
     long startTimeForReference = SystemClock.uptimeMillis();
+    // TODO: Run TFLite inference
     tflite.run(inputImageBuffer.getBuffer(), outputProbabilityBuffer.getBuffer().rewind());
     long endTimeForReference = SystemClock.uptimeMillis();
     Trace.endSection();
     LOGGER.v("Timecost to run model inference: " + (endTimeForReference - startTimeForReference));
 
     // Gets the map of label and probability.
+    // TODO: Use TensorLabel from TFLite Support Library to associate the probabilities
+    //       with category labels
     Map<String, Float> labeledProbability =
         new TensorLabel(labels, probabilityProcessor.process(outputProbabilityBuffer))
             .getMapWithFloatValue();
@@ -260,17 +252,16 @@ public abstract class Classifier {
   /** Closes the interpreter and model to release resources. */
   public void close() {
     if (tflite != null) {
+      // TODO: Close the interpreter
       tflite.close();
       tflite = null;
     }
+    // TODO: Close the GPU delegate
     if (gpuDelegate != null) {
       gpuDelegate.close();
       gpuDelegate = null;
     }
-    if (nnApiDelegate != null) {
-      nnApiDelegate.close();
-      nnApiDelegate = null;
-    }
+
     tfliteModel = null;
   }
 
@@ -293,6 +284,7 @@ public abstract class Classifier {
     int cropSize = Math.min(bitmap.getWidth(), bitmap.getHeight());
     int numRoration = sensorOrientation / 90;
     // TODO(b/143564309): Fuse ops inside ImageProcessor.
+    // TODO: Define an ImageProcessor from TFLite Support Library to do preprocessing
     ImageProcessor imageProcessor =
         new ImageProcessor.Builder()
             .add(new ResizeWithCropOrPadOp(cropSize, cropSize))

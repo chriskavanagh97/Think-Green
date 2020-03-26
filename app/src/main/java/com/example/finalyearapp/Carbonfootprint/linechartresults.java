@@ -61,7 +61,7 @@ public class linechartresults extends AppCompatActivity {
 
                     dataVals2.add(score);
                     //float confirm = total.floatValue();
-                    Toast.makeText(linechartresults.this, "Display screen activated" + score, Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(linechartresults.this, "Display screen activated" + score, Toast.LENGTH_SHORT).show();
 
                 }
 
@@ -85,8 +85,8 @@ public class linechartresults extends AppCompatActivity {
             public void onClick(View v) {
 
                 display.setVisibility(display.GONE);
-                Toast.makeText(linechartresults.this, "Float array: on start" + dataVals2, Toast.LENGTH_SHORT).show();
-                Toast.makeText(linechartresults.this, "Float array: on start" + total, Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(linechartresults.this, "Float array: on start" + dataVals2, Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(linechartresults.this, "Float array: on start" + total, Toast.LENGTH_SHORT).show();
                 linechart = (LineChart) findViewById(R.id.linechart);
                 Display();
 
@@ -99,7 +99,7 @@ public class linechartresults extends AppCompatActivity {
 
         results = findViewById(R.id.results);
 
-        Toast.makeText(linechartresults.this, "Float array:" + dataVals2  , Toast.LENGTH_SHORT).show();
+       // Toast.makeText(linechartresults.this, "Float array:" + dataVals2  , Toast.LENGTH_SHORT).show();
 
         dataVals.add(new Entry(0,dataVals2.get(0)));
         dataVals.add(new Entry(1,dataVals2.get(1)));

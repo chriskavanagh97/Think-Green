@@ -1,6 +1,7 @@
 package com.example.finalyearapp.MachineLearning;
 
 
+
 import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.graphics.SurfaceTexture;
@@ -16,15 +17,11 @@ import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
-
-
-import com.example.finalyearapp.MachineLearning.customview.AutoFitTextureView;
-import com.example.finalyearapp.MachineLearning.env.ImageUtils;
-import com.example.finalyearapp.MachineLearning.env.Logger;
-import com.example.finalyearapp.R;
-
 import java.io.IOException;
 import java.util.List;
+import org.tensorflow.lite.examples.classification.customview.AutoFitTextureView;
+import org.tensorflow.lite.examples.classification.env.ImageUtils;
+import org.tensorflow.lite.examples.classification.env.Logger;
 
 public class LegacyCameraConnectionFragment extends Fragment {
   private static final Logger LOGGER = new Logger();
@@ -53,7 +50,7 @@ public class LegacyCameraConnectionFragment extends Fragment {
       new TextureView.SurfaceTextureListener() {
         @Override
         public void onSurfaceTextureAvailable(
-                final SurfaceTexture texture, final int width, final int height) {
+            final SurfaceTexture texture, final int width, final int height) {
 
           int index = getCameraId();
           camera = Camera.open(index);
@@ -84,16 +81,17 @@ public class LegacyCameraConnectionFragment extends Fragment {
 
           camera.setPreviewCallbackWithBuffer(imageListener);
           Camera.Size s = camera.getParameters().getPreviewSize();
-          camera.addCallbackBuffer(new byte[ImageUtils.getYUVByteSize(s.height, s.width)]);
+          camera.addCallbackBuffer(
+              new byte[ImageUtils.getYUVByteSize(/* width= */ s.height, /* height= */ s.width)]);
 
-          textureView.setAspectRatio(s.height, s.width);
+          textureView.setAspectRatio(/* width= */ s.height, /* height= */ s.width);
 
           camera.startPreview();
         }
 
         @Override
         public void onSurfaceTextureSizeChanged(
-                final SurfaceTexture texture, final int width, final int height) {}
+            final SurfaceTexture texture, final int width, final int height) {}
 
         @Override
         public boolean onSurfaceTextureDestroyed(final SurfaceTexture texture) {
@@ -108,15 +106,18 @@ public class LegacyCameraConnectionFragment extends Fragment {
 
   @SuppressLint("ValidFragment")
   public LegacyCameraConnectionFragment(
-          final Camera.PreviewCallback imageListener, final int layout, final Size desiredSize) {
+      final Camera.PreviewCallback imageListener, final int layout, final Size desiredSize) {
     this.imageListener = imageListener;
     this.layout = layout;
     this.desiredSize = desiredSize;
   }
 
+  public LegacyCameraConnectionFragment() {
+  }
+
   @Override
   public View onCreateView(
-          final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
+      final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
     return inflater.inflate(layout, container, false);
   }
 

@@ -30,6 +30,18 @@
             android:textStyle="italic">
         </Button>
 
+        <Button
+            android:id="@+id/home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/bgbtnmenu"
+            android:text="Home Screen "
+            android:textSize="18sp"
+            android:textStyle="italic">
+        </Button>
+
 
 
         <LinearLayout

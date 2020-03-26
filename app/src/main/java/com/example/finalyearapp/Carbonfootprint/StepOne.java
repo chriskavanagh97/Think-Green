@@ -54,7 +54,6 @@ Calculator();
 
 
         if(i >3) {
-            Toast.makeText(StepOne.this, "finito" , Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(StepOne.this, StepTwo.class);
             startActivity(intent);
 
@@ -100,7 +99,7 @@ Calculator();
                 @Override
                 public void onClick(View v)
                 {
-                    Toast.makeText(StepOne.this, "submitted" , Toast.LENGTH_SHORT).show();
+
                     i = i + 1;
                     Calculator();
                 }

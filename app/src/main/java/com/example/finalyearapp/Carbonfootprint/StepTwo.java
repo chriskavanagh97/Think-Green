@@ -53,7 +53,7 @@ public class StepTwo extends AppCompatActivity {
 
 
         if(i >6) {
-            Toast.makeText(StepTwo.this, "finito" , Toast.LENGTH_SHORT).show();
+
             parsing();
 
 
@@ -94,7 +94,6 @@ public class StepTwo extends AppCompatActivity {
                 myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 mySpinner.setAdapter((myAdapter));
 
-                Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
             }
             if (i == 4) {
                 String message = getString(R.string.travelq4);
@@ -333,7 +332,6 @@ QUESTION FIVE ANSWERS
 
 
                     else {
-                        Toast.makeText(StepTwo.this, "submitted", Toast.LENGTH_SHORT).show();
                         i = i + 1;
                         Calculator();
 

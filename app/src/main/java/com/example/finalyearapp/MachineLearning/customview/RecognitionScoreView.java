@@ -1,5 +1,4 @@
 
-
 package com.example.finalyearapp.MachineLearning.customview;
 
 import android.content.Context;
@@ -8,19 +7,15 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
-
-
-import com.example.finalyearapp.MachineLearning.tflite.Classifier;
-
 import java.util.List;
-
+import org.tensorflow.lite.examples.classification.tflite.Classifier.Recognition;
 
 public class RecognitionScoreView extends View implements ResultsView {
   private static final float TEXT_SIZE_DIP = 16;
   private final float textSizePx;
   private final Paint fgPaint;
   private final Paint bgPaint;
-  private List<Classifier.Recognition> results;
+  private List<Recognition> results;
 
   public RecognitionScoreView(final Context context, final AttributeSet set) {
     super(context, set);
@@ -36,7 +31,7 @@ public class RecognitionScoreView extends View implements ResultsView {
   }
 
   @Override
-  public void setResults(final List<Classifier.Recognition> results) {
+  public void setResults(final List<Recognition> results) {
     this.results = results;
     postInvalidate();
   }
@@ -49,7 +44,7 @@ public class RecognitionScoreView extends View implements ResultsView {
     canvas.drawPaint(bgPaint);
 
     if (results != null) {
-      for (final Classifier.Recognition recog : results) {
+      for (final Recognition recog : results) {
         canvas.drawText(recog.getTitle() + ": " + recog.getConfidence(), x, y, fgPaint);
         y += (int) (fgPaint.getTextSize() * 1.5f);
       }

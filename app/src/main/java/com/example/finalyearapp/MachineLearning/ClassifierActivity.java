@@ -8,16 +8,12 @@ import android.media.ImageReader.OnImageAvailableListener;
 import android.os.SystemClock;
 import android.util.Size;
 import android.util.TypedValue;
-import android.widget.Toast;
-
-import com.example.finalyearapp.MachineLearning.env.BorderedText;
-import com.example.finalyearapp.MachineLearning.env.Logger;
-import com.example.finalyearapp.MachineLearning.tflite.Classifier;
-import com.example.finalyearapp.R;
-
-
 import java.io.IOException;
 import java.util.List;
+import org.tensorflow.lite.examples.classification.env.BorderedText;
+import org.tensorflow.lite.examples.classification.env.Logger;
+import org.tensorflow.lite.examples.classification.tflite.Classifier;
+import org.tensorflow.lite.examples.classification.tflite.Classifier.Device;
 
 public class ClassifierActivity extends CameraActivity implements OnImageAvailableListener {
   private static final Logger LOGGER = new Logger();
@@ -35,7 +31,7 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
 
   @Override
   protected int getLayoutId() {
-    return R.layout.camera_connection_fragment;
+    return R.layout.tfe_ic_camera_connection_fragment;
   }
 
   @Override
@@ -51,7 +47,7 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
     borderedText = new BorderedText(textSizePx);
     borderedText.setTypeface(Typeface.MONOSPACE);
 
-    recreateClassifier(getModel(), getDevice(), getNumThreads());
+    recreateClassifier(getDevice(), getNumThreads());
     if (classifier == null) {
       LOGGER.e("No classifier on preview!");
       return;
@@ -107,31 +103,21 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
       // Defer creation until we're getting camera frames.
       return;
     }
-    final Classifier.Device device = getDevice();
-    final Classifier.Model model = getModel();
+    final Device device = getDevice();
     final int numThreads = getNumThreads();
-    runInBackground(() -> recreateClassifier(model, device, numThreads));
+    runInBackground(() -> recreateClassifier(device, numThreads));
   }
 
-  private void recreateClassifier(Classifier.Model model, Classifier.Device device, int numThreads) {
+  private void recreateClassifier(Device device, int numThreads) {
     if (classifier != null) {
       LOGGER.d("Closing classifier.");
       classifier.close();
       classifier = null;
     }
-    if (device == Classifier.Device.GPU
-        && (model == Classifier.Model.QUANTIZED_MOBILENET || model == Classifier.Model.QUANTIZED_EFFICIENTNET)) {
-      LOGGER.d("Not creating classifier: GPU doesn't support quantized models.");
-      runOnUiThread(
-          () -> {
-            Toast.makeText(this, R.string.tfe_ic_gpu_quant_error, Toast.LENGTH_LONG).show();
-          });
-      return;
-    }
     try {
       LOGGER.d(
-          "Creating classifier (model=%s, device=%s, numThreads=%d)", model, device, numThreads);
-      classifier = Classifier.create(this, model, device, numThreads);
+          "Creating classifier (device=%s, numThreads=%d)", device, numThreads);
+      classifier = Classifier.create(this, device, numThreads);
     } catch (IOException e) {
       LOGGER.e(e, "Failed to create classifier.");
     }
