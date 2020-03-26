@@ -19,7 +19,6 @@ package com.example.finalyearapp.MachineLearning;
 import android.Manifest;
 import android.app.Fragment;
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.hardware.camera2.CameraAccessException;
@@ -54,9 +53,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.finalyearapp.MachineLearning.env.ImageUtils;
 import com.example.finalyearapp.MachineLearning.env.Logger;
 import com.example.finalyearapp.MachineLearning.tflite.Classifier;
-import com.example.finalyearapp.Maps.MapsActivity;
 import com.example.finalyearapp.R;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
+
 
 
 import java.nio.ByteBuffer;
@@ -99,11 +98,9 @@ public abstract class CameraActivity extends AppCompatActivity
       inferenceTimeTextView;
   protected ImageView bottomSheetArrowImageView;
   private ImageView plusImageView, minusImageView;
-  private Spinner modelSpinner;
   private Spinner deviceSpinner;
   private TextView threadsTextView;
 
-  private Classifier.Model model = Classifier.Model.QUANTIZED_EFFICIENTNET;
   private Classifier.Device device = Classifier.Device.CPU;
   private int numThreads = -1;
 
@@ -124,7 +121,6 @@ public abstract class CameraActivity extends AppCompatActivity
     threadsTextView = findViewById(R.id.threads);
     plusImageView = findViewById(R.id.plus);
     minusImageView = findViewById(R.id.minus);
-    modelSpinner = findViewById(R.id.model_spinner);
     deviceSpinner = findViewById(R.id.device_spinner);
     bottomSheetLayout = findViewById(R.id.bottom_sheet_layout);
     gestureLayout = findViewById(R.id.gesture_layout);
@@ -191,13 +187,11 @@ public abstract class CameraActivity extends AppCompatActivity
     rotationTextView = findViewById(R.id.rotation_info);
     inferenceTimeTextView = findViewById(R.id.inference_info);
 
-    modelSpinner.setOnItemSelectedListener(this);
     deviceSpinner.setOnItemSelectedListener(this);
 
     plusImageView.setOnClickListener(this);
     minusImageView.setOnClickListener(this);
 
-    model = Classifier.Model.valueOf(modelSpinner.getSelectedItem().toString().toUpperCase());
     device = Classifier.Device.valueOf(deviceSpinner.getSelectedItem().toString());
     numThreads = Integer.parseInt(threadsTextView.getText().toString().trim());
   }
@@ -532,15 +526,8 @@ public abstract class CameraActivity extends AppCompatActivity
       if (recognition != null) {
         if (recognition.getTitle() != null) recognitionTextView.setText(recognition.getTitle());
         if (recognition.getConfidence() != null)
-                  recognitionValueTextView.setText(
-                          String.format("%.2f", (100 * recognition.getConfidence())) + "%");
-
-        if(recognition.getConfidence() > 0.9)
-        {
-          Intent intent = new Intent(CameraActivity.this, MapsActivity.class);
-
-        }
-
+          recognitionValueTextView.setText(
+              String.format("%.2f", (100 * recognition.getConfidence())) + "%");
       }
 
       Classifier.Recognition recognition1 = results.get(1);
@@ -579,18 +566,6 @@ public abstract class CameraActivity extends AppCompatActivity
 
   protected void showInference(String inferenceTime) {
     inferenceTimeTextView.setText(inferenceTime);
-  }
-
-  protected Classifier.Model getModel() {
-    return model;
-  }
-
-  private void setModel(Classifier.Model model) {
-    if (this.model != model) {
-      LOGGER.d("Updating  model: " + model);
-      this.model = model;
-      onInferenceConfigurationChanged();
-    }
   }
 
   protected Classifier.Device getDevice() {
@@ -652,9 +627,7 @@ public abstract class CameraActivity extends AppCompatActivity
 
   @Override
   public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-    if (parent == modelSpinner) {
-      setModel(Classifier.Model.valueOf(parent.getItemAtPosition(pos).toString().toUpperCase()));
-    } else if (parent == deviceSpinner) {
+    if (parent == deviceSpinner) {
       setDevice(Classifier.Device.valueOf(parent.getItemAtPosition(pos).toString()));
     }
   }
