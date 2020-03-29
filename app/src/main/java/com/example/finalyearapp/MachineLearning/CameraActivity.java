@@ -1,26 +1,14 @@
-/*
- * Copyright 2019 The TensorFlow Authors. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *       http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 
 package com.example.finalyearapp.MachineLearning;
 
 import android.Manifest;
+import android.app.Dialog;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.hardware.Camera;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCharacteristics;
@@ -52,6 +40,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.UiThread;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.finalyearapp.MachineLearning.env.ImageUtils;
 import com.example.finalyearapp.MachineLearning.env.Logger;
@@ -74,6 +63,7 @@ public abstract class CameraActivity extends AppCompatActivity
 
   private static final int PERMISSIONS_REQUEST = 1;
   Classifier.Recognition recognition;
+  Dialog myDialog;
 
   private static final String PERMISSION_CAMERA = Manifest.permission.CAMERA;
   protected int previewWidth = 0;
@@ -523,6 +513,51 @@ public abstract class CameraActivity extends AppCompatActivity
   @UiThread
   protected void showResultsInBottomSheet(List<Classifier.Recognition> results) {
 
+    for(int i =0; i <2; i ++) {
+
+      myDialog.setContentView(R.layout.campopup);
+      TextView txtclose;
+      Button btnFollow;
+      ConstraintLayout background;
+      background = findViewById(R.id.background);
+
+      txtclose = (TextView) myDialog.findViewById(R.id.txtclose);
+      txtclose.setText("X");
+
+      TextView txtanswer = (TextView) myDialog.findViewById(R.id.Answer);
+      if (i == 0)
+      {
+
+      }
+      else if( i == 1)
+      {
+        background.setBackgroundResource(R.drawable.caminstruction2);
+      }
+
+      Button route = myDialog.findViewById(R.id.route);
+      route.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+          myDialog.dismiss();
+
+        }
+      });
+      txtclose.setOnClickListener(new View.OnClickListener() {
+
+        @Override
+        public void onClick(View v) {
+
+          myDialog.dismiss();
+
+
+        }
+
+      });
+      myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+      myDialog.show();
+
+
+    }
 
     if (results != null && results.size() >= 3) {
       recognition = results.get(0);
