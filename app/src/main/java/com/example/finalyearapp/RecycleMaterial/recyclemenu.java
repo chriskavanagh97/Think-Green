@@ -9,6 +9,7 @@ import android.widget.ImageView;
 
 import com.example.finalyearapp.MachineLearning.CameraConnectionFragment;
 import com.example.finalyearapp.MachineLearning.ClassifierActivity;
+import com.example.finalyearapp.Maps.Instructions;
 import com.example.finalyearapp.R;
 
 
@@ -43,7 +44,8 @@ public class recyclemenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(recyclemenu.this, ClassifierActivity.class);
+                Intent intent = new Intent(recyclemenu.this, Instructions.class);
+                intent.putExtra("value", 2);
                 startActivity(intent);
 
             }

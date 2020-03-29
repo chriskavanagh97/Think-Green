@@ -1,3 +1,18 @@
+/*
+ * Copyright 2019 The TensorFlow Authors. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
 package com.example.finalyearapp.MachineLearning;
 
@@ -60,10 +75,8 @@ public abstract class CameraActivity extends AppCompatActivity
         View.OnClickListener,
         AdapterView.OnItemSelectedListener {
   private static final Logger LOGGER = new Logger();
-
+int i;
   private static final int PERMISSIONS_REQUEST = 1;
-  Classifier.Recognition recognition;
-  Dialog myDialog;
 
   private static final String PERMISSION_CAMERA = Manifest.permission.CAMERA;
   protected int previewWidth = 0;
@@ -79,6 +92,7 @@ public abstract class CameraActivity extends AppCompatActivity
   private Runnable imageConverter;
   private LinearLayout bottomSheetLayout;
   private LinearLayout gestureLayout;
+  Dialog myDialog;
   private BottomSheetBehavior<LinearLayout> sheetBehavior;
   protected TextView recognitionTextView,
       recognition1TextView,
@@ -104,6 +118,7 @@ public abstract class CameraActivity extends AppCompatActivity
     LOGGER.d("onCreate " + this);
     super.onCreate(null);
     getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
     setContentView(R.layout.activity_camera);
 
     if (hasPermission()) {
@@ -112,6 +127,9 @@ public abstract class CameraActivity extends AppCompatActivity
       requestPermission();
     }
 
+    threadsTextView = findViewById(R.id.threads);
+    plusImageView = findViewById(R.id.plus);
+    minusImageView = findViewById(R.id.minus);
     deviceSpinner = findViewById(R.id.device_spinner);
     bottomSheetLayout = findViewById(R.id.bottom_sheet_layout);
     gestureLayout = findViewById(R.id.gesture_layout);
@@ -513,54 +531,8 @@ public abstract class CameraActivity extends AppCompatActivity
   @UiThread
   protected void showResultsInBottomSheet(List<Classifier.Recognition> results) {
 
-    for(int i =0; i <2; i ++) {
-
-      myDialog.setContentView(R.layout.campopup);
-      TextView txtclose;
-      Button btnFollow;
-      ConstraintLayout background;
-      background = findViewById(R.id.background);
-
-      txtclose = (TextView) myDialog.findViewById(R.id.txtclose);
-      txtclose.setText("X");
-
-      TextView txtanswer = (TextView) myDialog.findViewById(R.id.Answer);
-      if (i == 0)
-      {
-
-      }
-      else if( i == 1)
-      {
-        background.setBackgroundResource(R.drawable.caminstruction2);
-      }
-
-      Button route = myDialog.findViewById(R.id.route);
-      route.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-          myDialog.dismiss();
-
-        }
-      });
-      txtclose.setOnClickListener(new View.OnClickListener() {
-
-        @Override
-        public void onClick(View v) {
-
-          myDialog.dismiss();
-
-
-        }
-
-      });
-      myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-      myDialog.show();
-
-
-    }
-
     if (results != null && results.size() >= 3) {
-      recognition = results.get(0);
+      Classifier.Recognition recognition = results.get(0);
       if (recognition != null) {
         if (recognition.getTitle() != null) recognitionTextView.setText(recognition.getTitle());
         if (recognition.getConfidence() != null)
@@ -568,41 +540,26 @@ public abstract class CameraActivity extends AppCompatActivity
                   String.format("%.2f", (100 * recognition.getConfidence())) + "%");
 
 
+}
       }
-    }
-    Classifier.Recognition recognition1 = results.get(1);
-    if (recognition1 != null) {
-      if (recognition1.getTitle() != null) recognition1TextView.setText(recognition1.getTitle());
-      if (recognition1.getConfidence() != null)
-        recognition1ValueTextView.setText(
-                String.format("%.2f", (100 * recognition1.getConfidence())) + "%");
-    }
-
-    Classifier.Recognition recognition2 = results.get(2);
-    if (recognition2 != null) {
-      if (recognition2.getTitle() != null) recognition2TextView.setText(recognition2.getTitle());
-      if (recognition2.getConfidence() != null)
-        recognition2ValueTextView.setText(
-                String.format("%.2f", (100 * recognition2.getConfidence())) + "%");
-    }
-    Button button = findViewById(R.id.start);
-    button.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View view) {
-
-        if (recognition.getConfidence() > .9) {
-
-          long test = System.currentTimeMillis();
-          long pastTime = System.currentTimeMillis();
-          if (test >= (pastTime + 5 * 1000) & recognition.getConfidence() > .9) {
-
-
-          }
-        }
+      Classifier.Recognition recognition1 = results.get(1);
+      if (recognition1 != null) {
+        if (recognition1.getTitle() != null) recognition1TextView.setText(recognition1.getTitle());
+        if (recognition1.getConfidence() != null)
+          recognition1ValueTextView.setText(
+              String.format("%.2f", (100 * recognition1.getConfidence())) + "%");
       }
 
-    });
-  }
+      Classifier.Recognition recognition2 = results.get(2);
+      if (recognition2 != null) {
+        if (recognition2.getTitle() != null) recognition2TextView.setText(recognition2.getTitle());
+        if (recognition2.getConfidence() != null)
+          recognition2ValueTextView.setText(
+              String.format("%.2f", (100 * recognition2.getConfidence())) + "%");
+      }
+
+     }
+
 
   protected void showFrameInfo(String frameInfo) {
     frameValueTextView.setText(frameInfo);
@@ -662,7 +619,24 @@ public abstract class CameraActivity extends AppCompatActivity
 
   protected abstract void onInferenceConfigurationChanged();
 
-
+  @Override
+  public void onClick(View v) {
+    if (v.getId() == R.id.plus) {
+      String threads = threadsTextView.getText().toString().trim();
+      int numThreads = Integer.parseInt(threads);
+      if (numThreads >= 9) return;
+      setNumThreads(++numThreads);
+      threadsTextView.setText(String.valueOf(numThreads));
+    } else if (v.getId() == R.id.minus) {
+      String threads = threadsTextView.getText().toString().trim();
+      int numThreads = Integer.parseInt(threads);
+      if (numThreads == 1) {
+        return;
+      }
+      setNumThreads(--numThreads);
+      threadsTextView.setText(String.valueOf(numThreads));
+    }
+  }
 
   @Override
   public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {

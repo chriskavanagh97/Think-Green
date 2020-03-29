@@ -1,5 +1,3 @@
-
-
 package com.example.finalyearapp.MachineLearning;
 
 import android.graphics.Bitmap;

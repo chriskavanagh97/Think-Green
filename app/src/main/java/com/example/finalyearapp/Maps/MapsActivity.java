@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
 
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -26,6 +27,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -93,6 +95,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
     LatLng MarkerRed;
     LatLng MarkerYellow;
     Location currentlocation;
+    int i;
 
     String name, address, city, state, coordinantes;
     Double lat, lng;
@@ -123,6 +126,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
         mainmenu = (LinearLayout) findViewById(R.id.mainmenu);
 
         myDialog = new Dialog(this);
+
 
         sessiontype = (Button) findViewById(R.id.sessionType);
 
@@ -187,6 +191,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
 
             }
         });
+
     }
     private void removeTripMarkers(){
         for(Marker marker: mTripMarkers){
@@ -461,6 +466,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
         myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         myDialog.show();
 
+
     }
     private void getDeviceLocation() {
         /*
@@ -669,4 +675,5 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
                 null
         );
     }
+
     }
