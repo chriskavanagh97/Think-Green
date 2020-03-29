@@ -115,6 +115,6 @@ public class HandleXml {
 
         }
     });
-thread.start();;
+thread.start();
 }
 }

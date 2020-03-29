@@ -6,6 +6,7 @@
     android:background="#00000000">
 
     <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#00000000"
@@ -17,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@android:color/black"
-            tools:context="org.tensorflow.lite.examples.classification.com.example.finalyearapp.MachineLearning.CameraActivity" >
+            tools:context="org.tensorflow.lite.examples.classification.com.example.finalyearapp.MachineLearning.CameraActivity">
 
 
         </FrameLayout>
@@ -35,8 +36,18 @@
                 android:layout_height="150dp"
                 android:src="@drawable/thinkgreen" />
         </androidx.appcompat.widget.Toolbar>
+        <Button
+            android:id="@+id/start"
+            android:layout_marginTop="480dp"
+            android:layout_width="119dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="135dp"
+            android:text="Start">
 
+        </Button>
     </RelativeLayout>
+
     <include
         android:id="@+id/bottom_sheet_layout"
         layout="@layout/layout_bottom_sheet" />

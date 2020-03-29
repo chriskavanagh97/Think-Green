@@ -39,7 +39,7 @@ public class recyclewhat extends AppCompatActivity {
         recyclerView = findViewById(R.id.my_recycler_view);
         recyclerView.setHasFixedSize(true);
 
-        LinearLayoutManager mLayoutManager= new LinearLayoutManager(this);
+        LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
 
 
         recyclerView.setLayoutManager(mLayoutManager);
@@ -70,7 +70,7 @@ public class recyclewhat extends AppCompatActivity {
         });
 
 
-        database.addValueEventListener(new ValueEventListener() {
+     /*   database.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
@@ -90,8 +90,9 @@ public class recyclewhat extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        });
+        });*/
     }
+
 
     private void filter(String text)
     {
