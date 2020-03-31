@@ -31,9 +31,10 @@ import java.util.ArrayList;
 
 
 public class recyclewhat extends AppCompatActivity {
-    String Where, why;
+    String Where, why, generalcomment, how;
 
     private ArrayList<Material> materials = new ArrayList<>();
+
 
     private RecyclerView recyclerView;
     RecycleAdapter adapter;
@@ -136,13 +137,29 @@ public class recyclewhat extends AppCompatActivity {
                     why = jo_inside.getString("Why?");
 
                 }
-                else if (jo_inside.has("How?"))
+                else {
+
+                    why = jo_inside.getString(" ");
+                }
+
+                if (jo_inside.has("How?"))
                 {
-                    why = jo_inside.getString("How?");
+                    how = jo_inside.getString("How?");
+                }
+                else {
+
+                }
+                if (jo_inside.has("General Comment"))
+                {
+                    generalcomment = jo_inside.getString("General Comment");
+                }
+                else{
+                    generalcomment = jo_inside.getString("General Comment");
+
                 }
 
 
-                materials.add(new Material(what, Where, name));
+                materials.add(new Material(what, Where, name , why , how , generalcomment));
 
 
 

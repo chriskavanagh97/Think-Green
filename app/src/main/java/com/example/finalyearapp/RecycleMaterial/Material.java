@@ -16,10 +16,13 @@ public class Material {
     public Material() {
     }
 
-    public Material(String what, String where, String why) {
+    public Material(String name, String what, String where, String why,String how, String generalcomment) {
         What = what;
         Where = where;
         Why = why;
+        Name = name;
+        How = how;
+        tip = generalcomment;
     }
 
     public void setTip(String tip) {
