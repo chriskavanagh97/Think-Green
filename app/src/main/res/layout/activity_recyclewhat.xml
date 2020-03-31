@@ -1,72 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:background="@color/colorPrimary"
-
     android:layout_height="match_parent">
 
 
-    <TextView
-        android:id="@+id/Friends"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@color/colorPrimary"
-        android:gravity="center_horizontal"
-        android:text="What to do with your materials"
-        android:textColor="#0E0C0C"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+    <EditText
+        android:id="@+id/search"
+        android:layout_width="123dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="180dp"
+        android:layout_marginTop="80dp">
 
+    </EditText>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="78dp"
+        android:layout_marginTop="15dp"
         android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
+
+
+        <ImageView
+            android:id="@+id/aerosols"
+            android:layout_width="81dp"
             android:layout_height="wrap_content"
-            android:text="find an item"
-            android:textStyle="bold"
-            android:layout_margin="16dp">
+            app:srcCompat="@drawable/aerosols" />
 
-        </TextView>
-
-        <EditText
-            android:id="@+id/search"
-            android:layout_width="266dp"
+        <ImageView
+            android:id="@+id/medicine"
+            android:layout_width="106dp"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:hint="start typing">
+            app:srcCompat="@drawable/medicine" />
 
-        </EditText>
+        <ImageView
+            android:id="@+id/batteries"
+            android:layout_width="79dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/batteries" />
+
+        <ImageView
+            android:id="@+id/pizzabox"
+            android:layout_width="101dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/pizzaboxlbl" />
     </LinearLayout>
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
         android:orientation="horizontal">
 
         <androidx.recyclerview.widget.RecyclerView
 
             android:id="@+id/my_recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="650dp"
+            android:layout_height="400dp"
             android:scrollbars="vertical">
 
         </androidx.recyclerview.widget.RecyclerView>
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_weight="1"
 
-        android:background="#FAF8F8"
-        android:text="home" />
 
 
 </LinearLayout>

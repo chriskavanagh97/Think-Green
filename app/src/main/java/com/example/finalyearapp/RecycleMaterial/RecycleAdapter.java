@@ -6,11 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-
+import com.example.finalyearapp.MainActivity;
 import com.example.finalyearapp.R;
 
 
@@ -32,10 +32,6 @@ public class RecycleAdapter extends RecyclerView.Adapter<com.example.finalyearap
         {
             super(itemView);
             txtView= (TextView) itemView.findViewById(R.id.textView);
-            txtView2= (TextView) itemView.findViewById(R.id.textView2);
-            txtView3= (TextView) itemView.findViewById(R.id.textView3);
-
-
 
         }
     }
@@ -69,9 +65,6 @@ public class RecycleAdapter extends RecyclerView.Adapter<com.example.finalyearap
         final Material material = materials.get(position);
 
         holder.txtView.setText(material.getName());
-        holder.txtView2.setText(material.getWhere());
-        holder.txtView3.setText(material.getWhat());
-
 
         holder.txtView.setOnClickListener(new View.OnClickListener() {
             @Override

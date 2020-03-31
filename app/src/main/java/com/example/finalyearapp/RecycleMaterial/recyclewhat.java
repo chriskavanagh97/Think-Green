@@ -45,9 +45,9 @@ public class recyclewhat extends AppCompatActivity {
         setContentView(R.layout.activity_recyclewhat);
 
         recyclerView = findViewById(R.id.my_recycler_view);
-        recyclerView.setHasFixedSize(true);
 
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
+        getWindow().setBackgroundDrawableResource(R.drawable.materialsback);
 
 
         recyclerView.setLayoutManager(mLayoutManager);
@@ -55,7 +55,7 @@ public class recyclewhat extends AppCompatActivity {
         DatabaseReference database = FirebaseDatabase.getInstance().getReference().child("Materials");
 
 
-        recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+
         EditText search = (EditText) findViewById(R.id.search);
 
         search.addTextChangedListener(new TextWatcher() {
@@ -139,7 +139,7 @@ public class recyclewhat extends AppCompatActivity {
                 }
                 else {
 
-                    why = jo_inside.getString(" ");
+                    why = " ";
                 }
 
                 if (jo_inside.has("How?"))
@@ -147,6 +147,7 @@ public class recyclewhat extends AppCompatActivity {
                     how = jo_inside.getString("How?");
                 }
                 else {
+                    how = " ";
 
                 }
                 if (jo_inside.has("General Comment"))
@@ -154,12 +155,12 @@ public class recyclewhat extends AppCompatActivity {
                     generalcomment = jo_inside.getString("General Comment");
                 }
                 else{
-                    generalcomment = jo_inside.getString("General Comment");
+                    generalcomment = " ";
 
                 }
 
 
-                materials.add(new Material(what, Where, name , why , how , generalcomment));
+                materials.add(new Material(name, what, Where , why , how , generalcomment));
 
 
 
