@@ -22,13 +22,10 @@ import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.hardware.Camera;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCharacteristics;
 import android.hardware.camera2.CameraManager;
-import android.hardware.camera2.TotalCaptureResult;
 import android.hardware.camera2.params.StreamConfigurationMap;
 import android.media.Image;
 import android.media.Image.Plane;
@@ -51,16 +48,12 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.UiThread;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-
 import com.example.finalyearapp.MachineLearning.env.ImageUtils;
 import com.example.finalyearapp.MachineLearning.env.Logger;
 import com.example.finalyearapp.MachineLearning.tflite.Classifier;
-import com.example.finalyearapp.Maps.MapsActivity;
 import com.example.finalyearapp.R;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
@@ -77,6 +70,7 @@ public abstract class CameraActivity extends AppCompatActivity
   private static final Logger LOGGER = new Logger();
 int i;
   private static final int PERMISSIONS_REQUEST = 1;
+  Classifier.Recognition recognition;
 
   private static final String PERMISSION_CAMERA = Manifest.permission.CAMERA;
   protected int previewWidth = 0;
@@ -92,7 +86,6 @@ int i;
   private Runnable imageConverter;
   private LinearLayout bottomSheetLayout;
   private LinearLayout gestureLayout;
-  Dialog myDialog;
   private BottomSheetBehavior<LinearLayout> sheetBehavior;
   protected TextView recognitionTextView,
       recognition1TextView,
@@ -532,7 +525,7 @@ int i;
   protected void showResultsInBottomSheet(List<Classifier.Recognition> results) {
 
     if (results != null && results.size() >= 3) {
-      Classifier.Recognition recognition = results.get(0);
+       recognition = results.get(0);
       if (recognition != null) {
         if (recognition.getTitle() != null) recognitionTextView.setText(recognition.getTitle());
         if (recognition.getConfidence() != null)
@@ -557,6 +550,22 @@ int i;
           recognition2ValueTextView.setText(
               String.format("%.2f", (100 * recognition2.getConfidence())) + "%");
       }
+
+    Button start = findViewById(R.id.start);
+      start.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+
+
+            Intent intent = new Intent(CameraActivity.this, ClassifierResults.class);
+            intent.putExtra("value", recognition.getTitle());
+            startActivity(intent);
+
+
+
+        }
+      });
+
 
      }
 

@@ -1,0 +1,1321 @@
+{
+  "Materials":[
+    {
+      "name" :"Aluminium trays",
+      "What?": "Aluminium foil and trays are a type of metal similar to tins ; cans.",
+      "Where?": "Aluminium foil and trays can be placed in the household recycling bin but <strong>only</strong> if completely clean. only",
+      "Why?": "Aluminium can be recycled over and over without losing any of its properties."
+    },
+    {
+      "name" : "Animal bedding",
+      "What?": "Household animal bedding generally consists of old dog and cat beds. ",
+      "Where?": "These items when no longer fit for purpose should be placed in the general waste bin. ",
+      "General Comment ": "If bedding is in good condition an animal shelter may accept it as a donation. "
+    },
+    {
+      "name": "Armchair",
+      "What?": "This is furniture / a bulky item",
+      "Where?": "Furniture at the end of its useful life can often be recycled, especially items made from wood and metal. Most furniture can be recycled at your local civic amenity site and some local authorities may also provide a bulky goods collection service for a fee.",
+      "General Comment ": "If you have a piece of furniture that is still usable, you could consider selling it, passing it on to someone else or donating it  u2013 some charity shops accept furniture for resale."
+    },
+    {
+      "name": "Asbestos",
+      "What?": "Asbestos is a hazardous waste and must be disposed of safely. ",
+      "How?": "Asbestos should be removed ; disposed of by a specialist hazardous waste contractor. You can search for specialised contractors on the National Waste Collection Permit site: www.nwcpo.ie. ",
+      "General Comment ": "Asbestos is extremely hazardous. If you find asbestos in your home, call an expert! "
+    },
+    {
+      "name": "Ash / Ashes",
+      "What?": "Ash is produced generally from coal, wood or turf. ",
+      "Where?": "Ash from coal should only be placed in the general waste bin. Small amounts of ash from wood or turf can be placed in your home compost bin. ",
+      "Why?": "Ash produced from coal has no nutritional value and can be harmful to soil. ",
+      "General Comment ": "Ensure ash is fully cold before placing in the bin. "
+    },
+    {
+      "name": "Barbecues",
+      "What?": "Barbecues are a household bulky item and are generally made of metal. ",
+      "Where?": "Some Civic Amenity Sites will accept metal items. Check the map for your local civic amenity site on the Waste Services Locator on this site. Waste Services Locator ",
+      "General Comment ": "Disposable BBQs should be placed in the general waste bins. Ensure ash is fully cold. "
+    },
+    {
+      "name":"Bathroom suites",
+      "What?": "Bathroom suites no longer fit for purpose can be disposed of similarly to construction and demolition (C;D) waste. ",
+      "Where?": "Skip hire companies provide varying skip services. Some civic amenity sites also accept this material. Check the  waste services locator on this site for further detail.  waste services locator ",
+      "General Comment ": "Before disposing of bathroom suites always consider reuse. &nbsp; "
+    },
+    {
+      "name" : "Batteries",
+      "What?": "Household batteries of any size including battery packs from electrical items are suitable for recycling.",
+      "Where?":"Batteries should be brought to a Civic Amenity Site or lots of shops and supermarkets who sell batteries will have a collection point Check the  Waste Services Locator on this site for further details. Waste Services Locator",
+      "Why?":"When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Batteries generally contain hazardous components and therefore need to be disposed of correctly. ",
+      "General Comment ": "Most supermarkets will have battery boxes where you can leave your used batteries for free. If you use a lot of batteries why not try using rechargeable ones instead. "
+    },
+    {
+      "name": "Bedding ; blankets",
+      "What?": "Bedding and blankets generally cover duvets, blankets, bed sheets, duvet covers, pillows and throws. ",
+      "Where?": "Pillows and duvets due to hygiene reasons (unless new ; unused) should be placed in the general waste bin. Other textiles such as duvet covers or blankets can be recycled in textile banks. ",
+      "General Comment ": "If you have NEW unused and unwanted items these can be donated to charity. If you have used ones which are in good condition perhaps you could donate them to an animal shelter. "
+    },
+    {
+      "name":"Beds",
+      "What?": "Bed frames or bases are generally made of timber or metal. ",
+      "Where?": "Check the  waste services locator on this site for local recycling options. waste services locator "
+    },
+    {
+      "name": "Beverage cans",
+      "What?": "Most beverage cans are made of&nbsp;aluminium&nbsp;and a smaller number are made of&nbsp;tin-plated steel. ",
+      "Where?": "These should be placed in the household recycling bin but some Civic Amenity Sites and Bring Banks also accept beverage cans check out the Waste Services Locator on this site for further details. Waste Services Locator ",
+      "Why?": "Recycling beverage cans reduces the extraction of limited raw materials, saves considerable amounts of energy and&nbsp;reduces carbon dioxide emissions. ",
+      "How?": "Make sure all beverage cans placed in the household recycling bin are clean and dry and placed loosely in the bin. You can leave labels on as these are removed through the recycling process. ",
+      "General Comment ": "Look out for charities such as Every Can Counts at events and festivals: "
+    },
+    {
+      "name": "Bicycles",
+      "What?": "Bicycles are generally made of metal or aluminium which is recyclable. ",
+      "Where?": "Check the  waste services locator on this site for recycling options.&nbsp; There are also bicycle refurbishment projects listed on ",
+      "General Comment ": "Even bicycles in poor condition can be repaired, refurbished and re-used. Check https://www.repairmystuff.ie, it is online repair directory. here However if your bicycle is beyond repair the main parts of your old bike can be recycled at your nearest civic amenity site. "
+    },
+    {
+      "name": "Birthday cards",
+      "What?": "Birthday cards are generally made of&nbsp; heavy paper or light card. ",
+      "Where?": "This should be placed in the household recycling bin. ",
+      "How?": "Please make sure items are clean, dry and placed loosely in the bin. ",
+      "General Comment ": "Old cards could be use for arts, crafts and shopping lists. "
+    },
+    {
+      "name": "Biscuit sweet tins/tubs",
+      "What?": "Biscuit and sweet tins and tubs are made from metal or plastic. ",
+      "Where?": "These should be placed in the household recycling bin. ",
+      "How?": "Please make sure items are clean, dry and placed loosely in the bin. ",
+      "General Comment ": "Tins and tubs also make great storage containers. "
+    },
+    {
+      "name": "Black Trays",
+      "What?": "Rigid trays which any type of meat can be purchased in, they come in many colours and will normally have a soft film covering ",
+      "Where?": "The rigid plastic tray can be placed in the household recycling bin and the softer plastic cover should go into the general waste bin. ",
+      "How?": "All rigid trays regardless of the colour, number, symbol or lack thereof can be placed in the household recycling bin. Trays should be clean, if there is a soak pad this must be removed [place it in the black or food waste bin], you then need to clean out the tray by carefully washing it ensuring you do not splash any liquid on the counter tops or sink or if you are a bit unsure about washing it in the sink you can simply wipe out any excess liquid with paper towels and then dispose of these in the food waste recycling bin [this will ensure no bacteria gets spread on counters or sink] "
+    },
+    { "name":"Blender",
+      "What?": "This is an electrical item [WEEE].",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator ",
+      "Why?":"When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "Books",
+      "What?": "Books are made from paper and card. ",
+      "Where?": "Books should be placed in the household recycling bin. Large volumes can be taken to most local civic amenity sites. Check the  waste services locator on this site.  waste services locator ",
+      "General Comment ": "Why not pass them onto somebody else or donate them to charity. "
+    },
+    {
+      "name": "Bricks",
+      "What?": "Bricks are classified as construction and demolition (C;D) waste. ",
+      "Where?": "Skip hire companies generally provide a recycling service for bricks. Some civic amenity sites also accept this material. Check the  waste services locator on this site. waste services locator ",
+      "General Comment ": "Before disposing of bricks always consider reuse  u2013&nbsp; do you have a DIY project that you might be able to use them for? &nbsp; "
+    },
+    {
+      "name":  "Bubble wrap",
+      "What?": "Bubble wrap is a soft plastic and is currently not accepted in your household recycling bin. ",
+      "Where?": "Bubble wrap should be placed in the general waste bin. Some Civic Amenity Sites may accept bubble wrap  u2013 check out the Waster Services Locator on this site for further details. Waster Services Locato ",
+      "General Comment ": "Bubble wrap can be reused. "
+    },
+    {
+      "name": "Building materials",
+      "What?": "Building materials are generally classified as construction and demolition (C;D) waste. ",
+      "Where?": "Skip hire companies generally provide a recycling service for some materials and a disposal service for others. Some civic amenity sites also accept this material. Check the  waste services locator on this site. waste services locator ",
+      "General Comment ": "Before disposing of building materials always consider reuse  u2013&nbsp; do you have a DIY project that you might be able to use them for? "
+    },
+    {
+      "name": "Buttons",
+      "What?": "Buttons come in all shapes and sizes and can be made from many different materials. ",
+      "Where?": "Rigid plastic buttons can be recycled and may be placed in the household recycling bin. Buttons are often accepted at local charity shops as well. ",
+      "General Comment ": "Buttons can be used for arts and crafts  u2013 consider dropping them into a local arts centre. Remember it is always handy to have random buttons in case you lose one "
+    },
+    {
+      "name":  "Charger",
+      "What?": "This is an electrical item [WEEE] ",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator ",
+      "Why?":"When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "Cans" ,
+      "What?": "Tins and cans are made from either steel or aluminium. ",
+      "Where?": "This should be placed in the household recycling bin. ",
+      "Why?": "Aluminium and steel can be recycled over and over without losing any of its properties. ",
+      "How?": "Please make sure items are clean, dry and placed loosely in the bin. No need t remove the paper label. ",
+      "General Comment ": "Look out for charities such as Every Can Counts at events and festivals:"
+    },
+    {
+      "name": "Cardboard Packaging",
+      "What?": "Cardboard packaging is generally made from heavy duty paper based material and comes in many shapes and sizes. ",
+      "Where?": "This should be placed in the household recycling bin or if you have large volumes check the waste services locator on this site. waste services locator ",
+      "How?": "Please make sure items are clean, dry and placed loosely in the bin. ",
+      "General Comment ": "Soiled or wet cardboard cannot be recycled. "
+    },
+
+    {
+      "name": "Carrier bags",
+      "What?": "Carrier bags are generally made from paper, card or soft plastics. ",
+      "Where?": "Carrier bags made from paper or card when no longer suitable for use, should be placed in the household recycling bin. Carrier bags made from soft plastics should be reused indefinitely and when become no longer fit for purpose should be disposed of in the general waste bin. ",
+      "How?": "Please make sure carrier bags suitable for recycling are clean, dry and placed loosely in the bin. ",
+      "General Comment": "If paper or card become wet or dirty on its way to a recycling facility it may not be recycled. "
+    },
+    {
+      "name": "Cars",
+      "What?": "If your car is in a roadworthy condition, you may be able to sell it privately or trade-in when you buy a new one. ",
+      "Where?": "Bring them to an authorised facility ",
+      "General Comment ": "An end-of-life vehicle is a specified vehicle, such as a car, which is discarded or is to be discarded by its registered owner as waste. Vehicles normally reach the end of their useful lives, either due to age (typically around 12-14 years), or because of heavy damage following an accident. There is no fixed age, therefore, at which a vehicle can be considered an end-of-life vehicle. An end-of-life vehicle must be deposited at an authorised treatment facility. Each vehicle manufacturer or importer is required to have a national collection system in place made up of at least one such treatment facility in every city and council area. These facilities provide a free take-back service for vehicles of that producer is brand. There may also be an independent facility in your area that will accept your end-of-life vehicle. If an end-of-life vehicle is deposited at an unauthorised facility, the owner will not receive a certificate of destruction and may remain recorded as registered owner of the vehicle on the Department of Transport, Tourism and Sport National Vehicle File. "
+    },
+    { "name": "Cartons",
+      "What?": "Cartons  are generally made of&nbsp;paperboard and small amounts of&nbsp;polyethylene&nbsp;with an&nbsp;aluminum&nbsp;foil lining, and are commonly know as Tetra Pak. ",
+      "Where?": "Cartons  should be placed in the household recycling bin. Some Civic Amenity Sites also accept Cartons [Tetra Pak or Similar].&nbsp; Check the Waste Services Locator on this site for further details. Waste Services Locator ",
+      "Why?": "Cartons  are currently accepted for recycling. Recycling Cartons  reduces the extraction of limited raw materials, saves considerable amounts of energy and&nbsp;reduces carbon dioxide emissions. ",
+      "How?": "Make sure all Cartons  placed in the household recycling bin are clean and dry and placed loosely in the bin. &nbsp; "
+    },
+    { "name": "Cassette players",
+      "What?": "This is an electrical item [WEEE]",
+      "Where?":"Cassette players should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator",
+      "Why?":"When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "Cassette Tapes",
+      "What?": "Cassette tapes are generally made up of a number of different types of materials, some of which are recyclable and some of which are not. ",
+      "Where?": "Where possible cassette tapes should be dismantled and the outer hard parts placed in the recycling bin but the tape should be placed in the general waste bin."
+    },
+    {"name":  "Small Pet Waste",
+      "What?": "Cat litter and small pet waste includes the animal waste and soiled litter. ",
+      "Where?": "This should be placed in the general waste bin. "
+    },
+    {
+      "name": "Catalogues",
+      "What?": "Catalogues are generally made of paper and card. ",
+      "Where?": "Catalogues and similar items should be placed in the household recycling bin. ",
+      "How?": "Please make sure items are clean, dry and placed loosely in the bin. ",
+      "General Comment ": "If paper or card become wet or dirty on its way to a sorting facility it may not be recycled. "
+    },
+    { "name": "CD and DVD players",
+      "What?": "This is an electrical item [WEEE].",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {  "name": "CDs",
+      "What?": "CDs and DVDs are generally made of&nbsp; poly-carbonate plastic&nbsp;covered by an&nbsp;aluminium&nbsp;coating. ",
+      "Where?": "CDs and DVDs should be placed in the general waste bin. The cases for both can be placed in the household recycling bin, remove paper sleeves and any soft plastic lining where possible. ",
+      "General Comment ": "Instead of disposing of suitable DVD is and CD is once you are finished with them, why not give to friends or family or donate them to a charity shop for someone else to use? This is particularly relevant for music, films or box sets. "
+    },
+    {   "name": "Chairs",
+      "What?": "Chairs are furniture and considered a bulky item for disposal. ",
+      "Where?": "Furniture at the end of its useful life can often be recycled, especially items made from wood and metal. Some furniture can be recycled at your local civic amenity site, check the Waste Services Locator on this site for additional information. Waste Services Locator Some local authorities may also provide a bulky goods collection service for a fee. Also check out up cycling projects that welcome donations of furniture, some of which are listed on www.crni.ie ",
+      "General Comment ": "If you have a piece of furniture that is still usable, you could consider selling it, passing it on to someone else or donating it  u2013 some charity shops accept furniture for resale. There are also furniture up cycling projects that welcome donations check out www.crni.ie. "
+    },
+    {
+      "name":  "Chemicals",
+      "What?": "Generally chemicals are hazardous and fall in the category of hazardous waste. This includes items such as some fertilizers, pesticides and herbicides. ",
+      "Where?": "This material should not be placed in your household bins. Some Civic Amenity Sites accept household hazardous waste. Please check the Waste Services Locator for details of items accepted in a Civic Amenity Site near you. Some Local Authorities organise household hazardous waste collections also. Waste Services Locator ",
+      "General Comment ": "It is very important to dispose of household hazardous wastes correctly, as they have the potential to contaminate the environment is not dealt with properly. &nbsp; "
+    },
+    {
+      "name":  "Chest freezers",
+      "What?": "This is an electrical item [WEEE].",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator",
+      "Why?":"When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name" :  "Chest of drawers",
+    "What?": "Chests of drawers are furniture and considered a bulky item for disposal. ",
+    "Where?": "Furniture at the end of its useful life can often be recycled, especially items made from wood and metal. Some furniture can be recycled at your local civic amenity site, check the Waste Services Locator on this site for additional information. Waste Services Locato Some local authorities may also provide a bulky goods collection service for a fee. Also check out up cycling projects that welcome donations of furniture, some of which are listed on www.crni.ie ",
+    "General Comment ": "If you have a piece of furniture that is still usable, you could consider selling it, passing it on to someone else or donating it  u2013 some charity shops accept furniture for resale. There are also furniture up cycling projects that welcome donations check out www.crni.ie. "
+    },
+    {  "name":"Christmas cards",
+      "What?": "Christmas cards are generally made of heavy paper or light card. &nbsp; ",
+      "How?": "Most cards and their envelopes can be placed in the household recycle bin but any embellishments such as ribbons should be removed first. Also, if the envelope contains a film window, this too should be removed prior to placing in the recycling bin. &nbsp; ",
+      "General Comment ": "Old cards could be use for arts and crafts. "
+    },
+    {  "name": "Christmas decorations",
+      "What?": "Many Christmas decorations are made of a combination of materials which sometimes renders them unsuitable for recycling. ",
+      "Where?": "Any old decoration made from a single material such as paper, card or rigid plastic only can be placed in the recycling bin. If you are not sure what the decoration is made of or unsure if it is made of multiple materials then place the item in the general waste bin. If a decoration has any sort of plug or is powered by a battery (remove battery separately for recycling), it is considered a WEEE item and should be disposed of correctly  u2013 This should be brought to a WEEE drop-off recycling point or Civic Amenity Site, check the  waste services locator on this site. waste services locator ",
+      "General Comment ": "Reuse your decorations each year or perhaps swap then with friends. It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {  "name": "Christmas decorations packaging",
+      "What?": "Christmas decoration packaging is generally made of paper, card or soft plastics. ",
+      "Where?": "Paper and card packaging can be placed in the recycling bin and soft plastics (as they are currently not accepted for recycling at kerbside) should be placed in the general waste bin. ",
+      "How?": "Please make sure items are clean, dry and placed loosely in the bin. ",
+      "General Comment ": "If paper or card become wet or dirty on its way to the sorting facility it may not be recycled. "
+    },
+    { "name": "Christmas tree lights",
+      "What?": "This is an electrical item [WEEE]",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator",
+      "Why?": "nWhen you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    { "name":"Christmas trees (Fake)",
+      "What?": "Fake Christmas trees are made of many types of material which generally renders them unsuitable for recycling. Many trees of this type are reused over and over. ",
+      "Where?": "When no longer fit for purpose, fake Christmas trees should be placed in the general waste bin for disposal. "
+    },
+    {  "name":"Christmas trees (Real)",
+      "What?": "Real Christmas Trees can be mulched by specialised contractors. ",
+      "Where?": "Many Local Authorities arrange special Christmas Tree collection points during January each year  u2013 check with your Local Authority for local details. ",
+      "General Comment ": "Why not have a Christmas tree in a large plant pot and let it grow outdoors throughout the year, taking it inside when you need it, a living tree is extremely beneficial to the environment. "
+    },
+    {"name": "Clingfilm",
+      "What?": "Clingfilm is a soft plastic and is currently unsuitable for kerbside collection for recycling. ",
+      "Where?": "Clingfilm should be placed in the general waste bin. ",
+      "General Comment ": "Consider when appropriate using reusable material instead of clingfilm, for example there are alternatives such as beeswax wraps and silicone which can be found in many stores or online, they can be used over and over. "
+    },
+    { "name":"Clinical waste",
+      "What?": "Clinical waste generally contains sharps and is a hazardous waste and must be disposed of carefully. ",
+      "Where?": "Contact your local HSE for further details. ",
+      "General Comment ": "Hazardous household waste items are those items that can cause damage to health or the environment. &nbsp; "
+    },
+    {
+      "name": "Cloth nappies",
+      "What?": "Cloth nappies are generally&nbsp;a textile or clothing. ",
+      "Where?": "When appropriately clean, cloth nappies can be placed in a textile bank. ",
+      "General Comment ": "Cloth nappies are durable and long lasting  u2013 after all, they are designed to be washed and worn again and again. But when your child no longer needs them, instead of throwing them away, consider passing them on so they can benefit other families.<br> Ask family, friends, work colleagues or neighbours if they know of anyone who would like them.  "
+    },
+    { "name":"Clothes",
+      "What?": "Anything made of material or fabrics is a textile and should not be placed in your general or recycling bin. ",
+      "Where?": "Clothing and textiles should be placed in a clothing bank. ",
+      "Why?": "We need to keep clothes and textiles out of landfill because it helps to reduces greenhouse gases. A lot of clothing is made of organic material, meaning that it is derived from natural sources and is biodegradable. But landfills lack the oxygen needed for organic materials to break down so, when clothing does end up in a landfill, it decomposes through anaerobic digestion. ",
+      "General Comment ": "If you have NEW, unwanted or barely used items these can be donated to charity. "
+    },
+    { "name": "Clothes hangers",
+      "What?": "Clothes hangers are generally made of rigid plastic or lightweight metal. &nbsp; ",
+      "Where?": "These can be placed in your household recycling bin. &nbsp; ",
+      "General Comment ": "If you have excess hangers and don u2019t need them, they can often be donated to charity shops or given to retailers who will use them again. "
+    },
+    { "name": "Clothing ; textiles",
+      "What?": "Anything made of material or fabrics is a textile and should not be placed in your general or recycling bin. ",
+      "Where?": "Clothing and textiles should be placed in a clothing bank. ",
+      "Why?": "We need to keep clothes and textiles out of landfill because it helps to reduces greenhouse gases. A lot of clothing is made of organic material, meaning that it is derived from natural sources and is biodegradable. But landfills lack the oxygen needed for organic materials to break down so, when clothing does end up in a landfill, it decomposes through anaerobic digestion. ",
+      "General Comment ": "If you have NEW, unwanted or barely used items these can be donated to charity. "
+    },
+    {
+      "name":"Coffee Machine",
+
+      "What?": "This is an electrical item [WEEE]",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator",
+      "Why?":"When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "Coffee pods/capsules",
+      "What?": "Coffee pods are made up of many materials which makes them unsuitable for recycling at kerside ",
+      "Where?": "Generally coffee pods should be placed in the general waste bin."
+    },
+    {
+      "name":"Computer monitors",
+      "What?": "This is an electrical item [WEEE].",
+      "Where?" :" This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site.",
+      "Why?":"When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "Computers",
+      "What?": "This is an electrical item [WEEE].",
+      "Where?": "This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator",
+      "Why?": "When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "Construction Waste",
+      "What?": "Construction and demolition waste generally consists of rubble, bricks, soil and stone, tiles and even old sanitary ware. ",
+      "Where?": "Check the waste services locator on this site. waste services locator "
+    },
+    {
+    "name": "Cookers",
+    "What?": "Electrical and gas cookers are the most common found in Ireland.",
+    "Where?":"Electrical cookers should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. Gas cookers are generally accepted at most Civic",
+    "Why?":"When you recycle anything made of metal or with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+    "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "Cooking oil",
+      "What?": "Fats, oils and greases are food waste.",
+      "Where?": "If you have a Food Waste Recycling service small amounts of fats, oils and grease can be disposed of in the food waste recycling bin. Remember to remove packaging. FOG's can be placed into cardboard egg boxes and then placed in the food waste recycle bin [check out the short video below] Soiled kitchen roll which has been used to clean a pan can also be placed in the food waste recycling bin. Larger quantities of used cooking oil can be brought to most Civic Amenity Sites. Check the Waste Services Locator on this site. Waste Services Locator",
+      "General Comment ": "Fats, oils and greases should not be poured down sinks as they cause blockages. Fats, oils and greases are not suitable for home composting."
+    },
+    {
+      "name":"Cotton Wool",
+      "What?": "Cotton wool is a form of textile and comes in different sizes and densities. ",
+      "Where?": "Cotton wool should be placed in the general waste bin. ",
+      "Why?": "Do not try to flush away cotton wool  u2013 it expands when placed in water and can cause blockages. &nbsp; "
+    },
+    { "name": "Couch",
+    "What?": "This is furniture / a bulky item ",
+    "Where?": "Furniture at the end of its useful life can often be recycled, especially items made from wood and metal. Most furniture can be recycled at your local civic amenity site and some local authorities may also provide a bulky goods collection service for a fee. ",
+    "General Comment ": "If you have a piece of furniture that is still usable, you could consider selling it, passing it on to someone else or donating it  u2013 some charity shops accept furniture for resale. "
+    },
+    {
+      "name": "Crisp packets",
+      "What?": "Crisp packets are made of a number of different materials and are currently not suitable for recycling. ",
+      "Where?": "Crisp packets should be placed in the general waste bin. ",
+      "General Comment ": "Although the inside of the packet is shiny and looks like foil, it is in fact a metallised plastic film. This type of material is not currently recycled and should not be put in your recycling bin. TerraCycle  and Walkers have partnered to create a free recycling scheme for all crisp packets. The scheme also offers participants the opportunity to fundraise for their favourite school or charity. "
+    },
+    {
+      "name": "Crockery"  ,
+      "What?": "Old crockery including broken cups, saucers and plates should be placed in your general waste bin. ",
+      "Where?": "Crockery should not be placed in your local bring banks. ",
+      "General Comment ": "Good quality crockery, or vintage and retro items should be donated for reuse. "
+    },
+    {
+      "name":"Cupboards"  ,
+      "What?": "Cupboards are generally made of timber and are considered a bulky item for disposal. ",
+      "Where?": "Timber furniture at the end of its useful life can often be recycled, or indeed upcycled. Some Civic Amenity Sites accept this material, check the Waste Services Locator on this site for local details. Waste Services Locator ",
+      "General Comment ": "If you have a piece of furniture that is still usable, you could consider selling it, passing it on to someone else or donating it  u2013 some charity shops accept furniture for resale. Upcycling projects accept furniture for resale or repurposing. "
+    },
+    {
+      "name":"Curtains",
+      "What?": "Anything made of material or fabrics is a textile and should not be placed in your general or recycling bin. ",
+      "Where?": "Clothing and textiles should be placed in a clothing bank. ",
+      "Why?": "We need to keep clothes and textiles out of landfill because it helps to reduces greenhouse gases. A lot of clothing is made of organic material, meaning that it is derived from natural sources and is biodegradable. But landfills lack the oxygen needed for organic materials to break down so, when clothing does end up in a landfill, it decomposes through anaerobic digestion. ",
+      "General Comment ": "If you have NEW, unwanted or barely used items these can be donated to charity. "
+    },
+    {
+      "name": "Cushions",
+      "What?": "Anything made of material or fabrics is a textile and should not be placed in your general or recycling bin. ",
+      "Where?": "Clothing and textiles should be placed in a clothing bank. ",
+      "Why?": "We need to keep clothes and textiles out of landfill because it helps to reduces greenhouse gases. A lot of clothing is made of organic material, meaning that it is derived from natural sources and is biodegradable. But landfills lack the oxygen needed for organic materials to break down so, when clothing does end up in a landfill, it decomposes through anaerobic digestion. ",
+      "General Comment ": "If you have NEW, unwanted or barely used items these can be donated to charity. "
+    },
+    {
+      "name": "Deodorant",
+      "What?": "This can come in a few different forms; pressurised containers, roll on is which can be glass or plastic and as a stick. ",
+      "Where?": "The are normally made of a few different materials so the general rule is, where possible take them apart. ",
+      "How?": "For pressurised containers check what to do with Aerosol cans, For glass containers, take them apart,the glass part can go to the bottle bank and other parts to the recycle bin. For plastic take them apart and all parts to the recycle bin You can drop off your used personal care and beauty product packaging at public drop-off locations across Ireland. "
+    },
+    {
+      "name": "Dishwasher",
+      "What?": "This is an electrical item [WEEE].",
+      "Where?": " This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator",
+      "Why?":"When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "DIY equipment",
+      "What?": "Many items constitute non electrical DIY equipment and include hammers, nails, wheelbarrows and ladders. ",
+      "Where": "If you have these types of items for disposal and they are in good/safe working order, you could consider selling or donating them. Many metal and timber items are accepted at most Civic Amenity Sites, check the Waste Service Locator on this site for further details. ",
+      "General Comment ": "Look out for local swapping events and car boot sales. "
+    },
+    {
+      "name":  "DIY waste",
+      "What?": "DIY Waste is very similar in nature to construction and demolition (C;D) waste&nbsp; and generally consists of rubble, bricks, soil and stone, tiles and even old sanitary ware. ",
+      "Where?": "Contact your local waste service provider or check the waste services locator on this site for disposal options. waste services locator o "
+    },
+    {
+      "name": "Doors",
+      "What?": "Doors nowadays can be made from various materials including&nbsp;wood,&nbsp;steel, fiberglass, UPVC/vinyl, aluminum or glass. ",
+      "Where?": "Doors can often be recycled, especially those made from wood. Check your local civic amenity site on the Waste Services Locator on this site. Waste Services Locator Some local authorities may also provide a bulky goods collection service for a fee. ",
+      "General Comment ": "If you have a door that is still usable, you could consider selling it or passing it on to someone who needs it. "
+    },
+    {
+      "name": "Drink cartons",
+      "What?": "Drink cartons&nbsp;are generally made of&nbsp;paperboard and small amounts of&nbsp;polyethylene&nbsp;with an&nbsp;aluminum&nbsp;foil lining, and are commonly know as Tetra Pak. ",
+      "Where?": "This should be placed in the household recycling bin. Some Civic Amenity Sites also accept drink cartons.&nbsp; Check the Waste Services Locator on this site for further details. Waste Services Locator ",
+      "Why?": "Drink cartons are currently accepted for recycling. Recycling drink cartons reduces the extraction of limited raw materials, saves considerable amounts of energy and&nbsp;reduces carbon dioxide emissions. ",
+      "How?": "Make sure all drink cartons placed in the household recycling bin are clean and dry and placed loosely in the bin. &nbsp; &nbsp; "
+    },
+    {
+      "name": "Dryer",
+      "What?": "This is an electrical item [WEEE].",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator",
+      "Why?":"When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name":"Duvets ; pillows",
+      "What?": "Duvets and pillows are classified as textiles. Although most textiles are suitable for recycling due to hygiene reasons duvets and pillows aren u2019t. ",
+      "Where?": "This should be placed in the general waste bin. ",
+      "General Comment ": "If you have NEW unused and unwanted items these can be donated to charity. If you have used ones which are in good condition perhaps you could donate them to an animal shelter  u2013 check with your local centre first. Textile banks do not accept used pillows and duvets for hygiene reasons. "
+    },
+    {
+      "name": "DVD ; CD players",
+      "What?": "This is an electrical item [WEEE]",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site.",
+      "Why?":"When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "DVDs & CDs",
+      "What?": "DVD's and CD's are generally made of&nbsp; poly-carbonate plastic&nbsp;covered by an&nbsp;aluminium&nbsp;coating.",
+      "Where?": "DVD's and CD's should be placed in the general waste bin. The cases for both can be placed in the household recycling bin, remove paper sleeves and any soft plastic lining where possible.",
+      "General Comment ": "Instead of disposing of suitable DVD's and CD's once you are finished with them, why not give to friends or family or donate them to a charity shop for someone else to use? This is particularly relevant for music, films or box sets."
+    },
+    {
+      "name": "Egg shells",
+      "What?": "This is food waste. ",
+      "Where?": "This should be placed in the food waste recycling bin or home composted.",
+    "General Comment ": "Make a wall of clean crushed egg shells around your plants to deter slugs, snails and caterpillars. Rinse eggshells before home composting to deter vermin. "
+    },
+    {
+      "name": "Electrical items",
+      "What?":"This is an electrical item [WEEE].",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator",
+      "Why?":"When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "Electronic games",
+      "What?": "This is an electrical item [WEEE]",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site.  waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "Energy-saving bulbs",
+      "What?": "This is an electrical item [WEEE]",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "Engine oil",
+      "What?": "This is a hazardous waste. ",
+      "Where?": "Check the Waste Services Locator on this site to find your nearest Civic Amenity Site. Waste Services Locator ",
+      "How?": "Make sure that used engine oil is stored in a sealed container. Don u2019t mix engine oil with any other substance  u2013 as this makes it difficult to recycle. &nbsp; "
+    },
+    {
+      "name": "Envelopes",
+      "What?": "This is paper or a composite if the envelope has a plastic window. ",
+      "Where?": "This should be placed in the household recycling bin. ",
+      "How?": "If there is a window this should be removed and place in the general waste, the remaining paper can be placed in the household recycling bin. &nbsp; "
+    },
+    {
+      "name": "Fabrics",
+      "What?": "Fabric is a textile or clothing. ",
+      "Where?": "Fabrics should be placed in a textile bank. ",
+      "Why?": "Once fabrics including clothes are placed in a textile bank they can be recycled or reused. Fabric and clothing if disposed of incorrectly can have a negative environmental impact. Generally the carbon footprint of textile and clothing is quite high as the manufacturing process as global distribution impacts significantly on the environment. It is important, where possible to reuse and recycle clothing and textiles and not dispose of them in the general waste bin. ",
+      "General Comment ": "If you have NEW unused and unwanted items these can be donated to charity. "
+    },
+    {
+      "name": "Filters ",
+      "What?": "Water filters are generally made of plastics and activated carbon. So this means it is a composite material. ",
+      "Where?": "This should be placed in the general waste bin. ",
+      "General Comment ": "Water filters cannot be recycled as part of your recycling collection scheme nor at Civic Amenity Sites. However, if you use a BRITA branded water filter you can recycle the used filters at most Argos and Homebase stores where boxes are provided for the collection of used cartridges. TerraCycle u00ae and Aqua Optima u00ae have partnered to create a free recycling programme for all your Aqua Optima u00ae water filters. The programme also offers participants the opportunity to fundraise for their favourite school or charity. "
+    },
+    {
+      "name": "Fire alarms",
+      "What?": "This is an electrical item [WEEE]|",
+      "Where?":"</strong> Where? This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "Fluorescent tubes",
+      "What?": "This is an electrical item [WEEE]",
+      "where":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name":  "Fats Oils and Greases",
+      "What?": "Fats, oils and greases are food waste.",
+      "Where?": "If you have a Food Waste Recycling service small amounts of fats, oils and grease can be disposed of in the food waste recycling bin. Remember to remove packaging. FOG's can be placed into cardboard egg boxes and then placed in the food waste recycle bin [check out the short video below] Soiled kitchen roll which has been used to clean a pan can also be placed in the food waste recycling bin. Larger quantities of used cooking oil can be brought to most Civic Amenity Sites. Check the Waste Services Locator on this site. Waste Services Locator",
+      "General Comment ": "Fats, oils and greases should not be poured down sinks as they cause blockages. Fats, oils and greases are not suitable for home composting."
+    },
+    {
+      "name": "Foil",
+      "What?": "This is a metal&nbsp; similar to tins ; cans but lighter. ",
+      "Where?": "Clean foil should be placed in the household recycling bin. If foils are soiled they cannot be recycled and should be disposed of the general waste bin. ",
+      "How?": "All food residue must be removed, then placed in the bin clean, dry and loosely. Scrunch kitchen foil and tubs together to form a ball  u2013 the bigger the ball, the easier it is to recycle. &nbsp; &nbsp; "
+    },
+    {
+      "name":"Food ; drink pouches",
+      "What?": "This is a composite ",
+      "Where?": "This should be placed in the general waste bin. ",
+      "Comment": "TerraCycle u00ae and Ella is Kitchen u00ae have partnered to create EllaCycle, a free recycling programme for any brand of baby food pouches and any brand of baby food pouch caps, and a fundraising opportunity for participants. "
+    },
+    {
+      "name":  "Food blender ",
+      "What?": "This is an electrical item [WEEE]",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site.  waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "Food tins and drink cans",
+      "What?": "This is a metal ",
+      "Where?": "This should be placed in the household recycling bin",
+      "How?": "Empty and rinse items  u2013 left over foods or liquids can contaminate other recyclables.<br> You can leave labels on  u2013 these are removed in the recycling process.<br> Metal lids and caps can also be placed in the household recycling bin.   ",
+      "General Comment ": "Look out for charities such as Every Can Counts at events and festivals:"
+    },
+
+    {
+      "name":"Fridges ; freezers",
+      "What?": "This is an electrical item [WEEE]",
+      "Where?":" This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "Furniture",
+      "What?": "This is furniture / a bulky item ",
+      "Where?": "Furniture at the end of its useful life can often be recycled, especially items made from wood and metal. Most furniture can be recycled at your local civic amenity site and some local authorities may also provide a bulky goods collection service for a fee. Some upcycling projects accept furniture donations check out www.crni.ie ",
+      "General Comment ": "If you have a piece of furniture that is still usable, you could consider selling it, passing it on to someone else or donating it  u2013 some charity shops and upcycling projects accept furniture for resale or repurposing. "
+    },
+
+    {
+      "name": "Garden chemicals",
+      "What?": "Some garden chemicals are hazardous and fall in the category of hazardous waste. This includes items such as some fertilizers, pesticides and herbicides. ",
+      "Where?": "This material should not be placed in your household bins. Some Civic Amenity Sites accept household hazardous waste. Please check the Waste Services Locator for details of items accepted in a Civic Amenity Site near you.",
+      "General Comment ": "It is very important to dispose of household hazardous wastes correctly, as they have the potential to contaminate the environment is not dealt with properly. &nbsp; "
+    },
+    {
+
+      "name": "Gardening tools",
+      "What?": "Gardening tools such as hand shovels, rakes and brushes generally have wooden and metal components. Other garden tools such as strimmers and leaf blowers are electrical or fuel powered. ",
+      "Where?": "All electrical or battery powered tools can be brought to a Civic Amenity Site or returned to an electrical retailer for recycling. Some components of hand held tools are recyclable such as a metal handle or shovel. Metal is generally accepted at Civic Amenity Sites. Check the Waste Services Locator on this site. Waste Services Locator ",
+      "General Comment ": "Many gardening tools can be repaired by replacing for example the wooden handle or getting them sharpened. Check out your local Mens Shed who often provide this service "
+    },
+    {
+      "name": "Gardening tools (Electrical)",
+      "What?": "This is an electrical item [WEEE].",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+
+    {
+      "name":"Gift ; toy packaging",
+      "What?": "Gift and toy packaging generally consist of paper, cardboard and plastic. ",
+      "Where?": "Paper, cardboard and rigid plastic should be placed in the household recycling bin. Plastic film is not currently accepted for recycling at kerbside so should be placed in the general waste bin. ",
+      "How?": "Please remove plastic film from cardboard. The cardboard can be placed clean, dry and loose in the bin. The plastic film is not currently recyclable and must be disposed of in the general waste. ",
+      "General Comment ": "Flatten cardboard to make more space in your bin. "
+    },
+    {
+      "name": "Gift Bags",
+      "What?": "These are generally made of heavy paper or light card and sometimes have a layer of plastic. ",
+      "Where?": "They can be reused over and over and when no longer fit for purpose should be placed in the Recycling bin. ",
+      "General Comment ": "If possible pull any ribbons off gift bags before placing in the recycling bin. "
+    },
+    {
+      "name":"Glass Bottles and Jars",
+      "What?": "Glass bottles and jars generally fall into three categories  u2013 clear glass, green glass and brown glass, each of which is recyclable. ",
+      "Where?": "All clear glass, green and brown glass should be placed into glass recycling containers at your local bring bank. ",
+      "General Comment ": "Dont worry about removing labels as these will be removed during the recycling process See Waste Services Locator on this site for local details. Waste Services Locator "
+    },
+    {
+      "name": "Greetings cards",
+      "What?": "Greeting cards are generally made of heavy paper or light card. ",
+      "Where?": "Greeting cards should be reused where possible  u2013 use for shopping lists or for art ; craft. Greeting cards when no loner useful should be placed in the household recycling bin. ",
+      "How?": "Please make sure cards are clean, dry and placed loosely in the bin. ",
+      "General Comment ": "If possible pull any ribbons off cards before placing in the recycling bin. &nbsp; "
+    },
+    {
+      "name": "Hair Pet and Human",
+      "What?": "Hair clippings",
+      "Where?":" Small amounts can be placed in the food waste recycling bin or home composting.",
+      "Why?":"Hair is a good source of nitrogen which is good for compost. Make sure to spread out the hair so it will breakdown quicker. ",
+      "General Comment ": "If you have a lot of hair perhaps you could find a charity to donate it to or hair could be used as a filler for plush toys. "
+    },
+    {
+      "name": "Hair dryers",
+      "What?": "This is an electrical item [WEEE].",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "Hair straighteners",
+      "What?": "This is an electrical item [WEEE]",
+      "Where?":" This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "Hearing aids",
+      "What?": "This is an electrical item [WEEE].",
+      "Where?": "This should be brought to a WEEE drop off recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator ",
+      "Why?": "When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "Hedge trimmers",
+      "What?": "This is an electrical item [WEEE]. ",
+      "Where?": "This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator ",
+      "Why?": "When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name":  "Household Hazardous waste",
+      "What?": "Household Hazardous Waste (HHW) is any unwanted household product labeled as flammable, toxic, corrosive, or reactive. The most common products include aerosols, anti-freeze, asbestos, fertilizers, motor oil,",
+      "Where?": "Check the map for your local civic amenity site with the list of items they accept ",
+      "General Comment ": "Hazardous household waste items are those items that can cause damage to health or the environment. Many recycling centres accept certain types of household hazardous waste  u2013 so check the Waste Services Locator on this site for further details.  Waste Services Locator "
+    },
+    {
+      "name": "Inhalers",
+      "What?": "Inhalers containing medicine are considered to be hazardous and require specialised disposal.",
+      "Where?": "Check with your local pharmacy for advice and whether they provide a take back scheme. Many Civic Amenity Sites accept old medicines for disposal.&nbsp; Check the Waste Services Locator for local details. Waste Services Locator",
+      "General Comment ": "Never pierce canisters.  <h3>Teva Ireland: Inhaler Recycling</h3>"
+    },
+    {
+      "name": "Inkjet cartridges",
+      "What?": "An inkjet cartridge is a component of an inkjet printer that contains the ink that is deposited onto paper during printing. &nbsp; ",
+      "Where?": "Inkjet cartridges can normally be returned to the supplier for reuse or donated to charities that collect them as a revenue stream. ",
+      "How?": "When purchasing new cartridges ask your supplier about returning the empty cartridge for reuse. Alternatively check to see if your favourite charity collects these for reuse."
+    },
+    {
+      "name": "Ironing boards",
+      "What?": "Ironing boards are generally made of metal and fabric and most can be recycled. ",
+      "Where?": "Ironing boards are generally accepted at most Civic Amenity Sites for recycling. Check the Waste Services Locator for local details. Waste Services Locator ",
+      "How?": "Where accepted, remove the fabric cover and place in the  u2018Textiles u2019 container for recycling. Place the metal part of the ironing board in the  u2018Metals u2019 container for recycling. "
+    },
+    {
+      "name": "Irons",
+      "What?": "This is an electrical item [WEEE].",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "Jewellery",
+      "What?": "Jewellery and watches are accepted by many charities. Broken and outdated jewellery can often be repaired and remodelled to make it fashionable and usable again. ",
+      "Where?": "Donate to charity. Many pieces of jewellery can be recycled or re-sold to raise valuable funds. Always check the list of&nbsp; items accepted by the various charities first as they do vary considerably. Check Ireland is repair director for jewellers that offer repair and remodelling services",
+      "How?": "Always place jewellery for donation in a separate bag to keep the pieces together  u2013 otherwise, they may get lost in the sorting process. "
+    },
+    {
+      "name": "Junk mail",
+      "What?": "This is a paper or card ",
+      "Where?": "This should be placed in the household recycling bin. ",
+      "How?": "Please make sure items are clean, dry and placed loosely in the bin. ",
+      "General Comment ": "If paper or card become wet or dirty on its way to the sorting facility it may not be recycled. Sick of Junk Mail? Why not purchase a&nbsp;<em>No Junk Mail&nbsp;</em>sticker for your letter box? No Junk Mail&nbsp; "
+    },
+    {
+      "name": "Kettle",
+      "What?": "This is an electrical item [WEEE] <strong>Where?</strong> Where? This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "Why not get a No Junk Mail Sticker for your letter box to cut down on this unnecessary waste? "
+    },
+    {
+      "name": "Keyboards (musical)",
+      "What?": "This is an electrical item [WEEE] <strong>Where?</strong> Where? This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "Keys (metal)",
+      "What?": "This is a metal. ",
+      "Where?": "This should be brought to a civic amenity site where the keys can be recycled along with other scrap metal. Check the waste services locator on this site. waste services locator ",
+      "How?": "Remove any plastic tags or key rings before depositing your keys in the mixed metal skips. ",
+      "General Comment ": "Sell them! If you have a large collection of keys to dispose of, try contacting a local scrap metal merchant. "
+    },
+    {
+      "name": "Kitchen appliances",
+      "What?": "This is an electrical item [WEEE]",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "Kitchen foil",
+      "What?": "This is a metal like tins ; cans but lighter. ",
+      "Where?": "This should be placed in the household recycling bin but only if clean and free of food residue. ",
+      "Why?": "Aluminium can be recycled over and over without losing any of its properties. ",
+      "How?": "All food residue must be removed, then place the foil in the bin clean, dry and loosely. Scrunch kitchen foil and tubs together to form a ball  u2013 the bigger the ball, the easier it is to recycle. Aluminium foil ; trays must be free of all food residue. If tubs or foil are soiled they cannot be recycled and should be disposed of in the general waste bin. "
+    },
+    {
+      "name": "Kitchen roll",
+      "What?": "This is a paper or card ",
+      "Where?": "This should be placed in the household recycling bin or your food waste recycling bin. ",
+      "How?": "The inner tube can be placed in the household recycling bin. Once the paper has been used it should be placed in your food waste recycling bin or general waste. ",
+      "General Comment ": "If paper or card become wet or dirty on its way to the sorting facility it may not be recycled. "
+    },
+    {
+      "name":"Lamps",
+      "What?": "This is an electrical item [WEEE]",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "Laptop",
+      "What?": "This is an electrical item [WEEE]",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "Lawnmowers",
+      "What?": "This is an electrical item [WEEE]",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "Lever Arch Folders",
+      "What?": "A folder used by businesses and students for filing and storing notes ",
+      "Where?": "If they are made from cardboard  u2013 separate the metal lever arch panel from the binder, put both parts in the recycling bin. If they are made from plastic or are plastic covered  u2013 remove the metal lever arch panel from the binder and put in the recycling bin. The plastic binder is generally not recyclable, unless it is made from eg polypropylene.. ",
+      "General Comment": "Virgin fibre paper ring binders are made from tree fibre and use a lot of water, energy and trees. If they end up in landfill it is a great waste of valuable resources  u2013 it could have up to 7 more lives in recycled paper. Not only that, but in landfill as it decomposes it gives off methane  u2013 a greenhouse gas. Plastics are made from non-renewable natural resources such as crude oil, gas and coal. Plastic binders can theoretically be recycled but most aren u2019t in practice. In landfill they hang round for centuries. The worst plastic lever arch files are made from or covered in PVC (Poly Vinyl Chloride) which is polluting and problematic both in production and in landfill. "
+    },
+    {
+      "name":  "Lids and Caps",
+      "What?": "This can be plastic or a metal [Tins ; Cans]  u2013 Bottle tops / caps, lids from jars ",
+      "Where?": "This should be placed in the household recycling bin. "
+    },
+    {
+      "name":  "Light bulbs",
+      "What?": "This is an electrical item [WEEE]",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "Magazines",
+      "What?": "This is a paper or card ",
+      "Where?": "This should be placed in the household recycling bin. ",
+      "How?": "Please make sure items are clean, dry and placed loosely in the bin. ",
+      "General Comment ": "If paper or card become wet or dirty on its way to the sorting facility it may not be recycled. "
+    },
+    {
+      "name": "Mattress",
+      "What?": "Beds",
+      "Where?": "This should be brought to a civic amenity site, or mattress recycling project. Check the waste services locator on this site. Contact your local authority for information on local mattress recycling projects and special collections. ",
+      "General Comment" : "If you have NEW unused and unwanted items these can be donated to charity."
+    },
+    {
+      "name": "Meat Trays",
+      "What?": "Rigid trays which any type of meat can be purchased in, they come in many colours and will normally have a soft film covering ",
+      "Where?": "The rigid plastic tray can be placed in the household recycling bin and the softer plastic cover should go into the general waste bin. ",
+      "How?": "All rigid trays regardless of the colour, number, symbol or lack thereof can be placed in the household recycling bin. Trays should be clean, if there is a soak pad this must be removed [place it in the black or food waste bin], you then need to clean out the tray by carefully washing it ensuring you do not splash any liquid on the counter tops or sink or if you are a bit unsure about washing it in the sink you can simply wipe out any excess liquid with paper towels and then dispose of these in the food waste recycling bin [this will ensure no bacteria gets spread on counters or sink] &nbsp; "
+    },
+    {
+      "name":  "Medicinal Packaging",
+      "What?": "Blister pack, medicine bottles ",
+      "Where?": "Empty glass bottles can be placed in the glass bottle banks. Empty plastic bottles can be placed in the household recycling bin. Empty blister packs and sachets should be placed in the general waste bin. "
+    },
+    {
+      "name": "Microwave",
+      "What?": "This is an electrical item [WEEE]",
+      "Where?": " This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "Milk bottles",
+      "What?": "This is plastic. ",
+      "Where?": "This should be placed in the household recycling bin. ",
+      "How?": "Please make sure items are clean, dry and placed loosely in the bin. There is no need to remove the labels as this will happen during the recycling process and also you can remove the lid, squash the bottle and then place it back in. With the air removed from the bottle it means you will have more room in your recycle bin. &nbsp; "
+    },
+    {
+      "name":  "Mirrors",
+      "What?": "This is furniture / a bulky item ",
+      "Where?": "This should be brought to a designated civic amenity site, check the waste services locator on this site. map for details. waste services locator ",
+      "How?": "Furniture at the end of its useful life can often be recycled, especially items made from wood and metal. Mirrors or other decorative items in good condition can be donated to charity or to upcycling projects.",
+    "General Comment ": "If you have a piece of furniture that is still usable, you could consider selling it, passing it on to someone else or donating it  u2013 some charity shops and most upcycling projects accept furniture for resale. "
+    },
+    {
+      "name": "Mobile phones",
+      "What?": "This is an electrical item [WEEE]",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site.  waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "MP3 players",
+      "What?": "This is an electrical item [WEEE].",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "Musical instruments",
+      "What?": "Old or new used musical instruments such as guitar",
+      "General Comment ": "Musical instruments come in such a variety of shapes, sizes and materials that they are difficult to recycle. However, some instruments may have metal parts, for instance, which are recyclable. Alternatively, if they are still in good condition, consider the following options: Pass them on u2026some charity shops will accept donations of instruments and sheet music. Online: Advertise items for free at places such as Free Trade Ireland or Adverts.ie, Or sell them on websites like eBay and Done Deal. ",
+      "Recycle them?": "As musical instruments come in such a variety of shapes, sizes and materials they are difficult to recycle. However, some instruments may have metal parts, for instance, which are recyclable. You cannot recycle musical instruments in your household recycling bin, but you may be able to recycle some parts at the local civic amenity site. If they are too complicated to disassemble, you should put them in the general waste bin. "
+    },
+    {
+      "name": "Nail Varnish",
+      "What?": "The contents of the bottle can be hazardous ",
+      "Where?": "This should be placed in the general waste bin, the contents may be hazardous. The bottles are normally made of glass, this glass is not the same as a jar or wine/beer bottle so it cannot be placed in a bring bank ",
+      "General Comment ": "Some cosmetics brands will offer a recycle scheme and take back empties in exchange for a new product "
+    },
+    {
+      "name": "Napkins",
+      "What?": "This is a paper or card ",
+      "Where?": "If you have used the paper towel or napkins for cleaning out pots and pans or simply wiping your hands this should be placed in the food waste recycling bin. Only clean and dry paper towels and napkins can be placed in the recycle bin ",
+      "General Comment ": "Paper napkins and towels are great at kid is birthday parties or when you u2019re holding a barbecue, but it can seem very wasteful when your guests leave and there are piles of paper plates and napkins left everywhere. Unbleached paper plate and napkin are best to use and if possible they should be chlorine free paper so choose carefully when you go to the store but that extra minute or so making sure your napkins can be broken down can help you reduce the amount of waste your next party causes. The best paper towels or napkins to use is the kind that has already been recycled as it will be free from unnatural chemicals. "
+    },
+    {
+      "name": "Nappies (disposable)",
+      "What?": "Disposable nappies are made of many materials and are not recyclable. &nbsp; ",
+      "Where?": "When soiled, disposable nappies should be placed in the general waste bin. &nbsp; ",
+      "General Comment ": "An alternative is to use cloth nappies. Additional information form "
+    },
+    {
+      "name": "Newspapers",
+      "What?": "This is a paper or card ",
+      "Where?": "This should be placed in the household recycling bin. ",
+      "How?": "Please make sure items are clean, dry and placed loosely in the bin. ",
+      "General Comment ": "If paper or card become wet or dirty on its way to the sorting facility it may not be recycled. "
+    },
+    {
+      "name":  "Oil (car)",
+      "What?" : "Liquid you use for your car",
+      "Where?": "This should be brought to a designated drop off area or civic amenity site, check the map for details. ",
+      "How?": "Make sure your used engine oil is stored in a sealed container. Don u2019t mix engine oil with any other substance  u2013 as this makes it difficult to recycle. "
+    },
+    {
+      "name":  "Oven",
+      "What?": "This is an electrical item [WEEE]",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "food Packaging ",
+      "What?": "This is paper, card or plastic",
+      "Where?": "This ( other than plastic film) should be placed in the household recycling bin. ",
+      "How?": "Please make sure items are clean, dry and placed loosely in the bin. ",
+      "General Comment ": "If paper or card become wet or dirty on its way to the sorting facility it will not be recycled. Only rigid plastics should be placed in the household recycling bin, soft plastics should be placed in the general waste bin. "
+    },
+    {
+      "name":  "Paint",
+      "What?": "This may be hazardous, check the label ",
+      "Where?": "This should be brought to a designated drop off area or civic amenity site, check the map for details. ",
+      "How?": "Your waste collector is unable to accept liquid paint, as liquid wastes are banned from landfill sites, so if you can u2019t use it up or find it a good home by giving it away you will need to harden it before disposal. You can buy a paint hardener, or add sawdust, sand or soil to the tin and leave the lid off until the paint becomes solid and dry (please pierce the dried paint before taking it to a household civic amenity site to make sure it is fully hardened)<br> Solvent based paint, paint thinner and white spirit should be disposed of as hazardous waste.  ",
+      "General Comment ": "Keep your paint in tip top condition u2026<br> When opening lids, do so carefully to avoid damaging the can sealing ring<br> Protect the paint from frost and extreme temperatures as these can damage the paint<br> To stop your paint from drying out  u2013 ensure the lid is on securely and tightly; tip the container upside down for a few seconds (this will help stop a skin forming on the paint); store the paint containers in an upright position<br> Pass it on u2026<br> If you have unwanted paint, which is still usable there are several ways you can dispose of it.      Ask family and friends  u2013 it might be perfect for a painting project they have in mind<br> There are two paint reuse schemes operating in Ireland  u2013 the Rediscovery centre in Ballymun Dublin and Mungret in Limerick. More details at www.rediscoverycentre.ie or www.limerickrecyclingcentres.ie  "
+    },
+
+    {
+      "name": "Paper",
+      "What?": "This is a paper or card ",
+      "Where?": "This should be placed in the household recycling bin. ",
+      "How?": "Please make sure items are clean, dry and placed loosely in the bin. ",
+      "General Comment ": "If paper or card become wet or dirty on its way to the sorting facility it may not be recycled. "
+    },
+    {
+      "name": "Paper coffee cups",
+      "What?": "This is a composite ",
+      "Where?": "This should be placed in the general waste bin. ",
+      "General Comment ": "The lids and sleeves can be placed into the recycling bin. Why not invest in a reusable cup and use this for drinks on the go or alternatively  u201csit ; sip u201d your favourite beverage. "
+    },
+    {
+      "name": "Paper towels",
+      "What?": "This is a paper or card ",
+      "Where?": "If you have used the paper towel for cleaning out pots and pans or simply wiping your hands this should be placed in the food waste recycling bin. Only clean and dry paper towels can be placed in the recycle bin ",
+      "General Comment ": "Paper napkins and towels are great at kid is birthday parties or when you u2019re holding a barbecue, but it can seem very wasteful when your guests leave and there are piles of paper plates and napkins left everywhere. Unbleached paper plate and napkin are best to use and if possible they should be chlorine free paper so choose carefully when you go to the store but that extra minute or so making sure your napkins can be broken down can help you reduce the amount of waste your next party causes. The best paper towels or napkins to use is the kind that has already been recycled as it will be free from unnatural chemicals. "
+    },
+    {
+      "name": "PC",
+      "What?": "This is an electrical item [WEEE]",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site.  waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name":"Perfume Bottles",
+      "What?": "These are normally made of glass ",
+      "Where?": "These can be brought to a local bring bank, if possible take off as many of the part as possible ",
+      "General Comment ": "Some brands offer a service where you can get the bottles refilled in stores "
+    },
+    {
+      "name":  "Pet food",
+      "What?": "This is food waste ",
+      "Where?": "This should be placed in the food waste recycling bin. ",
+      "How?": "Remove all packaging before placing the pet food in the food waste recycling bin. ",
+      "General Comment ": "Unopened or unwanted pet food can be donated to a local animal shelter. "
+    },
+    {
+      "name":  "Pet waste",
+      "What?": "Dog / Cat poo ",
+      "Where?": "This should be placed in the general waste bin. ",
+      "How?": "All animal waste should be bagged up and placed in the general waste bin. "
+    },
+    {
+      "name":  "Petrol",
+      "What?": "This is a hazardous material ",
+      "Where?": "Check the map to see if this is accepted at your local civic amenity site. "
+    },
+    {
+      "name": "Photographs",
+      "What?": "This is a paper or card ",
+      "Where?": "This should be placed in the household recycling bin. ",
+      "How?": "Please make sure items are clean, dry and placed loosely in the bin. ",
+      "General Comment ": "Pass them on u2026<br> Could the photographs be of historical interest? Ask your local history society to see if they could be useful to their research<br> What about other family members, especially the younger ones? They might find them of interest in years to come u2026<br> Are they photos of friends? They might like to keep them<br> Check the ads in local newspapers  u2013 look out for announcements along the lines of  u201c u201dWe want your old photos u201d u201d     "
+    },
+    {
+      "name": "Pizza boxes",
+      "What?": "This is a paper or card ",
+      "Where?": "This should be placed in the household recycling bin. If you have a take out pizza this box may be soiled and needs to be treated differently ",
+      "How?": "Please make sure items are clean, dry and placed loosely in the bin. If you have a take out pizza, if the whole box is greasy and dirty please place it in the food waste recycle bin. If the top of the box is clean it can be torn off and placed in the household recycle bin. ",
+      "General Comment ": "If the pizza box is soiled with grease please put it in the food waste recycling bin along with any uneaten pizza. Clean pizza boxes can be placed in the recycling bin. Please note that if you have a frozen pizza or one from a fridge that comes in a box this box will be 100% recyclable and should be placed in the recycle bin or why not leave it in the store. "
+    },
+    {
+      "name": "Plasterboard",
+      "What?": "This is building material ",
+      "Where?": "Check the map for your local civic amenity site with the list of items they accept. &nbsp; "
+    },
+    {
+      "name": "Plastic bags",
+      "What?": "This is a soft plastic ",
+      "Where?": "This should be placed in the general waste bin. "
+    },
+    {
+      "name":  "Plastic bottles",
+      "What?": "This is a rigid plastic ",
+      "Where?": "This should be placed in the household recycling bin. ",
+      "How?": "Please make sure items are clean, dry and placed loosely in the bin. Why not invest in a reusable bottle to reduce your dependence on single use items? There is no need to remove the labels as this will happen during the recycling process and also you can remove the lid, squash the bottle and then place it back in. With the air removed from the bottle it means you will have more room in your recycle bin. ",
+      "General Comment ": "Bottles can be squashed and the lid put back on, this helps to create extra room in your bin. "
+    },
+    {
+      "name": "Plastic film",
+      "What?": "Plastic film is a soft plastic and is currently not accepted at kerbside for recycling. &nbsp; ",
+      "Where?": "If disposing at kerbside, plastic film should currently be placed in the general waste bin. &nbsp; "
+    },
+
+    {
+      "name": "Plastic tubs ; trays",
+      "What?": "This is a rigid plastic ",
+      "Where?": "This should be placed in the household recycling bin. ",
+      "How?": "Please make sure items are clean, dry and placed loosely in the bin. "
+    },
+    {
+      "name": "Plush Toys",
+      "What?": "This is a textile or clothing ",
+      "Where?": "This should be placed in a clothing bank. ",
+      "How?": "We need to keep clothes and textiles out of landfill because it helps to reduces greenhouse gases: A lot of clothing is made of organic material, meaning that it is derived from natural sources and is biodegradable. But landfills lack the oxygen needed for organic materials to break down so, when clothing does end up in a landfill, it decomposes through anaerobic digestion. ",
+      "General Comment ": "If you have NEW unused and unwanted items these can be donated to charity. "
+    },
+    {
+      "name":"Polystyrene",
+      "What?": "Expanded Polystyrene Foam (EPS) ",
+      "Where?": "This should be placed in the general waste bin. ",
+      "General Comment ": "Expanded polystyrene is a material that is not commonly recycled, although a few civic amenity centres may accept it. Small amounts of polystyrene can be used in the bottom of plant pots before soil is added. "
+    },
+    {
+      "name":  "Postage stamps",
+      "What?": "This is a paper or card ",
+      "Where?": "This should be placed in the household recycling bin. ",
+      "How?": "Please make sure items are clean, dry and placed loosely in the bin. ",
+      "General Comment ": "If paper or card become wet or dirty on its way to the sorting facility it may not be recycled. "
+    },
+    {
+      "name": "Printer cartridges",
+      "What?": "This is a composite ",
+      "Where?": "This should be placed in the general waste bin. ",
+      "General Comment ": "How should I reuse printer cartridges?<br> Get them refilled!<br> Why not take your empty cartridges to be refilled? You can save up to 60% on the price of a new cartridge!<br> Refill them yourself!<br> Refilling inkjet cartridges is straightforward and can be done on a DIY basis, with a number of companies supplying the ink and refilling equipment.<br> When buying your printer, choose one that uses cartridges that can be easily refilled or that can easily accept generic or refilled cartridges.<br> What else can I do with them?<br> Donate them! Lots of charities collect empty printer cartridges to raise money by refilling and reselling them.<br> Take a look at the internet to find charities in your area that are collecting printer cartridges.         "
+    },
+    {
+      "name":"Printers",
+      "What?": "This is an electrical item [WEEE]",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "Projectors",
+      "What?": "This is an electrical item [WEEE]",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name":  "Radios",
+      "What?": "This is an electrical item [WEEE]",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "Rags",
+      "What?": "Anything made of material or fabrics is a textile and should not be placed in your general or recycling bin. ",
+      "Where?": "Clothing and textiles should be placed in a clothing bank. ",
+      "Why?": "We need to keep clothes and textiles out of landfill because it helps to reduces greenhouse gases. A lot of clothing is made of organic material, meaning that it is derived from natural sources and is biodegradable. But landfills lack the oxygen needed for organic materials to break down so, when clothing does end up in a landfill, it decomposes through anaerobic digestion. ",
+      "General Comment ": "If you have NEW, unwanted or barely used items these can be donated to charity. "
+    },
+    {
+      "name": "Records",
+      "What?": "This is a composite ",
+      "Where?": "This should be placed in the general waste bin. ",
+      "General Comment ": "Vinyl records are not accepted in your household recycling scheme, or at your local recycling centre. However, if they u2019re still in good condition, a charity shop might take them or you might be able to sell them. Made from PVC, vinyl records are often  u2018re-purposed u2019 into new stylish ornaments, wall art or tableware. "
+    },
+    {
+      "name": "Rubble",
+      "What?": "This is building material. ",
+      "Where?": "Check the waste services locator for your local civic amenity site with the list of items they accept. waste services locator "
+    },
+    {
+      "name": "Rugs",
+      "What?": "This is a textile or clothing ",
+      "Where?": "This should be placed in a clothing bank. ",
+      "General Comment ": "If you have NEW unused and unwanted items these can be donated to charity. If you have used ones which are in good condition perhaps you could donate them to an animal shelter. "
+    },
+    {
+      "name": "Sat navs",
+      "What?": "This is an electrical item [WEEE]",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "Saucepans",
+      "What?": "These are composites and are generally made of metal with either a wooden or plastic handle. This should be placed in the general waste bin. ",
+      "General Comment ": "Your old metal pots and pans should NOT be put in your recycling bin. However, if they are in good condition, you may be able to donate them to charity. If you can dismantle the handle from the pan or pot the metal part can be recycled at your local civic amenity site. Place the handle in the general waste bin. "
+    },
+    {
+      "name": "School uniforms",
+      "What?": "Anything made of material or fabrics is a textile and should not be placed in your general or recycling bin. ",
+      "Where?": "Clothing and textiles should be placed in a clothing bank or donated to charity. ",
+      "Why?": "We need to keep clothes and textiles out of landfill. Landfills create greenhouse gases so reducing the quantity of materials disposed of in landfill is very important. &nbsp; ",
+      "General Comment ": "If you have NEW, unwanted or barely used items these can be donated to charity. Some schools organise uniform swaps at end of year  u2013 why not suggest this at your school? "
+    },
+    {
+      "name":"Sellotape",
+      "What?": "This is a soft plastic ",
+      "Where?": "This should be placed in the general waste bin. ",
+      "General Comment": "Wrapping a present? Why not use ribbon or string instead  u2013 it looks pretty and can be reused over and over again. If there is sellotape left on wrapping paper, small amounts are OK to add to the recycle bin but if possible try to remove it "
+    },
+    {
+      "name": "Shampoo bottles",
+      "What?": "Hair shampoo and conditioner bottles are rigid plastic. ",
+      "Where?": "This should be placed in the household recycling bin. ",
+      "How?": "Make sure bottles are empty before placing them in the recycling bin. Turn them upside down to use up all the product before disposing of them. There is no need to remove the labels as this will happen during the recycling process and also you can remove the lid, squash the bottle and then place it back in. With the air removed from the bottle it means you will have more room in your recycle bin. ",
+      "General Comment": "If you are want to reduce the amount of plastic you generate look out for solid versions of soap and conditioner. Eco Stores, health food shops and certain pharmacies sell these products. They can also be purchased online. You can drop off your used personal care and beauty product packaging at public drop-off locations across Ireland."
+    },
+    {
+      "name": "Shoes ; boots",
+      "What?": "This is a textile or clothing. ",
+      "Where?": "Very worn or damaged shoes should be placed in the general waste bin. Some Civic Amenity Sites accept reusable footwear as part of the textile collection. Check the waste services locator on this site. waste services locator ",
+      "General Comment": "Barely used and undamaged footwear can be donated to charity shops for resale. Get more information here about Irish Charity Shops "
+    },
+    {
+      "name": "Shredded paper",
+      "What?": "This is a paper or card ",
+      "Where?": "This should be placed in the household recycling bin if you have small amounts. If you are running a business and have large amounts of paper waste you may want to consider procuring the services of a specialised company to process it. ",
+      "How?": "Please make sure items are clean, dry and placed loosely in the bin. ",
+      "General Comment ": "If paper or card become wet or dirty on its way to the sorting facility it may not be recycled. "
+    },
+    {
+      "name":  "Sideboards",
+      "What?": "This is furniture / a bulky item. ",
+      "Where?": "Furniture at the end of its useful life can often be recycled, especially items made from wood and metal. Most furniture can be recycled at your local civic amenity site and some local authorities may also provide a bulky goods collection service for a fee. ",
+      "General Comment ": "If you have a piece of furniture that is still usable, you could consider selling it, passing it on to someone else or donating it  u2013 some charity shops and furniture upcycling projects accept furniture for resale and upcycling. "
+    },
+    {
+      "name":  "Smoke alarms",
+      "What?": "This is an electrical item [WEEE]",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "Sofas / settees",
+      "What?": "This is furniture / a bulky item ",
+      "Where?": "Furniture at the end of its useful life can often be recycled, especially items made from wood and metal. Most furniture can be recycled at your local civic amenity site and some local authorities may also provide a bulky goods collection service for a fee. ",
+      "General Comment ": "If you have a piece of furniture that is still usable, you could consider selling it, passing it on to someone else or donating it  u2013 some charity shops accept furniture for resale. "
+    },
+    {
+      "name": "Stamps",
+      "What?": "This is a paper or card ",
+      "Where?": "This should be placed in the household recycling bin. ",
+      "How?": "Please make sure items are clean, dry and placed loosely in the bin ",
+      "General Comment ": "If paper or card become wet or dirty on its way to the sorting facility it may not be recycled. Some charities collect stamps as part of their fundraising efforts. "
+    },
+    {
+      "name": "Stereos",
+      "What?": "This is an electrical item [WEEE]",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site.  waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name":  "Sticky tape",
+      "What?": "This is a soft plastic ",
+      "Where?": "This should be placed in the general waste bin. "
+    },
+    {
+      "name":  "Stools",
+      "What?": "This is furniture / a bulky item ",
+      "Where?": "Furniture at the end of its useful life can often be recycled, especially items made from wood and metal. Most furniture can be recycled at your local civic amenity site and some local authorities may also provide a bulky goods collection service for a fee. ",
+      "General Comment ": "If you have a piece of furniture that is still usable, you could consider selling it, passing it on to someone else or donating it  u2013 some charity shops and Upcycling Projects accept furniture for resale. "
+    },
+    {
+      "name": "Sweet tins",
+      "What?": "This is a metal similar to tins ; cans. ",
+      "Where?": "This should be placed in the household recycling bin. ",
+      "How?": "Please make sure items are clean, dry and placed loosely in the bin. ",
+      "General Comment ": "These tins left over from festivities are great for storing foods, DIY items and toys. You can also dispose of these items at Civic Amenity Sites. "
+    },
+    {
+      "name": "Tables",
+      "What?": "This is furniture / a bulky item ",
+      "Where?": "Furniture at the end of its useful life can often be recycled, especially items made from wood and metal. Most furniture can be recycled at your local civic amenity site and some local authorities may also provide a bulky goods collection service for a fee. ",
+      "General Comment ": "If you have a piece of furniture that is still usable, you could consider selling it, passing it on to someone else or donating it  u2013 some charity shops and upcycling projects accept furniture for resale and upcycling. "
+    },
+    {
+      "name": "Tablet computers",
+      "What?": "This is an electrical item [WEEE]",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "Tea bags / leaves",
+      "What?": "The leaves are considered a food item but currently many tea bags may contain small amounts of plastic ",
+      "Where?": "If you use loose leaf tea then this can be emptied directly into the food waste recycling bin, if you are using bags you could tear them open placing the the bag part in the general waste bin and contents in the food waste recycling bin. ",
+      "Why?": "The small amount of plastic used make the glue holding the bag together heat resistant. Most manufactures are researching alternatives which should be on the market soon ",
+      "Comment / Tips": "Why not get yourself a tea strainer and buy loose leaf tea. Loose leaf tea can be purchased by weight so you could bring along your own caddy so no waste is created. "
+    },
+    {
+      "name": "Tea towels",
+      "What?": "Anything made of material or fabrics is a textile and should not be placed in your general or recycling bin. ",
+      "Where?": "Tea towels like other textiles should be placed in a clothing bank for recycling. ",
+      "Why?": "We need to keep clothes and textiles out of landfill because it helps to reduces greenhouse gases. ",
+      "General Comment ": "If you have NEW, unwanted or barely used items these can be donated to charity. Old tea towels also make great dusters when cleaning or doing DIY around the house. "
+    },
+    {
+      "name": "Telephone directories",
+      "What?": "This is a paper or card. ",
+      "Where?": "This should be placed in the household recycling bin. ",
+      "How?": "Please make sure items are clean, dry and placed loosely in the bin. ",
+      "General Comment ": "If paper or card become wet or dirty on its way to the sorting facility it may not be recycled. "
+    },
+    {
+      "name": "Telephones",
+      "What?": "This is an electrical item [WEEE]",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name":  "Tiles (floor and wall)",
+      "What?": "Tiles are classified as building material. ",
+      "Where?": "Old, broken or damaged tiles should be brought to a civic amenity site and disposed of with construction and demolition (C;D) waste. Check the&nbsp; waste services locator on this site. waste services locator ",
+      "General Comment": "Artists or furniture upcycling projects may be able to use small quantities of tiles for projects particularly unusual tiles"
+    },
+    {
+      "name": "Tissues",
+      "What?": "Tissues are made from paper. ",
+      "Where?": "Used tissues should be placed in the general waste bin. Used kitchen towel can be placed in the food waste recycling bin. "
+    },
+    {
+      "name":"Toaster",
+      "What?": "This is an electrical item [WEEE]",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "Toner cartridges",
+      "What?": "Toner cartridges are a composite generally made from rigid plastic and ink. ",
+      "Where?": "Almost all retailers that supply toner cartridges provide a take back scheme for the empties. If not why not collect empty cartridges and donate them to a charity that collects them as part of their fundraising efforts? "
+    },
+    {
+      "name": "Tools  (manual)",
+      "What?": "Tools are generally composites made up of materials like metal, wood and plastic. ",
+      "Where?": "It can be difficult to recycle these items if the different components aren u2019t separated. Wooden handles, or metal parts can be recycled at your local&nbsp; civic amenity site  u2013 check the waste services locator on this site. waste services locator ",
+      "General Comment ": "Many tools can easily be repaired by replacing handles or sharpening them. Check out your local Men is Shed or repair shop to see if they provide this service. Need help locating a local repair service? Click on this link to access Ireland is online repair directory "
+    },
+    {
+      "name": "Tools (Electrical)",
+      "What?": "This is an electrical item [WEEE]",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site.  waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "Toothbrush [Electric]",
+      "What?": "This is an electrical item [WEEE]",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "Toothbrush [manual]",
+    "What?": "This is a composite generally made from different types of plastic. ",
+    "Where?": "Old toothbrushes should be placed in the general waste bin. ",
+    "General Comment:": "Eco-toothbrushes are becoming more popular and are now widely available. Eco varieties are generally made from bamboo or wood and can be composted at end of life. If you are interested in reducing the amount of plastic you generate consider swapping your plastic toothbrush to an eco one. Old plastic toothbrushes can be used as cleaning tools for fiddly jobs. &nbsp; &nbsp; "
+    },
+    {
+      "name":"Toothpaste tubes",
+      "What?": "Toothpaste tubes are a composite material. ",
+      "Where": "This should be placed in the general waste bin. ",
+      "Why?": "It it too difficult to remove all of the contents. ",
+      "General Comment ": "Looking to reduce the amount of plastic you create? Then why not investigate toothpaste tablets which are packaging free. These can be purchased in health stores or online. "
+    },
+    {
+      "name": "Torch",
+      "What?": "This is an electrical item [WEEE]",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "Tumble dryers",
+      "What?": "This is an electrical item [WEEE]",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "TVs",
+      "What?": "This is an electrical item [WEEE],",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site.  waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "Tyres",
+      "What?": "Tyres are composite materials.",
+      "General Comment ": "The Repak ELT tyre compliance scheme is being established to track tyres coming onto the market in Ireland and generate an accurate figure of the tyres that will be coming off as waste. Repak ELT scheme tyres will be monitored and managed in an environmentally sound manner. Industry operators  u2013 through membership of the scheme  u2013 take responsibility for the waste arising from the sale of tyres and vehicles at each stage of distribution. All tyre operators must join the scheme to be compliant. A visible Environmental Management Cost (vEMC) will cover the environmental disposal of members waste tyres. Repak ELT Registered Collectors will collect tyre waste from Repak ELT member outlets and will only be paid once they have submitted documentation proving that the tyres they collected were managed in an environmentally sound manner. Producer responsibility initiatives in other waste streams have transformed waste with a negative value to one of positive value as a resource for recycled material and innovative green products. Tyres are currently a resource in that they can be recycled, recovered and processed. Repak ELT tyre compliance scheme will work to bring improved environmental outcomes for end of life tyres. In time with the advancement of technologies, our goal is to see tyre waste moving to having a positive value."
+    },
+    {
+      "name":  "Vacuum Cleaner",
+      "What?": "This is an electrical item [WEEE]",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name":"Video recorders",
+      "What?": "This is an electrical item [WEEE]",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "Video tapes",
+      "What?": "Video tapes are generally made up of a number of different types of materials including rigid plastic and plastic film. ",
+      "Where?": "Where possible video tapes should be dismantled and the outer rigid part placed in the recycling bin. The soft plastic tape should be placed in the general waste bin. "
+    },
+    {
+      "name": "Wallpaper",
+      "What?": "This is a paper or card. ",
+      "Where?": "This can be placed in your recycling bin. ",
+      "How?": "Please make sure items are clean, dry and placed loosely in the bin. ",
+      "General Comment ": "If paper or card become wet or dirty on its way to the sorting facility it may not be recycled. Some upcycling projects welcome donations of good quality material such as wallpaper "
+    },
+    {
+      "name": "Wardrobes",
+      "What?": "This is furniture / a bulky item. ",
+      "Where?": "Furniture at the end of its useful life can often be recycled, especially items made from wood and metal. Most furniture can be recycled at your local civic amenity site and some local authorities may also provide a bulky goods collection service for a fee. ",
+      "General Comment ": "If you have a piece of furniture that is still usable, you could consider selling it, passing it on to someone else or donating it  u2013 some charity shops and upcycling projects accept furniture for resale and upcycling.  "
+    },
+    {
+      "name": "Washing Machine",
+      "What?": "This is an electrical item [WEEE]",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "Watches",
+      "What?": "Unwanted watches can be donated to your local charity shop ",
+    "General Comment ": "Watches and jewellery are accepted by many charities. They can be recycled or re-sold to raise valuable funds. Broken watches can be repaired. "
+    },
+    {
+      "name": "Water bottles",
+      "What?": "Water bottles are rigid plastic. ",
+      "Where?": "These should be placed in the household recycling bin. ",
+      "How?": "Please make sure items are clean, dry and placed loosely in the bin. There is no need to remove the labels as this will happen during the recycling process and also you can remove the lid, squash the bottle and then place it back in. With the air removed from the bottle it means you will have more room in your recycle bin. &nbsp; "
+    },
+    {
+      "name": "Water filters",
+      "What?": "Water filters are generally made of plastics and activated carbon. So this means it is a composite material. ",
+      "Where?": "Water filters are generally made of plastics and activated carbon. So this means it is a composite material and should be disposed of in the general waste bin. ",
+      "General Comment ": "Water filters cannot be recycled as part of your recycling collection scheme nor at Civic Amenity Sites. However, if you use a BRITA branded water filter you can recycle the used filters at most Argos and Homebase stores where boxes are provided for the collection of used cartridges.."
+    },
+    {
+      "name": "Wet wipes",
+      "What?": "This is a soft plastic ",
+      "Where?": "This should be placed in the general waste bin. ",
+      "Why?": "Baby wipes, cosmetic wipes, bathroom cleaning wipes and moist toilet tissues are NOT recyclable and are NON flushable either even though some labels say they are! They should always be placed in your general waste bin. ",
+      "General Comment ": "Why not try alternatives to single use disposable items such as wipes? Can you use a flannel or muslin square instead. These items can be washed and reused over ; over. You can drop off your used personal care and beauty product packaging at public drop-off locations across Ireland. Check "
+    },
+    {
+      "name":"White goods",
+      "What?": "This is an electrical item [WEEE]",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the  waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
+    },
+    {
+      "name": "Wood ; timber",
+      "What?": "This is building material. ",
+      "Where?": "This should be brought to a civic amenity site, check the  waste services locator on this site. waste services locator "
+    },
+    {
+      "name": "Wool",
+      "What?": "Wool is technically a textile. ",
+      "Where?": "This should be placed in the general waste bin as it is not accepted in textile banks. ",
+      "General Comment ": "Wool can be donated to schools, community groups, craftspeople and charity shops for reuse. "
+    },
+    {
+      "name": "Wrapping paper [Ribbon / Bow]",
+      "What?": "Most varieties of wrapping paper are made from light card or printed paper. However shiny or metallic gift-wrap is made of plastic film. ",
+      "Where?": "Normal wrapping paper should be placed in the household recycling bin. Any bows of ribbons used as decoration on gifts are usually made of plastic and these cannot be recycled. Any wrapping paper which has a plastic and/or metallic layer should be placed in the general waste bin, this paper cannot be recycled. ",
+      "How?": "Please make sure items are clean, dry and placed loosely in the bin. ",
+      "General Comment ": "Unsure if your shiny gift-wrap is recyclable? If the paper easily tears you can recycle it. Paper that needs cutting with a scissors is metallic and cannot be recycled. When buying wrapping paper look for one which looks natural, if it is shiney then avoid it If you are going to use bows or ribbons to decorate gifts make sure to use ones made of cloth that can be reused year after year "
+    },
+    {
+      "name": "Yoghurt pots",
+      "What?": "Yoghurt pots come in many different varieties including rigid plastic and card composites. ",
+      "Where?": "If the yoghurt pot is rigid plastic it should be placed in the household recycling bin. Remember the plastic film lid is not recyclable. Similarly cardboard cartons are composites like coffee cups and cannot currently be recycled. This type of yoghurt pot should be places in the general waste bin. ",
+      "How?": "Please make sure items like yoghurt pots are clean, dry and placed loosely in the recycling bin. &nbsp; "
+    }
+  ]
+}
+
