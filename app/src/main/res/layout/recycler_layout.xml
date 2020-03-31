@@ -11,6 +11,22 @@
         android:text="TextView"
         android:textStyle="bold"
         android:textColor="#111111" />
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="135dp"
+        android:layout_height="match_parent"
+        android:text="TextView"
+        android:textStyle="bold"
+        android:textColor="#111111" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="135dp"
+        android:layout_height="match_parent"
+        android:text="TextView"
+        android:textStyle="bold"
+        android:textColor="#111111" />
+
 
 
 

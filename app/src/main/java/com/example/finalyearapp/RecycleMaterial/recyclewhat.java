@@ -1,6 +1,6 @@
 package com.example.finalyearapp.RecycleMaterial;
 
-import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -15,16 +15,23 @@ import android.widget.EditText;
 
 import com.example.finalyearapp.R;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
 
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
+
 public class recyclewhat extends AppCompatActivity {
+    String Where, why;
 
     private ArrayList<Material> materials = new ArrayList<>();
 
@@ -91,6 +98,100 @@ public class recyclewhat extends AppCompatActivity {
 
             }
         });*/
+
+
+        String json;
+        try {
+            InputStream is = getAssets().open("materials.json");
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            json = new String(buffer, "UTF-8");
+
+
+            JSONObject obj = new JSONObject(json);
+            JSONArray m_jArry = obj.getJSONArray("Materials");
+
+
+
+            for (int i = 0; i < m_jArry.length(); i++) {
+
+                JSONObject jo_inside = m_jArry.getJSONObject(i);
+                String what = jo_inside.getString("What?");
+                String name = jo_inside.getString("name");
+
+
+                if(jo_inside.has("Where?"))
+                {
+                     Where = jo_inside.getString("Where?");
+
+                }
+                else
+                {
+                    Where = " ";
+                }
+                if(jo_inside.has("Why?"))
+                {
+                    why = jo_inside.getString("Why?");
+
+                }
+                else if (jo_inside.has("How?"))
+                {
+                    why = jo_inside.getString("How?");
+                }
+
+
+                materials.add(new Material(what, Where, name));
+
+
+
+
+
+
+   /* String json;
+            try{
+        InputStream is = getAssets().open("output.json");
+        int size = is.available();
+        byte[] buffer = new byte[size];
+        is.read(buffer);
+        is.close();
+        json = new String(buffer, "UTF-8");
+
+
+        JSONObject obj = new JSONObject(json);
+        JSONArray m_jArry = obj.getJSONArray("Materials");
+
+
+        for (int i = 0; i < m_jArry.length(); i++) {
+
+            JSONObject jo_inside = m_jArry.getJSONObject(i);
+
+
+            Iterator<String> keysItr = jo_inside.keys();
+            while (keysItr.hasNext()) {
+                String key = keysItr.next();
+                materials.add(new Material(key));
+
+            }
+*/
+
+            adapter = new RecycleAdapter(materials, recyclewhat.this);
+            recyclerView.setAdapter(adapter);
+
+
+        }
+
+
+
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
     }
 
 

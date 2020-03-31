@@ -3,7 +3,7 @@ package com.example.finalyearapp.RecycleMaterial;
 public class Material {
 
     String Name;
-    String what;
+    String What;
     String Where;
     String Why;
     String How;
@@ -16,8 +16,10 @@ public class Material {
     public Material() {
     }
 
-    public Material(String name) {
-        Name = name;
+    public Material(String what, String where, String why) {
+        What = what;
+        Where = where;
+        Why = why;
     }
 
     public void setTip(String tip) {
@@ -33,11 +35,11 @@ public class Material {
     }
 
     public String getWhat() {
-        return what;
+        return What;
     }
 
     public void setWhat(String what) {
-        this.what = what;
+        this.What = what;
     }
 
     public String getWhere() {
