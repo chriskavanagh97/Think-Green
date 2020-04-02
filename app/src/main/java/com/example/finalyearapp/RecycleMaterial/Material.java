@@ -7,10 +7,10 @@ public class Material {
     String Where;
     String Why;
     String How;
-    String tip;
+    String GeneralComment;
 
-    public String getTip() {
-        return tip;
+    public String getGeneralComment() {
+        return GeneralComment;
     }
 
     public Material() {
@@ -22,11 +22,15 @@ public class Material {
         Why = why;
         Name = name;
         How = how;
-        tip = generalcomment;
+        GeneralComment = generalcomment;
+    }
+    public Material(String name)
+    {
+
     }
 
-    public void setTip(String tip) {
-        this.tip = tip;
+    public void setGeneralComment(String GeneralComment) {
+        this.GeneralComment = GeneralComment;
     }
 
     public String getName() {

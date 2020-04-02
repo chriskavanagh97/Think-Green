@@ -43,7 +43,6 @@ public class Materialview extends AppCompatActivity {
         what = (TextView) findViewById(R.id.what);
         how = (TextView) findViewById(R.id.How);
         where = (TextView) findViewById(R.id.Where);
-        tip = (TextView) findViewById(R.id.Tip);
         title = (TextView) findViewById(R.id.Title);
 
         Intent intent = getIntent();
@@ -59,8 +58,8 @@ public class Materialview extends AppCompatActivity {
                 title.setText(material.getName());
                 what.setText(material.getWhat());
                 where.setText(material.getWhere());
-                how.setText(material.getHow());
-                tip.setText(material.getTip());
+                how.setText(material.getGeneralComment());
+
 
 
             }

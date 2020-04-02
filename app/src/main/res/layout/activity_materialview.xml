@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#00FFFFFF"
+    android:background="@drawable/viewonematerial"
     tools:context=".RecycleMaterial.Materialview">
 
 
@@ -13,7 +13,6 @@
         style="@style/TextAppearance.Compat.Notification.Title"
         android:layout_width="match_parent"
         android:layout_height="67dp"
-        android:background="#A4dada"
         android:orientation="vertical"
         android:visibility="visible">
 
@@ -22,7 +21,7 @@
 
             android:id="@+id/Title"
             android:layout_width="293dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="sans-serif-light"
             android:text="Title"
@@ -35,42 +34,37 @@
 
     </LinearLayout>
 
+
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="366dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="135dp"
         android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text='"Spread the word!"'>
-
-        </TextView>
 
         <ImageButton
             android:id="@+id/Facebook"
-            android:layout_width="75dp"
-            android:layout_height="match_parent"
-            android:background="#00FFFFFF"
-            tools:srcCompat="@drawable/bubble1" />
+            android:layout_width="57dp"
+            android:layout_marginStart="10dp"
+            android:layout_height="wrap_content"
+            tools:srcCompat="@drawable/facebook" />
 
         <ImageButton
             android:id="@+id/Twitter"
-            android:layout_width="75dp"
-            android:layout_height="match_parent"
-            android:background="#00FFFFFF"
-            app:srcCompat="@drawable/bubble2" />
+            android:layout_width="69dp"
+            android:layout_marginStart="10dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/twitter" />
 
         <ImageButton
             android:id="@+id/LinkedIn"
-            android:layout_width="75dp"
-            android:layout_gravity=""
-            android:layout_height="match_parent"
-            android:background="#00FFFFFF"
-            app:srcCompat="@drawable/bubble3" />
+            android:layout_width="59dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            app:srcCompat="@drawable/linkedin" />
 
     </LinearLayout>
-
 
     <LinearLayout
 
@@ -79,94 +73,49 @@
         android:orientation="vertical">
 
 
-
-
-        <ImageView
-
-            android:layout_width="128dp"
-            android:layout_height="34dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="30dp"
-
-            app:srcCompat="@drawable/what" />
-
         <TextView
             android:id="@+id/what"
-            android:layout_width="match_parent"
-            android:layout_height="37dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="15dp"
+            android:layout_width="317dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="60dp"
             android:text="Leaderboard"
             android:textColor="#181C34"
-            android:textSize="16sp">
+            android:textSize="12sp"
+            android:textStyle="italic">
 
         </TextView>
 
-        <ImageView
-
-            android:layout_width="135dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="15dp"
-
-
-            app:srcCompat="@drawable/why" />
 
         <TextView
             android:id="@+id/Where"
-            android:layout_width="match_parent"
-            android:layout_height="37dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginStart="20dp"
+            android:layout_width="317dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="65dp"
             android:text="Leaderboard"
             android:textColor="#181C34"
-            android:textSize="16sp">
+            android:textSize="12sp"
+            android:textStyle="italic">
 
         </TextView>
 
-
-        <ImageView
-
-            android:layout_width="135dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="15dp"
-
-            app:srcCompat="@drawable/why" />
 
         <TextView
             android:id="@+id/How"
-            android:layout_width="match_parent"
-            android:layout_height="37dp"
-            android:layout_marginStart="20dp"
+            android:layout_width="314dp"
+            android:layout_height="140dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="85dp"
             android:text="Leaderboard"
-            android:layout_marginTop="15dp"
             android:textColor="#181C34"
-            android:textSize="16sp">
+            android:textSize="12sp"
+            android:textStyle="italic">
 
         </TextView>
 
 
-        <ImageView
 
-            android:layout_width="247dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="15dp"
-            app:srcCompat="@drawable/generalcomment" />
-
-        <TextView
-            android:id="@+id/Tip"
-            android:layout_width="match_parent"
-            android:layout_height="37dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginBottom="204dp"
-            android:layout_marginTop="15dp"
-            android:text="Leaderboard"
-            android:textColor="#181C34"
-            android:textSize="16sp">
-
-        </TextView>
 
     </LinearLayout>
 <LinearLayout

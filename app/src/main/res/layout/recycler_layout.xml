@@ -7,8 +7,9 @@
         android:id="@+id/textView"
         android:layout_width="135dp"
         android:layout_gravity="center"
-        android:layout_marginStart="135dp"
+        android:layout_marginStart="110dp"
         android:layout_height="match_parent"
+        android:textAlignment="center"
         android:text="TextView"
         android:textStyle="bold"
         android:textColor="#111111" />

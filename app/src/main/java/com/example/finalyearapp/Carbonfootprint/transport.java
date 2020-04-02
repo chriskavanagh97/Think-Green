@@ -72,7 +72,7 @@ public class transport extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                background.setBackgroundResource(R.drawable.publictransporttip);
+                background.setBackgroundResource(R.drawable.eatinseason);
                 tip1.setTextColor(Color.BLACK);
                 tip2.setTextColor(Color.YELLOW);
                 tip3.setTextColor(Color.BLACK);
@@ -83,7 +83,7 @@ public class transport extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                background.setBackgroundResource(R.drawable.publictransporttip);
+                background.setBackgroundResource(R.drawable.eatlessmeat);
                 tip1.setTextColor(Color.YELLOW);
                 tip2.setTextColor(Color.BLACK);
                 tip3.setTextColor(Color.BLACK);
@@ -93,7 +93,7 @@ public class transport extends AppCompatActivity {
         tip3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                background.setBackgroundResource(R.drawable.publictransporttip);
+                background.setBackgroundResource(R.drawable.addsomevariety);
                 tip1.setTextColor(Color.BLACK);
                 tip2.setTextColor(Color.BLACK);
                 tip3.setTextColor(Color.YELLOW);
@@ -112,7 +112,7 @@ public class transport extends AppCompatActivity {
                 tip1.setTextColor(Color.BLACK);
                 tip2.setTextColor(Color.YELLOW);
                 tip3.setTextColor(Color.BLACK);
-                background.setBackgroundResource(R.drawable.publictransporttip);
+                background.setBackgroundResource(R.drawable.buyonething);
 
 
 
@@ -126,7 +126,7 @@ public class transport extends AppCompatActivity {
                 tip1.setTextColor(Color.BLACK);
                 tip2.setTextColor(Color.BLACK);
                 tip3.setHintTextColor(Color.YELLOW);
-                background.setBackgroundResource(R.drawable.publictransporttip);
+                background.setBackgroundResource(R.drawable.buysecondhand);
 
 
             }
@@ -135,7 +135,7 @@ public class transport extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                background.setBackgroundResource(R.drawable.publictransporttip);
+                background.setBackgroundResource(R.drawable.repair);
                 tip1.setTextColor(Color.YELLOW);
                 tip2.setTextColor(Color.BLACK);
                 tip3.setTextColor(Color.BLACK);
@@ -156,7 +156,7 @@ public class transport extends AppCompatActivity {
                 tip1.setTextColor(Color.BLACK);
                 tip2.setTextColor(Color.YELLOW);
                 tip3.setTextColor(Color.BLACK);
-                background.setBackgroundResource(R.drawable.publictransporttip);
+                background.setBackgroundResource(R.drawable.maketheswitch);
 
             }
         });
@@ -167,7 +167,7 @@ public class transport extends AppCompatActivity {
                 tip1.setTextColor(Color.BLACK);
                 tip2.setTextColor(Color.BLACK);
                 tip3.setHintTextColor(Color.YELLOW);
-                background.setBackgroundResource(R.drawable.publictransporttip);
+                background.setBackgroundResource(R.drawable.switchenergy);
 
 
             }
@@ -176,7 +176,7 @@ public class transport extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                background.setBackgroundResource(R.drawable.publictransporttip);
+                background.setBackgroundResource(R.drawable.embracenewtech);
                 tip1.setTextColor(Color.YELLOW);
                 tip2.setTextColor(Color.BLACK);
                 tip3.setTextColor(Color.BLACK);
@@ -197,7 +197,7 @@ public class transport extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                background.setBackgroundResource(R.drawable.publictransporttip);
+                background.setBackgroundResource(R.drawable.cycle);
                 tip1.setTextColor(Color.BLACK);
                 tip2.setTextColor(Color.YELLOW);
                 tip3.setTextColor(Color.BLACK);
@@ -208,7 +208,7 @@ public class transport extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                background.setBackgroundResource(R.drawable.cycletip);
+                background.setBackgroundResource(R.drawable.publictransport);
                 tip1.setTextColor(Color.YELLOW);
                 tip2.setTextColor(Color.BLACK);
                 tip3.setTextColor(Color.BLACK);
@@ -222,7 +222,7 @@ public class transport extends AppCompatActivity {
                 tip1.setTextColor(Color.BLACK);
                 tip2.setTextColor(Color.BLACK);
                 tip3.setTextColor(Color.YELLOW);
-                background.setBackgroundResource(R.drawable.publictransporttip);
+                background.setBackgroundResource(R.drawable.drivesmarter);
 
 
             }

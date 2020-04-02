@@ -403,7 +403,7 @@ QUESTION FIVE ANSWERS
         startActivity(resultintent);
 
 
-       /* Toast.makeText(StepFour.this, "parsing groups", Toast.LENGTH_SHORT).show();
+        Toast.makeText(StepFour.this, "parsing groups", Toast.LENGTH_SHORT).show();
         Intent i = getIntent();
 
         String mpg = i.getStringExtra("mpg");
@@ -416,8 +416,7 @@ QUESTION FIVE ANSWERS
         String household = i.getStringExtra("entertainment");
         String clothes = i.getStringExtra("house");
 
-        String url = "https://apis.berkeley.edu/coolclimate/footprint-sandbox? input_size=" + population +
-                "&input_footprint_transportation_fuel1=1"+
+        String url = "https://apis.berkeley.edu/coolclimate/footprint?&input_footprint_transportation_fuel1=1"+
                 "&input_footprint_transportation_miles1="+miles+
                 "&input_footprint_transportation_mpg1="+ mpg +
                 "&input_footprint_transportation_bus="+ bushours +
@@ -427,8 +426,8 @@ QUESTION FIVE ANSWERS
                 "&input_footprint_shopping_goods_default_other_personalcare=" + beauty +
                 "&input_footprint_shopping_goods_default_other_entertainment=" + entertainment +
                 "&input_footprint_housing_electricity_dollars="+yearlyvalue+
-                "&input_footprint_housing_naturalgas_dollars="+ yearlyvalue +
-                " -H \"accept: application/json\" -H \"app_id: dae89a90\" -H \"app_key: 88000d3ffd63f5312b37f888b9c2c792";
+                "&input_footprint_housing_naturalgas_dollars="+ yearlyvalue;
+               // " -H \"accept: application/json\" -H \"app_id: dae89a90\" -H \"app_key: 88000d3ffd63f5312b37f888b9c2c792";
 
                     HandleXml obj;
                    TextView text1 = findViewById(R.id.transport);
@@ -447,7 +446,6 @@ QUESTION FIVE ANSWERS
                    text4.setText(obj.getFood());
                    text5.setText(obj.getTotal());
 
-*/
 
 
 

@@ -25,7 +25,7 @@
       "General Comment ": "Asbestos is extremely hazardous. If you find asbestos in your home, call an expert! "
     },
     {
-      "name": "Ash / Ashes",
+      "name": "Ashes",
       "What?": "Ash is produced generally from coal, wood or turf. ",
       "Where?": "Ash from coal should only be placed in the general waste bin. Small amounts of ash from wood or turf can be placed in your home compost bin. ",
       "Why?": "Ash produced from coal has no nutritional value and can be harmful to soil. ",
@@ -96,7 +96,7 @@
       "How?": "All rigid trays regardless of the colour, number, symbol or lack thereof can be placed in the household recycling bin. Trays should be clean, if there is a soak pad this must be removed [place it in the black or food waste bin], you then need to clean out the tray by carefully washing it ensuring you do not splash any liquid on the counter tops or sink or if you are a bit unsure about washing it in the sink you can simply wipe out any excess liquid with paper towels and then dispose of these in the food waste recycling bin [this will ensure no bacteria gets spread on counters or sink] "
     },
     { "name":"Blender",
-      "What?": "This is an electrical item [WEEE].",
+      "What?": "This is an electrical item [WEEE}",
       "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator ",
       "Why?":"When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
       "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
@@ -196,7 +196,7 @@
       "General Comment ": "If paper or card become wet or dirty on its way to a sorting facility it may not be recycled. "
     },
     { "name": "CD and DVD players",
-      "What?": "This is an electrical item [WEEE].",
+      "What?": "This is an electrical item [WEEE}",
       "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
       "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
     },
@@ -218,7 +218,7 @@
     },
     {
       "name":  "Chest freezers",
-      "What?": "This is an electrical item [WEEE].",
+      "What?": "This is an electrical item [WEEE}",
       "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator",
       "Why?":"When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
       "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
@@ -308,14 +308,14 @@
     },
     {
       "name":"Computer monitors",
-      "What?": "This is an electrical item [WEEE].",
+      "What?": "This is an electrical item [WEEE}",
       "Where?" :" This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site.",
       "Why?":"When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
       "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
     },
     {
       "name": "Computers",
-      "What?": "This is an electrical item [WEEE].",
+      "What?": "This is an electrical item [WEEE}",
       "Where?": "This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator",
       "Why?": "When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
       "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
@@ -389,7 +389,7 @@
     },
     {
       "name": "Dishwasher",
-      "What?": "This is an electrical item [WEEE].",
+      "What?": "This is an electrical item [WEEE}",
       "Where?": " This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator",
       "Why?":"When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
       "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
@@ -420,7 +420,7 @@
     },
     {
       "name": "Dryer",
-      "What?": "This is an electrical item [WEEE].",
+      "What?": "This is an electrical item [WEEE}",
       "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator",
       "Why?":"When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
       "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
@@ -439,7 +439,7 @@
       "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
     },
     {
-      "name": "DVDs & CDs",
+      "name": "DVDs and CDs",
       "What?": "DVD's and CD's are generally made of&nbsp; poly-carbonate plastic&nbsp;covered by an&nbsp;aluminium&nbsp;coating.",
       "Where?": "DVD's and CD's should be placed in the general waste bin. The cases for both can be placed in the household recycling bin, remove paper sleeves and any soft plastic lining where possible.",
       "General Comment ": "Instead of disposing of suitable DVD's and CD's once you are finished with them, why not give to friends or family or donate them to a charity shop for someone else to use? This is particularly relevant for music, films or box sets."
@@ -452,7 +452,7 @@
     },
     {
       "name": "Electrical items",
-      "What?":"This is an electrical item [WEEE].",
+      "What?":"This is an electrical item [WEEE}",
       "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator",
       "Why?":"When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
       "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
@@ -464,7 +464,7 @@
       "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
     },
     {
-      "name": "Energy-saving bulbs",
+      "name": "Energy saving bulbs",
       "What?": "This is an electrical item [WEEE]",
       "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
       "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
@@ -496,8 +496,8 @@
     },
     {
       "name": "Fire alarms",
-      "What?": "This is an electrical item [WEEE]|",
-      "Where?":"</strong> Where? This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
+      "What?": "This is an electrical item [WEEE]",
+      "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
       "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
     },
     {
@@ -566,7 +566,7 @@
     },
     {
       "name": "Gardening tools (Electrical)",
-      "What?": "This is an electrical item [WEEE].",
+      "What?": "This is an electrical item [WEEE}",
       "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
       "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
     },
@@ -606,7 +606,7 @@
     },
     {
       "name": "Hair dryers",
-      "What?": "This is an electrical item [WEEE].",
+      "What?": "This is an electrical item [WEEE}",
       "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
       "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
     },
@@ -618,14 +618,14 @@
     },
     {
       "name": "Hearing aids",
-      "What?": "This is an electrical item [WEEE].",
+      "What?": "This is an electrical item [WEEE}",
       "Where?": "This should be brought to a WEEE drop off recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator ",
       "Why?": "When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
       "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
     },
     {
       "name": "Hedge trimmers",
-      "What?": "This is an electrical item [WEEE]. ",
+      "What?": "This is an electrical item [WEEE} ",
       "Where?": "This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator ",
       "Why?": "When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
       "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
@@ -656,7 +656,7 @@
     },
     {
       "name": "Irons",
-      "What?": "This is an electrical item [WEEE].",
+      "What?": "This is an electrical item [WEEE}",
       "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
       "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
     },
@@ -796,7 +796,7 @@
     },
     {
       "name": "MP3 players",
-      "What?": "This is an electrical item [WEEE].",
+      "What?": "This is an electrical item [WEEE}",
       "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
       "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
     },
@@ -844,7 +844,7 @@
       "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
     },
     {
-      "name": "food Packaging ",
+      "name": "food Packaging",
       "What?": "This is paper, card or plastic",
       "Where?": "This ( other than plastic film) should be placed in the household recycling bin. ",
       "How?": "Please make sure items are clean, dry and placed loosely in the bin. ",
@@ -1075,7 +1075,7 @@
       "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
     },
     {
-      "name": "Sofas / settees",
+      "name": "Sofas ",
       "What?": "This is furniture / a bulky item ",
       "Where?": "Furniture at the end of its useful life can often be recycled, especially items made from wood and metal. Most furniture can be recycled at your local civic amenity site and some local authorities may also provide a bulky goods collection service for a fee. ",
       "General Comment ": "If you have a piece of furniture that is still usable, you could consider selling it, passing it on to someone else or donating it  u2013 some charity shops accept furniture for resale. "
@@ -1124,7 +1124,7 @@
       "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
     },
     {
-      "name": "Tea bags / leaves",
+      "name": "Tea bags ",
       "What?": "The leaves are considered a food item but currently many tea bags may contain small amounts of plastic ",
       "Where?": "If you use loose leaf tea then this can be emptied directly into the food waste recycling bin, if you are using bags you could tear them open placing the the bag part in the general waste bin and contents in the food waste recycling bin. ",
       "Why?": "The small amount of plastic used make the glue holding the bag together heat resistant. Most manufactures are researching alternatives which should be on the market soon ",
@@ -1185,13 +1185,13 @@
       "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
     },
     {
-      "name": "Toothbrush [Electric]",
+      "name": "Toothbrush (Electric)",
       "What?": "This is an electrical item [WEEE]",
       "Where?":"This should be brought to a WEEE dropoff recycling point or Civic Amenity Site, check the waste services locator on this site. waste services locator <strong>Why?</strong> Why? When you recycle anything with a plug or a battery you are helping to reduce the amount of waste going to landfill. Electrical items generally contain hazardous components and therefore need to be disposed of correctly. . ",
       "General Comment ": "It is easy to check if an electrical item, toy or game is recyclable if it reached the end of its working life. Simply ask the following questions and if the answer is yes, to any of these, it is recyclable: Does it have a plug? Does it use batteries? Does it need charging? Does it have a picture of a crossed out wheelie bin on it? "
     },
     {
-      "name": "Toothbrush [manual]",
+      "name": "Toothbrush (manual)",
     "What?": "This is a composite generally made from different types of plastic. ",
     "Where?": "Old toothbrushes should be placed in the general waste bin. ",
     "General Comment:": "Eco-toothbrushes are becoming more popular and are now widely available. Eco varieties are generally made from bamboo or wood and can be composted at end of life. If you are interested in reducing the amount of plastic you generate consider swapping your plastic toothbrush to an eco one. Old plastic toothbrushes can be used as cleaning tools for fiddly jobs. &nbsp; &nbsp; "
@@ -1304,7 +1304,7 @@
       "General Comment ": "Wool can be donated to schools, community groups, craftspeople and charity shops for reuse. "
     },
     {
-      "name": "Wrapping paper [Ribbon / Bow]",
+      "name": "Wrapping paper *Ribbon ; Bow)",
       "What?": "Most varieties of wrapping paper are made from light card or printed paper. However shiny or metallic gift-wrap is made of plastic film. ",
       "Where?": "Normal wrapping paper should be placed in the household recycling bin. Any bows of ribbons used as decoration on gifts are usually made of plastic and these cannot be recycled. Any wrapping paper which has a plastic and/or metallic layer should be placed in the general waste bin, this paper cannot be recycled. ",
       "How?": "Please make sure items are clean, dry and placed loosely in the bin. ",

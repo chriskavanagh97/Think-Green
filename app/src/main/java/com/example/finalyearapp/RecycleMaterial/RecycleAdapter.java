@@ -84,6 +84,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<com.example.finalyearap
     {
         return materials.size();
     }
+
     public void filterlist(ArrayList<Material> filteredlist){
 
         materials = filteredlist;
