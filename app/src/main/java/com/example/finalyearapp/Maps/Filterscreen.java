@@ -94,6 +94,7 @@ public class Filterscreen extends AppCompatActivity {
                     Intent mapintent = new Intent(Filterscreen.this, MapsActivity.class);
                     mapintent.putExtra("value", "general locations");
                     mapintent.putExtra("city", item);
+                    mapintent.putExtra("recycleoutlet", "");
                     startActivity(mapintent);
                 }
                 else {

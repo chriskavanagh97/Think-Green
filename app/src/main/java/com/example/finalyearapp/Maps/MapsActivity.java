@@ -488,15 +488,24 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
 
                             MarkerYellow = new LatLng(lat, lng);
                             mMap.addMarker(new MarkerOptions().position(MarkerYellow).title(name + " " + address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
+                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
+                                    new LatLng(lat,
+                                            lng), 10));
 
                         } else if (name.equals("Lighting Dropoff")) {
                             MarkerRed = new LatLng(lat, lng);
                             mMap.addMarker(new MarkerOptions().position(MarkerRed).title(name + " " + address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
+                                    new LatLng(lat,
+                                            lng), 10));
 
 
                         } else if (name.equals("Civic Amenity Site")) {
                             Markerblue = new LatLng(lat, lng);
                             mMap.addMarker(new MarkerOptions().position(Markerblue).title(name + " " + address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
+                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
+                                    new LatLng(lat,
+                                            lng), 10));
 
 
                         } else if (name.equals("Electrical Retailers")) {
@@ -591,6 +600,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
                     }
 
 
+
                     mMap.setMyLocationEnabled(true);
 
                 }
@@ -600,6 +610,11 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
                 e.printStackTrace();
             } catch (JSONException e) {
                 e.printStackTrace();
+            }
+            if(places.size() == 0)
+            {
+                Toast.makeText(MapsActivity.this, "We are sorry it seems " + intentcity + " has no " + recycleoutlet + "'s", Toast.LENGTH_LONG).show();
+
             }
 
         }
