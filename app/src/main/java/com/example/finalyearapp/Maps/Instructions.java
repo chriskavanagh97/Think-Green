@@ -111,7 +111,7 @@ public class Instructions extends AppCompatActivity {
 
     public void intent(){
 
-        Intent intent = new Intent(Instructions.this, Locationservices.class);
+        Intent intent = new Intent(Instructions.this, Filterscreen.class);
         intent.putExtra("value", "false");
 
         startActivity(intent);

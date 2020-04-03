@@ -416,7 +416,8 @@ QUESTION FIVE ANSWERS
         String household = i.getStringExtra("entertainment");
         String clothes = i.getStringExtra("house");
 
-        String url = "https://apis.berkeley.edu/coolclimate/footprint?&input_footprint_transportation_fuel1=1"+
+        String url = "https://apis.berkeley.edu/coolclimate/footprint-sandbox?input_size=" + population +
+                "&input_footprint_transportation_fuel1=1"+
                 "&input_footprint_transportation_miles1="+miles+
                 "&input_footprint_transportation_mpg1="+ mpg +
                 "&input_footprint_transportation_bus="+ bushours +

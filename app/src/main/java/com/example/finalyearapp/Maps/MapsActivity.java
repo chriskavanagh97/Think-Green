@@ -12,9 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import android.app.Dialog;
-
 import android.content.Intent;
-
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.location.Location;
@@ -27,11 +25,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
+
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
 
 
 import com.example.finalyearapp.MainMenu;
@@ -305,10 +304,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
 
 
                     }
-
-
                 }
-
 
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
@@ -321,82 +317,124 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
 
         } else {
 
-            getDeviceLocation();
 
-            String json;
+            //();
             try {
-                InputStream is = getAssets().open("BringBanks.json");
-                int size = is.available();
-                byte[] buffer = new byte[size];
-                is.read(buffer);
-                is.close();
-                json = new String(buffer, "UTF-8");
+                Task locationResult = mFusedLocationProviderClient.getLastLocation();
+                locationResult.addOnCompleteListener(this, new OnCompleteListener() {
+                    @Override
+                    public void onComplete(@NonNull Task task) {
+                        if (task.isSuccessful()) {
+                            // Set the map's camera position to the current location of the device.
+                            currentlocation = (Location) task.getResult();
+                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
+                                    new LatLng(currentlocation.getLatitude(),
+                                            currentlocation.getLongitude()), 13));
+                            String json;
+                            try {
+                                InputStream is = getAssets().open("BringBanks.json");
+                                int size = is.available();
+                                byte[] buffer = new byte[size];
+                                is.read(buffer);
+                                is.close();
+                                json = new String(buffer, "UTF-8");
 
 
-                JSONObject obj = new JSONObject(json);
-                JSONArray m_jArry = obj.getJSONArray("Bringbanks");
+                                JSONObject obj = new JSONObject(json);
+                                JSONArray m_jArry = obj.getJSONArray("Bringbanks");
 
 
-                for (int i = 0; i < m_jArry.length(); i++) {
+                                for (int i = 0; i < m_jArry.length(); i++) {
 
-                    JSONObject jo_inside = m_jArry.getJSONObject(i);
+                                    JSONObject jo_inside = m_jArry.getJSONObject(i);
 
-
-                    name = jo_inside.getString("Name");
-                    String address1 = jo_inside.getString("Address");
-                    String address2 = jo_inside.getString("Address2");
-                    city = jo_inside.getString("City");
-                    state = jo_inside.getString("State");
-                    lat = jo_inside.getDouble("lat");
-                    lng = jo_inside.getDouble("lng");
-                    address = address1 + " , " + address2;
-                    coordinantes = lat + "," + lng;
-
-                    places.add(new place(name, address, city, state, coordinantes, lat, lng));
+                                if(jo_inside.getString("City").equals("Dublin")) {
 
 
-                    adapter = new RecycleAdapter(places, MapsActivity.this);
-                    recyclerView.setAdapter(adapter);
+                                    name = jo_inside.getString("Name");
+                                    String address1 = jo_inside.getString("Address");
+                                    String address2 = jo_inside.getString("Address2");
+                                    city = jo_inside.getString("City");
+                                    state = jo_inside.getString("State");
+                                    lat = jo_inside.getDouble("lat");
+                                    lng = jo_inside.getDouble("lng");
+                                    address = address1 + " , " + address2;
+                                    coordinantes = lat + "," + lng;
 
-                    mMap = googleMap;
+                                   /* adapter = new RecycleAdapter(places, MapsActivity.this);
+                                    recyclerView.setAdapter(adapter);
 
-                    if (name.equals("Bring Bank")) {
+                                    mMap = googleMap;*/
 
-                        MarkerYellow = new LatLng(lat, lng);
-                        mMap.addMarker(new MarkerOptions().position(MarkerYellow).title(name + " " + address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
+                                    Location target = new Location("target");
+                                    target.setLatitude(lat);
+                                    target.setLongitude(lng);
+                                    if (currentlocation.distanceTo(target) < 10000) {
 
-                    } else if (name.equals("Lighting Dropoff")) {
-                        MarkerRed = new LatLng(lat, lng);
-                        mMap.addMarker(new MarkerOptions().position(MarkerRed).title(name + " " + address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
-
-
-                    } else if (name.equals("Civic Amenity Site")) {
-                        Markerblue = new LatLng(lat, lng);
-                        mMap.addMarker(new MarkerOptions().position(Markerblue).title(name + " " + address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
-
-
-                    } else if (name.equals("Electrical Retailers")) {
-                        Marker = new LatLng(lat, lng);
-                        mMap.addMarker(new MarkerOptions().position(Marker).title(name + " " + address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+                                        places.add(new place(name, address, city, state, coordinantes, lat, lng));
 
 
+                                        adapter = new RecycleAdapter(places, MapsActivity.this);
+                                        recyclerView.setAdapter(adapter);
+
+                                        mMap = googleMap;
+
+
+                                        if (name.equals("Bring Bank")) {
+
+                                            MarkerYellow = new LatLng(lat, lng);
+                                            mMap.addMarker(new MarkerOptions().position(MarkerYellow).title(name + " " + address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
+
+                                        } else if (name.equals("Lighting Dropoff")) {
+                                            MarkerRed = new LatLng(lat, lng);
+                                            mMap.addMarker(new MarkerOptions().position(MarkerRed).title(name + " " + address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+
+
+                                        } else if (name.equals("Civic Amenity Site")) {
+                                            Markerblue = new LatLng(lat, lng);
+                                            mMap.addMarker(new MarkerOptions().position(Markerblue).title(name + " " + address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
+
+
+                                        } else if (name.equals("Electrical Retailers")) {
+                                            Marker = new LatLng(lat, lng);
+                                            mMap.addMarker(new MarkerOptions().position(Marker).title(name + " " + address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+
+
+                                        }
+                                    } else {
+                                    }
+                                }
+                                else
+                                    {
+
+                                    }
+
+                                    mMap.setMyLocationEnabled(true);
+
+                                }
+                            } catch (UnsupportedEncodingException e) {
+                                e.printStackTrace();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        } else {
+                            Log.d(TAG, "Current location is null. Using defaults.");
+
+                        }
                     }
+                });
 
-
-                    mMap.setMyLocationEnabled(true);
-
-                }
-            } catch (UnsupportedEncodingException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (JSONException e) {
-                e.printStackTrace();
+            } catch(SecurityException e)  {
+                Log.e("Exception: %s", e.getMessage());
             }
+
+
         }
+}
 
 
-    }
 
     @Override
     public void onInfoWindowClick(Marker marker)
@@ -468,12 +506,12 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
 
 
     }
-    private void getDeviceLocation() {
+   /* private void getDeviceLocation() {
         /*
          * Get the best and most recent location of the device, which may be null in rare
          * cases when a location is not available.
          */
-        try {
+   /*() try {
             Task locationResult = mFusedLocationProviderClient.getLastLocation();
             locationResult.addOnCompleteListener(this, new OnCompleteListener() {
                 @Override
@@ -494,7 +532,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
         } catch(SecurityException e)  {
             Log.e("Exception: %s", e.getMessage());
         }
-    }
+    }*/
     private void calculateDirections(Marker marker){
         try {
             Task locationResult = mFusedLocationProviderClient.getLastLocation();

@@ -96,9 +96,9 @@ public class HandleXml {
                 connect.setReadTimeout(100000);
                 connect.setConnectTimeout(150000);
                 connect.setRequestMethod("GET");
+                connect.setRequestProperty("Content-Type", "application/xml");
                 connect.setDoInput(true);
                 connect.connect();
-
                 InputStream stream = connect.getInputStream();
                 xmlFactoryObject = XmlPullParserFactory.newInstance();
                 XmlPullParser myparser = xmlFactoryObject.newPullParser();
