@@ -23,6 +23,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -30,6 +31,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -164,7 +166,57 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
         });
 
 
+        Spinner mySpinner = (Spinner) findViewById(R.id.cities);
+        Spinner mySpinner2 = findViewById(R.id.outlets);
 
+        ArrayList<String> cities = new ArrayList<>();
+
+        cities.add("Carlow");
+        cities.add("Cavan");
+        cities.add("Clare");
+        cities.add("Cork");
+        cities.add("Dublin");
+        cities.add("Galway");
+        cities.add("Donegal");
+        cities.add("Kerry");
+        cities.add("Kildare");
+        cities.add("Kilkenny");
+        cities.add("Laois");
+        cities.add("Louth");
+        cities.add("Leitrim");
+        cities.add("Limerick");
+        cities.add("Longford");
+        cities.add("Mayo");
+        cities.add("Meath");
+        cities.add("Offaly");
+        cities.add("Roscommon");
+        cities.add("Sligo");
+        cities.add("Tipperary");
+        cities.add("Waterford");
+        cities.add("Westmeath");
+        cities.add("Wexford");
+        cities.add("Wicklow");
+        ArrayList<String> outlets = new ArrayList<>();
+
+        outlets.add("All");
+        outlets.add("Bring Bank");
+        outlets.add("Lighting Dropoff");
+        outlets.add("Civic Amenity Site");
+        outlets.add("Electrical Retailers");
+
+
+
+        ArrayAdapter<String> myAdapter = new ArrayAdapter<>(MapsActivity.this,
+                android.R.layout.simple_list_item_1, cities);
+
+        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        mySpinner.setAdapter((myAdapter));
+
+        ArrayAdapter<String> myadapter2 = new ArrayAdapter<>(MapsActivity.this,
+                android.R.layout.simple_list_item_1, outlets);
+
+        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        mySpinner2.setAdapter((myadapter2));
         recyclerView = findViewById(R.id.my_recycler_view);
         recyclerView.setHasFixedSize(true);
 
