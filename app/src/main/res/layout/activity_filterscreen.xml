@@ -8,7 +8,7 @@
     tools:context=".Maps.Filterscreen">
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/city"
         android:layout_width="245dp"
         android:layout_height="34dp"
         android:text="TextView"
