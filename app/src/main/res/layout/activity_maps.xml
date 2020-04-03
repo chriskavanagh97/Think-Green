@@ -5,12 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    tools:context=".Maps.MapsActivity"
-    >
+    tools:context=".Maps.MapsActivity">
 
 
     <LinearLayout
-
         android:id="@+id/mainmenu"
         android:layout_width="260dp"
         android:layout_height="match_parent"
@@ -18,16 +16,64 @@
         android:orientation="vertical"
         android:translationX="-260dp">
 
+        <RadioGroup
+            android:layout_width="199dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/group"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.825"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.748">
+
+            <RadioButton
+                android:id="@+id/radioButton"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_height="wrap_content"
+                android:textColor="#F44336" />
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp" />
+
+            <RadioButton
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp" />
+
+
+            <RadioButton
+                android:id="@+id/button4"
+                android:layout_marginStart="15dp"
+                android:layout_width="42dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp" />
+        </RadioGroup>
+        <Button
+            android:id="@+id/start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="start" />
+
         <Button
             android:id="@+id/sessionType"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="24dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/bgbtnmenu"
             android:text="Back to map "
             android:textSize="18sp"
             android:textStyle="italic">
+
         </Button>
 
         <Button
@@ -40,26 +86,27 @@
             android:text="Home Screen "
             android:textSize="18sp"
             android:textStyle="italic">
-        </Button>
 
+        </Button>
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="7dp"
                 android:text="Search for a location: "
-                android:textStyle="bold"
-                android:layout_margin="7dp">
+                android:textStyle="bold">
 
             </TextView>
 
             <EditText
                 android:id="@+id/search"
-                android:layout_width="266dp"
+                android:layout_width="107dp"
                 android:layout_height="wrap_content"
                 android:hint="start typing">
 
@@ -69,57 +116,47 @@
         <androidx.recyclerview.widget.RecyclerView
 
             android:id="@+id/my_recycler_view"
-            android:background="#FFFF"
             android:layout_width="match_parent"
-            android:layout_height="650dp"
-            android:scrollbars="vertical"
+            android:layout_height="430dp"
+            android:background="#FFFF"
             android:divider="@android:color/transparent"
-            android:dividerHeight="15dp">
+            android:dividerHeight="15dp"
+            android:scrollbars="vertical">
 
         </androidx.recyclerview.widget.RecyclerView>
 
-        <Button
-            android:id="@+id/profile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
-            android:layout_marginTop="70dp"
-            android:background="@drawable/bgbtnmenu"
-            android:text="Find your nearest one"
-            android:textSize="18sp"
-            android:textStyle="italic">
 
-        </Button>
+        <RelativeLayout
+            android:id="@+id/mainContent"
+            android:layout_width="360dp"
+            android:layout_height="match_parent"
+            android:translationX="-260dp">
+
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryDark"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:logo="@drawable/ic_search">
+
+            </androidx.appcompat.widget.Toolbar>
+
+            <fragment
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="673dp"
+                android:layout_below="@+id/toolbar"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="-2dp"
+                android:layout_marginBottom="4dp" />
+
+        </RelativeLayout>
+    </LinearLayout>
 
     </LinearLayout>
-    <RelativeLayout
-        android:id="@+id/mainContent"
-        android:layout_width="360dp"
-        android:layout_height="match_parent"
-        android:translationX="-260dp">
 
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryDark"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:logo="@drawable/ic_search">
-
-        </androidx.appcompat.widget.Toolbar>
-
-        <fragment
-            android:id="@+id/map"
-            android:name="com.google.android.gms.maps.SupportMapFragment"
-            android:layout_width="match_parent"
-            android:layout_height="673dp"
-            android:layout_below="@+id/toolbar"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="-2dp"
-            android:layout_marginBottom="4dp" />
-
-    </RelativeLayout>
-</LinearLayout>
 
 

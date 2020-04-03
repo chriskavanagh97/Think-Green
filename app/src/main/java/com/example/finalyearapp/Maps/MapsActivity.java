@@ -27,6 +27,8 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -99,7 +101,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
     String name, address, city, state, coordinantes;
     Double lat, lng;
 
-    String name2, address2, city2;
+    String name2, address2, city2, intentcity;
     Double lat2, lng2;
     RelativeLayout maincontent;
     LinearLayout mainmenu;
@@ -160,6 +162,11 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
 
             }
         });
+        RadioGroup rbGroup;
+        rbGroup = (RadioGroup) findViewById(R.id.rbGroup);
+
+        RadioButton rbSelected = findViewById(rbGroup.getCheckedRadioButtonId());
+        int answerNr = rbGroup.indexOfChild(rbSelected) + 1;
 
 
         recyclerView = findViewById(R.id.my_recycler_view);
@@ -348,7 +355,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
 
 
             //();
-            getDeviceLocation();
+            //getDeviceLocation();
 
             String json;
             try {
@@ -363,11 +370,18 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
                 JSONObject obj = new JSONObject(json);
                 JSONArray m_jArry = obj.getJSONArray("Bringbanks");
 
+                intentcity = value.getStringExtra("city");
+
+                Toast.makeText(MapsActivity.this, "city" + intentcity, Toast.LENGTH_SHORT).show();
+
 
                 for (int i = 0; i < m_jArry.length(); i++) {
 
+
+
                     JSONObject jo_inside = m_jArry.getJSONObject(i);
-                    if(jo_inside.getString("City").equals(city2)) {
+
+                    if(jo_inside.getString("City").equals(intentcity)) {
 
                         name = jo_inside.getString("Name");
                         String address1 = jo_inside.getString("Address");
@@ -380,7 +394,6 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
                         coordinantes = lat + "," + lng;
 
                         places.add(new place(name, address, city, state, coordinantes, lat, lng));
-
 
                         adapter = new RecycleAdapter(places, MapsActivity.this);
                         recyclerView.setAdapter(adapter);
@@ -405,6 +418,9 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
                         } else if (name.equals("Electrical Retailers")) {
                             Marker = new LatLng(lat, lng);
                             mMap.addMarker(new MarkerOptions().position(Marker).title(name + " " + address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
+                                    new LatLng(lat,
+                                            lng), 10));
 
 
                         }

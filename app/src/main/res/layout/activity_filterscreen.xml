@@ -7,22 +7,22 @@
     android:background="@drawable/mapfilter"
     tools:context=".Maps.Filterscreen">
 
-    <TextView
+    <EditText
         android:id="@+id/city"
-        android:layout_width="245dp"
-        android:layout_height="34dp"
-        android:text="TextView"
+        android:layout_width="218dp"
+        android:layout_height="38dp"
         android:textAlignment="viewStart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.566"
+        app:layout_constraintHorizontal_bias="0.653"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.252" />
+        app:layout_constraintVertical_bias="0.245" />
 
     <RadioGroup
         android:layout_width="50dp"
         android:layout_height="174dp"
+        android:id="@+id/RadioGroup"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.825"
@@ -55,6 +55,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </RadioGroup>
+
+    <Button
+        android:id="@+id/start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/city"
+        app:layout_constraintVertical_bias="0.984" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
