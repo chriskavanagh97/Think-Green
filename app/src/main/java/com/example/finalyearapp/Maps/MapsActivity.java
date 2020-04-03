@@ -75,6 +75,7 @@ import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 
 public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWindowClickListener, OnMapReadyCallback , GoogleMap.OnPolylineClickListener {
@@ -209,6 +210,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
         ArrayAdapter<String> myAdapter = new ArrayAdapter<>(MapsActivity.this,
                 android.R.layout.simple_list_item_1, cities);
 
+
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mySpinner.setAdapter((myAdapter));
 
@@ -217,6 +219,37 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
 
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mySpinner2.setAdapter((myadapter2));
+
+        Button filterchange = findViewById(R.id.filter);
+        filterchange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (mySpinner2.getSelectedItem().toString().equals("All")) {
+
+
+                    String item = mySpinner.getSelectedItem().toString();
+                    Intent mapintent = new Intent(MapsActivity.this, MapsActivity.class);
+                    mapintent.putExtra("value", "general locations");
+                    mapintent.putExtra("city", item);
+                    startActivity(mapintent);
+                }
+                else {
+
+
+                    String item = mySpinner.getSelectedItem().toString();
+                    String outlet = mySpinner2.getSelectedItem().toString();
+                    Intent mapintent = new Intent(MapsActivity.this, MapsActivity.class);
+                    mapintent.putExtra("value", "specified outlet");
+                    mapintent.putExtra("city", item);
+                    mapintent.putExtra("recycleoutlet", outlet);
+                    startActivity(mapintent);
+                }
+
+            }
+
+
+        });
         recyclerView = findViewById(R.id.my_recycler_view);
         recyclerView.setHasFixedSize(true);
 
