@@ -98,7 +98,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
     Location currentlocation;
     int i;
 
-    String name, address, city, state, coordinantes;
+    String name, address, city, state, coordinantes, recycleoutlet;
     Double lat, lng;
 
     String name2, address2, city2, intentcity;
@@ -162,11 +162,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
 
             }
         });
-        RadioGroup rbGroup;
-        rbGroup = (RadioGroup) findViewById(R.id.rbGroup);
 
-        RadioButton rbSelected = findViewById(rbGroup.getCheckedRadioButtonId());
-        int answerNr = rbGroup.indexOfChild(rbSelected) + 1;
 
 
         recyclerView = findViewById(R.id.my_recycler_view);
@@ -226,7 +222,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
 
 
 
-        if (singlevalue.equals("true")) {
+        if (singlevalue.equals("specific location")) {
 
 
 
@@ -248,7 +244,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
                 name2 = value.getStringExtra("name");
                 lat2 = value.getDoubleExtra("lat", 1);
                 lng2 = value.getDoubleExtra("lng", 1);
-                city2 = value.getStringExtra("City");
+                city2 = value.getStringExtra("city");
 
                 if (name2.equals("Bring Bank")) {
                     // Add a marker in Sydney and move the camera
@@ -274,6 +270,11 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
                 marker.setLongitude(lng2);
 
 
+                Toast.makeText(MapsActivity.this, "city" + marker.getLatitude(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MapsActivity.this, "city" + city2, Toast.LENGTH_SHORT).show();
+
+
+
                 for (int i = 0; i < m_jArry.length(); i++) {
 
                     JSONObject jo_inside = m_jArry.getJSONObject(i);
@@ -294,7 +295,6 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
 
                                    /* adapter = new RecycleAdapter(places, MapsActivity.this);
                                     recyclerView.setAdapter(adapter);
-
                                     mMap = googleMap;*/
 
                         Location target = new Location("target");
@@ -336,10 +336,10 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
 
                         }
                     }
-                        else{
+                    else{
 
-                        }
                     }
+                }
 
 
             } catch (UnsupportedEncodingException e) {
@@ -351,7 +351,8 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
             }
 
 
-        } else {
+        }
+        else if(singlevalue.equals("general locations")) {
 
 
             //();
@@ -376,8 +377,6 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
 
 
                 for (int i = 0; i < m_jArry.length(); i++) {
-
-
 
                     JSONObject jo_inside = m_jArry.getJSONObject(i);
 
@@ -422,6 +421,86 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
                                     new LatLng(lat,
                                             lng), 10));
 
+                        }
+                    }
+
+
+                    mMap.setMyLocationEnabled(true);
+
+                }
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        else if(singlevalue.equals("specified outlet")){
+
+            String json;
+            try {
+                InputStream is = getAssets().open("BringBanks.json");
+                int size = is.available();
+                byte[] buffer = new byte[size];
+                is.read(buffer);
+                is.close();
+                json = new String(buffer, "UTF-8");
+
+
+                JSONObject obj = new JSONObject(json);
+                JSONArray m_jArry = obj.getJSONArray("Bringbanks");
+
+                intentcity = value.getStringExtra("city");
+
+                Toast.makeText(MapsActivity.this, "city" + intentcity, Toast.LENGTH_SHORT).show();
+
+
+                for (int i = 0; i < m_jArry.length(); i++) {
+
+                    JSONObject jo_inside = m_jArry.getJSONObject(i);
+                    recycleoutlet = value.getStringExtra("recycleoutlet");
+
+                    if(jo_inside.getString("City").equals(intentcity) & jo_inside.getString("Name").equals(recycleoutlet)) {
+
+                        name = jo_inside.getString("Name");
+                        String address1 = jo_inside.getString("Address");
+                        String address2 = jo_inside.getString("Address2");
+                        city = jo_inside.getString("City");
+                        state = jo_inside.getString("State");
+                        lat = jo_inside.getDouble("lat");
+                        lng = jo_inside.getDouble("lng");
+                        address = address1 + " , " + address2;
+                        coordinantes = lat + "," + lng;
+
+                        places.add(new place(name, address, city, state, coordinantes, lat, lng));
+
+                        adapter = new RecycleAdapter(places, MapsActivity.this);
+                        recyclerView.setAdapter(adapter);
+
+                        mMap = googleMap;
+
+                        if (name.equals("Bring Bank")) {
+
+                            MarkerYellow = new LatLng(lat, lng);
+                            mMap.addMarker(new MarkerOptions().position(MarkerYellow).title(name + " " + address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
+
+                        } else if (name.equals("Lighting Dropoff")) {
+                            MarkerRed = new LatLng(lat, lng);
+                            mMap.addMarker(new MarkerOptions().position(MarkerRed).title(name + " " + address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+
+
+                        } else if (name.equals("Civic Amenity Site")) {
+                            Markerblue = new LatLng(lat, lng);
+                            mMap.addMarker(new MarkerOptions().position(Markerblue).title(name + " " + address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
+
+
+                        } else if (name.equals("Electrical Retailers")) {
+                            Marker = new LatLng(lat, lng);
+                            mMap.addMarker(new MarkerOptions().position(Marker).title(name + " " + address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
+                                    new LatLng(lat,
+                                            lng), 10));
 
                         }
                     }
@@ -437,6 +516,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+
         }
 
 
@@ -542,11 +622,11 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
 
 
     }
-   /* private void getDeviceLocation() {
-        /*
-         * Get the best and most recent location of the device, which may be null in rare
-         * cases when a location is not available.
-         */
+    /* private void getDeviceLocation() {
+         /*
+          * Get the best and most recent location of the device, which may be null in rare
+          * cases when a location is not available.
+          */
    /*() try {
             Task locationResult = mFusedLocationProviderClient.getLastLocation();
             locationResult.addOnCompleteListener(this, new OnCompleteListener() {
@@ -560,11 +640,9 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
                                         currentlocation.getLongitude()), 13));
                     } else {
                         Log.d(TAG, "Current location is null. Using defaults.");
-
                     }
                 }
             });
-
         } catch(SecurityException e)  {
             Log.e("Exception: %s", e.getMessage());
         }
@@ -750,4 +828,4 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
         );
     }
 
-    }
+}

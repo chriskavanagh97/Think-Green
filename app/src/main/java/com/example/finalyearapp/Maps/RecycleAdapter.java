@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.finalyearapp.R;
 
 
@@ -83,7 +82,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<com.example.finalyearap
                intent.putExtra("city" , place.getCity());
                intent.putExtra("name" , place.getName());
 
-               intent.putExtra("value", "true");
+               intent.putExtra("value", "specific location");
                 v.getContext().startActivity(intent);
 
             }

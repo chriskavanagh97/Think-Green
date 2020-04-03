@@ -84,8 +84,6 @@ public class PollutionQuiz extends AppCompatActivity {
         t1_question = (TextView) findViewById(R.id.questionsTxt);
         UpdateQuestion();
 
-
-
         myDialog = new Dialog(this);
 
     }

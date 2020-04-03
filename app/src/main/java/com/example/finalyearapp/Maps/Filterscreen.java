@@ -5,10 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Filter;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.finalyearapp.Carbonfootprint.StepOne;
 import com.example.finalyearapp.MainActivity;
 import com.example.finalyearapp.R;
 import com.example.finalyearapp.RecycleMaterial.Material;
@@ -21,10 +27,12 @@ public class Filterscreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_filterscreen);
+        RadioGroup rbGroup;
 
 
-        TextView city = findViewById(R.id.city);
         Button start = findViewById(R.id.start);
+        Spinner mySpinner = (Spinner) findViewById(R.id.values);
+        Spinner mySpinner2 = findViewById(R.id.outlets);
 
         ArrayList<String> cities = new ArrayList<>();
 
@@ -53,34 +61,56 @@ public class Filterscreen extends AppCompatActivity {
         cities.add("Westmeath");
         cities.add("Wexford");
         cities.add("Wicklow");
+        ArrayList<String> outlets = new ArrayList<>();
+
+        outlets.add("All");
+        outlets.add("Bring Bank");
+        outlets.add("Lighting Dropoff");
+        outlets.add("Civic Amenity Site");
+        outlets.add("Electrical Retailers");
+
+
+
+        ArrayAdapter<String> myAdapter = new ArrayAdapter<>(Filterscreen.this,
+                android.R.layout.simple_list_item_1, cities);
+
+        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        mySpinner.setAdapter((myAdapter));
+
+        ArrayAdapter<String> myadapter2 = new ArrayAdapter<>(Filterscreen.this,
+                android.R.layout.simple_list_item_1, outlets);
+
+        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        mySpinner2.setAdapter((myadapter2));
 
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                String cityval = city.getText().toString().toLowerCase();
-
-                for (String item : cities) {
-
-                    if (item.toLowerCase().equals(cityval.toLowerCase())) {
-
-                        Toast.makeText(Filterscreen.this, "Correct city found" , Toast.LENGTH_SHORT).show();
+                if (mySpinner2.getSelectedItem().toString().equals("All")) {
 
 
-                        Intent mapintent = new Intent(Filterscreen.this, MapsActivity.class);
-                        mapintent.putExtra("value", "false");
-                        mapintent.putExtra("city", item);
-                        startActivity(mapintent);
-
-
-                    }
-                    else {
-                        Toast.makeText(Filterscreen.this, "It seems you misspelled the county" , Toast.LENGTH_SHORT).show();
-
-                    }
-
+                    String item = mySpinner.getSelectedItem().toString();
+                    Intent mapintent = new Intent(Filterscreen.this, MapsActivity.class);
+                    mapintent.putExtra("value", "general locations");
+                    mapintent.putExtra("city", item);
+                    startActivity(mapintent);
                 }
+                else {
+
+
+                    String item = mySpinner.getSelectedItem().toString();
+                    String outlet = mySpinner2.getSelectedItem().toString();
+                    Intent mapintent = new Intent(Filterscreen.this, MapsActivity.class);
+                    mapintent.putExtra("value", "specified outlet");
+                    mapintent.putExtra("city", item);
+                    mapintent.putExtra("recycleoutlet", outlet);
+                    startActivity(mapintent);
+                }
+
             }
+
+
         });
     }
 }
