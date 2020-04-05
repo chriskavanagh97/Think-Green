@@ -635,104 +635,118 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
         }
         else if(singlevalue.equals("classifieditemes")){
 
+                    try {
+                        Task locationResult = mFusedLocationProviderClient.getLastLocation();
+                        locationResult.addOnCompleteListener(this, new OnCompleteListener() {
+                            @Override
+                            public void onComplete(@NonNull Task task) {
+                                if (task.isSuccessful()) {
+                                    // Set the map's camera position to the current location of the device.
+                                    currentlocation = (Location) task.getResult();
+                                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
+                                            new LatLng(currentlocation.getLatitude(),
+                                                    currentlocation.getLongitude()), 13));
 
-            String json;
-            try {
-                InputStream is = getAssets().open("BringBanks.json");
-                int size = is.available();
-                byte[] buffer = new byte[size];
-                is.read(buffer);
-                is.close();
-                json = new String(buffer, "UTF-8");
-
-
-                JSONObject obj = new JSONObject(json);
-                JSONArray m_jArry = obj.getJSONArray("Bringbanks");
-
-                recycleoutlet = value.getStringExtra("recycleoutlet");
-
-
-                for (int i = 0; i < m_jArry.length(); i++) {
-
-                    JSONObject jo_inside = m_jArry.getJSONObject(i);
-
-
-                    if(jo_inside.getString("Name").equals(name)) {
+                                    String json;
+                                    try {
+                                        InputStream is = getAssets().open("BringBanks.json");
+                                        int size = is.available();
+                                        byte[] buffer = new byte[size];
+                                        is.read(buffer);
+                                        is.close();
+                                        json = new String(buffer, "UTF-8");
 
 
-                        name = jo_inside.getString("Name");
-                        String address1 = jo_inside.getString("Address");
-                        String address2 = jo_inside.getString("Address2");
-                        city = jo_inside.getString("City");
-                        state = jo_inside.getString("State");
-                        lat = jo_inside.getDouble("lat");
-                        lng = jo_inside.getDouble("lng");
-                        address = address1 + " , " + address2;
-                        coordinantes = lat + "," + lng;
+                                        JSONObject obj = new JSONObject(json);
+                                        JSONArray m_jArry = obj.getJSONArray("Bringbanks");
+
+                                        recycleoutlet = value.getStringExtra("recycleoutlet");
+
+
+                                    for (int i = 0; i < m_jArry.length(); i++) {
+
+                                        JSONObject jo_inside = m_jArry.getJSONObject(i);
+                                        if (jo_inside.getString("Name").equals(name)) {
+
+
+                                            name = jo_inside.getString("Name");
+                                            String address1 = jo_inside.getString("Address");
+                                            String address2 = jo_inside.getString("Address2");
+                                            city = jo_inside.getString("City");
+                                            state = jo_inside.getString("State");
+                                            lat = jo_inside.getDouble("lat");
+                                            lng = jo_inside.getDouble("lng");
+                                            address = address1 + " , " + address2;
+                                            coordinantes = lat + "," + lng;
 
                                    /* adapter = new RecycleAdapter(places, MapsActivity.this);
                                     recyclerView.setAdapter(adapter);
                                     mMap = googleMap;*/
 
-                        Location target = new Location("target");
-                        target.setLatitude(lat);
-                        target.setLongitude(lng);
-                        if (target.distanceTo(target) < 10000) {
+                                            Location target = new Location("target");
+                                            target.setLatitude(lat);
+                                            target.setLongitude(lng);
+                                            if (currentlocation.distanceTo(target) < 10000) {
 
-                            places.add(new place(name, address, city, state, coordinantes, lat, lng));
-
-
-                            adapter = new RecycleAdapter(places, MapsActivity.this);
-                            recyclerView.setAdapter(adapter);
-
-                            mMap = googleMap;
+                                                places.add(new place(name, address, city, state, coordinantes, lat, lng));
 
 
-                            if (name.equals("Bring Bank")) {
-                                // Add a marker in Sydney and move the camera
-                                MarkerYellow = new LatLng(lat, lng);
-                                mMap.addMarker(new MarkerOptions().position(MarkerYellow).title(name + " " + address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
+                                                adapter = new RecycleAdapter(places, MapsActivity.this);
+                                                recyclerView.setAdapter(adapter);
 
-                            } else if (name.equals("Lighting Dropoff")) {
-                                MarkerRed = new LatLng(lat, lng);
-                                mMap.addMarker(new MarkerOptions().position(MarkerRed).title(name + " " + address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+                                                mMap = googleMap;
 
 
-                            } else if (name.equals("Civic Amenity Site")) {
-                                Markerblue = new LatLng(lat, lng);
-                                mMap.addMarker(new MarkerOptions().position(Markerblue).title(name + " " + address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
+                                                if (name.equals("Bring Bank")) {
+                                                    // Add a marker in Sydney and move the camera
+                                                    MarkerYellow = new LatLng(lat, lng);
+                                                    mMap.addMarker(new MarkerOptions().position(MarkerYellow).title(name + " " + address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
+
+                                                } else if (name.equals("Lighting Dropoff")) {
+                                                    MarkerRed = new LatLng(lat, lng);
+                                                    mMap.addMarker(new MarkerOptions().position(MarkerRed).title(name + " " + address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
 
 
-                            } else if (name.equals("Electrical Retailers")) {
-                                Marker = new LatLng(lat, lng);
-                                mMap.addMarker(new MarkerOptions().position(Marker).title(name + " " + address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+                                                } else if (name.equals("Civic Amenity Site")) {
+                                                    Markerblue = new LatLng(lat, lng);
+                                                    mMap.addMarker(new MarkerOptions().position(Markerblue).title(name + " " + address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
 
 
+                                                } else if (name.equals("Electrical Retailers")) {
+                                                    Marker = new LatLng(lat, lng);
+                                                    mMap.addMarker(new MarkerOptions().position(Marker).title(name + " " + address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+
+
+                                                }
+                                            } else {
+
+                                            }
+                                        } else {
+
+                                        }
+                                    }
+
+
+                            } catch (UnsupportedEncodingException e) {
+                                e.printStackTrace();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            } catch (JSONException e) {
+                                e.printStackTrace();
                             }
+
                         } else {
+                                    Log.d(TAG, "Current location is null. Using defaults.");
 
-                        }
-                    }
-                    else{
+                                }
+                            }
+                        });
 
-                    }
-                }
-
-
-            } catch (UnsupportedEncodingException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-
+                    } catch(SecurityException e){
+        Log.e("Exception: %s",e.getMessage());
         }
-
-
-
-    }
+        }
+        }
 
     private void getDeviceLocation() {
         /*
