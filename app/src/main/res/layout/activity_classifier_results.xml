@@ -7,4 +7,16 @@
     tools:context=".MachineLearning.ClassifierResults">
 
 
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="112dp"
+        android:layout_height="59dp"
+        android:background="@drawable/mapsbtn"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.535"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
 </androidx.constraintlayout.widget.ConstraintLayout>

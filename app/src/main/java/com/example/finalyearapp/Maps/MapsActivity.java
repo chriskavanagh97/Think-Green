@@ -633,7 +633,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
 
 
         }
-        else if(singlevalue.equals("classifieditemes")){
+        else if(singlevalue.equals("classified item")){
 
                     try {
                         Task locationResult = mFusedLocationProviderClient.getLastLocation();
