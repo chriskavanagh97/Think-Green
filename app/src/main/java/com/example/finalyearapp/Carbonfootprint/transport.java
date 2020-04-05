@@ -14,7 +14,7 @@ import com.example.finalyearapp.R;
 
 public class transport extends AppCompatActivity {
 
-    TextView tip1, tip2, tip3, description, category;
+    TextView tip1, tip2, tip3, title;
     LinearLayout background;
 
     @Override
@@ -26,8 +26,8 @@ public class transport extends AppCompatActivity {
         tip2 = findViewById(R.id.tip2);
         tip3 = findViewById(R.id.tip3);
 
-        description = findViewById(R.id.description);
-        category = findViewById(R.id.category);
+        title = findViewById(R.id.title);
+
         Intent i = getIntent();
         String result = i.getStringExtra("result");
 
@@ -65,7 +65,14 @@ public class transport extends AppCompatActivity {
 
     public void food(){
 
+        title.setText("Food");
+
+        background.setBackgroundResource(R.drawable.eatlessmeat);
         tip1.setTextColor(Color.YELLOW);
+        tip2.setTextColor(Color.BLACK);
+        tip3.setTextColor(Color.BLACK);
+
+
 
 
         tip2.setOnClickListener(new View.OnClickListener() {
@@ -103,7 +110,12 @@ public class transport extends AppCompatActivity {
 
     }
     public void Stuff(){
+        title.setText("Stuff");
+
+        background.setBackgroundResource(R.drawable.repair);
         tip1.setTextColor(Color.YELLOW);
+        tip2.setTextColor(Color.BLACK);
+        tip3.setTextColor(Color.BLACK);
 
 
         tip2.setOnClickListener(new View.OnClickListener() {
@@ -146,7 +158,14 @@ public class transport extends AppCompatActivity {
     }
     public void home(){
 
+        title.setText("Home");
+
+        background.setBackgroundResource(R.drawable.embracenewtech);
         tip1.setTextColor(Color.YELLOW);
+        tip2.setTextColor(Color.BLACK);
+        tip3.setTextColor(Color.BLACK);
+        background.setBackgroundResource(R.drawable.publictransporttip);
+
 
 
         tip2.setOnClickListener(new View.OnClickListener() {
@@ -180,7 +199,7 @@ public class transport extends AppCompatActivity {
                 tip1.setTextColor(Color.YELLOW);
                 tip2.setTextColor(Color.BLACK);
                 tip3.setTextColor(Color.BLACK);
-                background.setBackgroundResource(R.drawable.publictransporttip);
+
 
 
             }
@@ -190,7 +209,13 @@ public class transport extends AppCompatActivity {
     }
     public void transport(){
 
+        title.setText("transport");
+
+        background.setBackgroundResource(R.drawable.publictransport);
         tip1.setTextColor(Color.YELLOW);
+        tip2.setTextColor(Color.BLACK);
+        tip3.setTextColor(Color.BLACK);
+
 
 
         tip2.setOnClickListener(new View.OnClickListener() {

@@ -399,11 +399,10 @@ QUESTION FIVE ANSWERS
     }
     public void parsing()
     {
-        Intent resultintent = new Intent(StepFour.this, Results.class);
-        startActivity(resultintent);
 
 
-        Toast.makeText(StepFour.this, "parsing groups", Toast.LENGTH_SHORT).show();
+
+        /*Toast.makeText(StepFour.this, "parsing groups", Toast.LENGTH_SHORT).show();
         Intent i = getIntent();
 
         String mpg = i.getStringExtra("mpg");
@@ -445,10 +444,11 @@ QUESTION FIVE ANSWERS
                    text2.setText(obj.getHome());
                    text3.setText(obj.getPurchasing());
                    text4.setText(obj.getFood());
-                   text5.setText(obj.getTotal());
+                   text5.setText(obj.getTotal());*/
 
 
-
+        Intent resultintent = new Intent(StepFour.this, Results.class);
+        startActivity(resultintent);
 
 
     }

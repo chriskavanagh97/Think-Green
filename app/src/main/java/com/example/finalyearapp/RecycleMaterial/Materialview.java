@@ -27,10 +27,6 @@ import static com.example.finalyearapp.MainActivity.KEY1;
 public class Materialview extends AppCompatActivity {
 
 
-
-
-    //String name = "aerosols";
-
     TextView what , how , tip , where, title;
     ImageButton facebook, twitter , linkedIn;
     Button home, listview;
@@ -38,7 +34,9 @@ public class Materialview extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_materialview);
+
+
+
 
         what = (TextView) findViewById(R.id.what);
         how = (TextView) findViewById(R.id.How);
