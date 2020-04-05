@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/viewonematerial"
+    android:background="@drawable/viewwhy"
     tools:context=".RecycleMaterial.Materialview">
 
 
@@ -105,7 +105,7 @@
 
 
         <TextView
-            android:id="@+id/GeneralComment"
+            android:id="@+id/Why"
             android:layout_width="303dp"
             android:layout_height="140dp"
             android:layout_marginStart="30dp"
@@ -121,27 +121,27 @@
 
 
     </LinearLayout>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
-
-    <Button
-        android:id="@+id/Home"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:background="@color/colorPrimary"
-        android:text="Home" />
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/ItemList"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:background="@color/colorPrimary"
-        android:text="Item List" />
+        <Button
+            android:id="@+id/Home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorPrimary"
+            android:text="Home" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/ItemList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorPrimary"
+            android:text="Item List" />
 
     </LinearLayout>
+
+</LinearLayout>

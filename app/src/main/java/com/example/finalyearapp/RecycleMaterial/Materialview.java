@@ -27,18 +27,21 @@ import static com.example.finalyearapp.MainActivity.KEY1;
 public class Materialview extends AppCompatActivity {
 
 
-    TextView what , how , tip , where, title;
+    TextView What , How , tip , Where, title, Why;
     ImageButton facebook, twitter , linkedIn;
     Button home, listview;
+    String Name, what , how , where , why , generalcomment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_materialview);
 
-        what = (TextView) findViewById(R.id.what);
-        how = (TextView) findViewById(R.id.How);
-        where = (TextView) findViewById(R.id.Where);
+
+        What = (TextView) findViewById(R.id.what);
+        tip = (TextView) findViewById(R.id.GeneralComment);
+        Where = (TextView) findViewById(R.id.Where);
         title = (TextView) findViewById(R.id.Title);
 
         Intent intent = getIntent();
@@ -51,10 +54,40 @@ public class Materialview extends AppCompatActivity {
 
                 final Material material = dataSnapshot.getValue(Material.class);
 
-                title.setText(material.getName());
-                what.setText(material.getWhat());
-                where.setText(material.getWhere());
-                how.setText(material.getGeneralComment());
+                Name = material.getName();
+                what = material.getWhat();
+                where = material.getWhere();
+                how = material.getGeneralComment();
+                why = material.getWhy();
+                generalcomment = material.getGeneralComment();
+
+                title.setText(Name);
+                What.setText(what);
+                Where.setText(where);
+                tip.setText(generalcomment);
+
+
+                if(how.equals(" ") & why.equals(" ")){
+
+                    setContentView(R.layout.activity_materialview);
+
+                }
+                else if(generalcomment.equals(" ") & how.equals(" ")){
+
+                    setContentView(R.layout.materialviewwhy);
+                    What = (TextView) findViewById(R.id.what);
+                    Where = (TextView) findViewById(R.id.Where);
+                    title = (TextView) findViewById(R.id.Title);
+                    Why = findViewById(R.id.Why);
+
+                    Why.setText(why);
+                    title.setText(Name);
+                    What.setText(what);
+                    Where.setText(where);
+
+                }
+
+
 
 
 
@@ -75,7 +108,7 @@ public class Materialview extends AppCompatActivity {
             public void onClick(View v){
                 Intent intent=new Intent(Intent.ACTION_SEND);
                 intent.setType("text/plain");
-                String shareBody = title.getText().toString() + "/n" + what.getText().toString()  + "/n" + where.getText().toString()  + "/n" + how.getText().toString()  + "/n" + tip.getText().toString();
+                String shareBody = title.getText().toString() + "/n" + What.getText().toString()  + "/n" + Where.getText().toString()  + "/n" + How.getText().toString()  + "/n" + tip.getText().toString();
                 String shareSub = "Your subject here";
 
                 intent.putExtra(Intent.EXTRA_SUBJECT, shareBody);
