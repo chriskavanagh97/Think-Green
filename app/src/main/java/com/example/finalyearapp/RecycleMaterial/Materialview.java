@@ -34,9 +34,7 @@ public class Materialview extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-
+        setContentView(R.layout.activity_materialview);
 
         what = (TextView) findViewById(R.id.what);
         how = (TextView) findViewById(R.id.How);

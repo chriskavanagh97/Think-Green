@@ -36,7 +36,7 @@
 
 
     <LinearLayout
-        android:layout_width="366dp"
+        android:layout_width="230dp"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:layout_marginStart="135dp"
@@ -45,24 +45,27 @@
 
         <ImageButton
             android:id="@+id/Facebook"
-            android:layout_width="57dp"
+            android:layout_width="44dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="10dp"
             android:layout_marginStart="10dp"
-            android:layout_height="wrap_content"
-            tools:srcCompat="@drawable/facebook" />
-
-        <ImageButton
-            android:id="@+id/Twitter"
-            android:layout_width="69dp"
-            android:layout_marginStart="10dp"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/twitter" />
+            android:background="@drawable/twitter" />
 
         <ImageButton
             android:id="@+id/LinkedIn"
-            android:layout_width="59dp"
-            android:layout_height="wrap_content"
+            android:layout_width="61dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="10dp"
             android:layout_marginStart="10dp"
-            app:srcCompat="@drawable/linkedin" />
+            android:background="@drawable/linkedin" />
+
+        <ImageButton
+            android:id="@+id/Twitter"
+            android:layout_marginTop="10dp"
+            android:layout_width="45dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/facebook" />
 
     </LinearLayout>
 
@@ -75,7 +78,7 @@
 
         <TextView
             android:id="@+id/what"
-            android:layout_width="317dp"
+            android:layout_width="306dp"
             android:layout_height="51dp"
             android:layout_marginStart="30dp"
             android:layout_marginTop="60dp"
@@ -89,8 +92,8 @@
 
         <TextView
             android:id="@+id/Where"
-            android:layout_width="317dp"
-            android:layout_height="65dp"
+            android:layout_width="302dp"
+            android:layout_height="85dp"
             android:layout_marginStart="30dp"
             android:layout_marginTop="65dp"
             android:text="Leaderboard"
@@ -103,10 +106,10 @@
 
         <TextView
             android:id="@+id/How"
-            android:layout_width="314dp"
+            android:layout_width="303dp"
             android:layout_height="140dp"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="85dp"
+            android:layout_marginTop="65dp"
             android:text="Leaderboard"
             android:textColor="#181C34"
             android:textSize="12sp"
