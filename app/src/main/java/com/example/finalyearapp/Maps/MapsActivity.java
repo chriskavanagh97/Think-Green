@@ -666,7 +666,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
                                     for (int i = 0; i < m_jArry.length(); i++) {
 
                                         JSONObject jo_inside = m_jArry.getJSONObject(i);
-                                        if (jo_inside.getString("Name").equals(name)) {
+                                        if (jo_inside.getString("Name").equals(recycleoutlet)) {
 
 
                                             name = jo_inside.getString("Name");
@@ -745,6 +745,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
                     } catch(SecurityException e){
         Log.e("Exception: %s",e.getMessage());
         }
+
         }
         }
 

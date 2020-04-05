@@ -8,7 +8,7 @@
 
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/maps"
         android:layout_width="112dp"
         android:layout_height="59dp"
         android:background="@drawable/mapsbtn"
