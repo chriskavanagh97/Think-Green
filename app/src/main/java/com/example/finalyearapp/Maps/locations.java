@@ -28,7 +28,8 @@ public class locations extends AppCompatActivity
 
     RecyclerView recyclerView;
     ArrayList <place> places = new ArrayList<>();
-    String name, address,  city,  state,  coordinantes , lat , lng;
+    String name, address,  city,  state,  coordinantes ;
+    Double lat , lng;
     RecycleAdapter adapter;
 
 
@@ -93,14 +94,14 @@ public class locations extends AppCompatActivity
                  String address2 = jo_inside.getString("Address2");
                  city = jo_inside.getString("City");
                  state = jo_inside.getString("State");
-                 lat = jo_inside.getString("lat");
-                 lng = jo_inside.getString("lng");
+                 lat = jo_inside.getDouble("lat");
+                 lng = jo_inside.getDouble("lng");
                  address = address1+ " , " + address2;
                  coordinantes = lat + "," + lng;
 
 
 
-                //places.add(new place(name, address, city, state, coordinantes, lat ,lng ));
+                places.add(new place(name, address, city, state, coordinantes, lat, lng));
 
 
                 adapter = new RecycleAdapter(places,locations.this);
