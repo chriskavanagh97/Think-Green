@@ -380,10 +380,6 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
                         address = address1 + " , " + address2;
                         coordinantes = lat + "," + lng;
 
-                                   /* adapter = new RecycleAdapter(places, MapsActivity.this);
-                                    recyclerView.setAdapter(adapter);
-                                    mMap = googleMap;*/
-
                         Location target = new Location("target");
                         target.setLatitude(lat);
                         target.setLongitude(lng);
@@ -442,8 +438,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
         else if(singlevalue.equals("general locations")) {
 
 
-            //();
-            //getDeviceLocation();
+
 
             String json;
             try {
@@ -459,10 +454,6 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
                 JSONArray m_jArry = obj.getJSONArray("Bringbanks");
 
                 intentcity = value.getStringExtra("city");
-
-                Toast.makeText(MapsActivity.this, "city" + intentcity, Toast.LENGTH_SHORT).show();
-
-
                 for (int i = 0; i < m_jArry.length(); i++) {
 
                     JSONObject jo_inside = m_jArry.getJSONObject(i);
@@ -534,6 +525,8 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
         }
         else if(singlevalue.equals("specified outlet")){
 
+
+
             String json;
             try {
                 InputStream is = getAssets().open("BringBanks.json");
@@ -548,9 +541,6 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
                 JSONArray m_jArry = obj.getJSONArray("Bringbanks");
 
                 intentcity = value.getStringExtra("city");
-
-                Toast.makeText(MapsActivity.this, "city" + intentcity, Toast.LENGTH_SHORT).show();
-
 
                 for (int i = 0; i < m_jArry.length(); i++) {
 
@@ -634,6 +624,8 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
 
         }
         else if(singlevalue.equals("classified item")){
+
+            getDeviceLocation();
 
                     try {
                         Task locationResult = mFusedLocationProviderClient.getLastLocation();
@@ -745,6 +737,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
                     } catch(SecurityException e){
         Log.e("Exception: %s",e.getMessage());
         }
+            mMap.setMyLocationEnabled(true);
 
         }
         }
