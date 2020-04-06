@@ -49,13 +49,13 @@ public class ArticlesActivity extends AppCompatActivity {
         String domain = intent.getStringExtra("name");
 
         if(domain.equals("latest")){
-            FEED_URL = "https://newsapi.org/v2/everything?q=climate crisis&apiKey=e31fb6b25b2d4051ac0b1b62f49d2d69";
+            FEED_URL = "https://newsapi.org/v2/everything?q=climate change&apiKey=e31fb6b25b2d4051ac0b1b62f49d2d69";
 
         }else
             {
 
 
-            FEED_URL = "https://newsapi.org/v2/everything?q=climate crisis&sources=" + domain + "&apiKey=e31fb6b25b2d4051ac0b1b62f49d2d69";
+            FEED_URL = "https://newsapi.org/v2/everything?q=climate change&sources=" + domain + "&apiKey=e31fb6b25b2d4051ac0b1b62f49d2d69";
 
 
         }
