@@ -2,28 +2,23 @@ package com.example.finalyearapp.ClimateChange;
 
 public class Animal {
 
-    String name;
+    private String name;
+    private int image_drawable;
 
-    public Animal(String name, String pictre) {
+
+    public void setName(String name) {
         this.name = name;
-        this.pictre = pictre;
+    }
+
+    public void setImage_drawable(int image_drawable) {
+        this.image_drawable = image_drawable;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public int getImage_drawable() {
+        return image_drawable;
     }
-
-    public String getPictre() {
-        return pictre;
-    }
-
-    public void setPictre(String pictre) {
-        this.pictre = pictre;
-    }
-
-    String pictre;
 }

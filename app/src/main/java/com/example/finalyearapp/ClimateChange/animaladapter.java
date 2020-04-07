@@ -5,12 +5,16 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.finalyearapp.MainActivity;
+import com.example.finalyearapp.QuizMenuPackage.OceanQuizzMenu.OceanQuizMenu;
+import com.example.finalyearapp.QuizMenuPackage.QuizAdapter;
+import com.example.finalyearapp.QuizMenuPackage.QuizModel;
 import com.example.finalyearapp.R;
 import com.example.finalyearapp.RecycleMaterial.Material;
 
@@ -19,78 +23,74 @@ import java.util.ArrayList;
 
 public class animaladapter extends RecyclerView.Adapter<com.example.finalyearapp.ClimateChange.animaladapter.MyViewHolder> {
 
+    private LayoutInflater inflater;
+    private ArrayList<Animal> imageModelArrayList;
 
 
-    private ArrayList<Material> materials;
     private Context mContext;
 // Provide a reference to the views for each data item
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView txtView,txtView2 ;
+    public animaladapter(Context ctx, ArrayList<Animal> imageModelArrayList) {
 
-        public MyViewHolder(View itemView)
-        {
-            super(itemView);
-            txtView= (TextView) itemView.findViewById(R.id.textView);
-            txtView2 = itemView.findViewById(R.id.textView2);
+        inflater = LayoutInflater.from(ctx);
+        this.imageModelArrayList = imageModelArrayList;
 
-        }
+
     }
 
-    public animaladapter(ArrayList<Animal>animals, Context context)
-    {
-        this.materials = materials;
-        this.mContext = context;
-    }
 
-// Create new views (invoked by the layout manager)
-
+    // Create new views (invoked by the layout manager)
     @Override
-    public com.example.finalyearapp.ClimateChange.animaladapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public animaladapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-// create a new view
+        View view = inflater.inflate(R.layout.recycler_item, parent, false);
+        animaladapter.MyViewHolder holder = new animaladapter.MyViewHolder(view);
 
-        LayoutInflater inflater= LayoutInflater.from(parent.getContext());
-        View itemView= inflater.inflate(R.layout.recycler_layout, parent, false);
-        com.example.finalyearapp.ClimateChange.animaladapter.MyViewHolder viewHolder= new com.example.finalyearapp.ClimateChange.animaladapter.MyViewHolder(itemView);
+        return holder;
 
-        return viewHolder;
+
     }
 
 
     @Override
     public void onBindViewHolder(com.example.finalyearapp.ClimateChange.animaladapter.MyViewHolder holder, int position) {
 
-        //get element from your dataset at this position
-        //replace the contents of the view with that element
-        final Material material = materials.get(position);
+        holder.iv.setImageResource(imageModelArrayList.get(position).getImage_drawable());
+        final Animal model = imageModelArrayList.get(position);
 
-        holder.txtView.setText(material.getName());
-
-        holder.txtView.setOnClickListener(new View.OnClickListener() {
+        holder.iv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), AnimalView.class);
-                intent.putExtra("name" ,material.getName());
+
+
+                Intent intent = new Intent(v.getContext(), OceanQuizMenu.class);
+
+                intent.putExtra("name", model.getName());
                 v.getContext().startActivity(intent);
 
 
             }
         });
-
     }
+
     // Return the size of your dataset
-    @Override
-    public int getItemCount()
-    {
-        return materials.size();
+    public int getItemCount() {
+        return imageModelArrayList.size();
     }
 
-    public void filterlist(ArrayList<Material> filteredlist){
+    class MyViewHolder extends RecyclerView.ViewHolder {
 
-        materials = filteredlist;
-        notifyDataSetChanged();
 
+        ImageView iv;
+
+
+        public MyViewHolder(View itemView) {
+            super(itemView);
+
+
+            iv = (ImageView) itemView.findViewById(R.id.image);
+
+        }
     }
 }
