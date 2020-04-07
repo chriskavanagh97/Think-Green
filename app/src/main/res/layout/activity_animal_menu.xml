@@ -5,11 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/colorPrimary"
     tools:context=".ClimateChange.AnimalMenu">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="128dp"
+        android:background="#FFFF"
         android:text="One in four of the world’s mammals are now threatened with extinction in the near future. So are one in eight birds, one in five sharks, one in four coniferous trees, and one in three amphibians.
 
 By and large, the cause of this decline is human activities. The land we use for living space, food, clothing, housing, fuel; the things we buy; and the waste we produce ">
@@ -18,9 +20,8 @@ By and large, the cause of this decline is human activities. The land we use for
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"
-        android:layout_width="428dp"
-        android:layout_height="444dp"
-        android:padding="10dp"
+        android:layout_width="400dp"
+        android:layout_height="599dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.376"
