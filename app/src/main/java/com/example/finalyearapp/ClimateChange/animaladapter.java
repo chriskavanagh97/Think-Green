@@ -6,17 +6,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
+
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.finalyearapp.MainActivity;
-import com.example.finalyearapp.QuizMenuPackage.OceanQuizzMenu.OceanQuizMenu;
-import com.example.finalyearapp.QuizMenuPackage.QuizAdapter;
-import com.example.finalyearapp.QuizMenuPackage.QuizModel;
+
+
+
+
 import com.example.finalyearapp.R;
-import com.example.finalyearapp.RecycleMaterial.Material;
+
 
 
 import java.util.ArrayList;
@@ -44,7 +43,7 @@ public class animaladapter extends RecyclerView.Adapter<com.example.finalyearapp
     @Override
     public animaladapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view = inflater.inflate(R.layout.recycler_item, parent, false);
+        View view = inflater.inflate(R.layout.animalrecyler, parent, false);
         animaladapter.MyViewHolder holder = new animaladapter.MyViewHolder(view);
 
         return holder;
@@ -64,7 +63,7 @@ public class animaladapter extends RecyclerView.Adapter<com.example.finalyearapp
             public void onClick(View v) {
 
 
-                Intent intent = new Intent(v.getContext(), OceanQuizMenu.class);
+                Intent intent = new Intent(v.getContext(), AnimalMenu.class);
 
                 intent.putExtra("name", model.getName());
                 v.getContext().startActivity(intent);

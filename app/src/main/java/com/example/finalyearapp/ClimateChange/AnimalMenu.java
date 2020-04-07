@@ -1,6 +1,7 @@
 package com.example.finalyearapp.ClimateChange;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -40,7 +41,8 @@ public class AnimalMenu extends AppCompatActivity {    private RecyclerView recy
         imageModelArrayList = quizzes();
         adapter = new animaladapter(this, imageModelArrayList);
         recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
+
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
 
     }
 
