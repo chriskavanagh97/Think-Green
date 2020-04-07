@@ -17,7 +17,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Maps.Filterscreen"></activity>
+        <activity android:name=".ClimateChange.AnimalView"></activity>
+        <activity android:name=".ClimateChange.AnimalMenu" />
+        <activity android:name=".Maps.Filterscreen" />
         <activity android:name=".MachineLearning.ClassifierResults" />
         <activity android:name=".Maps.Instructions" />
         <activity android:name=".Maps.Locationservices" />
