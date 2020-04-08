@@ -95,8 +95,8 @@ public class MainMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                maincontent.animate().translationX(-785);
-                mainmenu.animate().translationX(-785);
+                maincontent.animate().translationX(-510);
+                mainmenu.animate().translationX(-510);
             }
         });
         //=========================================================================================================================================================================================
