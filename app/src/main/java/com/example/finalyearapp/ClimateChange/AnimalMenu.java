@@ -63,7 +63,7 @@ public class AnimalMenu extends AppCompatActivity {    private RecyclerView recy
             }
             else if(i == 2)
             {
-                animal.setName("seal");
+                animal.setName("seals");
             }
             else if(i == 3)
             {
@@ -78,27 +78,27 @@ public class AnimalMenu extends AppCompatActivity {    private RecyclerView recy
             }
             else if(i == 6)
             {
-                animal.setName("rhino");
+                animal.setName("indianrhino");
             }
             else if(i == 7)
             {
-                animal.setName("elephant");
+                animal.setName("asianelephant");
             }
             else if(i == 8)
             {
-                animal.setName("monkey");
+                animal.setName("spidermonkey");
             }
             else if(i == 9)
             {
-                animal.setName("turtle");
+                animal.setName("greenturtle");
             }
             else if(i == 10)
             {
-                animal.setName("leopard");
+                animal.setName("snowleopard");
             }
             else if(i == 11)
             {
-                animal.setName("turtle");
+                animal.setName("seaturtles");
             }
 
 
