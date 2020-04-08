@@ -150,26 +150,26 @@ public class MainActivity extends AppCompatActivity {
     String key = mRootRef2.push().getKey();
 
      LineChartresult newresult = new LineChartresult();
-     newresult.setxValue(new Date().getDate());
+     newresult.setxValue(new Date().getTime());
      newresult.setyValue(8);
      mRootRef2.child(userid).child("0").setValue(newresult);
           //=====================================================
 
      LineChartresult newresult1 = new LineChartresult();
-        newresult1.setxValue(new Date().getDate());
+        newresult1.setxValue(new Date().getTime());
         newresult1.setyValue(6);
      mRootRef2.child(userid).child("1").setValue(newresult1);
 
 //===================================================
 
      LineChartresult newresult2 = new LineChartresult();
-        newresult2.setxValue(new Date().getDate());
+        newresult2.setxValue(new Date().getTime());
         newresult2.setyValue(8);
      mRootRef2.child(userid).child("2").setValue(newresult2);
 
      //========================================================
         LineChartresult newresult3 = new LineChartresult();
-        newresult3.setxValue(new Date().getDate());
+        newresult3.setxValue(new Date().getTime());
         newresult3.setyValue(11);
      mRootRef2.child(userid).child("3").setValue(newresult3);
 

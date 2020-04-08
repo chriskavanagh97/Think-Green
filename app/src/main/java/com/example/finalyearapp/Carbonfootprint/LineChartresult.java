@@ -3,14 +3,14 @@ package com.example.finalyearapp.Carbonfootprint;
 public class LineChartresult {
 
 
-    int xValue;
+    Long xValue;
     int yValue;
 
-    public int getxValue() {
+    public Long getxValue() {
         return xValue;
     }
 
-    public void setxValue(int xValue) {
+    public void setxValue(Long xValue) {
         this.xValue = xValue;
     }
 
@@ -22,7 +22,7 @@ public class LineChartresult {
         this.yValue = yValue;
     }
 
-    public LineChartresult(int xValue, int yValue) {
+    public LineChartresult(Long xValue, int yValue) {
         this.xValue = xValue;
         this.yValue = yValue;
 

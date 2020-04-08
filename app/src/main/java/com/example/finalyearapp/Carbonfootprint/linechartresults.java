@@ -51,7 +51,8 @@ public class linechartresults extends AppCompatActivity {
         FirebaseAuth mFirebaseAuth = FirebaseAuth.getInstance();
         String userid = mFirebaseAuth.getCurrentUser().getUid();
 
-        SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
+        SimpleDateFormat sdf = new SimpleDateFormat("EEE, MMM d ");
+
         graph = findViewById(R.id.linechart);
         LineGraphSeries<DataPoint> series = new LineGraphSeries<>(getDataPoint());
         graph.addSeries(series);
