@@ -8,7 +8,7 @@
     tools:context=".Carbonfootprint.linechartresults">
 
 
-    <com.github.mikephil.charting.charts.LineChart
+    <com.jjoe64.graphview.GraphView
         android:id="@+id/linechart"
         android:layout_width="333dp"
         android:layout_height="358dp"
