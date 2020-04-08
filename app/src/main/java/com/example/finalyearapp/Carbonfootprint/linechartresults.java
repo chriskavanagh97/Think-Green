@@ -44,6 +44,8 @@ public class linechartresults extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_linechart);
+        FirebaseAuth mFirebaseAuth = FirebaseAuth.getInstance();
+        String userid = mFirebaseAuth.getCurrentUser().getUid();
 
 
         graph = findViewById(R.id.linechart);
@@ -52,6 +54,36 @@ public class linechartresults extends AppCompatActivity {
         series.setDrawBackground(true);
         series.setDrawDataPoints(true);
         series.setDataPointsRadius(5);
+
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("Carbonfootprint").child(userid);
+        databaseReference.addValueEventListener(new ValueEventListener() {
+                                                    @Override
+                                                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                        DataPoint[] dp = new DataPoint[((int) dataSnapshot.getChildrenCount())];
+                                                        int index = 0;
+
+                                                        for (DataSnapshot myDataSnapshot : dataSnapshot.getChildren()) {
+                                                            LineChartresult values = myDataSnapshot.getValue(LineChartresult.class);
+
+                                                            dp[index] = new DataPoint(values.getxValue(), values.getyValue());
+                                                            index++;
+
+
+                                                        }
+                                                        series.resetData(dp);
+                                                    }
+
+
+                //float confirm = total.floatValue();
+                //Toast.makeText(linechartresults.this, "Display screen activated" + score, Toast.LENGTH_SHORT).show();
+
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
     }
 
