@@ -2,20 +2,34 @@ package com.example.finalyearapp.Carbonfootprint;
 
 public class LineChartresult {
 
-    private Float carbonfootprint;
+
+    int xValue, yValue;
+
+    public int getxValue() {
+        return xValue;
+    }
+
+    public void setxValue(int xValue) {
+        this.xValue = xValue;
+    }
+
+    public int getyValue() {
+        return yValue;
+    }
+
+    public void setyValue(int yValue) {
+        this.yValue = yValue;
+    }
+
+    public LineChartresult(int xValue, int yValue) {
+        this.xValue = xValue;
+        this.yValue = yValue;
+
+    }
+
     public LineChartresult() {
 
-    }
 
-    public Float getCarbonfootprint() {
-        return carbonfootprint;
-    }
-
-    public void setCarbonfootprint(Float carbonfootprint) {
-        this.carbonfootprint = carbonfootprint;
-    }
-
-    public LineChartresult(Float carbonfootprint) {
-        this.carbonfootprint = carbonfootprint;
     }
 }
+
