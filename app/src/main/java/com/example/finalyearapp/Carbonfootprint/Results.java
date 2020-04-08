@@ -55,7 +55,7 @@ public class Results extends AppCompatActivity {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     final LineChartresult linechats = dataSnapshot.getValue(LineChartresult.class);
-                    score = linechats.getCarbonfootprint();
+                    score = linechats.getyValue();
 
                     dataVals2.add(score);
                     //float confirm = total.floatValue();

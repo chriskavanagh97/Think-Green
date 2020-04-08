@@ -145,36 +145,28 @@ public class MainActivity extends AppCompatActivity {
      DatabaseReference mRootRef2 = FirebaseDatabase.getInstance().getReference().child("Carbonfootprint");
 
      LineChartresult newresult = new LineChartresult();
-
-
      newresult.setxValue(0);
      newresult.setyValue(8);
-
-     mRootRef2.child(userid).child("0").setValue(newresult);
+     mRootRef2.child(userid).setValue(newresult);
+          //=====================================================
 
      LineChartresult newresult1 = new LineChartresult();
+        newresult1.setxValue(1);
+        newresult1.setyValue(6);
+     mRootRef2.child(userid).setValue(newresult1);
 
-
-
-        newresult.setxValue(1);
-        newresult.setyValue(6);
-
-     mRootRef2.child(userid).child("1").setValue(newresult1);
+//===================================================
 
      LineChartresult newresult2 = new LineChartresult();
+        newresult2.setxValue(3);
+        newresult2.setyValue(8);
+     mRootRef2.child(userid).setValue(newresult2);
 
-
-        newresult.setxValue(3);
-        newresult.setyValue(8);
-
-     mRootRef2.child(userid).child("2").setValue(newresult2);
-
-
+     //========================================================
         LineChartresult newresult3 = new LineChartresult();
-
-        newresult.setxValue(4);
-        newresult.setyValue(11);
-     mRootRef2.child(userid).child("3").setValue(newresult3);
+        newresult3.setxValue(4);
+        newresult3.setyValue(11);
+     mRootRef2.child(userid).setValue(newresult3);
 
 
 
