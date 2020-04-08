@@ -3,7 +3,8 @@ package com.example.finalyearapp.Carbonfootprint;
 public class LineChartresult {
 
 
-    int xValue, yValue;
+    int xValue;
+    int yValue;
 
     public int getxValue() {
         return xValue;

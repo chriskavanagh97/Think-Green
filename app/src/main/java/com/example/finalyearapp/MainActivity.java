@@ -23,6 +23,9 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class MainActivity extends AppCompatActivity {
     private EditText EmailId;
     private EditText Password;
@@ -142,31 +145,33 @@ public class MainActivity extends AppCompatActivity {
      FirebaseAuth mFirebaseAuth = FirebaseAuth.getInstance();
      String userid = mFirebaseAuth.getCurrentUser().getUid();
 
+
      DatabaseReference mRootRef2 = FirebaseDatabase.getInstance().getReference().child("Carbonfootprint");
+    String key = mRootRef2.push().getKey();
 
      LineChartresult newresult = new LineChartresult();
-     newresult.setxValue(0);
+     newresult.setxValue(new Date().getDate());
      newresult.setyValue(8);
-     mRootRef2.child(userid).setValue(newresult);
+     mRootRef2.child(userid).child("0").setValue(newresult);
           //=====================================================
 
      LineChartresult newresult1 = new LineChartresult();
-        newresult1.setxValue(1);
+        newresult1.setxValue(new Date().getDate());
         newresult1.setyValue(6);
-     mRootRef2.child(userid).setValue(newresult1);
+     mRootRef2.child(userid).child("1").setValue(newresult1);
 
 //===================================================
 
      LineChartresult newresult2 = new LineChartresult();
-        newresult2.setxValue(3);
+        newresult2.setxValue(new Date().getDate());
         newresult2.setyValue(8);
-     mRootRef2.child(userid).setValue(newresult2);
+     mRootRef2.child(userid).child("2").setValue(newresult2);
 
      //========================================================
         LineChartresult newresult3 = new LineChartresult();
-        newresult3.setxValue(4);
+        newresult3.setxValue(new Date().getDate());
         newresult3.setyValue(11);
-     mRootRef2.child(userid).setValue(newresult3);
+     mRootRef2.child(userid).child("3").setValue(newresult3);
 
 
 

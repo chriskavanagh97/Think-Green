@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.finalyearapp.MainActivity;
 import com.example.finalyearapp.R;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.data.Entry;
@@ -23,6 +24,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.jjoe64.graphview.DefaultLabelFormatter;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
@@ -30,7 +32,9 @@ import com.jjoe64.graphview.series.LineGraphSeries;
 
 import org.w3c.dom.Text;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class linechartresults extends AppCompatActivity {
 
@@ -47,10 +51,23 @@ public class linechartresults extends AppCompatActivity {
         FirebaseAuth mFirebaseAuth = FirebaseAuth.getInstance();
         String userid = mFirebaseAuth.getCurrentUser().getUid();
 
-
+        SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
         graph = findViewById(R.id.linechart);
         LineGraphSeries<DataPoint> series = new LineGraphSeries<>(getDataPoint());
         graph.addSeries(series);
+        graph.getGridLabelRenderer().setNumHorizontalLabels(3);
+        graph.getGridLabelRenderer().setLabelFormatter(new DefaultLabelFormatter(){
+            @Override
+            public String formatLabel(double value, boolean isValueX) {
+                if(isValueX){
+                    return sdf.format(new Date((long)value));
+                }else {
+                    return super.formatLabel(value, isValueX);
+
+                }
+
+            }
+        });
         series.setDrawBackground(true);
         series.setDrawDataPoints(true);
         series.setDataPointsRadius(5);
@@ -67,16 +84,12 @@ public class linechartresults extends AppCompatActivity {
 
                                                             dp[index] = new DataPoint(values.getxValue(), values.getyValue());
                                                             index++;
+                                                            Toast.makeText(linechartresults.this, "children count is" + dp.length, Toast.LENGTH_SHORT).show();
 
 
                                                         }
                                                         series.resetData(dp);
                                                     }
-
-
-                //float confirm = total.floatValue();
-                //Toast.makeText(linechartresults.this, "Display screen activated" + score, Toast.LENGTH_SHORT).show();
-
 
 
             @Override
