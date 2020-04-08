@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/colorPrimary"
+    android:background="#FFFF"
     tools:context=".ClimateChange.AnimalMenu">
 
     <TextView
@@ -20,12 +19,7 @@ By and large, the cause of this decline is human activities. The land we use for
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"
-        android:layout_width="400dp"
-        android:layout_height="599dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.376"
-        tools:layout_editor_absoluteX="-9dp" />
-
-
+        android:layout_width="358dp"
+        android:layout_height="559dp"
+        android:layout_gravity="left" />
 </LinearLayout>

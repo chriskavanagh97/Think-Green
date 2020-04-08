@@ -24,7 +24,7 @@ public class AnimalMenu extends AppCompatActivity {    private RecyclerView recy
     private ArrayList<Animal> imageModelArrayList;
     private animaladapter adapter;
 
-    private int[] myImageList = new int[]{R.drawable.penguincycle, R.drawable.pandacycle,R.drawable.sealcycle, R.drawable.tigercycle,R.drawable.polarbearcycle,R.drawable.slothcycle,R.drawable.rhinocycle, R.drawable.elephantcycle};
+    private int[] myImageList = new int[]{R.drawable.penguincycle, R.drawable.pandacycle,R.drawable.sealcycle, R.drawable.tigercycle,R.drawable.polarbearcycle,R.drawable.slothcycle,R.drawable.rhinocycle, R.drawable.elephantcycle, R.drawable.monkeycycle,R.drawable.gturtlecycle, R.drawable.sleopardcycle, R.drawable.turtlecycle};
 
 
 
@@ -50,7 +50,7 @@ public class AnimalMenu extends AppCompatActivity {    private RecyclerView recy
 
         ArrayList<Animal> list = new ArrayList<>();
 
-        for(int i = 0; i < 7; i++){
+        for(int i = 0; i < 12; i++){
             Animal animal = new Animal();
             animal.setImage_drawable(myImageList[i]);
             if(i == 0)
@@ -84,6 +84,24 @@ public class AnimalMenu extends AppCompatActivity {    private RecyclerView recy
             {
                 animal.setName("elephant");
             }
+            else if(i == 8)
+            {
+                animal.setName("monkey");
+            }
+            else if(i == 9)
+            {
+                animal.setName("turtle");
+            }
+            else if(i == 10)
+            {
+                animal.setName("leopard");
+            }
+            else if(i == 11)
+            {
+                animal.setName("turtle");
+            }
+
+
 
             list.add(animal);
         }

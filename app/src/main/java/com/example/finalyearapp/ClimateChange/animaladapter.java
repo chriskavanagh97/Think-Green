@@ -63,7 +63,7 @@ public class animaladapter extends RecyclerView.Adapter<com.example.finalyearapp
             public void onClick(View v) {
 
 
-                Intent intent = new Intent(v.getContext(), AnimalMenu.class);
+                Intent intent = new Intent(v.getContext(), AnimalView.class);
 
                 intent.putExtra("name", model.getName());
                 v.getContext().startActivity(intent);
