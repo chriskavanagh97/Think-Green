@@ -139,8 +139,8 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
        mFirebaseAuth.addAuthStateListener((mAuthStateListener));
 
-     FirebaseAuth mFirebaseAuth = FirebaseAuth.getInstance();
-     String userid = mFirebaseAuth.getCurrentUser().getUid();
+     //FirebaseAuth mFirebaseAuth = FirebaseAuth.getInstance();
+     //String userid = mFirebaseAuth.getCurrentUser().getUid();
 
      DatabaseReference mRootRef2 = FirebaseDatabase.getInstance().getReference().child("Carbonfootprint");
 
@@ -149,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
 
      newresult.setCarbonfootprint(13.3f);
 
-     mRootRef2.child(userid).child("0").setValue(newresult);
+     /*mRootRef2.child(userid).child("0").setValue(newresult);
      LineChartresult newresult1 = new LineChartresult();
 
 
@@ -169,7 +169,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
+*/
 
 
 
