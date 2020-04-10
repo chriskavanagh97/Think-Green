@@ -75,7 +75,7 @@
 
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/graphic"
             android:layout_width="115dp"
             android:layout_height="109dp"
             android:layout_gravity="center"

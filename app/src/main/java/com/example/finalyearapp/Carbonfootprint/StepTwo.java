@@ -6,11 +6,14 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,6 +28,7 @@ public class StepTwo extends AppCompatActivity {
     int i = 1;
     Spinner mySpinner;
     TextView text;
+    ImageView image;
     int mpg;
     int miles;
     int bushours;
@@ -42,6 +46,7 @@ public class StepTwo extends AppCompatActivity {
         mySpinner = (Spinner) findViewById(R.id.values);
 
         myDialog = new Dialog(this);
+        image = findViewById(R.id.graphic);
 
 
         Calculator();
@@ -121,9 +126,12 @@ public class StepTwo extends AppCompatActivity {
 
                 ArrayAdapter<String> myAdapter = new ArrayAdapter<>(StepTwo.this,
                         android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.travel6));
+                setContentView(R.layout.activity_step_two);
+
 
                 myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 mySpinner.setAdapter((myAdapter));
+
 
             }
 
