@@ -56,7 +56,16 @@ public class linechartresults extends AppCompatActivity {
         graph = findViewById(R.id.linechart);
         LineGraphSeries<DataPoint> series = new LineGraphSeries<>(getDataPoint());
         graph.addSeries(series);
+
+        graph.getViewport().setYAxisBoundsManual(true);
+        graph.getViewport().setMinY(0);
+        graph.getViewport().setMaxY(12);
+        graph.getViewport().setMaxX(6);
         graph.getGridLabelRenderer().setNumHorizontalLabels(3);
+
+
+
+
         graph.getGridLabelRenderer().setLabelFormatter(new DefaultLabelFormatter(){
             @Override
             public String formatLabel(double value, boolean isValueX) {
@@ -71,7 +80,7 @@ public class linechartresults extends AppCompatActivity {
         });
         series.setDrawBackground(true);
         series.setDrawDataPoints(true);
-        series.setDataPointsRadius(5);
+        series.setDataPointsRadius(10);
 
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("Carbonfootprint").child(userid);
         databaseReference.addValueEventListener(new ValueEventListener() {

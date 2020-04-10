@@ -23,7 +23,6 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
@@ -142,36 +141,36 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
        mFirebaseAuth.addAuthStateListener((mAuthStateListener));
 
-     FirebaseAuth mFirebaseAuth = FirebaseAuth.getInstance();
-     String userid = mFirebaseAuth.getCurrentUser().getUid();
+        mFirebaseAuth.addAuthStateListener((mAuthStateListener));
 
+        FirebaseAuth mFirebaseAuth = FirebaseAuth.getInstance();
+        String userid = mFirebaseAuth.getCurrentUser().getUid();
 
-     DatabaseReference mRootRef2 = FirebaseDatabase.getInstance().getReference().child("Carbonfootprint");
-    String key = mRootRef2.push().getKey();
+        DatabaseReference mRootRef2 = FirebaseDatabase.getInstance().getReference().child("Carbonfootprint");
 
-     LineChartresult newresult = new LineChartresult();
-     newresult.setxValue(new Date().getTime());
-     newresult.setyValue(8);
-     mRootRef2.child(userid).child("0").setValue(newresult);
-          //=====================================================
+      /*  LineChartresult newresult = new LineChartresult();
+        newresult.setxValue(0);
+        newresult.setyValue(8);
+        mRootRef2.child(userid).child("0").setValue(newresult);*/
+        //=====================================================
 
-     LineChartresult newresult1 = new LineChartresult();
-        newresult1.setxValue(new Date().getTime());
-        newresult1.setyValue(6);
+    /* LineChartresult newresult1 = new LineChartresult();
+     newresult1.setxValue(new Date().getTime());
+     newresult1.setyValue(6);
      mRootRef2.child(userid).child("1").setValue(newresult1);
-
+*/
 //===================================================
 
-     LineChartresult newresult2 = new LineChartresult();
-        newresult2.setxValue(new Date().getTime());
-        newresult2.setyValue(8);
+    LineChartresult newresult2 = new LineChartresult();
+     newresult2.setxValue(new Date().getTime());
+     newresult2.setyValue(8);
      mRootRef2.child(userid).child("2").setValue(newresult2);
-
+/*
      //========================================================
-        LineChartresult newresult3 = new LineChartresult();
-        newresult3.setxValue(new Date().getTime());
-        newresult3.setyValue(11);
-     mRootRef2.child(userid).child("3").setValue(newresult3);
+     LineChartresult newresult3 = new LineChartresult();
+     newresult3.setxValue(new Date().getTime());
+     newresult3.setyValue(11);
+     mRootRef2.child(userid).child("3").setValue(newresult3);*/
 
 
 

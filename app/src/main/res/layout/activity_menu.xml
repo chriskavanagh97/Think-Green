@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-
     tools:context=".MainMenu">
 
 
@@ -13,7 +12,7 @@
         android:id="@+id/mainmenu"
         android:layout_width="260dp"
         android:layout_height="match_parent"
-        android:background="@color/colorPrimaryDark"
+        android:background="@drawable/sidebar"
         android:orientation="vertical"
         android:translationX="-260dp">
 
