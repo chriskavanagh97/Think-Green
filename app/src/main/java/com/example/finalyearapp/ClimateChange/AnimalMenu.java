@@ -2,20 +2,12 @@ package com.example.finalyearapp.ClimateChange;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
+
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 
-import com.example.finalyearapp.QuizMenuPackage.OceanQuizzMenu.OceanQuizMenu;
-import com.example.finalyearapp.QuizMenuPackage.PlasticQuizMenu.Quiz;
-import com.example.finalyearapp.QuizMenuPackage.PollutionQuizPackage.pollutionQuizmenu;
-import com.example.finalyearapp.QuizMenuPackage.QuizAdapter;
-import com.example.finalyearapp.QuizMenuPackage.QuizMenu;
-import com.example.finalyearapp.QuizMenuPackage.QuizModel;
 import com.example.finalyearapp.R;
 
 import java.util.ArrayList;
@@ -31,6 +23,8 @@ public class AnimalMenu extends AppCompatActivity {    private RecyclerView recy
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.didyouknow);
+
         setContentView(R.layout.activity_animal_menu);
 
 
