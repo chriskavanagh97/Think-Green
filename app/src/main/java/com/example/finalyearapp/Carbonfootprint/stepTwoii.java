@@ -39,6 +39,7 @@ public class stepTwoii extends AppCompatActivity {
                 airmedium = Integer.parseInt(three.getText().toString());
                 airlong = Integer.parseInt(four.getText().toString()) + Integer.parseInt(five.getText().toString());
                 airextended = Integer.parseInt(six.getText().toString());
+                parsing();
 
 
             }
