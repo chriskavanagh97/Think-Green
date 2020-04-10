@@ -13,24 +13,14 @@
         android:layout_width="260dp"
         android:layout_height="match_parent"
         android:background="@drawable/sidebar"
-        android:orientation="vertical"
-        android:translationX="-260dp">
-
-        <ImageView
-            android:layout_width="181dp"
-            android:layout_height="162dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="80dp"
-            android:src="@drawable/energy">
-
-        </ImageView>
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/SignOut"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="24dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="250dp"
             android:background="@drawable/bgbtnmenu"
             android:text="Sign out"
             android:textSize="18sp"
@@ -42,12 +32,8 @@
             android:id="@+id/setting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
             android:layout_marginTop="60dp"
-            android:background="@drawable/bgbtnmenu"
-            android:text="Setting"
-            android:textSize="18sp"
-            android:textStyle="italic">
+            android:background="@drawable/settingsbutton">
 
         </Button>
 
@@ -55,12 +41,9 @@
             android:id="@+id/profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
-            android:layout_marginTop="70dp"
-            android:background="@drawable/bgbtnmenu"
-            android:text="Profile"
-            android:textSize="18sp"
-            android:textStyle="italic">
+            android:layout_marginTop="10dp"
+            android:background="@drawable/profilebutton"
+            >
 
         </Button>
 
@@ -75,13 +58,13 @@
 
 
 
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryDark"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:logo="@drawable/ic_menu">
+            android:background="#CCF5F5"
+            android:elevation="40dp">
         </androidx.appcompat.widget.Toolbar>
 
 
