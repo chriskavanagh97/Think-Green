@@ -64,7 +64,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#CCF5F5"
-            android:elevation="20dp">
+            android:elevation="20dp"
+            app:logo="@drawable/ic_menu">
         </androidx.appcompat.widget.Toolbar>
 
 

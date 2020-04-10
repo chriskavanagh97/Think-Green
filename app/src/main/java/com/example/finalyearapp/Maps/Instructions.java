@@ -37,7 +37,7 @@ public class Instructions extends AppCompatActivity {
 
         if(loopvalue == 3) {
 
-            if (i == 3) {
+            if (i == 5) {
                 intent();
 
             } else {
@@ -54,6 +54,13 @@ public class Instructions extends AppCompatActivity {
                 } else if (i == 2) {
                     background.setBackgroundResource(R.drawable.mapsinstruction3);
                 }
+                else if (i == 3) {
+                    background.setBackgroundResource(R.drawable.menuaccess);
+                }
+                else if (i == 4) {
+                    background.setBackgroundResource(R.drawable.menufunctions);
+                }
+
 
 
                 next = findViewById(R.id.next);
