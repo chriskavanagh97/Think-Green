@@ -3,6 +3,7 @@
     <color name="colorPrimary">#A4dada</color>
     <color name="colorPrimaryDark">#A4DADA</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="toolbar">#CCF5F5</color>
 
 
     <color name="semi_transparent">#66000000</color>

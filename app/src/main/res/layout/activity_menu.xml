@@ -64,7 +64,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#CCF5F5"
-            android:elevation="40dp">
+            android:elevation="20dp">
         </androidx.appcompat.widget.Toolbar>
 
 
@@ -144,7 +144,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="117dp"
                     android:layout_marginStart="20dp"
-                    android:layout_marginTop="60dp"
+                    android:layout_marginTop="80dp"
                     android:src="@drawable/news" />
 
 
@@ -162,7 +162,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="117dp"
                     android:layout_marginStart="20dp"
-                    android:layout_marginTop="60dp"
+                    android:layout_marginTop="80dp"
                     android:src="@drawable/calculator" />
 
 
@@ -180,7 +180,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="117dp"
                     android:layout_marginStart="20dp"
-                    android:layout_marginTop="60dp"
+                    android:layout_marginTop="80dp"
                     android:src="@drawable/maps" />
 
 
