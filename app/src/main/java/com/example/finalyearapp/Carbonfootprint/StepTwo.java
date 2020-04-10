@@ -42,6 +42,7 @@ public class StepTwo extends AppCompatActivity {
         setContentView(R.layout.activity_step_two);
 
 
+
         text = findViewById(R.id.textView);
         mySpinner = (Spinner) findViewById(R.id.values);
 
@@ -57,7 +58,7 @@ public class StepTwo extends AppCompatActivity {
     {
 
 
-        if(i >6) {
+        if(i >5) {
 
             parsing();
 
@@ -119,20 +120,6 @@ public class StepTwo extends AppCompatActivity {
 
                 myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 mySpinner.setAdapter((myAdapter));
-            }
-            if (i == 6) {
-                String message = getString(R.string.travelq6);
-                text.setText(message);
-
-                ArrayAdapter<String> myAdapter = new ArrayAdapter<>(StepTwo.this,
-                        android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.travel6));
-                setContentView(R.layout.activity_step_two);
-
-
-                myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                mySpinner.setAdapter((myAdapter));
-
-
             }
 
 
@@ -352,7 +339,7 @@ QUESTION FIVE ANSWERS
     }
     public void parsing() {
 
-        Intent resultintent = new Intent(StepTwo.this, StepThree.class);
+        Intent resultintent = new Intent(StepTwo.this, stepTwoii.class);
         resultintent.putExtra("mpg",String.valueOf(mpg));
         resultintent.putExtra("miles",String.valueOf(miles));
         resultintent.putExtra("train",String.valueOf(trainhours));
