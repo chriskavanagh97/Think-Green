@@ -29,11 +29,7 @@ public class ViewUser extends AppCompatActivity {
         // home = (Button) findViewById(R.id.home);
         final TextView T1,T2,T3,T4 ,R1,R2,R3,R4;
 
-        T1 = (TextView) findViewById(R.id.NameTitle);
-        T2 = (TextView) findViewById(R.id.UsernameTitle);
-        T3 = (TextView) findViewById(R.id.EmailTitle);
 
-        T4 = (TextView) findViewById(R.id.ScoreTitle);
 
         R1 = (TextView) findViewById(R.id.Nameresult);
         R2 = (TextView) findViewById(R.id.Usernameresult);
