@@ -23,8 +23,6 @@ public class AnimalMenu extends AppCompatActivity {    private RecyclerView recy
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.didyouknow);
-
         setContentView(R.layout.activity_animal_menu);
 
 

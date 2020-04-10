@@ -20,6 +20,7 @@ import com.example.finalyearapp.Carbonfootprint.StepOne;
 import com.example.finalyearapp.Carbonfootprint.linechartresults;
 import com.example.finalyearapp.ClimateChange.Animal;
 import com.example.finalyearapp.ClimateChange.AnimalMenu;
+import com.example.finalyearapp.ClimateChange.Didyouknow;
 import com.example.finalyearapp.Leaderboard.Leaderboard;
 import com.example.finalyearapp.Maps.Instructions;
 import com.example.finalyearapp.Maps.Locationservices;
@@ -184,7 +185,7 @@ public class MainMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainMenu.this,
-                        AnimalMenu.class);
+                        Didyouknow.class);
 
                 startActivity(intent);
             }
