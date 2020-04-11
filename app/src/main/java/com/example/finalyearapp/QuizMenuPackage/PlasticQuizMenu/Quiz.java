@@ -87,7 +87,7 @@ public class Quiz extends AppCompatActivity {
         b4 = (RadioButton) findViewById(R.id.option4);
 
 
-        int total1 = Integer.parseInt(number);
+         total1 = Integer.parseInt(number);
         total ++;
         total2 = total1 + 4;
         t1_question = (TextView) findViewById(R.id.questionsTxt);
@@ -104,6 +104,7 @@ public class Quiz extends AppCompatActivity {
 
 
     private void UpdateQuestion() {
+
 
 
         if (total1 > total2) {
