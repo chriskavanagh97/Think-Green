@@ -34,7 +34,7 @@ import java.util.Iterator;
 
 public class ReviewQuestions extends AppCompatActivity {
 
-    private int score;
+
     String description;
     int id;
     private boolean answered;
