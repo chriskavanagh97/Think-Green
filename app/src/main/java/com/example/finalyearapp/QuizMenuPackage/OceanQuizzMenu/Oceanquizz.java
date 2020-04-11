@@ -23,6 +23,8 @@ import com.example.finalyearapp.Question;
 
 import com.example.finalyearapp.QuizMenuPackage.QuizResults;
 import com.example.finalyearapp.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -55,6 +57,10 @@ public class Oceanquizz extends AppCompatActivity  {
     int total2;
     int answerNr;
     int total1;
+    DatabaseReference mRootRef;
+    FirebaseAuth mFirebaseAuth;
+    FirebaseUser user;
+    String userid;
 
 private ImageView image;
 
@@ -76,8 +82,12 @@ private ImageView image;
         Window window = this.getWindow();
         window.setBackgroundDrawableResource(R.drawable.oceanicon);
 
+        mFirebaseAuth = FirebaseAuth.getInstance();
+        user = mFirebaseAuth.getCurrentUser();
+        userid = user.getUid();
 
 
+        mRootRef = FirebaseDatabase.getInstance().getReference().child("Review Questions");
         b1 = (RadioButton) findViewById(R.id.option1);
         b2 = (RadioButton) findViewById(R.id.option2);
         b3 = (RadioButton) findViewById(R.id.option3);
@@ -146,6 +156,11 @@ private ImageView image;
 
                             } else {
                                 answer = false;
+
+                                Question reviewquestion = new Question();
+                                reviewquestion.setId(total1);
+                                reviewquestion.setCategory("Ocean");
+                                mRootRef.child(userid).child(String.valueOf(total1)).setValue(reviewquestion);
                             }
 
                             ShowPopup();

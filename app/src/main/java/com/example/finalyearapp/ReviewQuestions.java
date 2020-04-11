@@ -62,6 +62,7 @@ public class ReviewQuestions extends AppCompatActivity {
     FirebaseAuth mFirebaseAuth;
     FirebaseUser user;
     String userid;
+    private ArrayList<Question> ids = new ArrayList<>();
 
 
     Dialog myDialog;
@@ -74,11 +75,10 @@ public class ReviewQuestions extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
-         mFirebaseAuth = FirebaseAuth.getInstance();
-          user = mFirebaseAuth.getCurrentUser();
+        mFirebaseAuth = FirebaseAuth.getInstance();
+        user = mFirebaseAuth.getCurrentUser();
         userid = user.getUid();
-        Intent intent = getIntent();
-        number = intent.getStringExtra("quiznum");
+
 
 
         Window window = this.getWindow();
@@ -90,9 +90,7 @@ public class ReviewQuestions extends AppCompatActivity {
         b4 = (RadioButton) findViewById(R.id.option4);
 
 
-        total1 = Integer.parseInt(number);
-        total ++;
-        total2 = total1 + 4;
+
         t1_question = (TextView) findViewById(R.id.questionsTxt);
         UpdateQuestion();
 
@@ -108,11 +106,43 @@ public class ReviewQuestions extends AppCompatActivity {
 
     private void UpdateQuestion() {
 
-        if (total1 > total2) {
+
+        Boolean done = false;
+
+        DatabaseReference databaseref = FirebaseDatabase.getInstance().getReference().child("Review Questions").child(userid).child("Pollution");
+        databaseref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                final Iterator<DataSnapshot> questions = dataSnapshot.getChildren().iterator();
+                while(questions.hasNext()){
+                    DataSnapshot question = questions.next();
+                    Question question1 = new Question();
+                    String id;
+                    String category;
+                    id = question.child("id").getValue().toString();
+                    category = question.child("category").getValue().toString();
+                    question1.setId(Integer.parseInt(id));
+                    question1.setCategory(category);
+                    ids.add(question1);
+
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+        if (total > ids.size() || total > 5) {
             details();
         } else {
 
-            DatabaseReference databaseref = FirebaseDatabase.getInstance().getReference().child("Review Questions").child(userid).child(String.valueOf(total1));
+            int n = 0;
+            DatabaseReference databaseref2 = FirebaseDatabase.getInstance().getReference().child("Questions").child(ids.get(n).getCategory()).child(String.valueOf(ids.get(n)));
             databaseref.addValueEventListener(new ValueEventListener() {
 
                 @Override
@@ -193,7 +223,7 @@ public class ReviewQuestions extends AppCompatActivity {
             public void onClick(View v) {
 
                 myDialog.dismiss();
-                total1++;
+                total++;
                 UpdateQuestion();
 
             }
