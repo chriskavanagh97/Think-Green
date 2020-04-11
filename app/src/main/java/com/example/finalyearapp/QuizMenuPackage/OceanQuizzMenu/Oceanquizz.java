@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -51,6 +52,7 @@ public class Oceanquizz extends AppCompatActivity  {
     private int incorrect = 0;
     private int correct =0;
     int total = 1;
+    int total2;
     int answerNr;
     int total1;
 
@@ -71,9 +73,8 @@ private ImageView image;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
-        image = (ImageView) findViewById(R.id.imageView) ;
-
-        image.setImageResource(R.drawable.ocean);
+        Window window = this.getWindow();
+        window.setBackgroundDrawableResource(R.drawable.oceanicon);
 
 
 
@@ -91,6 +92,7 @@ private ImageView image;
 
         total ++;
         t1_question = (TextView) findViewById(R.id.questionsTxt);
+        total2 = total1 + 4;
         UpdateQuestion();
 
 
@@ -106,7 +108,7 @@ private ImageView image;
 
 
 
-        final int  total2 = total1 + 5;
+
 
         if (total1 > total2) {
             details();
@@ -193,7 +195,7 @@ private ImageView image;
             public void onClick(View v) {
 
                 myDialog.dismiss();
-                total++;
+                total1++;
                 UpdateQuestion();
 
             }

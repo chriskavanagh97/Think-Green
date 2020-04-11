@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -53,6 +54,7 @@ public class PollutionQuiz extends AppCompatActivity {
     private int incorrect = 0;
     private int correct =0;
     int total = 1;
+     int  total2;
     int answerNr;
     private ImageView image;
     String number;
@@ -71,9 +73,9 @@ public class PollutionQuiz extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
-        image = (ImageView) findViewById(R.id.imageView) ;
+        Window window = this.getWindow();
+        window.setBackgroundDrawableResource(R.drawable.pollutionicon);
 
-        image.setImageResource(R.drawable.bubble2);
 
         b1 = (RadioButton) findViewById(R.id.option1);
         b2 = (RadioButton) findViewById(R.id.option2);
@@ -87,9 +89,11 @@ public class PollutionQuiz extends AppCompatActivity {
 
 
 
-        total ++;
+
         t1_question = (TextView) findViewById(R.id.questionsTxt);
+        total2 = total1 + 4;
         UpdateQuestion();
+
 
         myDialog = new Dialog(this);
 
@@ -101,13 +105,16 @@ public class PollutionQuiz extends AppCompatActivity {
 
     private void UpdateQuestion() {
 
-        final int  total2 = total1 + 5;
 
         if (total1 > total2) {
             details();
         } else {
 
-            DatabaseReference databaseref = FirebaseDatabase.getInstance().getReference().child("Questions").child("Pollution").child(String.valueOf(total));
+
+
+            Toast.makeText(PollutionQuiz.this,"total remain the same =" + total2,Toast.LENGTH_SHORT).show();
+
+            DatabaseReference databaseref = FirebaseDatabase.getInstance().getReference().child("Questions").child("Pollution").child(String.valueOf(total1));
             databaseref.addValueEventListener(new ValueEventListener() {
 
                 @Override
@@ -132,7 +139,6 @@ public class PollutionQuiz extends AppCompatActivity {
                             rbGroup = (RadioGroup) findViewById(R.id.rbGroup);
                             RadioButton rbSelected = findViewById(rbGroup.getCheckedRadioButtonId());
                             int answerNr = rbGroup.indexOfChild(rbSelected) + 1;
-                            Toast.makeText(PollutionQuiz.this,"answer no =" + answerNr,Toast.LENGTH_SHORT).show();
 
                             if (answerNr == id) {
 
@@ -160,7 +166,7 @@ public class PollutionQuiz extends AppCompatActivity {
     }
 
     public void ShowPopup() {
-
+        Toast.makeText(PollutionQuiz.this,"total no =" + total1,Toast.LENGTH_LONG).show();
         Button close;
         Button btnFollow;
         myDialog.setContentView(R.layout.custompopup);
@@ -189,7 +195,7 @@ public class PollutionQuiz extends AppCompatActivity {
             public void onClick(View v) {
 
                 myDialog.dismiss();
-                total++;
+                total1++;
                 UpdateQuestion();
 
             }

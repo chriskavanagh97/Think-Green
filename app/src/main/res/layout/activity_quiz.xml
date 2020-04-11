@@ -43,7 +43,7 @@
 
         <RadioGroup
             android:id="@+id/rbGroup"
-            android:layout_width="122dp"
+            android:layout_width="360dp"
             android:layout_height="wrap_content">
 
             <RadioButton
@@ -56,7 +56,7 @@
 
             <RadioButton
                 android:id="@+id/option2"
-                android:layout_width="110dp"
+                android:layout_width="360dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:text="option1"
@@ -64,7 +64,7 @@
 
             <RadioButton
                 android:id="@+id/option3"
-                android:layout_width="112dp"
+                android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:text="option1"
@@ -72,7 +72,7 @@
 
             <RadioButton
                 android:id="@+id/option4"
-                android:layout_width="108dp"
+                android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:text="option1"

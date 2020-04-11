@@ -7,7 +7,9 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -52,12 +54,15 @@ public class Quiz extends AppCompatActivity {
     private int incorrect = 0;
     private int correct =0;
     int total = 1;
+    int total2;
     int total1;
     int answerNr;
 
 
 
     Dialog myDialog;
+    private ImageView image;
+
 
 
 
@@ -72,6 +77,10 @@ public class Quiz extends AppCompatActivity {
         Intent intent = getIntent();
         number = intent.getStringExtra("quiznum");
 
+
+        Window window = this.getWindow();
+        window.setBackgroundDrawableResource(R.drawable.plasticicon);
+
         b1 = (RadioButton) findViewById(R.id.option1);
         b2 = (RadioButton) findViewById(R.id.option2);
         b3 = (RadioButton) findViewById(R.id.option3);
@@ -80,6 +89,7 @@ public class Quiz extends AppCompatActivity {
 
         int total1 = Integer.parseInt(number);
         total ++;
+        total2 = total1 + 4;
         t1_question = (TextView) findViewById(R.id.questionsTxt);
         UpdateQuestion();
 
@@ -95,13 +105,12 @@ public class Quiz extends AppCompatActivity {
 
     private void UpdateQuestion() {
 
-        final int  total2 = total1 + 5;
 
         if (total1 > total2) {
             details();
         } else {
 
-            DatabaseReference databaseref = FirebaseDatabase.getInstance().getReference().child("Questions").child("Plastic").child(String.valueOf(total));
+            DatabaseReference databaseref = FirebaseDatabase.getInstance().getReference().child("Questions").child("Plastic").child(String.valueOf(total1));
             databaseref.addValueEventListener(new ValueEventListener() {
 
                 @Override
@@ -182,7 +191,7 @@ public class Quiz extends AppCompatActivity {
             public void onClick(View v) {
 
                 myDialog.dismiss();
-                total++;
+                total1++;
                 UpdateQuestion();
 
             }
