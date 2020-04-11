@@ -72,11 +72,11 @@ public class QuizResults extends AppCompatActivity {
 
         if(Integer.parseInt(corrrect)< 3){
 
-            description.setText("Unfortunately you only got" +  Integer.parseInt(corrrect) * 25 + "%, all incorrect questions have been added to be reviewed. Improve your knowledge and save the planet");
+            description.setText("Unfortunately you only got " +  Integer.parseInt(corrrect) * 25 + "%, all incorrect questions have been added to be reviewed. Improve your knowledge and save the planet");
 
         }
         else {
-            description.setText("Congratulation you  got" +  Integer.parseInt(corrrect) * 25 + "%, all we are happy to see you are studying hard to help save the environment");
+            description.setText("Congratulation you  got " +  Integer.parseInt(corrrect) * 25 + "%, all we are happy to see you are studying hard to help save the environment");
 
 
 
