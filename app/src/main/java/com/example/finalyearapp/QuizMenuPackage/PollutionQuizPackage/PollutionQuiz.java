@@ -100,6 +100,7 @@ public class PollutionQuiz extends AppCompatActivity {
 
 
     private void UpdateQuestion() {
+
         final int  total2 = total1 + 5;
 
         if (total1 > total2) {

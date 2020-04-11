@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -124,6 +125,15 @@ public class Results extends AppCompatActivity {
                 Intent resultintent4 = new Intent(Results.this, transport.class);
                 resultintent4.putExtra("result","food");
                 startActivity(resultintent4);
+
+            }
+        });
+        Button menu = findViewById(R.id.menubtn);
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent menuintent = new Intent(Results.this, Menu.class);
+                startActivity(menuintent);
 
             }
         });
