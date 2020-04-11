@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.finalyearapp.ClimateChange.Didyouknow;
 import com.example.finalyearapp.R;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.Entry;
@@ -137,6 +138,16 @@ public class Results extends AppCompatActivity {
 
             }
         });
+
+    Button climatechange = findViewById(R.id.climatechange);
+        menu.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Intent climateintent = new Intent(Results.this, Didyouknow.class);
+            startActivity(climateintent);
+
+        }
+    });
     }
 
     public void calculator(){

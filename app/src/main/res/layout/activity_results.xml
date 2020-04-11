@@ -8,10 +8,23 @@
     android:background="@color/colorPrimary">
 
 
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="325dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="40dp"
+        android:text="see how your results effects climate change by clicking the climate change button below"
+        android:textColor="#0E0D0D"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/piechart" />
+
     <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/piechart"
-        android:layout_width="308dp"
-        android:layout_height="409dp"
+        android:layout_width="307dp"
+        android:layout_height="395dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -23,17 +36,17 @@
 
     <Button
         android:id="@+id/history"
-        android:layout_width="167dp"
-        android:layout_height="49dp"
+        android:layout_width="123dp"
+        android:layout_height="51dp"
         android:layout_marginTop="9dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/history"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.905"
+        app:layout_constraintHorizontal_bias="0.944"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/purchasing"
-        app:layout_constraintVertical_bias="0.818" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/transport"
@@ -43,10 +56,10 @@
         android:background="@drawable/transport"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.923"
+        app:layout_constraintHorizontal_bias="0.891"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/piechart"
-        app:layout_constraintVertical_bias="0.408" />
+        app:layout_constraintVertical_bias="0.493" />
 
     <Button
         android:id="@+id/home"
@@ -59,7 +72,7 @@
         app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/piechart"
-        app:layout_constraintVertical_bias="0.408" />
+        app:layout_constraintVertical_bias="0.486" />
 
     <Button
         android:id="@+id/purchasing"
@@ -72,7 +85,20 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/piechart"
-        app:layout_constraintVertical_bias="0.383" />
+        app:layout_constraintVertical_bias="0.489" />
+
+    <Button
+        android:id="@+id/climatechange"
+        android:layout_width="104dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="59dp"
+        android:background="@drawable/climatechangebtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/piechart"
+        app:layout_constraintVertical_bias="0.884" />
 
     <Button
         android:id="@+id/food"
@@ -84,7 +110,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.09" />
+        app:layout_constraintVertical_bias="0.283" />
 
     <EditText
         android:id="@+id/editText3"
@@ -104,14 +130,11 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="73dp"
+        android:layout_marginTop="8dp"
         android:text="View specifc tips for each section by clicking below"
         android:textColor="#0E0D0D"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/transport"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/piechart" />
 
@@ -124,7 +147,7 @@
         android:background="@drawable/backtomenu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/history"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.155"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/home"
         app:layout_constraintVertical_bias="0.0" />
