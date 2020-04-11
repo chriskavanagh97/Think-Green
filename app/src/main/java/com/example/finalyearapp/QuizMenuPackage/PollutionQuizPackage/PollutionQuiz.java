@@ -55,6 +55,8 @@ public class PollutionQuiz extends AppCompatActivity {
     int total = 1;
     int answerNr;
     private ImageView image;
+    String number;
+    int total1;
 
 
 
@@ -79,6 +81,11 @@ public class PollutionQuiz extends AppCompatActivity {
         b4 = (RadioButton) findViewById(R.id.option4);
 
 
+        Intent intent = getIntent();
+        number = intent.getStringExtra("quiznum");
+        total1 = Integer.parseInt(number);
+
+
 
         total ++;
         t1_question = (TextView) findViewById(R.id.questionsTxt);
@@ -93,9 +100,9 @@ public class PollutionQuiz extends AppCompatActivity {
 
 
     private void UpdateQuestion() {
+        final int  total2 = total1 + 5;
 
-
-        if (total > 5) {
+        if (total1 > total2) {
             details();
         } else {
 

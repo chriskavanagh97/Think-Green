@@ -3,19 +3,16 @@ package com.example.finalyearapp.QuizMenuPackage;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.finalyearapp.QuizMenuPackage.OceanQuizzMenu.OceanQuizMenu;
-import com.example.finalyearapp.QuizMenuPackage.PollutionQuizPackage.PollutionQuiz;
-import com.example.finalyearapp.QuizMenuPackage.PlasticQuizMenu.Quiz;
-import com.example.finalyearapp.QuizMenuPackage.PollutionQuizPackage.pollutionQuizmenu;
+
+
 import com.example.finalyearapp.R;
-import com.example.finalyearapp.ReviewQuestions;
+
 
 import java.util.ArrayList;
 
@@ -37,38 +34,7 @@ public class QuizMenu extends AppCompatActivity  {
         setContentView(R.layout.activity_quiz_menu);
 
 
-        Button pollution = (Button) findViewById(R.id.Pollution);
-        pollution.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                Intent inttoPQuiz = new Intent(QuizMenu.this, pollutionQuizmenu.class);
-                startActivity(inttoPQuiz);
-
-            }
-        });
-
-        Button plastic = (Button) findViewById(R.id.Plastic);
-        plastic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent inttoQuiz = new Intent(QuizMenu.this, OceanQuizMenu.class);
-                startActivity(inttoQuiz);
-
-            }
-        });
-
-        Button review = (Button) findViewById(R.id.Review);
-        review.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent inttoQuiz = new Intent(QuizMenu.this, Quiz.class);
-                startActivity(inttoQuiz);
-
-            }
-        });
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler);
 

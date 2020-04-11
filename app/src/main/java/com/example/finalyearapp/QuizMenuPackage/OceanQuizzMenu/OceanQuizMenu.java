@@ -63,7 +63,6 @@ public class OceanQuizMenu extends AppCompatActivity {
                 }
                 else if (quiztype.equals("ocean")) {
                     Intent intent = new Intent(OceanQuizMenu.this, Oceanquizz.class);
-
                     intent.putExtra("quiznum", Level1);
                     startActivity(intent);
                 }

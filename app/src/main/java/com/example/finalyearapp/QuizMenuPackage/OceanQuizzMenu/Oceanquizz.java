@@ -52,13 +52,13 @@ public class Oceanquizz extends AppCompatActivity  {
     private int correct =0;
     int total = 1;
     int answerNr;
+    int total1;
 
 private ImageView image;
 
     Dialog myDialog;
 
-    Intent intent = getIntent();
-    String number = intent.getStringExtra("quiznum");
+    String number;
 
 
 
@@ -83,6 +83,11 @@ private ImageView image;
         b4 = (RadioButton) findViewById(R.id.option4);
 
 
+        myDialog = new Dialog(this);
+
+        Intent intent = getIntent();
+        number = intent.getStringExtra("quiznum");
+         total1 = Integer.parseInt(number);
 
         total ++;
         t1_question = (TextView) findViewById(R.id.questionsTxt);
@@ -90,7 +95,6 @@ private ImageView image;
 
 
 
-        myDialog = new Dialog(this);
 
     }
 
@@ -101,7 +105,7 @@ private ImageView image;
     private void UpdateQuestion() {
 
 
-        int total1 = Integer.parseInt(number);
+
         final int  total2 = total1 + 5;
 
         if (total1 > total2) {

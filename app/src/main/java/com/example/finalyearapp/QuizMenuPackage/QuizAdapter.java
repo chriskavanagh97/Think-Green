@@ -8,15 +8,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import androidx.appcompat.view.menu.MenuView;
+
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.finalyearapp.QuizMenuPackage.OceanQuizzMenu.OceanQuizMenu;
-import com.example.finalyearapp.QuizMenuPackage.PlasticQuizMenu.Quiz;
-import com.example.finalyearapp.QuizMenuPackage.PollutionQuizPackage.pollutionQuizmenu;
 import com.example.finalyearapp.R;
-import com.example.finalyearapp.RecycleMaterial.Material;
-import com.example.finalyearapp.RecycleMaterial.Materialview;
+
 
 import java.util.ArrayList;
 

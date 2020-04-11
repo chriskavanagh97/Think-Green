@@ -45,17 +45,20 @@ public class Quiz extends AppCompatActivity {
 
     private long timeLeftInMillis;
     boolean answer;
+    String number;
 
     private TextView t1_question;
     private TextView next;
     private int incorrect = 0;
     private int correct =0;
     int total = 1;
+    int total1;
     int answerNr;
 
 
 
     Dialog myDialog;
+
 
 
 
@@ -66,7 +69,8 @@ public class Quiz extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
-
+        Intent intent = getIntent();
+        number = intent.getStringExtra("quiznum");
 
         b1 = (RadioButton) findViewById(R.id.option1);
         b2 = (RadioButton) findViewById(R.id.option2);
@@ -74,7 +78,7 @@ public class Quiz extends AppCompatActivity {
         b4 = (RadioButton) findViewById(R.id.option4);
 
 
-
+        int total1 = Integer.parseInt(number);
         total ++;
         t1_question = (TextView) findViewById(R.id.questionsTxt);
         UpdateQuestion();
@@ -91,8 +95,9 @@ public class Quiz extends AppCompatActivity {
 
     private void UpdateQuestion() {
 
+        final int  total2 = total1 + 5;
 
-        if (total > 5) {
+        if (total1 > total2) {
             details();
         } else {
 
