@@ -44,17 +44,18 @@ public class QuizResults extends AppCompatActivity {
         setContentView(R.layout.activity_quiz_results);
 
 
-        TextView t1 = (TextView) findViewById(R.id.title1);
+
         TextView r1 = (TextView) findViewById(R.id.result1);
+        TextView description = findViewById(R.id.description);
 
         TextView r2 = (TextView) findViewById(R.id.result2);
-        TextView t2 = (TextView) findViewById(R.id.title2);
+
 
         TextView r3 = (TextView) findViewById(R.id.result3);
-        TextView t3 = (TextView) findViewById(R.id.title3);
 
-        TextView r4 = (TextView) findViewById(R.id.result4);
-        TextView t4 = (TextView) findViewById(R.id.title4);
+
+        TextView r4 = (TextView) findViewById(R.id.description);
+
 
         Button home = (Button) findViewById(R.id.home);
         Button button = (Button) findViewById(R.id.button);
@@ -65,14 +66,25 @@ public class QuizResults extends AppCompatActivity {
         String incorrect = i.getStringExtra("incorrect");
 
 
-        r1.setText(questions);
-        r2.setText(corrrect);
-        r3.setText(incorrect);
-
-
+        r1.setText(corrrect);
+        r2.setText(incorrect);
         score = Integer.parseInt(corrrect) * 100;
 
-        r4.setText(String.valueOf(score));
+        r3.setText(score);
+
+        if(Integer.parseInt(corrrect)< 3){
+
+            description.setText("Unfortunately you only got" +  Integer.parseInt(corrrect) * 20 + "%, all incorrect questions have been added to be reviewed. Improve your knowledge and save the planet");
+
+        }
+        else {
+            description.setText("Congratulation you  got" +  Integer.parseInt(corrrect) * 20 + "%, all we are happy to see you are studying hard to help save the environment");
+
+
+
+        }
+
+
 
         FirebaseAuth mFirebaseAuth = FirebaseAuth.getInstance();
         userid = mFirebaseAuth.getCurrentUser().getUid();
