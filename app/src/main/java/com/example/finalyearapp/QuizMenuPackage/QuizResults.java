@@ -58,27 +58,25 @@ public class QuizResults extends AppCompatActivity {
 
 
         Button home = (Button) findViewById(R.id.home);
-        Button button = (Button) findViewById(R.id.button);
         Intent i = getIntent();
 
-        String questions = i.getStringExtra("total");
         String corrrect = i.getStringExtra("correct");
         String incorrect = i.getStringExtra("incorrect");
 
 
-        r1.setText(corrrect);
-        r2.setText(incorrect);
-        score = Integer.parseInt(corrrect) * 100;
+        r1.setText(incorrect);
+        r2.setText(corrrect);
 
-        r3.setText(score);
+
+        r3.setText(Integer.parseInt(corrrect) * 25 + "%");
 
         if(Integer.parseInt(corrrect)< 3){
 
-            description.setText("Unfortunately you only got" +  Integer.parseInt(corrrect) * 20 + "%, all incorrect questions have been added to be reviewed. Improve your knowledge and save the planet");
+            description.setText("Unfortunately you only got" +  Integer.parseInt(corrrect) * 25 + "%, all incorrect questions have been added to be reviewed. Improve your knowledge and save the planet");
 
         }
         else {
-            description.setText("Congratulation you  got" +  Integer.parseInt(corrrect) * 20 + "%, all we are happy to see you are studying hard to help save the environment");
+            description.setText("Congratulation you  got" +  Integer.parseInt(corrrect) * 25 + "%, all we are happy to see you are studying hard to help save the environment");
 
 
 

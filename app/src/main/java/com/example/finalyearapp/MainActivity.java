@@ -470,7 +470,7 @@ public class MainActivity extends AppCompatActivity {
         ocean6.setScore(100);
         ocean6.setId(2);
 
-        mRootRef.child("Ocean").child("6").setValue(ocean6);
+        mRootRef.child("Ocean").child("5").setValue(ocean6);
 
 
 
@@ -484,7 +484,7 @@ public class MainActivity extends AppCompatActivity {
         ocean7.setScore(100);
         ocean7.setId(3);
 
-        mRootRef.child("Ocean").child("7").setValue(ocean7);
+        mRootRef.child("Ocean").child("6").setValue(ocean7);
 
 
         Question ocean8 = new Question();
@@ -497,7 +497,7 @@ public class MainActivity extends AppCompatActivity {
         ocean8.setScore(100);
         ocean8.setId(4);
 
-        mRootRef.child("Ocean").child("8").setValue(ocean8);
+        mRootRef.child("Ocean").child("7").setValue(ocean8);
 
         Question ocean9 = new Question();
         ocean9.setQuestion("Industrial fishing is estimated to have wiped out what percent of large predatory fish?");
@@ -509,7 +509,7 @@ public class MainActivity extends AppCompatActivity {
         ocean9.setScore(100);
         ocean9.setId(1);
 
-        mRootRef.child("Ocean").child("9").setValue(ocean9);
+        mRootRef.child("Ocean").child("8").setValue(ocean9);
 
 
 
@@ -523,7 +523,7 @@ public class MainActivity extends AppCompatActivity {
         ocean10.setScore(100);
         ocean10.setId(1);
 
-        mRootRef.child("Ocean").child("10").setValue(ocean8);
+        mRootRef.child("Ocean").child("9").setValue(ocean8);
 
 
         Question ocean11 = new Question();
@@ -548,7 +548,7 @@ public class MainActivity extends AppCompatActivity {
         ocean12.setScore(100);
         ocean12.setId(2);
 
-        mRootRef.child("Ocean").child("12").setValue(ocean12);
+        mRootRef.child("Ocean").child("10").setValue(ocean12);
 
 
 
@@ -562,7 +562,7 @@ public class MainActivity extends AppCompatActivity {
         ocean13.setScore(100);
         ocean13.setId(3);
 
-        mRootRef.child("Ocean").child("13").setValue(ocean13);
+        mRootRef.child("Ocean").child("11").setValue(ocean13);
 
         Question ocean15 = new Question();
         ocean15.setQuestion("World ocean temperatures set a record in 2009. What was the average temperature worldwide in July?");
@@ -574,7 +574,7 @@ public class MainActivity extends AppCompatActivity {
         ocean15.setScore(100);
         ocean15.setId(4);
 
-        mRootRef.child("Ocean").child("15").setValue(ocean15);
+        mRootRef.child("Ocean").child("12").setValue(ocean15);
 
         Question ocean14 = new Question();
         ocean14.setQuestion("How much has the global mean sea level risen over the last century?");
@@ -586,7 +586,7 @@ public class MainActivity extends AppCompatActivity {
         ocean14.setScore(100);
         ocean14.setId(1);
 
-        mRootRef.child("Ocean").child("14").setValue(ocean14);
+        mRootRef.child("Ocean").child("13").setValue(ocean14);
 
 
         /* Ash.setName("Ash");
