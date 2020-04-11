@@ -187,8 +187,8 @@ public class MainMenu extends AppCompatActivity {
         intent.getStringExtra(KEY1);
 
 
-        ImageView leaderboard = (ImageView) findViewById(R.id.Leaderboard);
-        leaderboard.setOnClickListener(new View.OnClickListener() {
+        ImageView climatechange = (ImageView) findViewById(R.id.climatechange);
+        climatechange.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {

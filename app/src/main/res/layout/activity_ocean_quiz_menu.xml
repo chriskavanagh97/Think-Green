@@ -4,51 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/calculatorbackground"
+    android:background="@drawable/quiznumback"
     tools:context=".QuizMenuPackage.OceanQuizzMenu.OceanQuizMenu">
 
     <ImageView
         android:id="@+id/ButtonOne"
         android:layout_width="87dp"
         android:layout_height="81dp"
-        android:src="@drawable/bubble1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.973" />
+        app:layout_constraintVertical_bias="0.766" />
 
     <ImageView
         android:id="@+id/ButtonTwo"
-        android:layout_width="86dp"
-        android:layout_height="71dp"
-        android:layout_marginBottom="188dp"
-        android:src="@drawable/bubble2"
+        android:layout_width="237dp"
+        android:layout_height="98dp"
+        android:layout_marginBottom="100dp"
         app:layout_constraintBottom_toTopOf="@+id/ButtonOne"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:src="@drawable/midbubble"
-        app:layout_constraintBottom_toTopOf="@+id/ButtonOne"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/ButtonThree"
         android:layout_width="96dp"
         android:layout_height="89dp"
-        android:layout_marginBottom="12dp"
-        android:src="@drawable/bubble3"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="117dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

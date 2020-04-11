@@ -161,16 +161,16 @@ public class MainActivity extends AppCompatActivity {
 */
 //===================================================
 
-    LineChartresult newresult2 = new LineChartresult();
+    /*LineChartresult newresult2 = new LineChartresult();
      newresult2.setxValue(new Date().getTime());
      newresult2.setyValue(8);
-     mRootRef2.child(userid).child("2").setValue(newresult2);
-/*
+     mRootRef2.child(userid).child("2").setValue(newresult2);*/
+
      //========================================================
      LineChartresult newresult3 = new LineChartresult();
      newresult3.setxValue(new Date().getTime());
      newresult3.setyValue(11);
-     mRootRef2.child(userid).child("3").setValue(newresult3);*/
+     mRootRef2.child(userid).child("3").setValue(newresult3);
 
 
 
