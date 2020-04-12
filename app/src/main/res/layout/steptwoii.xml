@@ -14,30 +14,26 @@
         style="@style/Widget.AppCompat.EditText"
         android:layout_width="72dp"
         android:layout_height="27dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginBottom="564dp"
+        android:layout_marginTop="140dp"
         android:background="@android:color/transparent"
         android:singleLine="false"
         android:text="0"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.224"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/two"
         android:layout_width="64dp"
         android:layout_height="22dp"
-        android:layout_marginStart="280dp"
-        android:layout_marginTop="152dp"
+        android:layout_marginTop="140dp"
         android:background="@android:color/transparent"
         android:text="0"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.749"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/four"

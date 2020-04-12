@@ -112,12 +112,18 @@ public class ViewUser extends AppCompatActivity {
 
 
 
+                if(user.getImageURL().equals("default")){
 
 
 
-                Glide.with(ViewUser.this.getApplicationContext()).load(user.getImageURL()).into(profileimage);
+                    profileimage.setImageResource(R.drawable.profiledefault);
+
+                }else {
 
 
+                    Glide.with(ViewUser.this.getApplicationContext()).load(user.getImageURL()).into(profileimage);
+
+                }
 
 
             }

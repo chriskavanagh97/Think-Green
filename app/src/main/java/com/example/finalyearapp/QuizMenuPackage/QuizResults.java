@@ -69,7 +69,7 @@ public class QuizResults extends AppCompatActivity {
         r2.setText(incorrect);
 
 
-        /*r3.setText(Integer.parseInt(corrrect) * 25 + "%");
+        r3.setText(Integer.parseInt(corrrect) * 20 + "%");
 
         if(Integer.parseInt(corrrect)< 3){
 
@@ -81,7 +81,7 @@ public class QuizResults extends AppCompatActivity {
 
 
 
-        }*/
+        }
 
 
 

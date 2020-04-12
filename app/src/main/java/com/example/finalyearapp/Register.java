@@ -89,6 +89,7 @@ public class Register extends AppCompatActivity {
                                 createUser.setEmail(Email);
                                 createUser.setFirstName(name);
                                 createUser.setScore(Score);
+                                createUser.setImageURL("default");
 
                                 mRootRef.child(UserId).setValue(createUser);
 
