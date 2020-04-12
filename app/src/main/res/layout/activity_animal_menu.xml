@@ -7,15 +7,7 @@
     android:background="#FFFF"
     tools:context=".ClimateChange.AnimalMenu">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="128dp"
-        android:background="#FFFF"
-        android:text="One in four of the world’s mammals are now threatened with extinction in the near future. So are one in eight birds, one in five sharks, one in four coniferous trees, and one in three amphibians.
 
-By and large, the cause of this decline is human activities. The land we use for living space, food, clothing, housing, fuel; the things we buy; and the waste we produce ">
-
-    </TextView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"
