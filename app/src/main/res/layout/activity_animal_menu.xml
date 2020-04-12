@@ -8,10 +8,9 @@
     tools:context=".ClimateChange.AnimalMenu">
 
 
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"
         android:layout_width="358dp"
-        android:layout_height="559dp"
+        android:layout_height="665dp"
         android:layout_gravity="left" />
 </LinearLayout>
