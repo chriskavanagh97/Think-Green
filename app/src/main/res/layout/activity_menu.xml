@@ -74,7 +74,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#CCF5F5"
+            android:background="#ADD32A"
             android:elevation="20dp"
             app:logo="@drawable/ic_menu">
         </androidx.appcompat.widget.Toolbar>
