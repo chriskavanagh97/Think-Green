@@ -36,7 +36,9 @@ public class ReviewQuestions extends AppCompatActivity {
 
 
     String description;
+    String category;
     int id;
+    String qid;
     private boolean answered;
     private RadioGroup rbGroup;
 
@@ -109,21 +111,26 @@ public class ReviewQuestions extends AppCompatActivity {
 
         Boolean done = false;
 
-        DatabaseReference databaseref = FirebaseDatabase.getInstance().getReference().child("Review Questions").child(userid).child("Pollution");
+        DatabaseReference databaseref = FirebaseDatabase.getInstance().getReference().child("Review Questions").child(userid);
         databaseref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 final Iterator<DataSnapshot> questions = dataSnapshot.getChildren().iterator();
                 while(questions.hasNext()){
                     DataSnapshot question = questions.next();
-                    Question question1 = new Question();
-                    String id;
-                    String category;
-                    id = question.child("id").getValue().toString();
-                    category = question.child("category").getValue().toString();
-                    question1.setId(Integer.parseInt(id));
-                    question1.setCategory(category);
-                    ids.add(question1);
+
+                    final Question question1 = question.getValue(Question.class);
+
+
+                    qid = "1";
+
+                    Question question2 = new Question();
+
+
+                    category = "Ocean";
+                    question2.setId(Integer.parseInt(qid));
+                    question2.setCategory(category);
+                    ids.add(question2);
 
 
                 }
@@ -138,11 +145,13 @@ public class ReviewQuestions extends AppCompatActivity {
 
 
         if (total > ids.size() || total > 5) {
+
             details();
+
         } else {
 
             int n = 0;
-            DatabaseReference databaseref2 = FirebaseDatabase.getInstance().getReference().child("Questions").child(ids.get(n).getCategory()).child(String.valueOf(ids.get(n)));
+            DatabaseReference databaseref2 = FirebaseDatabase.getInstance().getReference().child("Questions").child(ids.get(n).getCategory()).child(String.valueOf(ids.get(n).getId()));
             databaseref.addValueEventListener(new ValueEventListener() {
 
                 @Override
@@ -241,9 +250,9 @@ public class ReviewQuestions extends AppCompatActivity {
 
         total = total -1 ;
         Intent resultintent = new Intent(ReviewQuestions.this, QuizResults.class);
-        resultintent.putExtra("total",String.valueOf(total));
-        resultintent.putExtra("correct",String.valueOf(correct));
-        resultintent.putExtra("incorrect",String.valueOf(incorrect));
+        resultintent.putExtra("total",String.valueOf(ids.size()));
+        resultintent.putExtra("correct",String.valueOf(ids.size()));
+        resultintent.putExtra("incorrect",String.valueOf(ids.size()));
         startActivity(resultintent);
 
     }

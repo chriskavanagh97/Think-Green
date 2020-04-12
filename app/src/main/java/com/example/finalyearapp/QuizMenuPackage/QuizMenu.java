@@ -54,7 +54,7 @@ public class QuizMenu extends AppCompatActivity  {
             quizModel.setImage_drawable(myImageList[i]);
             if(i == 0)
             {
-                quizModel.setName("energy");
+                quizModel.setName("review");
             }
             else if(i == 1)
             {

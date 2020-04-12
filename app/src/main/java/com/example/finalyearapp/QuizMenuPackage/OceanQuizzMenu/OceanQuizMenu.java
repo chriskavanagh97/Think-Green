@@ -12,6 +12,7 @@ import com.example.finalyearapp.QuizMenuPackage.PlasticQuizMenu.Quiz;
 import com.example.finalyearapp.QuizMenuPackage.PollutionQuizPackage.PollutionQuiz;
 import com.example.finalyearapp.QuizMenuPackage.RecycleQuiz;
 import com.example.finalyearapp.R;
+import com.example.finalyearapp.ReviewQuestions;
 
 public class OceanQuizMenu extends AppCompatActivity {
 
@@ -49,8 +50,8 @@ public class OceanQuizMenu extends AppCompatActivity {
                     intent.putExtra("quiznum", Level1);
                     startActivity(intent);
                 }
-                else if (quiztype.equals("energy")) {
-                    Intent intent = new Intent(OceanQuizMenu.this, PollutionQuiz.class);
+                else if (quiztype.equals("review")) {
+                    Intent intent = new Intent(OceanQuizMenu.this, ReviewQuestions.class);
 
                     intent.putExtra("quiznum", Level1);
                     startActivity(intent);

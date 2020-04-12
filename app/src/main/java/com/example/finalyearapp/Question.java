@@ -12,6 +12,16 @@ public class Question {
     private String Answer2;
     private String Answer3;
     private String Answer4;
+    String key;
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
     private String Category;
     private int Id;
 
