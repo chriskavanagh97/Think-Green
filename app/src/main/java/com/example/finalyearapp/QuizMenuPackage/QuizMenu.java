@@ -24,7 +24,7 @@ public class QuizMenu extends AppCompatActivity  {
     private ArrayList<QuizModel> imageModelArrayList;
     private QuizAdapter adapter;
 
-    private int[] myImageList = new int[]{R.drawable.energy, R.drawable.ocean,R.drawable.plastic, R.drawable.pollution,R.drawable.recycle,R.drawable.sun,R.drawable.energy};
+    private int[] myImageList = new int[]{ R.drawable.ocean,R.drawable.plastic, R.drawable.pollution,R.drawable.recycle};
 
 
 
@@ -49,31 +49,25 @@ public class QuizMenu extends AppCompatActivity  {
 
         ArrayList<QuizModel> list = new ArrayList<>();
 
-        for(int i = 0; i < 7; i++){
+        for(int i = 0; i < 4; i++){
             QuizModel quizModel = new QuizModel();
             quizModel.setImage_drawable(myImageList[i]);
-            if(i == 0)
-            {
-                quizModel.setName("review");
-            }
-            else if(i == 1)
+
+             if(i == 0)
             {
                 quizModel.setName("ocean");
             }
-            else if(i == 2)
+            else if(i == 1)
             {
                 quizModel.setName("plastic");
             }
-            else if(i == 3)
+            else if(i == 2)
             {
                 quizModel.setName("pollution");
-            }   else if(i == 4)
+            }
+            else if(i == 3)
             {
                 quizModel.setName("recycle");
-            }
-            else if(i == 5)
-            {
-                quizModel.setName("sun");
             }
 
             list.add(quizModel);
