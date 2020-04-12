@@ -124,6 +124,7 @@ public class StepFour extends AppCompatActivity {
                     if(i == 1 & mySpinner.getSelectedItem().equals("detatched")){
 
                         housesize = "detatched";
+                        i = i + 1;
                         Calculator();
 
                     }
@@ -329,6 +330,7 @@ QUESTION FIVE ANSWERS
         else if(population == 4 & bedrooms <=3  & housesize.equals("flat") || population == 4 & bedrooms <=3  & housesize.equals("terrace") || population == 4 & bedrooms <=3  & housesize.equals("semi detatched")){
 
             kwh = "medium";
+            kwh();
         } else if(population == 4 & bedrooms > 3){
 
             kwh = "high";
