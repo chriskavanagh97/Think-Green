@@ -39,6 +39,7 @@
         android:id="@+id/recycler"
         android:layout_width="428dp"
         android:layout_height="444dp"
+        android:layout_marginTop="130dp"
         android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
