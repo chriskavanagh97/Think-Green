@@ -27,7 +27,7 @@ public class ViewUser extends AppCompatActivity {
         setContentView(R.layout.activity_view_user);
 
         // home = (Button) findViewById(R.id.home);
-        final TextView T1,T2,T3,T4 ,R1,R2,R3,R4;
+        final TextView R1,R2,R3,R4;
 
 
 

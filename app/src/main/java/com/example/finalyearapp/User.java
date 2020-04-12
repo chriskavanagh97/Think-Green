@@ -8,6 +8,24 @@ public class User {
     String username;
     String email;
     int posistion;
+    String imageURL;
+
+    public int getPosistion() {
+        return posistion;
+    }
+
+    public void setPosistion(int posistion) {
+        this.posistion = posistion;
+    }
+
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
+    }
+
     private int score;
 
 
