@@ -86,6 +86,35 @@ public class Materialview extends AppCompatActivity {
                     Where.setText(where);
 
                 }
+                else if(why.equals(" ") & how.equals(" ") & generalcomment.equals(" "))
+                {
+                    setContentView(R.layout.materialviewwhat);
+                    What = (TextView) findViewById(R.id.what);
+                    Where = (TextView) findViewById(R.id.Where);
+                    title = (TextView) findViewById(R.id.Title);
+
+
+                    Why.setText(why);
+                    title.setText(Name);
+                    What.setText(what);
+                    Where.setText(where);
+
+                }
+                else if(why.equals(" ")  & generalcomment.equals(" "))
+                {
+                    setContentView(R.layout.materialviewwhat);
+                    What = (TextView) findViewById(R.id.what);
+                    Where = (TextView) findViewById(R.id.Where);
+                    title = (TextView) findViewById(R.id.Title);
+                    Why = findViewById(R.id.Why);
+
+                    Why.setText(how);
+                    title.setText(Name);
+                    What.setText(what);
+                    Where.setText(where);
+
+                }
+
 
 
 
