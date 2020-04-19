@@ -62,9 +62,6 @@ public class Leaderboard extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot)
             {
 
-
-
-
                 for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren())
                 {
                     int i = 1;
