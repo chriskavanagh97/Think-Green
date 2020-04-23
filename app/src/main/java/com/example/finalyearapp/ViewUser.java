@@ -1,7 +1,6 @@
 package com.example.finalyearapp;
 
 
-
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -10,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -58,11 +58,52 @@ public class ViewUser extends AppCompatActivity {
         setContentView(R.layout.activity_view_user);
 
         // home = (Button) findViewById(R.id.home);
-        final TextView R1,R2,R3,R4;
+        final EditText R1, R2;
+        final TextView R3, R4;
         profileimage = findViewById(R.id.profile_image);
+
+        R1 =  findViewById(R.id.Nameresult);
+        R2 =  findViewById(R.id.Usernameresult);
+        R3 = (TextView) findViewById(R.id.Emailresult);
+
+        R4 = (TextView) findViewById(R.id.ScoreResult);
 
         storageReference = FirebaseStorage.getInstance().getReference("upload");
         reference = FirebaseDatabase.getInstance().getReference("Users").child(userid);
+
+        Button changedetails = findViewById(R.id.changedetails);
+        changedetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Users").child(userid);
+                reference.addValueEventListener(new ValueEventListener() {
+                                                    @Override
+                                                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+
+
+                                                        DatabaseReference nameref = dataSnapshot.getRef().child("firstName");
+                                                        nameref.setValue(R1.getText().toString());
+
+                                                        DatabaseReference usernameref = dataSnapshot.getRef().child("username");
+                                                        usernameref.setValue(R2.getText().toString());
+
+
+                                                    }
+
+                                                    @Override
+                                                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+
+                                                    }
+                                                }
+                );
+
+
+            }
+        });
+
 
         profileimage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,11 +116,6 @@ public class ViewUser extends AppCompatActivity {
 
 
 
-        R1 = (TextView) findViewById(R.id.Nameresult);
-        R2 = (TextView) findViewById(R.id.Usernameresult);
-        R3 = (TextView) findViewById(R.id.Emailresult);
-
-        R4 = (TextView) findViewById(R.id.ScoreResult );
 
         FirebaseAuth mFirebaseAuth = FirebaseAuth.getInstance();
         String userid = mFirebaseAuth.getCurrentUser().getUid();
@@ -93,7 +129,6 @@ public class ViewUser extends AppCompatActivity {
                 R2.setText(user.getUsername());
                 R3.setText(user.getEmail());
                 R4.setText(String.valueOf((user.getScore())));
-
 
 
             }
@@ -111,14 +146,12 @@ public class ViewUser extends AppCompatActivity {
                 User user = dataSnapshot.getValue(User.class);
 
 
-
-                if(user.getImageURL().equals("default")){
-
+                if (user.getImageURL().equals("default")) {
 
 
                     profileimage.setImageResource(R.drawable.profiledefault);
 
-                }else {
+                } else {
 
 
                     Glide.with(ViewUser.this.getApplicationContext()).load(user.getImageURL()).into(profileimage);
@@ -136,8 +169,6 @@ public class ViewUser extends AppCompatActivity {
         });
 
     }
-
-
 
 
     private void openImage() {
@@ -172,8 +203,6 @@ public class ViewUser extends AppCompatActivity {
         final ProgressDialog pd = new ProgressDialog(ViewUser.this.getApplicationContext());
 
         pd.setMessage("Uploading");
-
-
 
 
         if (imageuri != null) {
@@ -299,7 +328,10 @@ public class ViewUser extends AppCompatActivity {
 
 
         }
+
+
     }
+
     protected void onStart() {
         super.onStart();
         Intent intent = getIntent();

@@ -42,6 +42,7 @@ public class Leaderboard extends AppCompatActivity {
         recyclerView.setLayoutManager(mLayoutManager);
 
 
+
         DatabaseReference database = FirebaseDatabase.getInstance().getReference().child("Users");
 
         //Collections.sort(leaderboardlist, Collections.reverseOrder());
