@@ -57,6 +57,14 @@ dependencies {
 
     implementation 'com.github.bumptech.glide:glide:4.8.0'
 
+
+    implementation "com.stripe:stripe-java:19.4.0"
+    implementation 'com.stripe:stripe-android:14.3.0'
+
+
+
+
+
     implementation 'org.tensorflow:tensorflow-android:1.2.0-rc0'
 
     implementation 'com.squareup.picasso:picasso:2.71828'
