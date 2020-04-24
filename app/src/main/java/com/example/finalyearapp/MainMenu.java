@@ -30,6 +30,7 @@ import com.example.finalyearapp.Carbonfootprint.StepOne;
 
 import com.example.finalyearapp.ClimateChange.Didyouknow;
 
+import com.example.finalyearapp.ClimateChange.Earthtimeline;
 import com.example.finalyearapp.Maps.Instructions;
 import com.bumptech.glide.Glide;
 
@@ -240,7 +241,7 @@ public class MainMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainMenu.this,
-                        Didyouknow.class);
+                        Earthtimeline.class);
 
                 startActivity(intent);
             }

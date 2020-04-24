@@ -58,11 +58,21 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.8.0'
 
 
-    implementation "com.stripe:stripe-java:19.4.0"
-    implementation 'com.stripe:stripe-android:14.3.0'
-
-
-
+    implementation 'com.braintreepayments.api:drop-in:4.5.0'
+    components.all {
+        allVariants {
+            withDependencies { deps ->
+                deps.each { dep ->
+                    if (dep.group == 'net.minidev' && dep.name == 'json-smart') {
+                        dep.version {
+                            prefer "2.3"
+                        }
+                        dep.because "resolving dependencies issue"
+                    }
+                }
+            }
+        }
+    }
 
 
     implementation 'org.tensorflow:tensorflow-android:1.2.0-rc0'
@@ -73,6 +83,9 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.17'
+
 
     implementation 'org.jsoup:jsoup:1.11.3'
 
