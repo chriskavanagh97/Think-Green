@@ -17,7 +17,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ClimateChange.Earthtimeline"></activity>
+        <activity android:name=".Paypal.PaymentDetails"></activity>
+        <activity android:name=".Paypal.Mainscreen" />
+        <activity android:name=".ClimateChange.Earthtimeline" />
         <activity android:name=".Carbonfootprint.stepTwoii" />
         <activity android:name=".ClimateChange.Didyouknow" />
         <activity android:name=".ClimateChange.AnimalView" />

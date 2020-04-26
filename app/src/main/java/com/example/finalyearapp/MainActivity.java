@@ -1,6 +1,8 @@
 package com.example.finalyearapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,6 +25,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.io.File;
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
@@ -37,10 +40,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        fixGoogleMapBug();
 
         mFirebaseAuth = FirebaseAuth.getInstance();
         EmailId = findViewById(R.id.EmailLogin);
         Password = findViewById(R.id.LoginPassword);
+
 
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
 
@@ -136,7 +141,14 @@ public class MainActivity extends AppCompatActivity {
     //=========================================================================================================================================================================================
     //Hardcoding questions into my database
     //=========================================================================================================================================================================================
-
+    private void fixGoogleMapBug() {
+        SharedPreferences googleBug = getSharedPreferences("google_bug", Context.MODE_PRIVATE);
+        if (!googleBug.contains("fixed")) {
+            File corruptedZoomTables = new File(getFilesDir(), "ZoomTables.data");
+            corruptedZoomTables.delete();
+            googleBug.edit().putBoolean("fixed", true).apply();
+        }
+    }
     protected void onStart() {
         super.onStart();
      /*  mFirebaseAuth.addAuthStateListener((mAuthStateListener));
