@@ -10,15 +10,15 @@
 
     <com.jjoe64.graphview.GraphView
         android:id="@+id/linechart"
-        android:layout_width="333dp"
-        android:layout_height="358dp"
+        android:layout_width="355dp"
+        android:layout_height="327dp"
         android:background="#FFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.415"
+        app:layout_constraintHorizontal_bias="0.41"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.287" />
+        app:layout_constraintVertical_bias="0.219" />
 
     <EditText
         android:id="@+id/editText2"
@@ -36,17 +36,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.29" />
 
-    <Button
-        android:id="@+id/display"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:text="Display results"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <TextView
         android:id="@+id/results"
         android:layout_width="318dp"
@@ -57,8 +46,62 @@
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linechart" />
+        app:layout_constraintTop_toBottomOf="@+id/linechart"
+        app:layout_constraintVertical_bias="0.078" />
+
+    <Button
+        android:id="@+id/transport"
+        android:layout_width="78dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="59dp"
+        android:layout_marginBottom="48dp"
+        android:background="@drawable/transport"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/piechart"
+        app:layout_constraintVertical_bias="0.509" />
+
+    <Button
+        android:id="@+id/food"
+        android:layout_width="82dp"
+        android:layout_height="38dp"
+        android:background="@drawable/food"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.356" />
+
+    <Button
+        android:id="@+id/home"
+        android:layout_width="87dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="59dp"
+        android:layout_marginBottom="44dp"
+        android:background="@drawable/home"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/piechart"
+        app:layout_constraintVertical_bias="0.486" />
+
+    <Button
+        android:id="@+id/purchasing"
+        android:layout_width="87dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="59dp"
+        android:layout_marginBottom="48dp"
+        android:background="@drawable/purchasing"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/piechart"
+        app:layout_constraintVertical_bias="0.522" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -77,7 +77,7 @@ public class recyclewhat extends AppCompatActivity {
         favourites.setOnClickListener(new View.OnClickListener() {
                                           @Override
                                           public void onClick(View view) {
-
+                                              materials.clear();
                                               reference.addValueEventListener(new ValueEventListener() {
                                                   @Override
                                                   public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

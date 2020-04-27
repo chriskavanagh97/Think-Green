@@ -18,9 +18,7 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
-import com.github.mikephil.charting.highlight.Highlight;
-import com.github.mikephil.charting.listener.OnChartGestureListener;
-import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
+
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -34,8 +32,8 @@ import java.util.List;
 
 public class Results extends AppCompatActivity {
 
-    float score;
-    ArrayList <Float> dataVals2 = new ArrayList<>();
+    double score;
+    ArrayList <Double> dataVals2 = new ArrayList<>();
     int total = 0;
 
     @Override
@@ -51,15 +49,19 @@ public class Results extends AppCompatActivity {
         FirebaseAuth mFirebaseAuth = FirebaseAuth.getInstance();
         String userid = mFirebaseAuth.getCurrentUser().getUid();
 
-        for (total = 0; total < 4; total++) {
-            DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("Carbonfootprint").child(userid).child(String.valueOf(total));
+
+          /*  DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("Carbonfootprint").child(userid);
             databaseReference.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    final LineChartresult linechats = dataSnapshot.getValue(LineChartresult.class);
-                    score = linechats.getyValue();
+                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                        final LineChartresult linechats = dataSnapshot.getValue(LineChartresult.class);
+                        score = linechats.getyValue();
 
-                    dataVals2.add(score);
+                        dataVals2.add(score);
+
+                    }
+
                     //float confirm = total.floatValue();
                   //  Toast.makeText(Results.this, "Display screen activated" + score  , Toast.LENGTH_SHORT).show();
 
@@ -69,8 +71,8 @@ public class Results extends AppCompatActivity {
                 public void onCancelled(@NonNull DatabaseError databaseError) {
 
                 }
-            });
-        }
+            });*/
+
         PieChart();
         Button history = (Button) findViewById(R.id.history);
         history.setOnClickListener(new View.OnClickListener() {

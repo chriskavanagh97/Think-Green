@@ -26,6 +26,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.jjoe64.graphview.DefaultLabelFormatter;
 import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.LegendRenderer;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
@@ -40,7 +41,7 @@ public class linechartresults extends AppCompatActivity {
 
 
     GraphView graph;
-
+    Button food, home , purchasing, transport;
 
     ArrayList<ILineDataSet> lineDataSets = new ArrayList<>();
 
@@ -51,33 +52,33 @@ public class linechartresults extends AppCompatActivity {
         FirebaseAuth mFirebaseAuth = FirebaseAuth.getInstance();
         String userid = mFirebaseAuth.getCurrentUser().getUid();
 
-        SimpleDateFormat sdf = new SimpleDateFormat("EEE, MMM d ");
+        transport = findViewById(R.id.transport);
+        food = findViewById(R.id.food);
+        purchasing = findViewById(R.id.purchasing);
+        home = findViewById(R.id.home);
+
 
         graph = findViewById(R.id.linechart);
         LineGraphSeries<DataPoint> series = new LineGraphSeries<>(getDataPoint());
         graph.addSeries(series);
+        series.setTitle("Overall");
 
-        graph.getViewport().setYAxisBoundsManual(true);
-        graph.getViewport().setMinY(0);
-        graph.getViewport().setMaxY(12);
+        graph.getViewport().setXAxisBoundsManual(true);
         graph.getViewport().setMaxX(6);
-        graph.getGridLabelRenderer().setNumHorizontalLabels(3);
+        graph.getViewport().setMinX(1);
+
+        //graph.getLegendRenderer().setFixedPosition(42,45);
+        graph.getLegendRenderer().setTextSize(35);
+        graph.getLegendRenderer().setBackgroundColor(Color.LTGRAY);
+        graph.getLegendRenderer().setWidth(426);
+        graph.getLegendRenderer().setAlign(LegendRenderer.LegendAlign.TOP);
+        graph.getLegendRenderer().setVisible(true);
 
 
 
 
-        graph.getGridLabelRenderer().setLabelFormatter(new DefaultLabelFormatter(){
-            @Override
-            public String formatLabel(double value, boolean isValueX) {
-                if(isValueX){
-                    return sdf.format(new Date((long)value));
-                }else {
-                    return super.formatLabel(value, isValueX);
 
-                }
 
-            }
-        });
         series.setDrawBackground(true);
         series.setDrawDataPoints(true);
         series.setDataPointsRadius(10);
@@ -87,14 +88,13 @@ public class linechartresults extends AppCompatActivity {
                                                     @Override
                                                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                         DataPoint[] dp = new DataPoint[((int) dataSnapshot.getChildrenCount())];
-                                                        int index = 0;
+                                                        int index =0;
 
                                                         for (DataSnapshot myDataSnapshot : dataSnapshot.getChildren()) {
                                                             LineChartresult values = myDataSnapshot.getValue(LineChartresult.class);
 
-                                                            dp[index] = new DataPoint(values.getxValue(), values.getyValue());
+                                                            dp[index] = new DataPoint(index, values.getyValue());
                                                             index++;
-                                                            Toast.makeText(linechartresults.this, "children count is" + dp.length, Toast.LENGTH_SHORT).show();
 
 
                                                         }
@@ -107,6 +107,142 @@ public class linechartresults extends AppCompatActivity {
 
             }
         });
+        transport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("TravelValue").child(userid);
+                databaseReference.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        DataPoint[] dp = new DataPoint[((int) dataSnapshot.getChildrenCount())];
+                        int index =0;
+                        series.setTitle("Transport Value");
+
+                        for (DataSnapshot myDataSnapshot : dataSnapshot.getChildren()) {
+                            LineChartresult values = myDataSnapshot.getValue(LineChartresult.class);
+
+                            dp[index] = new DataPoint(index, values.getyValue());
+                            index++;
+
+
+                        }
+                        series.resetData(dp);
+                    }
+
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+            }
+        });
+
+        food.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("FoodValue").child(userid);
+                databaseReference.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        DataPoint[] dp = new DataPoint[((int) dataSnapshot.getChildrenCount())];
+                        int index =0;
+                        series.setTitle("Food Value");
+
+
+                        for (DataSnapshot myDataSnapshot : dataSnapshot.getChildren()) {
+                            LineChartresult values = myDataSnapshot.getValue(LineChartresult.class);
+
+                            dp[index] = new DataPoint(index, values.getyValue());
+                            index++;
+
+
+                        }
+                        series.resetData(dp);
+                    }
+
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+            }
+        });
+
+        purchasing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("PurchasingValue").child(userid);
+                databaseReference.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        DataPoint[] dp = new DataPoint[((int) dataSnapshot.getChildrenCount())];
+                        int index =0;
+                        series.setTitle("Purchasing Value");
+
+
+                        for (DataSnapshot myDataSnapshot : dataSnapshot.getChildren()) {
+                            LineChartresult values = myDataSnapshot.getValue(LineChartresult.class);
+
+                            dp[index] = new DataPoint(index, values.getyValue());
+                            index++;
+
+
+                        }
+                        series.resetData(dp);
+                    }
+
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+            }
+        });
+
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("HomeValue").child(userid);
+                databaseReference.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        DataPoint[] dp = new DataPoint[((int) dataSnapshot.getChildrenCount())];
+                        int index =0;
+                        series.setTitle("Home Value");
+
+
+                        for (DataSnapshot myDataSnapshot : dataSnapshot.getChildren()) {
+                            LineChartresult values = myDataSnapshot.getValue(LineChartresult.class);
+
+                            dp[index] = new DataPoint(index, values.getyValue());
+                            index++;
+
+
+                        }
+                        series.resetData(dp);
+                    }
+
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+            }
+        });
+
+
 
     }
 
