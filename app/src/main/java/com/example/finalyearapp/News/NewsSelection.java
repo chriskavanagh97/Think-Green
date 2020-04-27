@@ -12,7 +12,7 @@ import com.example.finalyearapp.R;
 
 public class NewsSelection extends AppCompatActivity {
 
-    ImageView customize, latest;
+    ImageView customize, latest, favourites;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +21,7 @@ public class NewsSelection extends AppCompatActivity {
 
         customize = findViewById(R.id.custom);
         latest = findViewById(R.id.latest);
+        favourites = findViewById(R.id.favourites);
 
 
         customize.setOnClickListener(new View.OnClickListener() {
@@ -37,6 +38,16 @@ public class NewsSelection extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(NewsSelection.this, ArticlesActivity.class);
                 intent.putExtra("name", "latest");
+                startActivity(intent);
+
+            }
+        });
+
+        latest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(NewsSelection.this, ArticlesActivity.class);
+                intent.putExtra("name", "favourites");
                 startActivity(intent);
 
             }
