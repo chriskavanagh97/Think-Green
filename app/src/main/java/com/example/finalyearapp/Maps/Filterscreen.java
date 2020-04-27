@@ -36,6 +36,7 @@ public class Filterscreen extends AppCompatActivity {
 
         ArrayList<String> cities = new ArrayList<>();
 
+        cities.add("Select County");
         cities.add("Carlow");
         cities.add("Cavan");
         cities.add("Clare");
@@ -63,6 +64,7 @@ public class Filterscreen extends AppCompatActivity {
         cities.add("Wicklow");
         ArrayList<String> outlets = new ArrayList<>();
 
+        outlets.add("Select a Recycle station");
         outlets.add("All");
         outlets.add("Bring Bank");
         outlets.add("Lighting Dropoff");
@@ -80,7 +82,7 @@ public class Filterscreen extends AppCompatActivity {
         ArrayAdapter<String> myadapter2 = new ArrayAdapter<>(Filterscreen.this,
                 R.layout.spinner, outlets);
 
-        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        myAdapter.setDropDownViewResource(R.layout.spinner);
         mySpinner2.setAdapter((myadapter2));
 
         start.setOnClickListener(new View.OnClickListener() {

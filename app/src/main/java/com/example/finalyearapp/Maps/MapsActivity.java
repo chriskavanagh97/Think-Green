@@ -451,75 +451,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
         }
         else if(singlevalue.equals("favourites")) {
 
-            reference.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-
-                        place location = dataSnapshot1.getValue(place.class);
-
-
-                        name = location.getName();
-                        address = location.getAddress();
-                        lat = location.getLat();
-                        lng  = location.getLng();
-                        city = "";
-                        coordinantes = location.getCoordinantes();
-
-                        places.add(new place(name, address, city, state, coordinantes, lat, lng));
-
-                        adapter = new RecycleAdapter(places, MapsActivity.this);
-                        recyclerView.setAdapter(adapter);
-
-                        mMap = googleMap;
-
-                        if (name.equals("Bring Bank")) {
-
-                            MarkerYellow = new LatLng(lat, lng);
-                            mMap.addMarker(new MarkerOptions().position(MarkerYellow).title(name + " " + address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
-                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
-                                    new LatLng(lat,
-                                            lng), 10));
-
-                        } else if (name.equals("Lighting Dropoff")) {
-                            MarkerRed = new LatLng(lat, lng);
-                            mMap.addMarker(new MarkerOptions().position(MarkerRed).title(name + " " + address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
-                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
-                                    new LatLng(lat,
-                                            lng), 10));
-
-
-                        } else if (name.equals("Civic Amenity Site")) {
-                            Markerblue = new LatLng(lat, lng);
-                            mMap.addMarker(new MarkerOptions().position(Markerblue).title(name + " " + address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
-                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
-                                    new LatLng(lat,
-                                            lng), 10));
-
-
-                        } else if (name.equals("Electrical Retailers")) {
-                            Marker = new LatLng(lat, lng);
-                            mMap.addMarker(new MarkerOptions().position(Marker).title(name + " " + address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
-                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
-                                    new LatLng(lat,
-                                            lng), 10));
-
-                        }
-                        mMap = googleMap;
-
-
-
-                        mMap.setMyLocationEnabled(true);
-                    }
-
-                    }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                }
-
-            });
+         Favoutites(mMap);
         }
         else if(singlevalue.equals("general locations")) {
 
@@ -953,6 +885,78 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
         myDialog.show();
 
 
+    }
+
+    public void Favoutites(GoogleMap googleMap){
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+
+                    place location = dataSnapshot1.getValue(place.class);
+
+
+                    name = location.getName();
+                    address = location.getAddress();
+                    lat = location.getLat();
+                    lng  = location.getLng();
+                    city = "";
+                    coordinantes = location.getCoordinantes();
+
+                    places.add(new place(name, address, city, state, coordinantes, lat, lng));
+
+                    adapter = new RecycleAdapter(places, MapsActivity.this);
+                    recyclerView.setAdapter(adapter);
+
+                    mMap = googleMap;
+
+                    if (name.equals("Bring Bank")) {
+
+                        MarkerYellow = new LatLng(lat, lng);
+                        mMap.addMarker(new MarkerOptions().position(MarkerYellow).title(name + " " + address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
+                        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
+                                new LatLng(lat,
+                                        lng), 10));
+
+                    } else if (name.equals("Lighting Dropoff")) {
+                        MarkerRed = new LatLng(lat, lng);
+                        mMap.addMarker(new MarkerOptions().position(MarkerRed).title(name + " " + address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+                        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
+                                new LatLng(lat,
+                                        lng), 10));
+
+
+                    } else if (name.equals("Civic Amenity Site")) {
+                        Markerblue = new LatLng(lat, lng);
+                        mMap.addMarker(new MarkerOptions().position(Markerblue).title(name + " " + address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
+                        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
+                                new LatLng(lat,
+                                        lng), 10));
+
+
+                    } else if (name.equals("Electrical Retailers")) {
+                        Marker = new LatLng(lat, lng);
+                        mMap.addMarker(new MarkerOptions().position(Marker).title(name + " " + address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+                        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
+                                new LatLng(lat,
+                                        lng), 10));
+
+                    }
+                    mMap = googleMap;
+
+
+
+                    mMap.setMyLocationEnabled(true);
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+
+        });
     }
     /* private void getDeviceLocation() {
          /*
