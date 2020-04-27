@@ -72,13 +72,13 @@ public class Filterscreen extends AppCompatActivity {
 
 
         ArrayAdapter<String> myAdapter = new ArrayAdapter<>(Filterscreen.this,
-                android.R.layout.simple_list_item_1, cities);
+                R.layout.spinner, cities);
 
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mySpinner.setAdapter((myAdapter));
 
         ArrayAdapter<String> myadapter2 = new ArrayAdapter<>(Filterscreen.this,
-                android.R.layout.simple_list_item_1, outlets);
+                R.layout.spinner, outlets);
 
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mySpinner2.setAdapter((myadapter2));
@@ -112,6 +112,20 @@ public class Filterscreen extends AppCompatActivity {
             }
 
 
+        });
+
+        Button favourite = findViewById(R.id.favourite);
+        favourite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent mapintent = new Intent(Filterscreen.this, MapsActivity.class);
+                mapintent.putExtra("value", "favourites");
+                startActivity(mapintent);
+
+
+
+            }
         });
     }
 }

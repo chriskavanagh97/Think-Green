@@ -10,6 +10,9 @@ public class place {
     Double lat;
     Double lng;
 
+    public place() {
+    }
+
     public Double getLat() {
         return lat;
     }

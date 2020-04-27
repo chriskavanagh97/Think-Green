@@ -38,6 +38,8 @@ import android.widget.Toast;
 
 
 import com.example.finalyearapp.MainMenu;
+import com.example.finalyearapp.News.ArticlesActivity;
+import com.example.finalyearapp.News.ArticlesItem;
 import com.example.finalyearapp.R;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -59,6 +61,12 @@ import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.maps.DirectionsApiRequest;
 import com.google.maps.GeoApiContext;
 import com.google.maps.PendingResult;
@@ -80,11 +88,17 @@ import java.util.Map;
 
 public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWindowClickListener, OnMapReadyCallback , GoogleMap.OnPolylineClickListener {
 
+    FirebaseAuth mFirebaseAuth = FirebaseAuth.getInstance();
+    String userid = mFirebaseAuth.getCurrentUser().getUid();
+    DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("MapFavourites").child(userid);
+
     private GoogleMap mMap;
     Location mLastLocation;
     com.google.android.gms.maps.model.Marker mCurrLocationMarker;
     Dialog myDialog;
     GeoApiContext mCGeoApiContext = null;
+
+
     String TAG = "MapsActivity";
     Location location;
     private ArrayList<PolylineData> mPolylineData = new ArrayList<>();
@@ -435,10 +449,79 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
 
 
         }
+        else if(singlevalue.equals("favourites")) {
+
+            reference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+
+                        place location = dataSnapshot1.getValue(place.class);
+
+
+                        name = location.getName();
+                        address = location.getAddress();
+                        lat = location.getLat();
+                        lng  = location.getLng();
+                        city = "";
+                        coordinantes = location.getCoordinantes();
+
+                        places.add(new place(name, address, city, state, coordinantes, lat, lng));
+
+                        adapter = new RecycleAdapter(places, MapsActivity.this);
+                        recyclerView.setAdapter(adapter);
+
+                        mMap = googleMap;
+
+                        if (name.equals("Bring Bank")) {
+
+                            MarkerYellow = new LatLng(lat, lng);
+                            mMap.addMarker(new MarkerOptions().position(MarkerYellow).title(name + " " + address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
+                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
+                                    new LatLng(lat,
+                                            lng), 10));
+
+                        } else if (name.equals("Lighting Dropoff")) {
+                            MarkerRed = new LatLng(lat, lng);
+                            mMap.addMarker(new MarkerOptions().position(MarkerRed).title(name + " " + address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
+                                    new LatLng(lat,
+                                            lng), 10));
+
+
+                        } else if (name.equals("Civic Amenity Site")) {
+                            Markerblue = new LatLng(lat, lng);
+                            mMap.addMarker(new MarkerOptions().position(Markerblue).title(name + " " + address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
+                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
+                                    new LatLng(lat,
+                                            lng), 10));
+
+
+                        } else if (name.equals("Electrical Retailers")) {
+                            Marker = new LatLng(lat, lng);
+                            mMap.addMarker(new MarkerOptions().position(Marker).title(name + " " + address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
+                                    new LatLng(lat,
+                                            lng), 10));
+
+                        }
+                        mMap = googleMap;
+
+
+
+                        mMap.setMyLocationEnabled(true);
+                    }
+
+                    }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+
+            });
+        }
         else if(singlevalue.equals("general locations")) {
-
-
-
 
             String json;
             try {
@@ -777,7 +860,6 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
     {
         Toast.makeText(this, "Info window clicked",
                 Toast.LENGTH_SHORT).show();
-
         myDialog.setContentView(R.layout.mapspopup);
         TextView txtclose;
         Button btnFollow;
@@ -787,43 +869,73 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
 
         TextView txtanswer = (TextView) myDialog.findViewById(R.id.Answer);
         txtanswer.setText(marker.getTitle());
-        if(marker.getTitle().contains("Bring Bank") ){
+        TextView textview = (TextView) myDialog.findViewById(R.id.description);
+
+        place newplace = new place();
+        LatLng posistion = marker.getPosition();
+        lng = posistion.longitude;
+        lat = posistion.latitude;
+
+        if(marker.getTitle().contains("Bring Bank")){
+
+            name = "Bring Bank";
+            address = marker.getTitle().replace("Bring Bank " , "");
+
+            textview.setText("Bring banks are recycling containers provided by your local authority. These facilities typically accept glass bottles and jars, aluminium and tin cans. Bring Banks are FREE.\n" );
 
 
-            TextView textview = (TextView) myDialog.findViewById(R.id.description);
-            textview.setText("Bring banks are recycling containers provided by your local authority. These facilities typically accept glass bottles and jars, aluminium and tin cans. Bring Banks are FREE.\n" +
-                    "\n");
+            Toast.makeText(MapsActivity.this, "Added to your favourites", Toast.LENGTH_SHORT).show();
 
-        }else if(marker.getTitle().contains("Bring Bank") ){
+        }   else if(marker.getTitle().contains("Lighting Dropoff")){
 
+            name = "Lighting Dropoff";
+            address = marker.getTitle().replace("Lighting Dropoff " , "");
 
-            TextView textview = (TextView) myDialog.findViewById(R.id.description);
-            textview.setText("Bring banks are recycling containers provided by your local authority. These facilities typically accept glass bottles and jars, aluminium and tin cans. Bring Banks are FREE.\n" +
-                    "\n");
+            textview.setText("Bring banks are recycling containers provided by your local authority. These facilities typically accept glass bottles and jars, aluminium and tin cans. Bring Banks are FREE.\n" );
+            Toast.makeText(MapsActivity.this, "Added to your favourites", Toast.LENGTH_SHORT).show();
+
+        }else if(marker.getTitle().contains("Electrical Retailers")){
+
+            name = "Electrical Retailers";
+            address = marker.getTitle().replace("Electrical Retailers " , "");
+
+            textview.setText("Bring banks are recycling containers provided by your local authority. These facilities typically accept glass bottles and jars, aluminium and tin cans. Bring Banks are FREE.\n");
 
         }
-        else if(marker.getTitle().contains("Bring Bank") ){
+        else if(marker.getTitle().contains("Civic Amenity Site")){
 
+            name = "Civic Amenity Site";
+            address = marker.getTitle().replace("Civic Amenity Site " , "");
 
-            TextView textview = (TextView) myDialog.findViewById(R.id.description);
-            textview.setText("Bring banks are recycling containers provided by your local authority. These facilities typically accept glass bottles and jars, aluminium and tin cans. Bring Banks are FREE.\n" +
-                    "\n");
-
-        }
-        else if(marker.getTitle().contains("Bring Bank") ){
-
-
-            TextView textview = (TextView) myDialog.findViewById(R.id.description);
-            textview.setText("Bring banks are recycling containers provided by your local authority. These facilities typically accept glass bottles and jars, aluminium and tin cans. Bring Banks are FREE.\n" +
-                    "\n");
+            textview.setText("Bring banks are recycling containers provided by your local authority. These facilities typically accept glass bottles and jars, aluminium and tin cans. Bring Banks are FREE.\n" );
 
         }
+
         Button route = myDialog.findViewById(R.id.route);
         route.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 myDialog.dismiss();
                 calculateDirections(marker);
+            }
+        });
+        Button favourite = myDialog.findViewById(R.id.favourite);
+        favourite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+
+                newplace.setAddress(address);
+                newplace.setName(name);
+                newplace.setLat(lat);
+                newplace.setLng(lng);
+                newplace.setCoordinantes(posistion.toString());
+
+                reference.push().setValue(newplace);
+
+                Toast.makeText(MapsActivity.this, "Added to your favourites", Toast.LENGTH_SHORT).show();
+
             }
         });
         txtclose.setOnClickListener(new View.OnClickListener() {
