@@ -154,8 +154,8 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
             @Override
             public void onClick(View v) {
 
-                maincontent.animate().translationX(-785);
-                mainmenu.animate().translationX(-785);
+                maincontent.animate().translationX(-520);
+                mainmenu.animate().translationX(-520);
             }
         });
 
@@ -266,6 +266,17 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnInfoWi
 
 
         });
+
+        Button favourite = findViewById(R.id.favourite);
+        favourite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mMap.clear();
+
+                Favoutites(mMap);
+            }
+        });
+
         recyclerView = findViewById(R.id.my_recycler_view);
         recyclerView.setHasFixedSize(true);
 
