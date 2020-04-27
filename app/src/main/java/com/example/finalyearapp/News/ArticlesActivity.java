@@ -10,8 +10,16 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.finalyearapp.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -33,6 +41,14 @@ public class ArticlesActivity extends AppCompatActivity {
     private ArticlesViewAdapter mListAdapter;
     private ArrayList<ArticlesItem> mListData;
     private String FEED_URL;
+    String title ;
+    String image ;
+    String description ;
+    String Company ;
+    String date ;
+    String url;
+
+    DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("NewsFavourites");
 
 
 
@@ -41,24 +57,6 @@ public class ArticlesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_articles);
 
-        String name = getIntent().getStringExtra("name");
-        String id = getIntent().getStringExtra("id");
-        setTitle(name);
-
-        Intent intent = getIntent();
-        String domain = intent.getStringExtra("name");
-
-        if(domain.equals("latest")){
-            FEED_URL = "https://newsapi.org/v2/everything?q=climate change&apiKey=e31fb6b25b2d4051ac0b1b62f49d2d69";
-
-        }else
-            {
-
-
-            FEED_URL = "https://newsapi.org/v2/everything?q=climate change&sources=" + domain + "&apiKey=e31fb6b25b2d4051ac0b1b62f49d2d69";
-
-
-        }
         mListView = (ListView) findViewById(R.id.listView);
 
 
@@ -77,6 +75,30 @@ public class ArticlesActivity extends AppCompatActivity {
                 startActivity(browserIntent);
             }
         });
+
+
+        String name = getIntent().getStringExtra("name");
+        String id = getIntent().getStringExtra("id");
+        setTitle(name);
+
+        Intent intent = getIntent();
+        String domain = intent.getStringExtra("name");
+
+        if(domain.equals("latest")){
+            FEED_URL = "https://newsapi.org/v2/everything?q=climate change&apiKey=e31fb6b25b2d4051ac0b1b62f49d2d69";
+
+        }else if(domain.equals("favourites")) {
+
+
+        }
+        else {
+
+
+
+            FEED_URL = "https://newsapi.org/v2/everything?q=climate change&sources=" + domain + "&apiKey=e31fb6b25b2d4051ac0b1b62f49d2d69";
+
+
+        }
 
 
         //Start download
@@ -165,12 +187,12 @@ public class AsyncHttpTask extends AsyncTask<String, Void, String> {
             ArticlesItem item;
             for (int i = 0; i < posts.length(); i++) {
                 JSONObject post = posts.optJSONObject(i);
-                String title = post.optString("title");
-                String image = post.optString("urlToImage");
-                String description = post.optString("description");
-                String Company = post.optString("name");
-                String date = post.optString("publishedAt");
-                String url = post.optString("url");
+                 title = post.optString("title");
+                 image = post.optString("urlToImage");
+                 description = post.optString("description");
+                 Company = post.optString("name");
+                 date = post.optString("publishedAt");
+                 url = post.optString("url");
                 item = new ArticlesItem();
                 item.setTitle(title);
                 item.setImage(image);
@@ -188,4 +210,37 @@ public class AsyncHttpTask extends AsyncTask<String, Void, String> {
         }
     }
 
+    public void Favourites(){
+
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                ArticlesItem item;
+
+
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+
+                    ArticlesItem articlesItem = dataSnapshot1.getValue(ArticlesItem.class);
+
+                    item = new ArticlesItem();
+                    item.setTitle(item.getTitle());
+                    item.setImage(item.getImage());
+                    item.setUrl(item.getUrl());
+                    item.setDescription(item.getDescription());
+                    item.setDate(item.getDate());
+                    item.setName(item.getDate());
+                    mListData.add(item);
+
+                }
+
+            }
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
 }
+
