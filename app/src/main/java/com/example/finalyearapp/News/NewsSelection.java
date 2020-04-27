@@ -43,7 +43,7 @@ public class NewsSelection extends AppCompatActivity {
             }
         });
 
-        latest.setOnClickListener(new View.OnClickListener() {
+        favourites.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(NewsSelection.this, ArticlesActivity.class);

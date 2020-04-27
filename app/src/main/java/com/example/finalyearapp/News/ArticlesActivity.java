@@ -14,6 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.finalyearapp.R;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -48,8 +49,9 @@ public class ArticlesActivity extends AppCompatActivity {
     String date ;
     String url;
 
-    DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("NewsFavourites");
-
+    FirebaseAuth mFirebaseAuth = FirebaseAuth.getInstance();
+    String userid = mFirebaseAuth.getCurrentUser().getUid();
+    DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("NewsFavourites").child(userid);
 
 
     @Override
@@ -86,9 +88,12 @@ public class ArticlesActivity extends AppCompatActivity {
 
         if(domain.equals("latest")){
             FEED_URL = "https://newsapi.org/v2/everything?q=climate change&apiKey=e31fb6b25b2d4051ac0b1b62f49d2d69";
+            new ArticlesActivity.AsyncHttpTask().execute(FEED_URL);
+
 
         }else if(domain.equals("favourites")) {
 
+            Favourites();
 
         }
         else {
@@ -96,37 +101,38 @@ public class ArticlesActivity extends AppCompatActivity {
 
 
             FEED_URL = "https://newsapi.org/v2/everything?q=climate change&sources=" + domain + "&apiKey=e31fb6b25b2d4051ac0b1b62f49d2d69";
+            new ArticlesActivity.AsyncHttpTask().execute(FEED_URL);
+
 
 
         }
 
 
         //Start download
-        new ArticlesActivity.AsyncHttpTask().execute(FEED_URL);
 
     }
 
-//Downloading data asynchronously
-public class AsyncHttpTask extends AsyncTask<String, Void, String> {
+    //Downloading data asynchronously
+    public class AsyncHttpTask extends AsyncTask<String, Void, String> {
 
-    @Override
-    protected String doInBackground(String... urls) {
-        String result = "";
-        URL url;
-        HttpsURLConnection urlConnection = null;
+        @Override
+        protected String doInBackground(String... urls) {
+            String result = "";
+            URL url;
+            HttpsURLConnection urlConnection = null;
 
-        try {
-            url = new URL(urls[0]);
+            try {
+                url = new URL(urls[0]);
 
-            urlConnection = (HttpsURLConnection) url.openConnection();
-
-
-            if (result != null) {
-
-                String response = streamToString(urlConnection.getInputStream());
+                urlConnection = (HttpsURLConnection) url.openConnection();
 
 
-                parseResult(response);
+                if (result != null) {
+
+                    String response = streamToString(urlConnection.getInputStream());
+
+
+                    parseResult(response);
 
 
 
@@ -134,32 +140,32 @@ public class AsyncHttpTask extends AsyncTask<String, Void, String> {
 
 
 
+                }
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+
+
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
 
-
-        } catch (IOException e) {
-            e.printStackTrace();
+            return null;
         }
 
-        return null;
-    }
 
+        @Override
+        protected void onPostExecute(String result) {
+            // Download complete. Let us update UI
+            if (result != null) {
 
-    @Override
-    protected void onPostExecute(String result) {
-        // Download complete. Let us update UI
-        if (result != null) {
+                mListAdapter.setListData(mListData);
 
-            mListAdapter.setListData(mListData);
+            } else {
+                Toast.makeText(ArticlesActivity.this, "Failed to load data!", Toast.LENGTH_SHORT).show();
+            }
 
-        } else {
-            Toast.makeText(ArticlesActivity.this, "Failed to load data!", Toast.LENGTH_SHORT).show();
         }
-
     }
-}
 
     String streamToString(InputStream stream) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(stream));
@@ -187,12 +193,12 @@ public class AsyncHttpTask extends AsyncTask<String, Void, String> {
             ArticlesItem item;
             for (int i = 0; i < posts.length(); i++) {
                 JSONObject post = posts.optJSONObject(i);
-                 title = post.optString("title");
-                 image = post.optString("urlToImage");
-                 description = post.optString("description");
-                 Company = post.optString("name");
-                 date = post.optString("publishedAt");
-                 url = post.optString("url");
+                title = post.optString("title");
+                image = post.optString("urlToImage");
+                description = post.optString("description");
+                Company = post.optString("name");
+                date = post.optString("publishedAt");
+                url = post.optString("url");
                 item = new ArticlesItem();
                 item.setTitle(title);
                 item.setImage(image);
@@ -215,23 +221,33 @@ public class AsyncHttpTask extends AsyncTask<String, Void, String> {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                ArticlesItem item;
-
-
+                ArticlesItem itemfav;
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
 
                     ArticlesItem articlesItem = dataSnapshot1.getValue(ArticlesItem.class);
 
-                    item = new ArticlesItem();
-                    item.setTitle(item.getTitle());
-                    item.setImage(item.getImage());
-                    item.setUrl(item.getUrl());
-                    item.setDescription(item.getDescription());
-                    item.setDate(item.getDate());
-                    item.setName(item.getDate());
-                    mListData.add(item);
+                    itemfav = new ArticlesItem();
+                    itemfav.setTitle(articlesItem.getTitle());
+                    itemfav.setImage(articlesItem.getImage());
+                    itemfav.setUrl(articlesItem.getUrl());
+                    itemfav.setDescription(articlesItem.getDescription());
+                    itemfav.setDate(articlesItem.getDate());
+                    itemfav.setName(articlesItem.getName());
+
+                    mListData.add(itemfav);
+
+                    Toast.makeText(ArticlesActivity.this, "title" + articlesItem.getTitle(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(ArticlesActivity.this, "title" + articlesItem.getDate(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(ArticlesActivity.this, "title" + articlesItem.getDescription(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(ArticlesActivity.this, "title" + articlesItem.getUrl(), Toast.LENGTH_LONG).show();
+
 
                 }
+
+
+
+                mListView.setAdapter(mListAdapter);
+
 
             }
 
@@ -243,4 +259,3 @@ public class AsyncHttpTask extends AsyncTask<String, Void, String> {
         });
     }
 }
-
