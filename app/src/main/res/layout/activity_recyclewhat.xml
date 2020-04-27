@@ -65,7 +65,13 @@
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/favourite"
+        android:layout_width="99dp"
+        android:layout_height="39dp"
+        android:layout_gravity="center"
+        android:background="@drawable/mapfavourites">
 
-
+    </Button>
 
 </LinearLayout>

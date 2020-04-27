@@ -96,14 +96,16 @@ public class ArticlesViewAdapter extends ArrayAdapter<ArticlesItem> {
             public void onClick(View view) {
                 Toast.makeText(mContext, "Favourite clicked", Toast.LENGTH_SHORT).show();
 
-                ArticlesItem item;
-                item = new ArticlesItem();
-                item.setTitle(holder.titleTextView.toString());
-                item.setImage(holder.imageView.toString());
-                item.setUrl(Uri.parse(item.getUrl()).toString());
-                item.setDescription(holder.descriptionTextView.toString());
-                item.setDate(holder.date.toString());
-                item.setName(holder.companyname.toString());
+                ArticlesItem favitem;
+                favitem = new ArticlesItem();
+                favitem.setTitle(item.getTitle());
+                favitem.setImage(item.getImage());
+                favitem.setUrl(item.getUrl());
+                favitem.setDescription(item.getDescription());
+                favitem.setDate(item.getDate());
+                favitem.setName(item.getName());
+
+                reference.push().setValue(favitem);
 
             }
         });

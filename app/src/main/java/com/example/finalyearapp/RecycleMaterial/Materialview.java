@@ -11,10 +11,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.finalyearapp.MainActivity;
+import com.example.finalyearapp.News.ArticlesItem;
 import com.example.finalyearapp.R;
 import com.example.finalyearapp.Register;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -25,6 +28,11 @@ import static com.example.finalyearapp.MainActivity.KEY1;
 
 
 public class Materialview extends AppCompatActivity {
+
+    FirebaseAuth mFirebaseAuth = FirebaseAuth.getInstance();
+    String userid = mFirebaseAuth.getCurrentUser().getUid();
+    DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("MaterialFavourites").child(userid);
+
 
 
     TextView What , How , tip , Where, title, Why;
@@ -115,11 +123,6 @@ public class Materialview extends AppCompatActivity {
 
                 }
 
-
-
-
-
-
             }
 
 
@@ -129,7 +132,26 @@ public class Materialview extends AppCompatActivity {
             }
         });
 
+        Button favourite = findViewById(R.id.addtofav);
+        favourite.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
 
+        Material material;
+        material = new Material();
+        material.setName(Name);
+        material.setGeneralComment(generalcomment);
+        material.setHow(how);
+        material.setWhat(what);
+        material.setWhere(where);
+        material.setWhy(why);
+
+
+        reference.push().setValue(material);
+
+        Toast.makeText(Materialview.this, "Added to Favourites", Toast.LENGTH_SHORT).show();
+    }
+});
         facebook = (ImageButton) findViewById(R.id.Facebook);
         facebook.setOnClickListener(new View.OnClickListener(){
 
@@ -165,26 +187,6 @@ public class Materialview extends AppCompatActivity {
             }
 
 
-        });
-        home = (Button) findViewById(R.id.Home);
-        home.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v) {
-                Intent intent1 = new Intent(Materialview.this , Menu.class);
-                startActivity(intent1);
-            }
-        });
-
-        listview = (Button) findViewById(R.id.ItemList);
-        listview.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                Intent intent = new Intent(Materialview.this , recyclewhat.class);
-                startActivity(intent);
-            }
         });
 
     }
