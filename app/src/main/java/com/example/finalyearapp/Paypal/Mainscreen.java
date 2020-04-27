@@ -3,11 +3,14 @@ package com.example.finalyearapp.Paypal;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.app.Instrumentation;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.finalyearapp.R;
 import com.paypal.android.sdk.payments.PayPalConfiguration;
@@ -64,7 +67,7 @@ public class Mainscreen extends AppCompatActivity {
 
         amount = 50;
 
-        PayPalPayment payPalPayment = new PayPalPayment(new BigDecimal(amount), "USD,",
+        PayPalPayment payPalPayment = new PayPalPayment(new BigDecimal(amount), "USD",
         "Adoption of an animal ", PayPalPayment.PAYMENT_INTENT_SALE);
 
         Intent intent = new Intent(this, PaymentActivity.class);
@@ -83,13 +86,19 @@ public class Mainscreen extends AppCompatActivity {
                     try {
                         String paymentDetails = confirmation.toJSONObject().toString(4);
 
-                        startActivity(new Intent(this, PaymentDetails.class));
+                        startActivity(new Intent(this, PaymentDetails.class)
+                                .putExtra("paymentDetails", paymentDetails)
+                                .putExtra("PaymentAmount", amount));
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
                 }
             }
+            else if(resultCode == Activity.RESULT_CANCELED)
+                Toast.makeText(this, "Cancel", Toast.LENGTH_SHORT).show();
 
         }
+        else if( resultCode == PaymentActivity.RESULT_EXTRAS_INVALID)
+            Toast.makeText(this, "Invalid", Toast.LENGTH_SHORT).show();
     }
 }

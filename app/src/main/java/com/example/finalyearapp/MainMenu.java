@@ -38,6 +38,7 @@ import com.bumptech.glide.Glide;
 
 
 import com.example.finalyearapp.News.NewsSelection;
+import com.example.finalyearapp.Paypal.Mainscreen;
 import com.example.finalyearapp.QuizMenuPackage.QuizMenu;
 import com.example.finalyearapp.RecycleMaterial.recyclemenu;
 import com.google.android.gms.tasks.Continuation;
@@ -241,7 +242,7 @@ public class MainMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainMenu.this,
-                        Earthtimeline.class);
+                        Mainscreen.class);
 
                 startActivity(intent);
             }
