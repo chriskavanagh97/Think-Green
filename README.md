@@ -1,1 +1,2 @@
-An android app focused on education people on the environemnt
+An android built in conjunction . Think Green an education app that helps people boost their knowledge on the environment. It outlines the importance of the environment to our planet and animals globally. Machine learning is integrated to educate people how to recycle correctly. The app consists of several API's from a NewsAPI, to Google MAPS, to Paypal. There are over 80 java classes used to build the app highlighting its sophisticated functionality 
+
